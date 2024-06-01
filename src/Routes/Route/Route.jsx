@@ -1,11 +1,13 @@
+import Root from "../../Root/Root";
+import ErrorPage from "../../Page/ErrorePage/ErrorPage"
+import Home from "../../Page/Home/Home"
+import Login from "../../Page/Login/Login"
+import Register from "../../Page/Register/Register"
 import {
     createBrowserRouter,
   } from "react-router-dom";
-import Login from "../pages/Login/Login";
-import Register from "../pages/Register/Register";
-import Root from "../Root/Root";
-import Home from "../Home/Home";
-import ErrorPage from "../pages/ErrorePage/ErrorPage";
+import Listing from "../../Page/Listing/Listing";
+
 
 
   const router = createBrowserRouter([
@@ -27,6 +29,10 @@ import ErrorPage from "../pages/ErrorePage/ErrorPage";
           path:'/register',
           element: <Register></Register>
         },
+        {
+          path: '/listing',
+          element: <Listing></Listing>
+        }
        
       ]
     },

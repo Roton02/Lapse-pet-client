@@ -1,17 +1,23 @@
 
-import {Outlet} from 'react-router-dom'
+import {Outlet, useLocation} from 'react-router-dom'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
-import Navbar from '../Shared/Navber/Navbar';
-import Footer from '../Shared/Navber/Footer/Footer';
+import Navbar from '../Shared/Navbar/Navbar';
+import Footer from '../Shared/Footer/Footer';
+
 AOS.init();
 
 const Root = () => {
+    const location = useLocation()
+    const noHeaderAndFooter =location.pathname.includes('login' )|| location.pathname.includes('register') || location.pathname.includes('Login')
+    console.log(location);
     return (
-        <div className="my-8 max-w-7xl px-3 mx-auto">
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Footer></Footer>
+        <div>
+           {noHeaderAndFooter ||  <Navbar></Navbar>}
+            <div className="min-h-screen">
+                <Outlet></Outlet>
+            </div>
+            {noHeaderAndFooter || <Footer></Footer>}
         </div>
     );
 };

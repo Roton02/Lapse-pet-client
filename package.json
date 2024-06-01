@@ -12,6 +12,7 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
+    "axios": "^1.7.2",
     "firebase": "^10.11.0",
     "i": "^0.3.7",
     "npm": "^10.5.2",
@@ -21,9 +22,12 @@
     "react-helmet-async": "^2.0.4",
     "react-icons": "^5.1.0",
     "react-router-dom": "^6.23.0",
-    "react-toastify": "^10.0.5"
+    "react-tabs": "^6.0.2",
+    "react-toastify": "^10.0.5",
+    "sweetalert2": "^11.11.0"
   },
   "devDependencies": {
+    "@types/node": "^20.13.0",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",

@@ -1,0 +1,4 @@
+.shop.react-tabs__tab-panel--selected{
+    border-bottom: 2px solid yellow;
+    background: #000;
+}
