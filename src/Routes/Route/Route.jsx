@@ -7,6 +7,7 @@ import {
     createBrowserRouter,
   } from "react-router-dom";
 import Listing from "../../Page/Listing/Listing";
+import SinglePeatsDetails from "../../Page/SinglePeatsdetails/SinglePeatsDetails";
 
 
 
@@ -32,6 +33,10 @@ import Listing from "../../Page/Listing/Listing";
         {
           path: '/listing',
           element: <Listing></Listing>
+        },
+        {
+          path:'/singlePage/:id',
+          element: <SinglePeatsDetails></SinglePeatsDetails>
         }
        
       ]
