@@ -8,6 +8,8 @@ import {
   } from "react-router-dom";
 import Listing from "../../Page/Listing/Listing";
 import SinglePeatsDetails from "../../Page/SinglePeatsdetails/SinglePeatsDetails";
+import CampaignPeats from "../../Page/CampaignPeats/CampaignPeats";
+import CampaignDetails from "../../Page/CampaignDetails/CampaignDetails";
 
 
 
@@ -37,6 +39,14 @@ import SinglePeatsDetails from "../../Page/SinglePeatsdetails/SinglePeatsDetails
         {
           path:'/singlePage/:id',
           element: <SinglePeatsDetails></SinglePeatsDetails>
+        },
+        {
+          path:"/campaign",
+          element:<CampaignPeats></CampaignPeats>
+        },
+        {
+          path:'/campaignDetails',
+          element: <CampaignDetails></CampaignDetails>
         }
        
       ]

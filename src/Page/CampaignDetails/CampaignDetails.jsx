@@ -4,14 +4,14 @@ import { useParams } from "react-router-dom";
 import { AuthContext } from "../../ContextProvider/ContextProvider";
 import Swal from "sweetalert2";
 
-const SinglePeatsDetails = () => {
+const CampaignDetails = () => {
   const params = useParams();
   const { user } = useContext(AuthContext);
   console.log(params);
   const [details, setdetails] = useState([]);
   const axiosPublic = useAxiosPublic();
   useEffect(() => {
-    axiosPublic.get(`/allCategory/${params.id}`).then((res) => {
+    axiosPublic.get(`/campaignAllPeats/${params.id}`).then((res) => {
       setdetails(res.data);
     });
   }, [axiosPublic, params]);
@@ -194,4 +194,4 @@ const SinglePeatsDetails = () => {
   );
 };
 
-export default SinglePeatsDetails;
+export default CampaignDetails;

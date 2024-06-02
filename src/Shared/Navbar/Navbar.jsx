@@ -67,7 +67,7 @@ const Navbar = () => {
               Pet Listing
             </NavLink>
             <NavLink
-              to="/Campaigns"
+              to="/campaign"
               className="btn btn-ghost border-2 border-gray-300 hover:bg-black hover:text-white "
             >
               Donation Campaigns
@@ -96,7 +96,7 @@ const Navbar = () => {
               Pet Listing
             </NavLink>
             <NavLink
-              to="/Campaigns"
+              to="/campaign"
               className="btn btn-ghost border-2 border-gray-300 hover:bg-black hover:text-white "
             >
               Donation Campaigns

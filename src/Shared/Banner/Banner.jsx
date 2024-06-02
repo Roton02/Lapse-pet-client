@@ -18,6 +18,11 @@ const Banner = ({ heading, subheading, btn, description, heigth, search }) => {
                   {heading}
                 </h1>
               )}
+              {
+                description&& (
+                  <p className="my-5">{description}</p>
+                )
+              }
               {btn && <p className="text-[#393d72]">{description}</p>}
               {btn && (
                 <button className="w-full px-5 py-2 mt-4 text-xl font-medium text-white capitalize transition-colors duration-300 transform bg-[#ff4880] rounded-md lg:w-auto hover:bg-pink-500 focus:outline-none focus:bg-[#ff4880]">
