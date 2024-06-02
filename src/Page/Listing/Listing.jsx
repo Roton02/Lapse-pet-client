@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ImLocation2 } from "react-icons/im";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const Listing = () => {

@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { Link } from "react-router-dom";
 import Banner from "../../Shared/Banner/Banner";
-import { ImLocation2 } from "react-icons/im";
-import { MdTimeline } from "react-icons/md";
+
 
 const CampaignPeats = () => {
   const axiosPublic = useAxiosPublic();
@@ -35,7 +34,10 @@ const CampaignPeats = () => {
                 />
               </figure>
               <div className="card-body space-y-0 ">
+                <div className="flex justify-between">
                 <h2 className="card-title font-bold">{campaign.name}</h2>
+                <h2 className=" font-bold">{campaign.date}</h2>
+                </div>
                 <div className="">
                   <p> Max Donation Amount : $ {campaign.max_donation_amount}</p>
                   <p> Donated Amount : $ {campaign.donated_amount}</p>

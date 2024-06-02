@@ -21,12 +21,9 @@ const CampaignDetails = () => {
     const requestedData = details;
     const email = user?.email;
     const name = user?.displayName;
-    const numbers = e.target.phone.value;
-    const address = e.target.address.value;
     requestedData.RequesterEmail = email;
     requestedData.RequesterName = name;
-    requestedData.RequsterAddress = address;
-    requestedData.RequsterNumber = numbers;
+    
     // console.log(requestedData);
     axiosPublic.post("/Adopted/request", requestedData).then((res) => {
       // console.log(res.data);
@@ -92,7 +89,7 @@ const CampaignDetails = () => {
                   }
                   className="btn bg-[#1e847f] text-white hover:bg-[#1e547f] "
                 >
-                  Adopt
+                  Donate Now
                 </button>
 
                 <dialog
@@ -117,47 +114,15 @@ const CampaignDetails = () => {
                         </div>
                       </div>
                       <div className="flex gap-5">
-                        <div>
-                          <label htmlFor="FoodName"> Name</label> <br />
-                          <input
-                            name="name"
-                            type="text"
-                            required
-                            value={user?.displayName}
-                            placeholder="Write Food Name"
-                            className="input input-bordered w-full"
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="FoodName">Email</label> <br />
-                          <input
-                            name="image"
-                            type="text"
-                            required
-                            value={user?.email}
-                            placeholder="Write Valid URL"
-                            className="input input-bordered w-full"
-                          />
-                        </div>
                       </div>
                       <div className="">
                         <div>
-                          <label htmlFor="Phone">Phone</label> <br />
+                          <label htmlFor="DonateAmount">Donate Amount</label> <br />
                           <input
-                            name="phone"
-                            type="number"
-                            required
-                            placeholder="write your Number"
-                            className="input input-bordered w-full"
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="expired">Address</label> <br />
-                          <input
-                            name="address"
+                            name="DonateAmount"
                             type="text"
                             required
-                            placeholder="write Recived address"
+                            placeholder="write Donate Amount"
                             className="input input-bordered w-full"
                           />
                         </div>

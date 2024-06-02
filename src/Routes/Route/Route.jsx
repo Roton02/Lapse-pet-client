@@ -10,7 +10,9 @@ import Listing from "../../Page/Listing/Listing";
 import SinglePeatsDetails from "../../Page/SinglePeatsdetails/SinglePeatsDetails";
 import CampaignPeats from "../../Page/CampaignPeats/CampaignPeats";
 import CampaignDetails from "../../Page/CampaignDetails/CampaignDetails";
-
+import Dashboard from "../../Root/Dashboard";
+import PrivateRoute from "../PrivateRoute/PrivateRoute"
+import AddPets from "../../DashBorad/AddPet/AddPets";
 
 
   const router = createBrowserRouter([
@@ -45,12 +47,26 @@ import CampaignDetails from "../../Page/CampaignDetails/CampaignDetails";
           element:<CampaignPeats></CampaignPeats>
         },
         {
-          path:'/campaignDetails',
+          path:'/campaignDetails/:id',
           element: <CampaignDetails></CampaignDetails>
         }
        
       ]
     },
+    {
+      path: 'dashboard',
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>  ,
+      children: [
+        // normal user routes
+       {
+        path:'addPet',
+        element:<AddPets></AddPets>
+       }
+        // admin only routes
+        
+
+      ]
+    }
   ]);
 
   export default router;

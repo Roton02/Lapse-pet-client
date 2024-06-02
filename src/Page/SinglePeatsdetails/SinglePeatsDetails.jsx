@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useParams } from "react-router-dom";
-import { AuthContext } from "../../ContextProvider/ContextProvider";
 import Swal from "sweetalert2";
+import useAuth from "../../Hooks/useAuth";
 
 const SinglePeatsDetails = () => {
   const params = useParams();
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth()
   console.log(params);
   const [details, setdetails] = useState([]);
   const axiosPublic = useAxiosPublic();
