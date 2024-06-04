@@ -91,9 +91,10 @@ import UpdatePets from "../../DashBorad/MyAdded/UpdatePets";
        },
        {
         path:'myAddedPeats/updatepets/:id',
-        element:<UpdatePets></UpdatePets>
+        element:<UpdatePets></UpdatePets>,
+        loader: ({params})=>fetch(`http://localhost:5000/myAdded/?id=${params.id}`)
        }
-        // admin only routes
+        // admin only routes 
         
 
       ]

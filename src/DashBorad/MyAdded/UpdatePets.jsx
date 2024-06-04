@@ -4,69 +4,37 @@ import { useForm } from "react-hook-form";
 import { BiVerticalBottom } from "react-icons/bi";
 import useAuth from "../../Hooks/useAuth";
 import { imageUpload } from "../../api/utils";
+import { useLoaderData } from "react-router-dom";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
-import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
 
 const UpdatePets = () => {
-    const [data, setData] = useState([])
-    const params = useParams()
-    console.log(params);
-    const axiosPublic = useAxiosPublic()
-    // Fetching data with React Query
-  const { data: pets = [], refetch } = useQuery({
-    queryKey: ["pets"],
-    queryFn: async () => {
-      const res = await axiosPublic.get(`/myAdded/?id=${params.id}`);
-      setData(res.data)
-      return res.data;
-    },
-});
-console.log(data);
+  const axiosPublic = useAxiosPublic()
+  const loadedData = useLoaderData()
+  // console.log(loadedData);
+  const habi = {};
+
+  for (let i = 0; i < loadedData.length; i++) {
+    habi[i] = loadedData[i];
+  }
+  console.log(habi);
+  // const [, , age, , description, description2, img,location, name, , ,_id] = loadedData
+  // console.log(age);
   const {
     register,
     reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [photo, setPhoto] = useState(null);
-  console.log(photo);
   const { user } = useAuth();
   const [selectedOption, setSelectedOption] = useState(null);
-  function getCurrentDate() {
-    const date = new Date();
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are zero-indexed
-    const day = String(date.getDate()).padStart(2, "0");
-
-    return `${year}-${month}-${day}`;
-  }
-  function getCurrentTime() {
-    const date = new Date();
-    const hours = String(date.getHours()).padStart(2, '0');
-    const minutes = String(date.getMinutes()).padStart(2, '0');
-    const seconds = String(date.getSeconds()).padStart(2, '0');
-    
-    return `${hours}:${minutes}:${seconds}`;
-  }
-  useEffect(()=>{
-    reset()
-  },[reset])
+  useEffect(() => {
+    reset();
+  }, [reset]);
   const onSubmit = async (data) => {
-    console.log(
-      data.name,
-      data.age,
-      data.photo,
-      data.note1,
-      data.note2,
-      data.location
-    );
-    const AddedPersonImage = user.photoURL;
-    const AddedPersonName = user.displayName;
-    const AddedPersonEmail = user.email;
+    
     try {
       const imgData = await imageUpload(data.photo[0]);
-      data.photo= imgData
+      data.photo = imgData;
       console.log(imgData);
     } catch (err) {
       console.log(err);
@@ -78,14 +46,13 @@ console.log(data);
       location: data.location,
       age: data.age,
       description: data.note1,
-      description2: data.note2,
-      date: getCurrentDate(),
-      time: getCurrentTime(),
-      adopted: false,
-      addedPerson: { AddedPersonImage, AddedPersonName, AddedPersonEmail },
+      description2: data.note2,   
     };
     console.log(petDetails);
-    
+    axiosPublic.patch(`updateMyaddedPets/`)
+    .then(res =>{
+      console.log(res.data);
+    })
   };
 
   const options = [
@@ -102,9 +69,7 @@ console.log(data);
 
   return (
     <div>
-      <div className=" ">
-        <div>
-          <div className="relative">
+      <div className="relative">
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
               <div className="">
                 <div>
@@ -116,7 +81,7 @@ console.log(data);
                             className="block text-2xl font-bold text-gray-800
                  dark:text-white"
                           >
-                           Update peats
+                            Update peats
                           </h1>
                         </div>
 
@@ -130,7 +95,6 @@ console.log(data);
                                 <span className="label-text">Name</span>
                               </label>
                               <input
-                              
                                 type="text"
                                 {...register("name", { required: true })}
                                 name="name"
@@ -260,8 +224,6 @@ console.log(data);
               </div>
             </div>
           </div>
-        </div>
-      </div>
     </div>
   );
 };

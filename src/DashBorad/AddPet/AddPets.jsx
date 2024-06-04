@@ -170,7 +170,7 @@ const AddPets = () => {
                             </div>
                             <div className="form-control">
                               <label className="label">
-                                <span className="label-text">Image</span>
+                                <span className="label-text">Type</span>
                               </label>
                               <Select
                                 value={selectedOption}
