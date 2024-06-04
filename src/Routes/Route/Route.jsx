@@ -13,6 +13,13 @@ import CampaignDetails from "../../Page/CampaignDetails/CampaignDetails";
 import Dashboard from "../../Root/Dashboard";
 import PrivateRoute from "../PrivateRoute/PrivateRoute"
 import AddPets from "../../DashBorad/AddPet/AddPets";
+import MyAddedPeats from "../../DashBorad/MyAdded/MyAddedPeats";
+import AdoptionRequest from "../../DashBorad/RequestedPeats/AdoptionRequest";
+import CreateCampaign from "../../DashBorad/CreateCampaign/CreateCampaign";
+import MyDonationCampaign from "../../DashBorad/MyDonationCampaign/MyDonationCampaign";
+import MyDonation from "../../DashBorad/MyDonation/MyDonation";
+import UpdatePets from "../../DashBorad/MyAdded/UpdatePets";
+
 
 
   const router = createBrowserRouter([
@@ -61,6 +68,30 @@ import AddPets from "../../DashBorad/AddPet/AddPets";
        {
         path:'addPet',
         element:<AddPets></AddPets>
+       },
+       {
+        path:'myAddedPeats',
+        element:<MyAddedPeats></MyAddedPeats>
+       },
+       {
+        path:'adoptionRequest',
+        element:<AdoptionRequest></AdoptionRequest>
+       },
+       {
+        path:'CreateCampaign',
+        element:<CreateCampaign></CreateCampaign>
+       },
+       {
+        path:'myDonationCampaign',
+        element:<MyDonationCampaign></MyDonationCampaign>
+       },
+       {
+        path:'myDonation',
+        element:<MyDonation></MyDonation>
+       },
+       {
+        path:'myAddedPeats/updatepets/:id',
+        element:<UpdatePets></UpdatePets>
        }
         // admin only routes
         

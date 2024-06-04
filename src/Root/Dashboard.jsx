@@ -19,9 +19,9 @@ const Dashboard = () => {
   const isAdmin = false;
 
   return (
-    <div className="flex bg-gradient-to-bl from-pink-200 via-transparent">
+    <div className="flex bg-gradient-to-bl from-pink-300 via-transparent">
       {/* dashboard side bar */}
-      <div className="w-64 min-h-screen bg-orange-400">
+      <div className="w-64 min-h-screen bg-[#ff4880]">
         <ul className="menu p-4">
           {isAdmin ? (
             <>
@@ -65,33 +65,33 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/history">
+                <NavLink to="/dashboard/myAddedPeats">
                   <FaCalendar></FaCalendar>
                   My added pets
                 </NavLink>
               </li>
 
               <li>
-                <NavLink to="/dashboard/review">
+                <NavLink to="/dashboard/adoptionRequest">
                   <FaAdn></FaAdn>
                   Adoption Request
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/paymentHistory">
+                <NavLink to="/dashboard/CreateCampaign">
                   <FaCreativeCommons></FaCreativeCommons>
                   Create Donation Campaign
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/paymentHistory">
+                <NavLink to="/dashboard/myDonationCampaign">
                   <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
                   My Donation Campaigns
 
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/paymentHistory">
+                <NavLink to="/dashboard/myDonation">
                   <FaList></FaList>
                   My Donations
                 </NavLink>

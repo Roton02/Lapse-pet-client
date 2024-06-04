@@ -8,7 +8,7 @@ const Category = ({ item }) => {
           <Link key={data._id}>
           <div
             
-            className=" w-full overflow-hidden bg-gray-200 shadow-sm dark:bg-gray-800"
+            className=" w-full min-w-96 overflow-hidden bg-gray-200 shadow-sm dark:bg-gray-800"
           >
             <img
               className="object-cover w-full h-56"

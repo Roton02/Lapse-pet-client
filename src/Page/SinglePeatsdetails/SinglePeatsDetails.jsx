@@ -18,7 +18,7 @@ const SinglePeatsDetails = () => {
   console.log(details);
   const handleAdoptionREquest = (e) => {
     e.preventDefault();
-    const requestedData = details;
+    const requestedData = {id:details._id, AddedEmail:details.addedPerson.AddedPersonEmail,name:details.name, type:details.type,requetsed:true, adopted:details.adopted,age:details.age, date:details.date,description:details.description, img:details.img,location:details.location};
     const email = user?.email;
     const name = user?.displayName;
     const numbers = e.target.phone.value;
@@ -27,14 +27,14 @@ const SinglePeatsDetails = () => {
     requestedData.RequesterName = name;
     requestedData.RequsterAddress = address;
     requestedData.RequsterNumber = numbers;
-    // console.log(requestedData);
+    console.log(requestedData);
     axiosPublic.post("/Adopted/request", requestedData).then((res) => {
-      // console.log(res.data);
+      console.log(res.data);
       if (res.data.insertedId) {
         Swal.fire({
           position: "top-center",
           icon: "success",
-          title: `Your request has accepted`,
+          title: `Your request has Recived`,
           showConfirmButton: false,
           timer: 2000,
         });

@@ -1,16 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Select from "react-select";
 import { useForm } from "react-hook-form";
 import { BiVerticalBottom } from "react-icons/bi";
 import useAuth from "../../Hooks/useAuth";
 import { imageUpload } from "../../api/utils";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
-import Swal from "sweetalert2";
+import { useQuery } from "@tanstack/react-query";
+import { useParams } from "react-router-dom";
 
-const AddPets = () => {
+const UpdatePets = () => {
+    const [data, setData] = useState([])
+    const params = useParams()
+    console.log(params);
     const axiosPublic = useAxiosPublic()
+    // Fetching data with React Query
+  const { data: pets = [], refetch } = useQuery({
+    queryKey: ["pets"],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/myAdded/?id=${params.id}`);
+      setData(res.data)
+      return res.data;
+    },
+});
+console.log(data);
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -34,6 +49,9 @@ const AddPets = () => {
     
     return `${hours}:${minutes}:${seconds}`;
   }
+  useEffect(()=>{
+    reset()
+  },[reset])
   const onSubmit = async (data) => {
     console.log(
       data.name,
@@ -67,17 +85,7 @@ const AddPets = () => {
       addedPerson: { AddedPersonImage, AddedPersonName, AddedPersonEmail },
     };
     console.log(petDetails);
-    axiosPublic.post('/AddPet', petDetails)
-      .then(res => {
-        console.log(res.data);
-        if (res.data.acknowledged) {
-          Swal.fire({
-            title: "Added !",
-            text: "Your file has been added Successfull.",
-            icon: "success"
-          });
-        }
-      })
+    
   };
 
   const options = [
@@ -108,7 +116,7 @@ const AddPets = () => {
                             className="block text-2xl font-bold text-gray-800
                  dark:text-white"
                           >
-                            Add A new Peat{" "}
+                           Update peats
                           </h1>
                         </div>
 
@@ -122,6 +130,7 @@ const AddPets = () => {
                                 <span className="label-text">Name</span>
                               </label>
                               <input
+                              
                                 type="text"
                                 {...register("name", { required: true })}
                                 name="name"
@@ -239,7 +248,7 @@ const AddPets = () => {
                             >
                               <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-[#1e847f] top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
                               <span className="relative my-auto  text-[#1e847f] transition duration-300 group-hover:text-white ease">
-                                Add Peat
+                                Update
                               </span>
                             </button>
                           </div>
@@ -257,4 +266,4 @@ const AddPets = () => {
   );
 };
 
-export default AddPets;
+export default UpdatePets;
