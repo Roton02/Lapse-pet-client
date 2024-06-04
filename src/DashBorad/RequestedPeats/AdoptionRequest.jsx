@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import Swal from "sweetalert2";
 
 const AdoptionRequest = () => {
@@ -21,7 +20,8 @@ const AdoptionRequest = () => {
     console.log(id);
     axiosPublic.patch(`adopted/requestedAccept/${id}`)
     .then(res=>{
-      console.log(res.data);
+      console.log("working",res.data);
+      refetch()
     })
   }
   const handleCancle =(id)=>{

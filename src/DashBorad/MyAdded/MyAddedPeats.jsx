@@ -111,12 +111,14 @@ console.log(pets);
     });
   };
 
-  const handleAdopted = async (_id) => {
+  const handleAdopted = async (_id,id) => {
     console.log(`Adopted pet with ID: ${_id}`);
-    await axiosPublic.patch(`/myAddedAdopt/${_id}`).then((res) => {
-      console.log(res.data);
-      refetch()
-    });
+    console.log(` pet with ID: ${id}`);
+
+    // await axiosPublic.patch(`/myAddedAdopt/${_id}`).then((res) => {
+    //   console.log(res.data);
+    //   refetch()
+    // });
   };
 
   const [pageIndex, setPageIndex] = useState(0);
@@ -218,7 +220,7 @@ console.log(pets);
                     Already Adopt
                   </button> :
                   <button
-                  onClick={() => handleAdopted(row._id)}
+                  onClick={() => handleAdopted(row._id,row.id)}
                   className="bg-green-500 text-white px-2 py-1 rounded"
                 >
                   Adopted

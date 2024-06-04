@@ -43,6 +43,7 @@ const AddPets = () => {
       data.note2,
       data.location
     );
+    console.log(data.photo);
     const AddedPersonImage = user.photoURL;
     const AddedPersonName = user.displayName;
     const AddedPersonEmail = user.email;
