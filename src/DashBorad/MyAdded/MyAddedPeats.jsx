@@ -1,4 +1,4 @@
-import  { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   useReactTable,
   getCoreRowModel,
@@ -22,7 +22,7 @@ const MyAddedPets = () => {
       return res.data;
     },
   });
-console.log(pets);
+  console.log(pets);
   const columns = useMemo(
     () => [
       {
@@ -111,13 +111,13 @@ console.log(pets);
     });
   };
 
-  const handleAdopted = async (_id,id) => {
+  const handleAdopted = async (_id, id) => {
     console.log(`Adopted pet with ID: ${_id}`);
     console.log(` pet with ID: ${id}`);
 
     await axiosPublic.patch(`/myAddedAdopt/${_id}/${id}`).then((res) => {
       console.log(res.data);
-      refetch()
+      refetch();
     });
   };
 
@@ -197,12 +197,20 @@ console.log(pets);
               <td className="p-4 text-sm text-gray-700">{row.name}</td>
               <td className="p-4 text-sm text-gray-700">{row.type}</td>
               <td className="p-4 text-sm text-gray-700">
-                {row.adopted ? <button disabled className="bg-green-300 px-1">Adopted</button>:
-                 <button disabled className="to-blue-300 px-1"> Avilable</button> }
+                {row.adopted ? (
+                  <button disabled className="bg-green-300 px-1">
+                    Adopted
+                  </button>
+                ) : (
+                  <button disabled className="to-blue-300 px-1">
+                    {" "}
+                    Avilable
+                  </button>
+                )}
               </td>
               <td className="p-4 text-sm text-gray-700">
                 <div className="space-x-2">
-                  <Link to={`updatepets/${row._id}`}> 
+                  <Link to={`updatepets/${row._id}`}>
                     <button className="bg-blue-500 text-white px-2 py-1 rounded">
                       Update
                     </button>
@@ -213,20 +221,21 @@ console.log(pets);
                   >
                     Delete
                   </button>
-                  {
-                    row.adopted ? <button
-                    disabled={true}
-                    className="bg-emerald-950 text-white px-2 py-1 rounded"
-                  >
-                    Already Adopt
-                  </button> :
-                  <button
-                  onClick={() => handleAdopted(row._id,row.id)}
-                  className="bg-green-500 text-white px-2 py-1 rounded"
-                >
-                  Adopted
-                </button>
-                  }
+                  {row.adopted ? (
+                    <button
+                      disabled={true}
+                      className="bg-emerald-950 text-white px-2 py-1 rounded"
+                    >
+                      Already Adopt
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => handleAdopted(row._id, row.id)}
+                      className="bg-green-500 text-white px-2 py-1 rounded"
+                    >
+                      Adopted
+                    </button>
+                  )}
                 </div>
               </td>
             </tr>

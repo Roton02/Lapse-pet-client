@@ -19,6 +19,7 @@ import CreateCampaign from "../../DashBorad/CreateCampaign/CreateCampaign";
 import MyDonationCampaign from "../../DashBorad/MyDonationCampaign/MyDonationCampaign";
 import MyDonation from "../../DashBorad/MyDonation/MyDonation";
 import UpdatePets from "../../DashBorad/MyAdded/UpdatePets";
+import MyDonationCampaignEdit from "../../DashBorad/MyDonationCampaign/MyDonationCampaignEdit";
 
 
 
@@ -93,6 +94,10 @@ import UpdatePets from "../../DashBorad/MyAdded/UpdatePets";
         path:'myAddedPeats/updatepets/:id',
         element:<UpdatePets></UpdatePets>,
         loader: ({params})=>fetch(`http://localhost:5000/myAdded/?id=${params.id}`)
+       },
+       {
+        path:'myDonationCampaign/updateCampaign/:id',
+        element:<MyDonationCampaignEdit></MyDonationCampaignEdit>
        }
         // admin only routes 
         

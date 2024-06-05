@@ -1,10 +1,12 @@
 import Swal from "sweetalert2";
-import useAuth from "../../Hooks/useAuth";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { imageUpload } from "../../api/utils";
+import { useNavigate, useParams } from "react-router-dom";
 
-const CreateCampaign = () => {
-  const {user} = useAuth()
+const MyDonationCampaignEdit = () => {
+    const navigate = useNavigate()
+    const params = useParams()
+    console.log(params);
   const axiosPublic = useAxiosPublic()
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,30 +26,26 @@ const CreateCampaign = () => {
     const sortDescription = form.sortDescription.value;
     const longDescription = form.longDescription.value;
     const campaignDetails = {
-      userName:user.displayName,
-      userEmail:user.email,
-      userPhoto:user.photoURL,
-      pause:false,
       image,
       date,
       name,
       maxDonation,
-      donatedAmount:0,
       sortDescription,
       longDescription,
     };
     console.log(campaignDetails);
-    axiosPublic.post('Donation/campaign', campaignDetails)
+    axiosPublic.patch(`/myCampaignUpdate/${params.id}`, campaignDetails)
     .then(res => {
       console.log(res.data);
-      if (res.data.insertedId) {
+      if (res.data.matchedCount > 0) {
         Swal.fire({
           position: "top-center",
           icon: "success",
-          title: "Your Campaign Added Successfully",
+          title: "Your Campaign Update Successfully",
           showConfirmButton: false,
           timer: 1200
         });
+        navigate('/dashboard/myDonationCampaign')
       }
     })
 
@@ -59,7 +57,7 @@ const CreateCampaign = () => {
           className="text-lg text-center border-b-2 pb-5 font-semibold text-gray-700 capitalize 
     dark:text-white"
         >
-          Create your Donation Campaign
+         Update your Donation Campaign
         </h2>
 
         <form onSubmit={handleSubmit}>
@@ -148,4 +146,4 @@ const CreateCampaign = () => {
   );
 };
 
-export default CreateCampaign;
+export default MyDonationCampaignEdit;
