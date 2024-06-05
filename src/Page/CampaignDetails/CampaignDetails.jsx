@@ -47,27 +47,11 @@ const CampaignDetails = () => {
             <div className="lg:col-span-4 items-center mt-10 lg:mt-0">
               <img
                 className="w-full rounded-xl"
-                src={details.img}
+                src={details.image}
                 alt="Image Loading..............."
               />
             </div>
             <div className="lg:col-span-3">
-              {/* <div className="bg-slate-100 p-5">
-                  <h1 className="text-2xl underline font-anton text-center">
-                    Donator information -{" "}
-                  </h1>
-                  <div className="flex gap-5 items-center">
-                    <div className="avatar">
-                      <div className="w-16 rounded">
-                        <img src={donator?.image} />
-                      </div>
-                    </div>
-                    <div className="text-sm font-anton">
-                      <p>{donator?.name}</p>
-                      <p> pickup_location : {pickup_location}</p>
-                    </div>
-                  </div>
-                </div> */}
               <h1 className="block mt-3 ml-2 text-2xl font-anton font-bold text-gray-800  md:text-3xl lg:text-4xl dark:text-white">
                 {details.name}
               </h1>
@@ -75,12 +59,12 @@ const CampaignDetails = () => {
                 age : {details.age}
               </p>
               <p className=" text-lg font-anton text-gray-800 dark:text-neutral-400">
-                Date : {details.date}
+                Last Date Donation : {details.date}
               </p>
               <p className=" text-lg font-anton text-gray-800 dark:text-neutral-400">
-                Location : {details.location}
+                Note : {details.sortDescription}
               </p>
-              <p className="font-anton">{details.description}</p>
+              <p className="font-anton">{details.longDescription}</p>
 
               <div className="mt-3 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
                 <button
@@ -105,7 +89,7 @@ const CampaignDetails = () => {
                         <div className="flex my-4 justify-center gap-5 items-center">
                           <div className="avatar">
                             <div className="w-16 rounded">
-                              <img src={details.img} />
+                              <img src={details.image} />
                             </div>
                           </div>
                           <div className="text-xl font-anton">

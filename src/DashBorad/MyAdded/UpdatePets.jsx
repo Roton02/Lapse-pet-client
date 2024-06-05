@@ -29,7 +29,7 @@ const UpdatePets = () => {
     formState: { errors },
   } = useForm();
   const { user } = useAuth();
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(type);
   useEffect(() => {
     reset();
   }, [reset]);
@@ -109,7 +109,7 @@ const UpdatePets = () => {
                           </label>
                           <input
                             type="text"
-                            {...register("name", { required: true })}
+                            {...register("name", )}
                             defaultValue={name}
                             name="name"
                             placeholder="Name"
@@ -127,7 +127,7 @@ const UpdatePets = () => {
                           </label>
                           <input
                             type="text"
-                            {...register("age", { required: true })}
+                            {...register("age", )}
                             defaultValue={age}
                             name="age"
                             placeholder="peat age"
@@ -145,7 +145,7 @@ const UpdatePets = () => {
                           </label>
                           <input
                             type="file"
-                            {...register("photo", { required: true })}
+                            {...register("photo",)}
                             // defaultValue={img}
                             name="photo"
                             placeholder="Photo"
@@ -162,7 +162,7 @@ const UpdatePets = () => {
                             <span className="label-text">Type</span>
                           </label>
                           <Select
-                            value={selectedOption || type}
+                            value={selectedOption}
                             onChange={handleChange}
                             options={options}
                             placeholder={selectedOption}
@@ -175,7 +175,7 @@ const UpdatePets = () => {
                         </label>
                         <input
                           type="text"
-                          {...register("location", { required: true })}
+                          {...register("location", )}
                           defaultValue={location}
                           name="location"
                           placeholder="write reciver location"
@@ -193,7 +193,7 @@ const UpdatePets = () => {
                         </label>
                         <input
                           type="text"
-                          {...register("note1", { required: true })}
+                          {...register("note1", )}
                           defaultValue={description}
                           name="note1"
                           placeholder="Note About Peat"
@@ -208,7 +208,7 @@ const UpdatePets = () => {
                           <span className="label-text">Description</span>
                         </label>
                         <textarea
-                          {...register("note2", { required: true })}
+                          {...register("note2", )}
                           defaultValue={description2}
                           className="textarea textarea-secondary"
                           placeholder="Write Above Peats"

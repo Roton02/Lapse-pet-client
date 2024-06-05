@@ -11,3 +11,4 @@ export const imageUpload = async photo => {
        console.log(data.data.display_url)
        return data?.data?.display_url;
 }
+

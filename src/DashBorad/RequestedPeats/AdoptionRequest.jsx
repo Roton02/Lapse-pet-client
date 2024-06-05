@@ -16,9 +16,9 @@ const AdoptionRequest = () => {
     },
   });
   console.log(RequestedPets);
-  const handleAccept =(id)=>{
-    console.log(id);
-    axiosPublic.patch(`adopted/requestedAccept/${id}`)
+  const handleAccept =(_id,id)=>{
+    console.log(_id, id);
+    axiosPublic.patch(`adopted/requestedAccept/${_id}/${id}`)
     .then(res=>{
       console.log("working",res.data);
       refetch()
@@ -154,7 +154,7 @@ const AdoptionRequest = () => {
                   </td>
                   <td className="size-px px-6 py-1.5 whitespace-nowrap">
                   <button
-                    onClick={() => handleAccept(manage._id)}
+                    onClick={() => handleAccept(manage._id, manage.id)}
                     className="bg-green-500 text-white px-2 py-1 rounded"
                   >
                     Accept

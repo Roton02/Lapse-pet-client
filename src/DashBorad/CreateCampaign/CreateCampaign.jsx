@@ -1,23 +1,32 @@
+import useAuth from "../../Hooks/useAuth";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { imageUpload } from "../../api/utils";
 
 const CreateCampaign = () => {
+  const {user} = useAuth()
+  const axiosPublic = useAxiosPublic()
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
-    const image = form.photo.value;
+    let image = e.target.elements.photo.files[0];
     try {
-        const imgData = await imageUpload(image[0]);
-        doanteDetails.photo= imgData
-        console.log(imgData);
-      } catch (err) {
-        console.log(err);
-      }
+      const imgData = await imageUpload(image);
+      // setImageURL(imgData);
+      console.log(imgData);
+      image = imgData
+  } catch (err) {
+      console.log(err);
+  }
     const date = form.date.value;
     const maxDonation = form.maxDonation.value;
     const sortDescription = form.sortDescription.value;
     const longDescription = form.longDescription.value;
-    const doanteDetails = {
+    const campaignDetails = {
+      userName:user.displayName,
+      userEmail:user.email,
+      userPhoto:user.photoURL,
+      pause:false,
       image,
       date,
       name,
@@ -25,7 +34,12 @@ const CreateCampaign = () => {
       sortDescription,
       longDescription,
     };
-    console.log(doanteDetails);
+    console.log(campaignDetails);
+    axiosPublic.post('Donation/campaign', campaignDetails)
+    .then(res => {
+      console.log(res.data);
+    })
+
   };
   return (
     <div>

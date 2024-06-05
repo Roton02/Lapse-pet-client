@@ -26,9 +26,9 @@ const CampaignPeats = () => {
         {campaign.map((campaign) => (
           <div key={campaign._id}>
             <div className=" px-0 border-2 rounded-xl ">
-              <figure className=" ">
+              <figure className="w-full bg-cover">
                 <img
-                  src={campaign.img}
+                  src={campaign.image}
                   alt="Shoes"
                   className="rounded-t-xl w-full h-64"
                 />
@@ -39,7 +39,7 @@ const CampaignPeats = () => {
                 <h2 className=" font-bold">{campaign.date}</h2>
                 </div>
                 <div className="">
-                  <p> Max Donation Amount : $ {campaign.max_donation_amount}</p>
+                  <p> Max Donation Amount : $ {campaign.maxDonation}</p>
                   <p> Donated Amount : $ {campaign.donated_amount}</p>
                 </div>
 
