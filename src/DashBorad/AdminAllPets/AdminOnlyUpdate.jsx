@@ -2,26 +2,20 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 import { useForm } from "react-hook-form";
 import { BiVerticalBottom } from "react-icons/bi";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAuth from "../../Hooks/useAuth";
 import { imageUpload } from "../../api/utils";
-import { useLoaderData, useNavigate } from "react-router-dom";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
-import Swal from "sweetalert2";
 
-const UpdatePets = () => {
+const AdminOnlyUpdate = () => {
   const navigate = useNavigate();
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure()
   const loadedData = useLoaderData();
-  // console.log(loadedData);
-  const prevData = {};
-  for (let i = 0; i < loadedData.length; i++) {
-    prevData[i] = loadedData[i];
-  }
-  console.log(prevData[0]);
+  console.log(loadedData);
+
   const { _id, name, age, type, img, description, description2, location } =
-    prevData[0];
-  // const [, , age, , description, description2, img,location, name, , ,_id] = loadedData
-  // console.log(age);
+    loadedData;
   const {
     register,
     reset,
@@ -29,7 +23,7 @@ const UpdatePets = () => {
     formState: { errors },
   } = useForm();
   const { user } = useAuth();
-  const [selectedOption, setSelectedOption] = useState(type);
+  const [selectedOption, setSelectedOption] = useState();
   useEffect(() => {
     reset();
   }, [reset]);
@@ -38,23 +32,23 @@ const UpdatePets = () => {
   }, [reset]);
   const onSubmit = async (data) => {
     try {
-      const imgData = await imageUpload(data.photo[0]);
-      data.photo = imgData;
+      const imgData = await imageUpload(data.photo[0] );
+      data.photo = imgData
       console.log(imgData);
     } catch (err) {
       console.log(err);
     }
     const petDetails = {
-      name: data.name,
-      type: selectedOption,
-      img: data.photo ,
-      location: data.location,
-      age: data.age,
-      description: data.note1,
-      description2: data.note2,
+      name: data.name || name,
+      type: selectedOption || type,
+      img: data.photo || img ,
+      location: data.location || location,
+      age: data.age || age,
+      description: data.note1 || description,
+      description2: data.note2 || description2,
     };
     console.log(petDetails);
-    axiosPublic.patch(`updateMyaddedPets/${_id}`, petDetails).then((res) => {
+    axiosSecure.patch(`updateMyaddedPets/${_id}`, petDetails).then((res) => {
       if (res.data.modifiedCount > 0) {
         Swal.fire({
           position: "top-center",
@@ -63,7 +57,7 @@ const UpdatePets = () => {
           showConfirmButton: false,
           timer: 1000,
         });
-        navigate("/dashboard/myAddedPeats");
+        // navigate("/dashboard");
       }
     });
   };
@@ -94,7 +88,7 @@ const UpdatePets = () => {
                         className="block text-2xl font-bold text-gray-800
                  dark:text-white"
                       >
-                        Update peats
+                        Update peats By Admin 
                       </h1>
                     </div>
 
@@ -110,7 +104,6 @@ const UpdatePets = () => {
                           <input
                             type="text"
                             {...register("name", )}
-                            defaultValue={name}
                             name="name"
                             placeholder="Name"
                             className="input input-bordered"
@@ -128,7 +121,6 @@ const UpdatePets = () => {
                           <input
                             type="text"
                             {...register("age", )}
-                            defaultValue={age}
                             name="age"
                             placeholder="peat age"
                             className="input input-bordered"
@@ -146,7 +138,6 @@ const UpdatePets = () => {
                           <input
                             type="file"
                             {...register("photo",)}
-                            // defaultValue={img}
                             name="photo"
                             placeholder="Photo"
                             className="input "
@@ -176,7 +167,6 @@ const UpdatePets = () => {
                         <input
                           type="text"
                           {...register("location", )}
-                          defaultValue={location}
                           name="location"
                           placeholder="write reciver location"
                           className="input input-bordered"
@@ -194,7 +184,6 @@ const UpdatePets = () => {
                         <input
                           type="text"
                           {...register("note1", )}
-                          defaultValue={description}
                           name="note1"
                           placeholder="Note About Peat"
                           className="input input-bordered"
@@ -209,7 +198,6 @@ const UpdatePets = () => {
                         </label>
                         <textarea
                           {...register("note2", )}
-                          defaultValue={description2}
                           className="textarea textarea-secondary"
                           placeholder="Write Above Peats"
                         ></textarea>
@@ -242,5 +230,5 @@ const UpdatePets = () => {
     </div>
   );
 };
-
-export default UpdatePets;
+        
+export default AdminOnlyUpdate;

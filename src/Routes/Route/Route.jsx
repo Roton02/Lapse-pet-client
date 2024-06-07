@@ -22,6 +22,8 @@ import UpdatePets from "../../DashBorad/MyAdded/UpdatePets";
 import MyDonationCampaignEdit from "../../DashBorad/MyDonationCampaign/MyDonationCampaignEdit";
 import AllUsers from "../../DashBorad/AllUsers/AllUsers";
 import AdminRoute from "../AdminRoute/AdminRoute";
+import AdminAllPets from "../../DashBorad/AdminAllPets/AdminAllPets";
+import AdminOnlyUpdate from "../../DashBorad/AdminAllPets/AdminOnlyUpdate";
 
 
 
@@ -105,7 +107,16 @@ import AdminRoute from "../AdminRoute/AdminRoute";
         {
           path: 'users',
           element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
-        }
+        },
+        {
+          path:'fets',
+          element: <AdminRoute><AdminAllPets></AdminAllPets></AdminRoute>
+        },
+        {
+          path:'fets/updatepets/:id',
+          element:<AdminOnlyUpdate></AdminOnlyUpdate>,
+          loader: ({params})=>fetch(`http://localhost:5000/allCategory/${params.id}`)
+         }
 
       ]
     }
