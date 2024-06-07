@@ -5,6 +5,7 @@ import auth from "../Firebase.config/Firbase.config";
 import {  updateProfile } from "firebase/auth";
 import { toast } from "react-toastify";
 import useAxiosPublic from '../Hooks/useAxiosPublic';
+import Swal from 'sweetalert2';
 
 export const AuthContext = createContext(null)
 const ContextProvider = ({children}) => {
@@ -38,7 +39,13 @@ const ContextProvider = ({children}) => {
     const Logout =()=>{
         // setLoading(false)
          signOut(auth)
-         toast.success(' successful Logout ')
+         Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: `LogOut SuccessFul !`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
          return
     }
    

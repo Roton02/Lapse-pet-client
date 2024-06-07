@@ -20,6 +20,8 @@ import MyDonationCampaign from "../../DashBorad/MyDonationCampaign/MyDonationCam
 import MyDonation from "../../DashBorad/MyDonation/MyDonation";
 import UpdatePets from "../../DashBorad/MyAdded/UpdatePets";
 import MyDonationCampaignEdit from "../../DashBorad/MyDonationCampaign/MyDonationCampaignEdit";
+import AllUsers from "../../DashBorad/AllUsers/AllUsers";
+import AdminRoute from "../AdminRoute/AdminRoute";
 
 
 
@@ -98,9 +100,12 @@ import MyDonationCampaignEdit from "../../DashBorad/MyDonationCampaign/MyDonatio
        {
         path:'myDonationCampaign/updateCampaign/:id',
         element:<MyDonationCampaignEdit></MyDonationCampaignEdit>
-       }
+       },
         // admin only routes 
-        
+        {
+          path: 'users',
+          element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+        }
 
       ]
     }

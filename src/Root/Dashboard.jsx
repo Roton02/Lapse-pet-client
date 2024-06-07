@@ -1,7 +1,6 @@
 import {
   FaAd,
   FaAdn,
-  FaBook,
   FaCalendar,
   FaCanadianMapleLeaf,
   FaCreativeCommons,
@@ -10,13 +9,15 @@ import {
   FaList,
   FaSearch,
   FaUsers,
-  FaUtensils,
+  
 } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../Hooks/useAdmin";
 
 const Dashboard = () => {
   // TODO: get isAdmin value from the database
-  const isAdmin = false;
+  const [isAdmin] = useAdmin()
+  console.log(isAdmin);
 
   return (
     <div className="flex bg-gradient-to-bl from-pink-300 via-transparent">
@@ -26,33 +27,60 @@ const Dashboard = () => {
           {isAdmin ? (
             <>
               <li>
-                <NavLink to="/dashboard/adminHome">
-                  <FaHome></FaHome>
-                  Admin Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/addItems">
-                  <FaUtensils></FaUtensils>
-                  Add Items
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/manageItems">
-                  <FaList></FaList>
-                  Manage Items
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/bookings">
-                  <FaBook></FaBook>
-                  Manage Bookings
-                </NavLink>
-              </li>
-              <li>
                 <NavLink to="/dashboard/users">
                   <FaUsers></FaUsers>
                   All Users
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/fets">
+                  <FaList></FaList>
+                  All Pets
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/adminHome">
+                <FaList></FaList>
+                All Donation
+                </NavLink>
+              </li>
+              <hr />
+              <li>
+                <NavLink to="/dashboard/addPet">
+                <FaAd></FaAd>
+                  Add a pet
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/myAddedPeats">
+                  <FaCalendar></FaCalendar>
+                  My added pets
+                </NavLink>
+              </li>
+
+              <li>
+                <NavLink to="/dashboard/adoptionRequest">
+                  <FaAdn></FaAdn>
+                  Adoption Request
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/CreateCampaign">
+                  <FaCreativeCommons></FaCreativeCommons>
+                  Create Donation Campaign
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/myDonationCampaign">
+                  <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
+                  My Donation Campaigns
+
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/myDonation">
+                  <FaList></FaList>
+                  My Donations
                 </NavLink>
               </li>
             </>
