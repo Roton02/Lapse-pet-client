@@ -4,9 +4,11 @@ import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase.config/Firbase.config";
 import {  updateProfile } from "firebase/auth";
 import { toast } from "react-toastify";
+import useAxiosPublic from '../Hooks/useAxiosPublic';
 
 export const AuthContext = createContext(null)
 const ContextProvider = ({children}) => {
+  const axiosPublic = useAxiosPublic()
 
 //  const [viewLand , setViewLand] = useState({})
 //  console.log(viewLand);
@@ -48,19 +50,28 @@ const ContextProvider = ({children}) => {
     
     useEffect(()=>{
         const  unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-           if (currentUser) {
-             setUser(currentUser);
-             setLoading(false)
-           } else{
-              // console.log('logOut Successfull');
-           setUser(null)
-           setLoading(false)
-           }
+          setUser(currentUser);
+          if (currentUser) {
+            // get token and store client
+            const userInfo = { email: currentUser.email };
+            axiosPublic.post('/jwt', userInfo)
+                .then(res => {
+                    if (res.data.token) {
+                        localStorage.setItem('access-token', res.data.token);
+                        setLoading(false);
+                    }
+                })
+        }
+        else {
+            // TODO: remove token (if token stored in the client side: Local storage, caching, in memory)
+            localStorage.removeItem('access-token');
+            setLoading(false);
+        }
            return ()=>{
                unsubscribe()
            }
          });
-     },[])
+     },[axiosPublic])
 
 const info = {UpdateUser,  user, googleSignIn,githubSignIn, signUp,login,Logout,loading}
     return (

@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../ContextProvider/ContextProvider";
-import Swal from "sweetalert2";
 
 const CampaignDetails = () => {
   const params = useParams();
@@ -18,25 +17,10 @@ const CampaignDetails = () => {
   console.log(details);
   const handleAdoptionREquest = (e) => {
     e.preventDefault();
-    const requestedData = details;
-    const email = user?.email;
-    const name = user?.displayName;
-    requestedData.RequesterEmail = email;
-    requestedData.RequesterName = name;
-    
-    // console.log(requestedData);
-    axiosPublic.post("/Adopted/request", requestedData).then((res) => {
-      // console.log(res.data);
-      if (res.data.insertedId) {
-        Swal.fire({
-          position: "top-center",
-          icon: "success",
-          title: `Your request has accepted`,
-          showConfirmButton: false,
-          timer: 2000,
-        });
-      }
-    });
+    const paymentDetails = details;
+    paymentDetails.PaymentAuthorEmail = user?.email;
+    paymentDetails.PaymentAuthorName = user?.displayName;
+   console.log(paymentDetails);
   };
 
   return (
@@ -68,6 +52,7 @@ const CampaignDetails = () => {
 
               <div className="mt-3 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
                 <button
+                  
                   onClick={() =>
                     document.getElementById("my_modal_5").showModal()
                   }
@@ -114,10 +99,11 @@ const CampaignDetails = () => {
 
                       <div className="flex justify-center my-5">
                         <button
+                        disabled={details.pause}
                           type="submit"
                           className="btn px-5 bg-[#1e847f] text-white hover:text-black"
                         >
-                          submit
+                          Donate
                         </button>
                       </div>
                     </form>

@@ -2,8 +2,10 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { imageUpload } from "../../api/utils";
 import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
 
 const MyDonationCampaignEdit = () => {
+  const [disabled, setDisabled]= useState(false)
     const navigate = useNavigate()
     const params = useParams()
     console.log(params);
@@ -33,11 +35,14 @@ const MyDonationCampaignEdit = () => {
       sortDescription,
       longDescription,
     };
+    // if (name.length>0 || date.length>0||maxDonation.length>0||sortDescription.length>0||longDescription.length>0||image.length>0) {
+    //   setDisabled(false)
+    // }
     console.log(campaignDetails);
     axiosPublic.patch(`/myCampaignUpdate/${params.id}`, campaignDetails)
     .then(res => {
       console.log(res.data);
-      if (res.data.matchedCount > 0) {
+      if (res.data.modifiedCount > 0) {
         Swal.fire({
           position: "top-center",
           icon: "success",
@@ -65,7 +70,6 @@ const MyDonationCampaignEdit = () => {
             <div>
               <label className="text-gray-700 dark:text-gray-200">Name</label>
               <input
-                required
                 id="username"
                 type="text"
                 name="name"
@@ -75,7 +79,7 @@ const MyDonationCampaignEdit = () => {
             <div>
               <label className="text-gray-700 dark:text-gray-200">Image</label>
               <input
-                required
+                
                 id="username"
                 type="file"
                 name="photo"
@@ -88,7 +92,7 @@ const MyDonationCampaignEdit = () => {
                 Maximum donation amount
               </label>
               <input
-                required
+                
                 id="emailAddress"
                 type="number"
                 name="maxDonation"
@@ -101,7 +105,7 @@ const MyDonationCampaignEdit = () => {
                 Last date of donation
               </label>
               <input
-                required
+                
                 id="password"
                 type="date"
                 name="date"
@@ -114,7 +118,7 @@ const MyDonationCampaignEdit = () => {
               sort Description
             </label>
             <input
-              required
+              
               id="passwordConfirmation"
               type="text"
               name="sortDescription"
@@ -135,9 +139,10 @@ const MyDonationCampaignEdit = () => {
           <div className="flex justify-end mt-6">
             <button
               type="submit"
+              disabled={disabled}
               className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
             >
-              Submit
+              Update
             </button>
           </div>
         </form>

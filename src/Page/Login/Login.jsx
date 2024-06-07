@@ -4,8 +4,10 @@ import { AuthContext } from "../../ContextProvider/ContextProvider";
 import { Helmet } from "react-helmet-async";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import { toast } from "react-toastify";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const Login = () => {
+  const axiosPublic = useAxiosPublic()
   const navigate = useNavigate();
   const [toggle, setToggle] = useState(false)
   const { login, googleSignIn, githubSignIn } = useContext(AuthContext);
@@ -37,9 +39,16 @@ const Login = () => {
   const handleSigninWithGoogle = () => {
     googleSignIn()
       .then((result) => {
-        console.log(result.user);
-        toast.success(' successful Login  by Google')
+        const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName
+      }
+      axiosPublic.post('/users', userInfo)
+      .then(res =>{
+        console.log('object');
+          console.log(res.data);
         navigate(location?.state ? location.state : "/");
+      })
       })
       .catch((error) => {
         setError(error.message)
@@ -48,11 +57,18 @@ const Login = () => {
   };
   const handleSigninWithGithub = () => {
     githubSignIn()
-      .then((result) => {
-        console.log(result.user);
-        toast.success(' successful Login  by Github')
-        navigate(location?.state ? location.state : "/");
-      })
+    .then((result) => {
+      const userInfo = {
+        email: result.user?.email,
+        name: result.user?.displayName
+    }
+    axiosPublic.post('/users', userInfo)
+    .then(res =>{
+      console.log('object');
+        console.log(res.data);
+      navigate(location?.state ? location.state : "/");
+    })
+    })
       .catch((error) => {
         setError(error.message);
         toast.warning(error.message)

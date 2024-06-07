@@ -16,6 +16,10 @@ const MyDonationCampaign = () => {
     },
   });
 
+  const handlePause = id =>{
+    console.log(id);
+  }
+
   const calculateProgress = (current, max) => {
     return (current / max) * 100;
   };
@@ -26,8 +30,8 @@ const MyDonationCampaign = () => {
         <thead>
           <tr>
             <th className="py-2 px-4 border-b">Pet Name</th>
-            <th className="py-2 px-4 border-b">Maximum Donation Amount</th>
-            <th className="py-2 px-4 border-b">Donation Progress</th>
+            <th className="py-2 px-4 border-b">Maximum Donation </th>
+            <th className="py-2 px-4 border-b">Donated</th>
             <th className="py-2 px-4 border-b">Pause</th>
             <th className="py-2 px-4 border-b">Edit</th>
             <th className="py-2 px-4 border-b">View Donators</th>
@@ -56,7 +60,9 @@ const MyDonationCampaign = () => {
                 </div>
               </td>
               <td className="py-2 px-4 border-b text-center">
-                <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded">
+                <button 
+                onClick={()=>handlePause(item._id)}
+                className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded">
                   Pause
                 </button>
               </td>
@@ -67,10 +73,34 @@ const MyDonationCampaign = () => {
                   </button>
                 </Link>
               </td>
-              <td className="py-2 px-4 border-b text-center">
-                <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded">
+              <td className="py-2 px-1 border-b text-center">
+                
+                {/* You can open the modal using document.getElementById('ID').showModal() method */}
+                <button
+                   className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
+                  onClick={() =>
+                    document.getElementById("my_modal_3").showModal()
+                  }
+                >
                   View Donators
                 </button>
+                <dialog id="my_modal_3" className="modal">
+                  <div className="modal-box">
+                    <form method="dialog">
+                      {/* if there is a button in form, it will close the modal */}
+                      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                        ✕
+                      </button>
+                    </form>
+                    <h3 className="font-bold text-lg">Donator List!</h3>
+                    <ol className="space-y-2  grid grid-cols-2 my-3">
+                      <li>ami </li>
+                      <li>Momo </li>
+                      <li>pappu</li>
+                      <li>raju</li>
+                    </ol>
+                  </div>
+                </dialog>
               </td>
             </tr>
           ))}
