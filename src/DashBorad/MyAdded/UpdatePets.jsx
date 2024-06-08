@@ -20,8 +20,6 @@ const UpdatePets = () => {
   console.log(prevData[0]);
   const { _id, name, age, type, img, description, description2, location } =
     prevData[0];
-  // const [, , age, , description, description2, img,location, name, , ,_id] = loadedData
-  // console.log(age);
   const {
     register,
     reset,
@@ -37,21 +35,24 @@ const UpdatePets = () => {
     reset();
   }, [reset]);
   const onSubmit = async (data) => {
-    try {
-      const imgData = await imageUpload(data.photo[0]);
-      data.photo = imgData;
-      console.log(imgData);
-    } catch (err) {
-      console.log(err);
+    let newImage = img;
+    if (data.photo.length) {
+      try {
+        const imgData = await imageUpload(data.photo[0]);
+        newImage = imgData;
+        console.log(imgData);
+      } catch (err) {
+        console.log(err);
+      }
     }
     const petDetails = {
-      name: data.name,
-      type: selectedOption,
-      img: data.photo ,
-      location: data.location,
-      age: data.age,
-      description: data.note1,
-      description2: data.note2,
+      name: data.name || name,
+      type: selectedOption || type,
+      img: newImage ,
+      location: data.location || location,
+      age: data.age || age,
+      description: data.note1 || description,
+      description2: data.note2 || description2,
     };
     console.log(petDetails);
     axiosPublic.patch(`updateMyaddedPets/${_id}`, petDetails).then((res) => {

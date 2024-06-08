@@ -4,18 +4,21 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 
-const MyDonationCampaign = () => {
+const AdminCampaign = () => {
   const { user } = useAuth();
   const axiosPublic = useAxiosPublic();
   // Fetching data with React Query
   const { data = [], refetch } = useQuery({
     queryKey: ["Campaign"],
     queryFn: async () => {
-      const res = await axiosPublic.get(`myAddedCampaign/${user.email}`);
+      const res = await axiosPublic.get('campaignAllPeats');
       console.log(res.data);
       return res.data;
     },
   });
+  const handleUnPause =async(id)=>{
+    console.log(id);
+  }
 
   const handlePause =async (id) =>{
     // console.log(id);
@@ -53,7 +56,7 @@ const MyDonationCampaign = () => {
             <th className="py-2 px-4 border-b">Donated</th>
             <th className="py-2 px-4 border-b">Pause</th>
             <th className="py-2 px-4 border-b">Edit</th>
-            <th className="py-2 px-4 border-b">View Donators</th>
+            <th className="py-2 px-4 border-b">Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -80,7 +83,11 @@ const MyDonationCampaign = () => {
               </td>
               <td className="py-2 px-4 border-b text-center">
                {
-                item.pause ? <button>AllReady Paused</button>:
+                item.pause ? <button 
+                onClick={()=>handleUnPause(item._id)}
+                className="bg-pink-500  text-white font-bold py-1 px-4 rounded">
+                  unpaused
+                </button>:
                 <button 
                 onClick={()=>handlePause(item._id)}
                 className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded">
@@ -99,30 +106,11 @@ const MyDonationCampaign = () => {
                 
                 {/* You can open the modal using document.getElementById('ID').showModal() method */}
                 <button
-                   className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
-                  onClick={() =>
-                    document.getElementById("my_modal_3").showModal()
-                  }
+                   className="bg-red-500 text-white font-bold py-1 px-4 rounded"
                 >
-                  View Donators
+                  Delete
                 </button>
-                <dialog id="my_modal_3" className="modal">
-                  <div className="modal-box">
-                    <form method="dialog">
-                      {/* if there is a button in form, it will close the modal */}
-                      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                        ✕
-                      </button>
-                    </form>
-                    <h3 className="font-bold text-lg">Donator List!</h3>
-                    <ol className="space-y-2  grid grid-cols-2 my-3">
-                      <li>ami </li>
-                      <li>Momo </li>
-                      <li>pappu</li>
-                      <li>raju</li>
-                    </ol>
-                  </div>
-                </dialog>
+              
               </td>
             </tr>
           ))}
@@ -132,4 +120,4 @@ const MyDonationCampaign = () => {
   );
 };
 
-export default MyDonationCampaign;
+export default AdminCampaign;

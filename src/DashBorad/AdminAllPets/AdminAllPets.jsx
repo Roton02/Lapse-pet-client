@@ -10,6 +10,9 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { toast } from "react-toastify";
+import { TbBounceLeft } from "react-icons/tb";
+
 const AdminAllPets = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
@@ -126,10 +129,42 @@ const AdminAllPets = () => {
     });
   };
   const handleChangeStatusByNotAdopted = async (id) => {
-    console.log(id);
-  };
+      await axiosSecure.patch(`/AdminChangeStatusByNotAdopted/${id}`)
+      .then(res => {
+        // console.log(res.data);
+        if (res.data.modifiedCount > 0) {
+          toast.success('pet  status changed by Not Adopted', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
+            refetch()
+        }
+      })
+    };
   const handleChangeStatusByAdopted = async (id) => {
-    console.log(id);
+    await axiosSecure.patch(`/AdminChangeStatusByAdopted/${id}`)
+    .then(res => {
+      if (res.data.modifiedCount > 0) {
+        toast.success('pet  status changed by Adopted', {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          
+          });
+          refetch()
+      }
+    })
   };
 
   const [pageIndex, setPageIndex] = useState(0);
@@ -215,7 +250,7 @@ const AdminAllPets = () => {
                 ) : (
                   <button disabled className="to-blue-300 px-1">
                     {" "}
-                    Avilable
+                    Not Adopted
                   </button>
                 )}
               </td>
@@ -277,7 +312,9 @@ const AdminAllPets = () => {
           </button>
         </div>
       )}
+      
     </div>
+    
   );
 };
 

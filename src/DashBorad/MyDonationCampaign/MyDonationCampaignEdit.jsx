@@ -1,19 +1,23 @@
 import Swal from "sweetalert2";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { imageUpload } from "../../api/utils";
 import { useNavigate, useParams } from "react-router-dom";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useState } from "react";
 
 const MyDonationCampaignEdit = () => {
-  const [disabled, setDisabled]= useState(false)
+  const [editData , setEditData] = useState()
     const navigate = useNavigate()
     const params = useParams()
     console.log(params);
-  const axiosPublic = useAxiosPublic()
+  const axiosSecure = useAxiosSecure()
+   axiosSecure.get(`/campaignAllPeats/${params.id}`).then(res=> {
+    console.log(res.data);
+    setEditData(res.data)
+  })
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
+    const name = form.name.value || editData.name;
     let image = e.target.elements.photo.files[0];
     try {
       const imgData = await imageUpload(image);
@@ -35,11 +39,9 @@ const MyDonationCampaignEdit = () => {
       sortDescription,
       longDescription,
     };
-    // if (name.length>0 || date.length>0||maxDonation.length>0||sortDescription.length>0||longDescription.length>0||image.length>0) {
-    //   setDisabled(false)
-    // }
+
     console.log(campaignDetails);
-    axiosPublic.patch(`/myCampaignUpdate/${params.id}`, campaignDetails)
+    axiosSecure.patch(`/myCampaignUpdate/${params.id}`, campaignDetails)
     .then(res => {
       console.log(res.data);
       if (res.data.modifiedCount > 0) {
@@ -139,7 +141,6 @@ const MyDonationCampaignEdit = () => {
           <div className="flex justify-end mt-6">
             <button
               type="submit"
-              disabled={disabled}
               className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
             >
               Update

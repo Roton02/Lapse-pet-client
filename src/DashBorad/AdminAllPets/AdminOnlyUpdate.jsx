@@ -10,7 +10,7 @@ import { imageUpload } from "../../api/utils";
 
 const AdminOnlyUpdate = () => {
   const navigate = useNavigate();
-  const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
   const loadedData = useLoaderData();
   console.log(loadedData);
 
@@ -31,17 +31,20 @@ const AdminOnlyUpdate = () => {
     reset();
   }, [reset]);
   const onSubmit = async (data) => {
-    try {
-      const imgData = await imageUpload(data.photo[0] );
-      data.photo = imgData
-      console.log(imgData);
-    } catch (err) {
-      console.log(err);
+    let newImage = img;
+    if (data.photo.length) {
+      try {
+        const imgData = await imageUpload(data.photo[0]);
+        newImage = imgData;
+        console.log(imgData);
+      } catch (err) {
+        console.log(err);
+      }
     }
     const petDetails = {
       name: data.name || name,
       type: selectedOption || type,
-      img: data.photo || img ,
+      img: newImage,
       location: data.location || location,
       age: data.age || age,
       description: data.note1 || description,
@@ -88,7 +91,7 @@ const AdminOnlyUpdate = () => {
                         className="block text-2xl font-bold text-gray-800
                  dark:text-white"
                       >
-                        Update peats By Admin 
+                        Update peats By Admin
                       </h1>
                     </div>
 
@@ -103,7 +106,7 @@ const AdminOnlyUpdate = () => {
                           </label>
                           <input
                             type="text"
-                            {...register("name", )}
+                            {...register("name")}
                             name="name"
                             placeholder="Name"
                             className="input input-bordered"
@@ -120,7 +123,7 @@ const AdminOnlyUpdate = () => {
                           </label>
                           <input
                             type="text"
-                            {...register("age", )}
+                            {...register("age")}
                             name="age"
                             placeholder="peat age"
                             className="input input-bordered"
@@ -137,7 +140,7 @@ const AdminOnlyUpdate = () => {
                           </label>
                           <input
                             type="file"
-                            {...register("photo",)}
+                            {...register("photo")}
                             name="photo"
                             placeholder="Photo"
                             className="input "
@@ -166,7 +169,7 @@ const AdminOnlyUpdate = () => {
                         </label>
                         <input
                           type="text"
-                          {...register("location", )}
+                          {...register("location")}
                           name="location"
                           placeholder="write reciver location"
                           className="input input-bordered"
@@ -183,7 +186,7 @@ const AdminOnlyUpdate = () => {
                         </label>
                         <input
                           type="text"
-                          {...register("note1", )}
+                          {...register("note1")}
                           name="note1"
                           placeholder="Note About Peat"
                           className="input input-bordered"
@@ -197,7 +200,7 @@ const AdminOnlyUpdate = () => {
                           <span className="label-text">Description</span>
                         </label>
                         <textarea
-                          {...register("note2", )}
+                          {...register("note2")}
                           className="textarea textarea-secondary"
                           placeholder="Write Above Peats"
                         ></textarea>
@@ -230,5 +233,5 @@ const AdminOnlyUpdate = () => {
     </div>
   );
 };
-        
+
 export default AdminOnlyUpdate;
