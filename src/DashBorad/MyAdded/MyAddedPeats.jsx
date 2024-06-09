@@ -3,6 +3,7 @@ import {
   useReactTable,
   getCoreRowModel,
   getPaginationRowModel,
+  getSortedRowModel,
   flexRender,
 } from "@tanstack/react-table";
 import { useQuery } from "@tanstack/react-query";
@@ -10,6 +11,7 @@ import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+
 const MyAddedPets = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
@@ -23,6 +25,7 @@ const MyAddedPets = () => {
     },
   });
   console.log(pets);
+
   const columns = useMemo(
     () => [
       {
@@ -46,7 +49,7 @@ const MyAddedPets = () => {
         header: "Category",
       },
       {
-        accessorKey: "status",
+        accessorKey: "adopted",
         header: "Status",
         cell: ({ row }) => (row.original.adopted ? "Adopted" : "Available"),
       },
@@ -123,6 +126,7 @@ const MyAddedPets = () => {
 
   const [pageIndex, setPageIndex] = useState(0);
   const [pageSize, setPageSize] = useState(10);
+  const [sorting, setSorting] = useState([]);
 
   const table = useReactTable({
     data: pets,
@@ -133,6 +137,7 @@ const MyAddedPets = () => {
         pageIndex,
         pageSize,
       },
+      sorting,
     },
     onPaginationChange: (updater) => {
       const newState =
@@ -142,8 +147,10 @@ const MyAddedPets = () => {
       setPageIndex(newState.pageIndex);
       setPageSize(newState.pageSize);
     },
+    onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    getSortedRowModel: getSortedRowModel(),
     manualPagination: true,
   });
 
@@ -156,7 +163,7 @@ const MyAddedPets = () => {
   return (
     <div className="container mx-auto p-4 ">
       <h1 className="text-2xl font-bold mb-4">My Added Pets</h1>
-      <table className="min-w-full  bg-white border border-gray-300">
+      <table className="min-w-full bg-white border border-gray-300">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr
@@ -166,14 +173,19 @@ const MyAddedPets = () => {
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="p-4 text-left text-sm font-medium text-gray-700"
+                  className="p-4 text-left text-sm font-medium text-gray-700 cursor-pointer"
+                  onClick={header.column.getToggleSortingHandler()}
                 >
                   {header.isPlaceholder ? null : (
-                    <div>
+                    <div className="flex items-center">
                       {flexRender(
                         header.column.columnDef.header,
                         header.getContext()
                       )}
+                      {{
+                        asc: " 🔼",
+                        desc: " 🔽",
+                      }[header.column.getIsSorted()] ?? null}
                     </div>
                   )}
                 </th>

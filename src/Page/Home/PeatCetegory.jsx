@@ -1,12 +1,20 @@
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "../Home/Category.css";
-import TitlePerSection from "../../Shared/TitlePerSection/TitlePerSection";
-import usePeatCategory from "../../Hooks/usePeatCategory";
 import Category from "../../Component/Category";
+import { useEffect, useState } from "react";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
 const PeatCetegory = () => {
-    const [categoryData] = usePeatCategory()
+  const axiosPublic = useAxiosPublic()
+    const [categoryData, setCategoryData] = useState([])
+    useEffect(()=>{
+      axiosPublic.get('homeData')
+      .then(res=>{
+        setCategoryData(res.data);
+      })
+    },[])
     // console.log(categoryData);
     const cats = categoryData.filter(peat => peat.type === "Cat")
     const dog = categoryData.filter(peat => peat.type === "Dog")
@@ -14,13 +22,15 @@ const PeatCetegory = () => {
     console.log(cats,dog, rabbite);
   return (
     <div>
-      <TitlePerSection title={"Here are all peats"}></TitlePerSection>
+      <SectionTitle heading={'ABILITY TO SAVE ANIMALS'} subHeading={'--FUNDRAISING CAMPAINGS--'}>
+
+      </SectionTitle>
       <div className="flex justify-center items-center mx-auto my-10">
         <Tabs>
-          <TabList className={" shoop flex justify-center items-center mb-5"}>
-            <Tab>Cats</Tab>
-            <Tab>dogs</Tab>
-            <Tab>Rabbite</Tab>
+          <TabList className={"  border-b md:pl-24 flex justify-start  items-center mb-5"}>
+            <Tab><span className=" font-semibold"> Category By Cats</span></Tab>
+            <Tab><span className=" font-semibold"> Category By Dogs</span></Tab>
+            <Tab><span className=" font-semibold"> Category By Rabbite</span></Tab>
           </TabList>
 
           <TabPanel>

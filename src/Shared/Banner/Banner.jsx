@@ -31,6 +31,12 @@ const Banner = ({ heading, subheading, btn, description, heigth, search }) => {
               )}
             </div>
             <div className="w-1/2">
+
+
+
+
+
+            
               <img className="w-full"
                 src="https://i.ibb.co/CHK1q5V/pets-3715733-640-removebg-preview.png"
                 alt=""
