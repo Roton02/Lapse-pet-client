@@ -4,11 +4,11 @@ import { useForm } from "react-hook-form";
 import { BiVerticalBottom } from "react-icons/bi";
 import useAuth from "../../Hooks/useAuth";
 import { imageUpload } from "../../api/utils";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const AddPets = () => {
-    const axiosPublic = useAxiosPublic()
+    const axiosSecure = useAxiosSecure()
   const {
     register,
     handleSubmit,
@@ -68,7 +68,7 @@ const AddPets = () => {
       addedPerson: { AddedPersonImage, AddedPersonName, AddedPersonEmail },
     };
     console.log(petDetails);
-    axiosPublic.post('/AddPet', petDetails)
+    axiosSecure.post('/AddPet', petDetails)
       .then(res => {
         console.log(res.data);
         if (res.data.acknowledged) {

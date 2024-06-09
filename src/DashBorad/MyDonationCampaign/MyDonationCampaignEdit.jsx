@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { imageUpload } from "../../api/utils";
 import { useNavigate, useParams } from "react-router-dom";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const MyDonationCampaignEdit = () => {
   const [editData , setEditData] = useState()
@@ -10,27 +10,33 @@ const MyDonationCampaignEdit = () => {
     const params = useParams()
     console.log(params);
   const axiosSecure = useAxiosSecure()
-   axiosSecure.get(`/campaignAllPeats/${params.id}`).then(res=> {
-    console.log(res.data);
-    setEditData(res.data)
-  })
+  useEffect(()=>{
+    axiosSecure.get(`/campaignAllPeats/${params.id}`).then(res=> {
+        console.log(res.data);
+        setEditData(res.data)
+      })
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   },[])
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
+    console.log(e.target.photo.files);
     const name = form.name.value || editData.name;
-    let image = e.target.elements.photo.files[0];
-    try {
-      const imgData = await imageUpload(image);
-      // setImageURL(imgData);
-      console.log(imgData);
-      image = imgData
-  } catch (err) {
-      console.log(err);
-  }
-    const date = form.date.value;
-    const maxDonation = form.maxDonation.value;
-    const sortDescription = form.sortDescription.value;
-    const longDescription = form.longDescription.value;
+    let image = editData.image;
+    if (e.target.photo.files.length >0) {
+      console.log('object');
+      try {
+        const imgData = await imageUpload(e.target.photo.files[0]);
+        image = imgData;
+        console.log(imgData);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    const date = form.date.value || editData.date;
+    const maxDonation = form.maxDonation.value || editData.maxDonation;
+    const sortDescription = form.sortDescription.value || editData.sortDescription;
+    const longDescription = form.longDescription.value || editData.longDescription;
     const campaignDetails = {
       image,
       date,
@@ -75,6 +81,7 @@ const MyDonationCampaignEdit = () => {
                 id="username"
                 type="text"
                 name="name"
+                defaultValue={editData?.name}
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
               />
             </div>
@@ -98,6 +105,7 @@ const MyDonationCampaignEdit = () => {
                 id="emailAddress"
                 type="number"
                 name="maxDonation"
+                defaultValue={editData?.maxDonation}
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
               />
             </div>
@@ -111,6 +119,7 @@ const MyDonationCampaignEdit = () => {
                 id="password"
                 type="date"
                 name="date"
+                defaultValue={editData?.date}
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
               />
             </div>
@@ -124,6 +133,7 @@ const MyDonationCampaignEdit = () => {
               id="passwordConfirmation"
               type="text"
               name="sortDescription"
+              defaultValue={editData?.sortDescription}
               className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
             />
           </div>
@@ -133,6 +143,7 @@ const MyDonationCampaignEdit = () => {
             </label>
             <textarea
             name="longDescription"
+            defaultValue={editData?.longDescription}
               className="textarea w-full textarea-secondary"
               placeholder="Write Above Peats"
             ></textarea>

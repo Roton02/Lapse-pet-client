@@ -14,27 +14,21 @@ const AdminOnlyUpdate = () => {
   const loadedData = useLoaderData();
   console.log(loadedData);
 
-  const { _id, name, age, type, img, description, description2, location } =
-    loadedData;
-  const {
-    register,
-    reset,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { _id, name, age, type, img, description, description2, location } = loadedData;
+  const { register, reset, handleSubmit, formState: { errors } } = useForm();
   const { user } = useAuth();
   const [selectedOption, setSelectedOption] = useState();
+  const [fileInput, setFileInput] = useState(null);
+
   useEffect(() => {
     reset();
   }, [reset]);
-  useEffect(() => {
-    reset();
-  }, [reset]);
+
   const onSubmit = async (data) => {
     let newImage = img;
-    if (data.photo.length) {
+    if (fileInput && fileInput.files.length) {
       try {
-        const imgData = await imageUpload(data.photo[0]);
+        const imgData = await imageUpload(fileInput.files[0]);
         newImage = imgData;
         console.log(imgData);
       } catch (err) {
@@ -60,7 +54,7 @@ const AdminOnlyUpdate = () => {
           showConfirmButton: false,
           timer: 1000,
         });
-        // navigate("/dashboard");
+        navigate("/dashboard/fets");
       }
     });
   };
@@ -74,7 +68,6 @@ const AdminOnlyUpdate = () => {
   const handleChange = (selectedOption) => {
     setSelectedOption(selectedOption.value);
     console.log(`Option selected:`, selectedOption);
-    // setPetType(selectedOption)
   };
 
   return (
@@ -84,13 +77,10 @@ const AdminOnlyUpdate = () => {
           <div className="">
             <div>
               <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="lg:max-w-lg lg:mx-auto  ms-auto">
+                <div className="lg:max-w-lg lg:mx-auto ms-auto">
                   <div className="p-4 sm:p-7 flex flex-col bg-white rounded-2xl shadow-lg dark:bg-neutral-900">
                     <div className="text-center">
-                      <h1
-                        className="block text-2xl font-bold text-gray-800
-                 dark:text-white"
-                      >
+                      <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
                         Update peats By Admin
                       </h1>
                     </div>
@@ -108,6 +98,7 @@ const AdminOnlyUpdate = () => {
                             type="text"
                             {...register("name")}
                             name="name"
+                            defaultValue={name}
                             placeholder="Name"
                             className="input input-bordered"
                           />
@@ -125,6 +116,7 @@ const AdminOnlyUpdate = () => {
                             type="text"
                             {...register("age")}
                             name="age"
+                            defaultValue={age}
                             placeholder="peat age"
                             className="input input-bordered"
                           />
@@ -140,10 +132,10 @@ const AdminOnlyUpdate = () => {
                           </label>
                           <input
                             type="file"
-                            {...register("photo")}
+                            ref={setFileInput}
                             name="photo"
                             placeholder="Photo"
-                            className="input "
+                            className="input"
                           />
                           {errors.photo && (
                             <span className="text-red-600">
@@ -157,6 +149,7 @@ const AdminOnlyUpdate = () => {
                           </label>
                           <Select
                             value={selectedOption}
+                            defaultValue={type}
                             onChange={handleChange}
                             options={options}
                             placeholder={selectedOption}
@@ -171,6 +164,7 @@ const AdminOnlyUpdate = () => {
                           type="text"
                           {...register("location")}
                           name="location"
+                          defaultValue={location}
                           placeholder="write reciver location"
                           className="input input-bordered"
                         />
@@ -188,6 +182,7 @@ const AdminOnlyUpdate = () => {
                           type="text"
                           {...register("note1")}
                           name="note1"
+                          defaultValue={description}
                           placeholder="Note About Peat"
                           className="input input-bordered"
                         />
@@ -201,6 +196,7 @@ const AdminOnlyUpdate = () => {
                         </label>
                         <textarea
                           {...register("note2")}
+                          defaultValue={description2}
                           className="textarea textarea-secondary"
                           placeholder="Write Above Peats"
                         ></textarea>
@@ -210,7 +206,7 @@ const AdminOnlyUpdate = () => {
                         )}
                       </div>
 
-                      <div className="mt-5 flex justify-center ">
+                      <div className="mt-5 flex justify-center">
                         <button
                           type="submit"
                           value={""}

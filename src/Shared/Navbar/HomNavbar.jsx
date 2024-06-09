@@ -1,10 +1,9 @@
-import "animate.css";
-import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { AuthContext } from "../../ContextProvider/ContextProvider";
 import './Navbar.css'
-const Navbar = () => {
-  const { Logout, user } = useContext(AuthContext);
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../ContextProvider/ContextProvider";
+const HomNavbar = () => {
+    const { Logout, user } = useContext(AuthContext);
   const [theme, setTheme] = useState(() => {
     // Retrieve theme from localStorage on component mount
     const locatTheme = localStorage.getItem("theme");
@@ -30,81 +29,57 @@ const Navbar = () => {
       .setAttribute("data-theme", theme ? "dark" : "light");
   }, [theme]); // Re-run effect when theme changes
   console.log(user);
-  return (
-    <nav className="  navbar z-[100]  w-full  md:flex md:justify-between md:items-center bg-base-100">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 "
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </div>
-          <div
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[100] p-2  shadow bg-base-100 rounded-box w-52"
-          >
-            <NavLink
-              to="/"
-              className="btn  border-b-2 border-gray-300 hover:bg-black hover:text-white "
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/listing"
-              className="btn border-2 border-gray-300 hover:bg-black hover:text-white "
-            >
-              Pet Listing
-            </NavLink>
-            <NavLink
-              to="/campaign"
-              className="btn border-2 border-gray-300 hover:bg-black hover:text-white "
-            >
-              Donation Campaigns
-            </NavLink>
-          </div>
-        </div>
+    return (
+        <div>
+            <nav  className="relative ">
+    <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+        <div className="flex items-center justify-between">
+        <div className="w-48">
         <Link to="/">
-          <img 
-          className="w-48"
+          <img
             src="https://i.ibb.co/T1fdtf3/logo2-removebg-preview.png"
             alt=""
           />
         </Link>
-      </div>
-     
-      <div className="navbar-end ">
-      <div className=" space-x-2  hidden lg:flex ">
-        <NavLink
+        </div>
+
+            <div className="flex md:hidden">
+                <button type="button" className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+                    <svg  xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+                        <path   />
+                    </svg>
+            
+                    <svg  xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+                        <path  d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        
+        <div className="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
+        
+            <div className="flex gap-5 flex-col items-center md:flex-row md:mx-6">
+            <NavLink
               to="/"
-              className="btn btn-sm  border-b-2 border-gray-300 hover:bg-black hover:text-white "
+              className=" btn btn-sm"
             >
               Home
             </NavLink>
             <NavLink
               to="/listing"
-              className="btn  btn-sm border-2 border-gray-300 hover:bg-black hover:text-white "
+              className=" btn btn-sm "
             >
               Pet Listing
             </NavLink>
             <NavLink
               to="/campaign"
-              className="btn btn-sm border-2 border-gray-300 hover:bg-black hover:text-white "
+              className="  btn btn-sm"
             >
               Donation Campaigns
             </NavLink>
-        </div>
-        <label className="mx-5 cursor-pointer grid place-items-center">
+            <div>
+            <label className="mr-6 cursor-pointer grid place-items-center">
           <input
             type="checkbox"
             onClick={toggleTheme}
@@ -141,8 +116,12 @@ const Navbar = () => {
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </label>
-        {user ? (
-          <div className="flex items-center ">
+            </div>
+            </div>
+        
+            <div className="flex justify-center md:block">
+            
+            <div className="flex items-center ">
             <div className="dropdown dropdown-end">
               <div tabIndex={0} role="button">
                 <div
@@ -151,22 +130,19 @@ const Navbar = () => {
                   className=" border rounded-full border-gray-300 z-[110]  avatar"
                 >
                   <div className=" rounded-full w-9 md:w-12  ">
-                    <img alt="" src={user?.photoURL || ''} />
+                    <img alt="" src={user?.photoURL} />
                   </div>
                 </div>
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content hidden lg:flex  z-[100] menu p-2 gap-2 shadow bg-base-100 rounded-box w-64"
+                className="dropdown-content hidden lg:flex  z-[100] menu p-2 gap-2 shadow bg-base-100 rounded-box w-40"
               >
-                <div className="flex justify-center">
-                <img className="rounded-full w-20 text-center" src={user?.photoURL || ''} alt="" />
-                </div>
                 <li className="mx-auto  ">{user?.displayName}</li>
                 <li>
                   <NavLink
                     to="/dashBoard"
-                    className="btn btn-sm btn-ghost border-2  border-gray-300 hover:bg-black hover:text-white"
+                    className="btn btm-nav-sm  btn-ghost border-2  border-gray-300 hover:bg-black hover:text-white"
                   >
                     DashBoard
                   </NavLink>
@@ -174,15 +150,18 @@ const Navbar = () => {
 
                 <button
                   onClick={Logout}
-
-                  className="btn btn-sm btn-ghost border-2  border-gray-300 hover:bg-black hover:text-white"
+                  className="rounded-md btn btm-nav-sm m-1 overflow-hidden relative group cursor-pointer border-2 p-1 font-medium border-[#ff4880] text-[#ff4880] hover:text-white"
                 >
+                  <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-[#ff4880] top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+                  <span className="relative  text-[#ff4880] transition duration-300 group-hover:text-white ease">
                     Logout
-                 
+                  </span>
                 </button>
               </ul>
             </div>
           </div>
+        {/* {user ? (
+          
         ) : (
           <Link
            
@@ -194,10 +173,13 @@ const Navbar = () => {
               Login
             </span>
           </Link>
-        )}
-      </div>
-    </nav>
-  );
+        )} */}
+            </div>
+        </div>
+    </div>
+</nav>
+        </div>
+    );
 };
 
-export default Navbar;
+export default HomNavbar;

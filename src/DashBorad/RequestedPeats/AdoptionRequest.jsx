@@ -1,16 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const AdoptionRequest = () => {
   const { user } = useAuth();
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   // Fetching data with React Query
   const { data: RequestedPets = [], refetch } = useQuery({
     queryKey: ["pets"],
     queryFn: async () => {
-      const res = await axiosPublic.get(`Adopted/request/${user.email}`
+      const res = await axiosSecure.get(`Adopted/request/${user.email}`
       );
       return res.data;
     },
@@ -18,7 +18,7 @@ const AdoptionRequest = () => {
   console.log(RequestedPets);
   const handleAccept =(_id,id)=>{
     console.log(_id, id);
-    axiosPublic.patch(`adopted/requestedAccept/${_id}/${id}`)
+    axiosSecure.patch(`adopted/requestedAccept/${_id}/${id}`)
     .then(res=>{
       console.log("working",res.data);
       refetch()
@@ -36,7 +36,7 @@ const AdoptionRequest = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosPublic.delete(`/Adopted/request/${id}`).then((res) => {
+        axiosSecure.delete(`/Adopted/request/${id}`).then((res) => {
           console.log(res.data);
           if (res.data.deletedCount > 0) {
             Swal.fire({

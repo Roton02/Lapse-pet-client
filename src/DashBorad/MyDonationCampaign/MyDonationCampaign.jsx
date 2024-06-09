@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "react-toastify";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const MyDonationCampaign = () => {
   const { user } = useAuth();
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   // Fetching data with React Query
   const { data = [], refetch } = useQuery({
     queryKey: ["Campaign"],
     queryFn: async () => {
-      const res = await axiosPublic.get(`myAddedCampaign/${user.email}`);
+      const res = await axiosSecure.get(`myAddedCampaign/${user.email}`);
       console.log(res.data);
       return res.data;
     },
@@ -19,7 +19,7 @@ const MyDonationCampaign = () => {
 
   const handlePause =async (id) =>{
     // console.log(id);
-    await axiosPublic.patch(`/Campaign/pause/${id}`)
+    await axiosSecure.patch(`/Campaign/pause/${id}`)
     .then(res => {
       // console.log(res.data);
       if (res.data.modifiedCount > 0) {

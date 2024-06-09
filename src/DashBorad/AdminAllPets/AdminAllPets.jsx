@@ -8,13 +8,10 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
-import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { toast } from "react-toastify";
-import { TbBounceLeft } from "react-icons/tb";
 
 const AdminAllPets = () => {
-  const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
 
   // Fetching data with React Query

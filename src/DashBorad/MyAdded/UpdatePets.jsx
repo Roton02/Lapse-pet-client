@@ -5,12 +5,12 @@ import { BiVerticalBottom } from "react-icons/bi";
 import useAuth from "../../Hooks/useAuth";
 import { imageUpload } from "../../api/utils";
 import { useLoaderData, useNavigate } from "react-router-dom";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const UpdatePets = () => {
   const navigate = useNavigate();
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const loadedData = useLoaderData();
   // console.log(loadedData);
   const prevData = {};
@@ -55,7 +55,7 @@ const UpdatePets = () => {
       description2: data.note2 || description2,
     };
     console.log(petDetails);
-    axiosPublic.patch(`updateMyaddedPets/${_id}`, petDetails).then((res) => {
+    axiosSecure.patch(`updateMyaddedPets/${_id}`, petDetails).then((res) => {
       if (res.data.modifiedCount > 0) {
         Swal.fire({
           position: "top-center",

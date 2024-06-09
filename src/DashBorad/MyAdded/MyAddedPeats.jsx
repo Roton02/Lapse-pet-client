@@ -7,18 +7,18 @@ import {
 } from "@tanstack/react-table";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const MyAddedPets = () => {
   const { user } = useAuth();
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
 
   // Fetching data with React Query
   const { data: pets = [], refetch } = useQuery({
     queryKey: ["pets"],
     queryFn: async () => {
-      const res = await axiosPublic.get(`/myAdded/?email=${user.email}`);
+      const res = await axiosSecure.get(`/myAdded/?email=${user.email}`);
       return res.data;
     },
   });
@@ -96,7 +96,7 @@ const MyAddedPets = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosPublic.delete(`/myAddedDelete/${_id}`).then((res) => {
+        axiosSecure.delete(`/myAddedDelete/${_id}`).then((res) => {
           console.log(res.data);
           if (res.data.deletedCount > 0) {
             Swal.fire({
@@ -115,7 +115,7 @@ const MyAddedPets = () => {
     console.log(`Adopted pet with ID: ${_id}`);
     console.log(` pet with ID: ${id}`);
 
-    await axiosPublic.patch(`/myAddedAdopt/${_id}/${id}`).then((res) => {
+    await axiosSecure.patch(`/myAddedAdopt/${_id}/${id}`).then((res) => {
       console.log(res.data);
       refetch();
     });
