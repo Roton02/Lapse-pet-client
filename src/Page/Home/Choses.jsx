@@ -30,7 +30,7 @@ const Choses = () => {
           src="https://kit.envalabdemos.com/peat/wp-content/uploads/2023/09/national-pet-adoption-day-2021-08-29-01-05-31-utc.jpg   "
           alt=""
         />
-        <img className="rounded-xl"
+        <img className="rounded-xl" style={{ cursor: 'pointer' }}
           src=" https://kit.envalabdemos.com/peat/wp-content/uploads/2023/09/pet-giving-paw-to-young-woman-2021-09-24-04-00-07-utc.jpg  "
           alt=""
         />

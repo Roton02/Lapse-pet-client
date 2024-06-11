@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../ContextProvider/ContextProvider";
+import Payment from "../../Component/Payment";
 
 const CampaignDetails = () => {
   const params = useParams();
@@ -96,6 +97,7 @@ const CampaignDetails = () => {
                           />
                         </div>
                       </div>
+                     
 
                       <div className="flex justify-center my-5">
                         <button
@@ -107,6 +109,7 @@ const CampaignDetails = () => {
                         </button>
                       </div>
                     </form>
+                    <Payment></Payment>
                     <div
                       className="modal-action absolute
                                   top-0 right-6
