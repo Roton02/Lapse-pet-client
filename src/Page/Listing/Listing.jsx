@@ -47,14 +47,15 @@ const Listing = () => {
           </div>
         </div>
       </header>
-      <div className="md:px-32 p-5 rounded-3xl  w-full border mt-1 bg-slate-50  flex items-center justify-between">
+      <div className="md:px-32 p-5 rounded-3xl  w-full border
+       mt-1 bg-slate-50  flex flex-col lg:flex-row items-center justify-between ">
         <form onSubmit={handleSubmit}>
           <div className="relative z-10 flex  space-x-2  py-5  rounded-lg  text-neutral-200">
             <div className="">
               <input
                 type="text"
                 name="serching"
-                className="py-2.5 w-96 px-4 block  border-transparent rounded-lg bg-white border border-gray-600 text-black"
+                className="py-2.5 md:w-96 px-4 block  border-transparent rounded-lg bg-white border border-gray-600 text-black"
                 placeholder="Search by peat Name And get the peat details !"
               />
             </div>
@@ -62,7 +63,7 @@ const Listing = () => {
             <div className="flex-[0_0_auto] ">
               <button
                 type="submit"
-                className="size-[46px] w-52 inline-flex justify-center items-center gap-x-2  font-semibold rounded-lg border border-transparent  text-white text-xl bg-[#ff4880] disabled:opacity-50 disabled:pointer-events-none"
+                className="size-[46px] text-sm md:w-52 w-20 inline-flex justify-center items-center gap-x-2  font-semibold rounded-lg border border-transparent  text-white  bg-[#ff4880] disabled:opacity-50 disabled:pointer-events-none"
               >
                 Search
               </button>

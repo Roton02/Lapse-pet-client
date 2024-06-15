@@ -21,16 +21,16 @@ const PeatCetegory = () => {
     const rabbite = categoryData.filter(peat => peat.type === "Rabbit")
     console.log(cats,dog, rabbite);
   return (
-    <div>
+    <div className="px-4">
       <SectionTitle heading={'ABILITY TO SAVE ANIMALS'} subHeading={'--FUNDRAISING CAMPAINGS--'}>
 
       </SectionTitle>
-      <div className="flex justify-center items-center mx-auto my-10">
+      <div className="flex justify-center items-center mx-auto px-4 my-10">
         <Tabs>
-          <TabList className={"  border-b md:pl-24 flex justify-start  items-center mb-5"}>
-            <Tab><span className=" font-semibold"> Category By Cats</span></Tab>
-            <Tab><span className=" font-semibold"> Category By Dogs</span></Tab>
-            <Tab><span className=" font-semibold"> Category By Rabbite</span></Tab>
+          <TabList className={"  border-b md:pl-24 ml-10 flex justify-start  items-center mb-5"}>
+            <Tab><span className=" font-semibold text-sm ">  Cats</span></Tab>
+            <Tab><span className=" font-semibold text-sm ">  Dogs</span></Tab>
+            <Tab><span className=" font-semibold text-sm ">  Rabbite</span></Tab>
           </TabList>
 
           <TabPanel>

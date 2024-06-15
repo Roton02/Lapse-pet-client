@@ -42,7 +42,7 @@ const CreateCampaign = () => {
       console.log(res.data);
       if (res.data.insertedId) {
         Swal.fire({
-          position: "top-center",
+          position: "top-right",
           icon: "success",
           title: "Your Campaign Added Successfully",
           showConfirmButton: false,

@@ -11,10 +11,10 @@ import Testimonials from "./Testimonial";
 
 const Home = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden ">
       {/* <Banner heading='Help Animals'  subheading={'The reason you need'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '} btn={'Discover Me'}></Banner> */}
       <Banner2></Banner2>
-      <PeatCetegory></PeatCetegory>
+      <PeatCetegory> </PeatCetegory>
       <CallToAction></CallToAction>
       <Choses></Choses>
       {/* <BecomeAMembar></BecomeAMembar> */}

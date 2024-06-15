@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       <ContextProvider>
         <HelmetProvider>
-          <div >
+          <div className="px-2">
             <RouterProvider router={router} />
           </div>
         </HelmetProvider>

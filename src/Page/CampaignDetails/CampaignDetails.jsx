@@ -1,10 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../../ContextProvider/ContextProvider";
 import Payment from "../../Component/Payment";
 
 const CampaignDetails = () => {
+  const [recomended, setRecomended] = useState(false);
+  const [recomendedData, setRecomendedData] = useState([]);
+
   const params = useParams();
   const { user } = useContext(AuthContext);
   console.log(params);
@@ -18,16 +21,23 @@ const CampaignDetails = () => {
   console.log(details);
   const handleAdoptionREquest = (e) => {
     e.preventDefault();
+    setRecomended(true)
     const paymentDetails = details;
     paymentDetails.PaymentAuthorEmail = user?.email;
     paymentDetails.PaymentAuthorName = user?.displayName;
-   console.log(paymentDetails);
+    console.log(paymentDetails);
   };
+  useEffect(() => {
+    axiosPublic.get("/campaignAllPeats").then((res) => {
+      console.log(res.data);
+      setRecomendedData(res.data);
+    });
+  }, []);
 
   return (
     <div>
       <div>
-        <div className="max-w-[85rem] mx-auto md:p-5">
+        <div className="max-w-[85rem] mx-auto md:p-5 border-2 border-t-0">
           <div className="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
             <div className="lg:col-span-4 items-center mt-10 lg:mt-0">
               <img
@@ -37,27 +47,34 @@ const CampaignDetails = () => {
               />
             </div>
             <div className="lg:col-span-3">
-              <h1 className="block mt-3 ml-2 text-2xl font-anton font-bold text-gray-800  md:text-3xl lg:text-4xl dark:text-white">
+              <img
+                className="  mx-auto h-1/2 "
+                src="https://i.ibb.co/kqWvWh1/images-removebg-preview.png"
+                alt=""
+              />
+              <h1 className="block  mb-2  text-xl font-anton font-bold    dark:text-white">
+                <span className="text-xl font-bold"> Name :</span>{" "}
                 {details.name}
               </h1>
-              <p className="mt-3 text-lg font-anton text-gray-800 dark:text-neutral-400">
-                age : {details.age}
+              <hr />
+              <p className=" text-sm font-anton py-3  dark:text-neutral-400">
+                {details.sortDescription}
               </p>
-              <p className=" text-lg font-anton text-gray-800 dark:text-neutral-400">
-                Last Date Donation : {details.date}
+              <hr />
+              <p className=" text-xl font-anton  dark:text-neutral-400">
+                Last Date of Donation : {details.date}
               </p>
-              <p className=" text-lg font-anton text-gray-800 dark:text-neutral-400">
-                Note : {details.sortDescription}
+
+              <p className="font-anton text-sm py-3">
+                {details.longDescription}
               </p>
-              <p className="font-anton">{details.longDescription}</p>
 
               <div className="mt-3 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
                 <button
-                  
                   onClick={() =>
                     document.getElementById("my_modal_5").showModal()
                   }
-                  className="btn bg-[#1e847f] text-white hover:bg-[#1e547f] "
+                  className="btn bg-[#ff4880] text-white hover:text-black btn-sm "
                 >
                   Donate Now
                 </button>
@@ -83,11 +100,11 @@ const CampaignDetails = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex gap-5">
-                      </div>
+                      <div className="flex gap-5"></div>
                       <div className="">
                         <div>
-                          <label htmlFor="DonateAmount">Donate Amount</label> <br />
+                          <label htmlFor="DonateAmount">Donate Amount</label>{" "}
+                          <br />
                           <input
                             name="DonateAmount"
                             type="text"
@@ -97,11 +114,10 @@ const CampaignDetails = () => {
                           />
                         </div>
                       </div>
-                     
 
                       <div className="flex justify-center my-5">
                         <button
-                        disabled={details.pause}
+                          disabled={details.pause}
                           type="submit"
                           className="btn px-5 bg-[#1e847f] text-white hover:text-black"
                         >
@@ -128,6 +144,46 @@ const CampaignDetails = () => {
           </div>
         </div>
       </div>
+      {recomended && (
+        <div>
+          <h1 className="text-2xl font-bold flex justify-center py-5 ">Recomended For Donate </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-10 mt-2">
+            {recomendedData.slice(0, 3).map((campaign) => (
+              <div key={campaign._id}>
+                <div className="px-0 border  bg-[#fbebe2] rounded-xl">
+                  <figure className="w-full bg-cover">
+                    <img
+                      src={campaign.image}
+                      alt="No uploaded any image"
+                      className="rounded-t-xl min-h-28 rounded-br-full bg-cover w-full "
+                    />
+                  </figure>
+                  <div className="px-5">
+                    <div className="flex justify-between">
+                      <h2 className="card-title font-bold text-2xl">
+                        {campaign.name}
+                      </h2>
+                      <h2 className="font-bold">{campaign.date}</h2>
+                    </div>
+                    <div className="text-sm font-bold text-gray-500 ">
+                      <p>Max Donate: $ {campaign.maxDonation}</p>
+                      <p>Donated : $ {campaign.donated_amount}</p>
+                    </div>
+
+                    <div className="w-full flex justify-end my-2 mb-3">
+                      <Link to={`/campaignDetails/${campaign._id}`}>
+                        <button className="rounded-md  btn-sm btn overflow-hidden relative group cursor-pointer border-2 font-medium border-[#ff4880] text-[#ff4880] hover:text-black">
+                          View Details
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

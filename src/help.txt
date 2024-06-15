@@ -1,3 +1,4 @@
+// CheckOutForm.jsx
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import useAuth from "../Hooks/useAuth";
@@ -8,6 +9,8 @@ const CheckOutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState("");
+
+  // CheckOutForm.jsx
   const { user } = useAuth();
   const [clientSecret, setClientSecret] = useState("");
   const axiosSecure = useAxiosSecure();
@@ -15,14 +18,10 @@ const CheckOutForm = () => {
 
   useEffect(() => {
     if (totalPrice > 0) {
-      axiosSecure.post("/create-payment-intent", { donation: totalPrice })
+      axiosSecure.post("/create-payment-intent", { price: totalPrice })
         .then((res) => {
-          console.log("Client Secret fetched:", res.data.clientSecret);
+          console.log(res.data.clientSecret);
           setClientSecret(res.data.clientSecret);
-        })
-        .catch((err) => {
-          console.error("Error fetching client secret:", err);
-          setError("Failed to fetch client secret");
         });
     }
   }, [axiosSecure, totalPrice]);
@@ -43,22 +42,15 @@ const CheckOutForm = () => {
       type: "card",
       card,
     });
-
     if (error) {
       console.log("Payment error", error);
       setError(error.message);
-      return;
     } else {
       console.log("Payment method", paymentMethod);
       setError("");
     }
-
-    if (!clientSecret) {
-      console.error("Client secret is empty");
-      setError("Client secret is not available.");
-      return;
-    }
-
+    // CheckOutForm.jsx er handleSubmit() er moddhe
+    //  confirm payment
     const { paymentIntent, error: confirmError } =
       await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -71,15 +63,27 @@ const CheckOutForm = () => {
       });
 
     if (confirmError) {
-      console.log("Confirm error", confirmError);
-      setError(confirmError.message);
+      console.log("Confirm error");
     } else {
       console.log("Payment intent", paymentIntent);
       if (paymentIntent.status === "succeeded") {
-        console.log("Transaction id", paymentIntent.id);
+        console.log("Transiction id", paymentIntent.id);
         setTransactionId(paymentIntent.id);
+
+        // payment successfully hole payment er all information gulo DB te add korbo
+        // const payment = {
+        //   email: user.email,
+        //   price: totalPrice,
+        //   transactionId: paymentIntent.id,
+        //   date: new Date(), // utc date convert. use moment js to
+        //   status: "pending",
+        // };
+
+        // const res = await axiosSecure.post("/payments", payment);
+        // console.log("Payment saved", res.data);
       }
     }
+
   };
 
   return (
@@ -99,7 +103,10 @@ const CheckOutForm = () => {
             },
           },
         }}
-      />
+      >
+        {" "}
+      </CardElement>
+
       <button
         type="submit"
         className="btn btn-secondary mt-5"
@@ -108,7 +115,8 @@ const CheckOutForm = () => {
         Pay
       </button>
       <p className="text-red-500">{error}</p>
-      <p className="text-green-500">Your Transaction Id: {transactionId}</p>
+      <p className="text-green-500">Your Transaction Id: {transactionId}</p>;
+
     </form>
   );
 };
