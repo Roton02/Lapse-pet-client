@@ -17,13 +17,12 @@ const MyDonationCampaign = () => {
     },
   });
 
-  const handlePause =async (id) =>{
+  const handlePause = async (id) => {
     // console.log(id);
-    await axiosSecure.patch(`/Campaign/pause/${id}`)
-    .then(res => {
+    await axiosSecure.patch(`/Campaign/pause/${id}`).then((res) => {
       // console.log(res.data);
       if (res.data.modifiedCount > 0) {
-        toast.success('This pet Donation Paused successful', {
+        toast.success("This pet Donation Paused successful", {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: false,
@@ -32,12 +31,11 @@ const MyDonationCampaign = () => {
           draggable: true,
           progress: undefined,
           theme: "dark",
-          });
-          refetch()
+        });
+        refetch();
       }
-    })
-
-  }
+    });
+  };
 
   const calculateProgress = (current, max) => {
     return (current / max) * 100;
@@ -79,14 +77,16 @@ const MyDonationCampaign = () => {
                 </div>
               </td>
               <td className="py-2 px-4 border-b text-center">
-               {
-                item.pause ? <button>AllReady Paused</button>:
-                <button 
-                onClick={()=>handlePause(item._id)}
-                className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded">
-                  Pause
-                </button>
-               }
+                {item.pause ? (
+                  <button>AllReady Paused</button>
+                ) : (
+                  <button
+                    onClick={() => handlePause(item._id)}
+                    className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded"
+                  >
+                    Pause
+                  </button>
+                )}
               </td>
               <td className="py-2 px-4 border-b text-center">
                 <Link to={`updateCampaign/${item._id}`}>
@@ -96,10 +96,9 @@ const MyDonationCampaign = () => {
                 </Link>
               </td>
               <td className="py-2 px-1 border-b text-center">
-                
                 {/* You can open the modal using document.getElementById('ID').showModal() method */}
                 <button
-                   className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
+                  className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
                   onClick={() =>
                     document.getElementById("my_modal_3").showModal()
                   }
@@ -114,13 +113,23 @@ const MyDonationCampaign = () => {
                         ✕
                       </button>
                     </form>
-                    <h3 className="font-bold text-lg">Donator List!</h3>
-                    <ol className="space-y-2  grid grid-cols-2 my-3">
-                      <li>ami </li>
-                      <li>Momo </li>
-                      <li>pappu</li>
-                      <li>raju</li>
-                    </ol>
+                    <h3 className="font-bold text-lg">
+                      Your Campaign Donator List!
+                    </h3>
+                    <div>
+                      {item.donators ? (
+                        item.donators.map((d, i) => (
+                          <div key={i}>
+                            <h4>{d.email}</h4>
+                            <p>{d.name}</p>
+                          </div>
+                        ))
+                      ) : (
+                        <p className="mt-5 text-red-600 font-bold">
+                          there are no donators
+                        </p>
+                      )}
+                    </div>
                   </div>
                 </dialog>
               </td>

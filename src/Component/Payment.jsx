@@ -6,17 +6,13 @@ import SectionTitle from "../Shared/SectionTitle/SectionTitle";
 // TODO: add publishable key
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY);
 
-const Payment = () => {
+const Payment = ({pause,id}) => {
+  console.log(pause);
   return (
     <div>
-      <SectionTitle
-        heading="Payment"
-        subHeading="Please pay to eat"
-      ></SectionTitle>
-
       <div>
         <Elements stripe={stripePromise}>
-          <CheckOutForm></CheckOutForm>
+          <CheckOutForm pause={pause} id={id}></CheckOutForm>
         </Elements>
       </div>
     </div>

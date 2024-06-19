@@ -21,7 +21,7 @@ const CampaignDetails = () => {
   console.log(details);
   const handleAdoptionREquest = (e) => {
     e.preventDefault();
-    setRecomended(true)
+    setRecomended(true);
     const paymentDetails = details;
     paymentDetails.PaymentAuthorEmail = user?.email;
     paymentDetails.PaymentAuthorName = user?.displayName;
@@ -71,13 +71,14 @@ const CampaignDetails = () => {
 
               <div className="mt-3 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
                 <button
-                  onClick={() =>
-                    document.getElementById("my_modal_5").showModal()
-                  }
-                  className="btn bg-[#ff4880] text-white hover:text-black btn-sm "
+                  onClick={() => {
+                    document.getElementById("my_modal_5").showModal();
+                    setRecomended(true);
+                  }}
+                  className="btn bg-[#ff4880] text-white hover:text-black btn-sm"
                 >
                   Donate Now
-                </button>
+                </button> 
 
                 <dialog
                   id="my_modal_5"
@@ -100,32 +101,8 @@ const CampaignDetails = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex gap-5"></div>
-                      <div className="">
-                        <div>
-                          <label htmlFor="DonateAmount">Donate Amount</label>{" "}
-                          <br />
-                          <input
-                            name="DonateAmount"
-                            type="text"
-                            required
-                            placeholder="write Donate Amount"
-                            className="input input-bordered w-full"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="flex justify-center my-5">
-                        <button
-                          disabled={details.pause}
-                          type="submit"
-                          className="btn px-5 bg-[#1e847f] text-white hover:text-black"
-                        >
-                          Donate
-                        </button>
-                      </div>
                     </form>
-                    <Payment></Payment>
+                    <Payment pause={details.pause} id={details._id}></Payment>
                     <div
                       className="modal-action absolute
                                   top-0 right-6
@@ -146,7 +123,9 @@ const CampaignDetails = () => {
       </div>
       {recomended && (
         <div>
-          <h1 className="text-2xl font-bold flex justify-center py-5 ">Recomended For Donate </h1>
+          <h1 className="text-2xl font-bold flex justify-center py-5 ">
+            Recomended For Donate{" "}
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-10 mt-2">
             {recomendedData.slice(0, 3).map((campaign) => (
               <div key={campaign._id}>
