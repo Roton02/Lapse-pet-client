@@ -4,7 +4,7 @@ const Category = ({ item }) => {
   console.log(item);
   return (
     <div>
-      <div className="grid md:grid-cols-3 gap-10 px-4 ">
+      <div className="grid md:grid-cols-3 gap-10 px-4 items-center ">
         {item.map((data) => (
           <Link key={data._id}>
           <div

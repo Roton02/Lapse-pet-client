@@ -77,11 +77,13 @@ const CheckOutForm = ({pause,id}) => {
       setError(confirmError.message);
     } else {
       console.log("Payment intent", paymentIntent);
+      let danateMoney = 0;
       if (paymentIntent.status === "succeeded") {
         const amount = paymentIntent.amount;
+        danateMoney=paymentIntent.amount
         const donate_person_email =user.email
         const donate_person_name =user.displayName;
-        const donate_details = {amount,donate_person_email,donate_person_name}
+        const donate_details = {amount,donate_person_email,donate_person_name,danateMoney}
         axiosSecure.patch(`/campaigndonateUpdate/${id}`, donate_details)
         .then(res => {
           console.log(res.data);

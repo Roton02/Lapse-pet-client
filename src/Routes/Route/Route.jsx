@@ -55,7 +55,7 @@ import AdminCampaignEdit from "../../DashBorad/AdminCampaign/AdminCampaignEdit";
         },
         {
           path:'/singlePage/:id',
-          element: <SinglePeatsDetails></SinglePeatsDetails>
+          element: <PrivateRoute><SinglePeatsDetails></SinglePeatsDetails></PrivateRoute>
         },
         {
           path:"/campaign",
@@ -63,7 +63,7 @@ import AdminCampaignEdit from "../../DashBorad/AdminCampaign/AdminCampaignEdit";
         },
         {
           path:'/campaignDetails/:id',
-          element: <CampaignDetails></CampaignDetails>
+          element: <PrivateRoute><CampaignDetails></CampaignDetails></PrivateRoute>
         }
        
       ]

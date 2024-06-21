@@ -54,7 +54,7 @@ const CampaignPeats = () => {
         </div>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-10 mt-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   gap-10 mt-2">
         {campaign.map((campaign) => (
           //    <div key={campaign._id}
 
@@ -97,12 +97,12 @@ const CampaignPeats = () => {
           //  </div>
 
           <div key={campaign._id}>
-            <div className="px-0 border  bg-[#fbebe2] rounded-xl">
+            <div className="px-0 border   bg-[#fbebe2] rounded-xl">
               <figure className="w-full bg-cover">
                 <img
                   src={campaign.image}
                   alt="No uploaded any image"
-                  className="rounded-t-xl min-h-28 rounded-br-full bg-cover w-full "
+                  className="rounded-t-xl h-72 rounded-br-full bg-cover w-full "
                 />
               </figure>
               <div className="px-5">
@@ -111,8 +111,8 @@ const CampaignPeats = () => {
                   <h2 className="font-bold">{campaign.date}</h2>
                 </div>
                 <div className="text-sm font-bold text-gray-500 ">
-                  <p>Max Donate: $ {campaign.maxDonation}</p>
-                  <p>Donated : $ {campaign.donated_amount}</p>
+                  <p>Need :  {campaign.maxDonation} $</p>
+                  <p>Donated :  {campaign.donatedAmount} $</p>
                 </div>
 
                 <div className="w-full flex justify-end my-2 mb-3">

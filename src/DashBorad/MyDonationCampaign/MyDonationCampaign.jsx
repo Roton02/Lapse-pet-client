@@ -7,6 +7,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const MyDonationCampaign = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
+
   // Fetching data with React Query
   const { data = [], refetch } = useQuery({
     queryKey: ["Campaign"],
@@ -18,11 +19,9 @@ const MyDonationCampaign = () => {
   });
 
   const handlePause = async (id) => {
-    // console.log(id);
     await axiosSecure.patch(`/Campaign/pause/${id}`).then((res) => {
-      // console.log(res.data);
       if (res.data.modifiedCount > 0) {
-        toast.success("This pet Donation Paused successful", {
+        toast.success("This pet Donation Paused successfully", {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: false,
@@ -47,7 +46,7 @@ const MyDonationCampaign = () => {
         <thead>
           <tr>
             <th className="py-2 px-4 border-b">Pet Name</th>
-            <th className="py-2 px-4 border-b">Maximum Donation </th>
+            <th className="py-2 px-4 border-b">Maximum Donation</th>
             <th className="py-2 px-4 border-b">Donated</th>
             <th className="py-2 px-4 border-b">Pause</th>
             <th className="py-2 px-4 border-b">Edit</th>
@@ -58,19 +57,12 @@ const MyDonationCampaign = () => {
           {data.map((item, index) => (
             <tr key={index}>
               <td className="py-2 px-4 border-b text-center">{item.name}</td>
-              <td className="py-2 px-4 border-b text-center">
-                ${item.maxDonation}
-              </td>
+              <td className="py-2 px-4 border-b text-center">${item.maxDonation}</td>
               <td className="py-2 px-4 border-b text-center">
                 <div className="relative pt-1">
                   <div className="overflow-hidden h-2 text-xs flex rounded bg-pink-200">
                     <div
-                      style={{
-                        width: `${calculateProgress(
-                          item.donatedAmount,
-                          item.maxDonation
-                        )}%`,
-                      }}
+                      style={{ width: `${calculateProgress(item.donatedAmount, item.maxDonation)}%` }}
                       className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"
                     ></div>
                   </div>
@@ -78,7 +70,7 @@ const MyDonationCampaign = () => {
               </td>
               <td className="py-2 px-4 border-b text-center">
                 {item.pause ? (
-                  <button>AllReady Paused</button>
+                  <button>Already Paused</button>
                 ) : (
                   <button
                     onClick={() => handlePause(item._id)}
@@ -96,38 +88,33 @@ const MyDonationCampaign = () => {
                 </Link>
               </td>
               <td className="py-2 px-1 border-b text-center">
-                {/* You can open the modal using document.getElementById('ID').showModal() method */}
                 <button
                   className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
-                  onClick={() =>
-                    document.getElementById("my_modal_3").showModal()
-                  }
+                  onClick={() => document.getElementById(`my_modal_${index}`).showModal()}
                 >
                   View Donators
                 </button>
-                <dialog id="my_modal_3" className="modal">
+                <dialog id={`my_modal_${index}`} className="modal">
                   <div className="modal-box">
                     <form method="dialog">
-                      {/* if there is a button in form, it will close the modal */}
                       <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                         ✕
                       </button>
                     </form>
-                    <h3 className="font-bold text-lg">
-                      Your Campaign Donator List!
-                    </h3>
+                    <h3 className="font-bold text-lg">Your Campaign Donator List!</h3>
                     <div>
-                      {item.donators ? (
+                      {item.donators && item.donators.length > 0 ? (
                         item.donators.map((d, i) => (
-                          <div key={i}>
+                          <div className="p-2 my-2  bg-pink-200 rounded-xl" key={i}>
+        
+                            <div>
+                            <p className="text-xl font-semibold">{d.name}</p>
                             <h4>{d.email}</h4>
-                            <p>{d.name}</p>
+                            </div>
                           </div>
                         ))
                       ) : (
-                        <p className="mt-5 text-red-600 font-bold">
-                          there are no donators
-                        </p>
+                        <p className="mt-5 text-red-600 font-bold">There are no donators</p>
                       )}
                     </div>
                   </div>
