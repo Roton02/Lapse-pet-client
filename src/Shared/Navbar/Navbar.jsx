@@ -52,7 +52,7 @@ const Navbar = () => {
           </div>
           <div
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[100] p-2  shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 gap-2  z-[100]   shadow bg-base-100  w-52  " 
           >
             <NavLink
               to="/"
@@ -71,6 +71,12 @@ const Navbar = () => {
               className="btn border-2 border-gray-300 hover:bg-black hover:text-white "
             >
               Donation Campaigns
+            </NavLink>
+            <NavLink
+              to="/contract"
+              className="btn border-2 border-gray-300 hover:bg-black hover:text-white "
+            >
+             Contract
             </NavLink>
           </div>
         </div>
@@ -103,6 +109,13 @@ const Navbar = () => {
             >
               Donation Campaigns
             </NavLink>
+            <NavLink
+              to="/contract"
+              className="btn btn-sm border-2 border-gray-300 hover:bg-black hover:text-white "
+            >
+              Contract
+            </NavLink>
+            
         </div>
         <label className="mx-5 cursor-pointer grid place-items-center">
           <input
@@ -171,7 +184,15 @@ const Navbar = () => {
                     DashBoard
                   </NavLink>
                 </li>
-
+                <li>
+                  <NavLink
+                    to="/profile"
+                    className="btn btn-sm btn-ghost border-2  border-gray-300 hover:bg-black hover:text-white"
+                  >
+                    Profile
+                  </NavLink>
+                </li>
+              
                 <button
                   onClick={Logout}
 

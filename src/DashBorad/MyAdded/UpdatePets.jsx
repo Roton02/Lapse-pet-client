@@ -224,10 +224,10 @@ const UpdatePets = () => {
                         <button
                           type="submit"
                           value={""}
-                          className="rounded-md w-1/3  btn  overflow-hidden relative group cursor-pointer border-2  font-medium border-[#1e847f] text-[#1e847f]hover:text-white"
+                          className="rounded-md w-1/3  btn  overflow-hidden relative group cursor-pointer border-2  font-medium border-[#ff4880] text-[#1e847f]hover:text-white"
                         >
-                          <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-[#1e847f] top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-                          <span className="relative my-auto  text-[#1e847f] transition duration-300 group-hover:text-white ease">
+                          <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-[#ff4880] top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+                          <span className="relative my-auto  text-[#ff4880] transition duration-300 group-hover:text-white ease">
                             Update
                           </span>
                         </button>

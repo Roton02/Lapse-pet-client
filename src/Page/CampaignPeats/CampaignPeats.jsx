@@ -3,6 +3,9 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { Link } from "react-router-dom";
 import Banner from "../../Shared/Banner/Banner";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Skeleton from "react-loading-skeleton";
+import 'react-loading-skeleton/dist/skeleton.css'
+
 
 const CampaignPeats = () => {
   const axiosPublic = useAxiosPublic();
@@ -54,79 +57,50 @@ const CampaignPeats = () => {
         </div>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   gap-10 mt-2">
-        {campaign.map((campaign) => (
-          //    <div key={campaign._id}
-
-          //    className=" w-full min-w-96 overflow-hidden shadow-sm dark:bg-gray-800"
-          //  >
-          //    <img
-          //      className="object-cover rounded-xl w-full h-56"
-          //      src={campaign.image}
-          //      alt="avatar"
-          //    />
-
-          //    <div className=" space-y-2 p-5">
-          //      <a
-          //        href="#"
-          //        className="block text-xl font-bold  dark:text-white text-slate-600 "
-          //      >
-          //        {campaign.sortDescription}
-          //      </a>
-          //      <p className="text-sm  text-gray-500">
-          //        {campaign.longDescription}
-          //      </p>
-
-          //      <div>
-          //        <div className="flex justify-between font-bold text-slate-600">
-          //          <p>$ {campaign.maxDonation}</p>
-          //          <p>$ {campaign.donatedAmount}</p>
-          //          <p>$ {campaign.maxDonation -campaign.donatedAmount }</p>
-          //        </div>
-          //        <div className="flex justify-between text-gray-500">
-          //          <p>Target Amount</p>
-          //          <p>Rasied so far</p>
-          //          <p>Still need
-          //          </p>
-          //        </div>
-          //      </div>
-          //      <progress
-          //       className="progress progress-secondary w-full" value={campaign.donatedAmount} max={campaign.maxDonation}></progress>
-
-          //    </div>
-          //  </div>
-
-          <div key={campaign._id}>
-            <div className="px-0 border   bg-[#fbebe2] rounded-xl">
-              <figure className="w-full bg-cover">
-                <img
-                  src={campaign.image}
-                  alt="No uploaded any image"
-                  className="rounded-t-xl h-72 rounded-br-full bg-cover w-full "
-                />
-              </figure>
-              <div className="px-5">
-                <div className="flex justify-between">
-                  <h2 className="card-title font-bold text-2xl">{campaign.name}</h2>
-                  <h2 className="font-bold">{campaign.date}</h2>
-                </div>
-                <div className="text-sm font-bold text-gray-500 ">
-                  <p>Need :  {campaign.maxDonation} $</p>
-                  <p>Donated :  {campaign.donatedAmount} $</p>
-                </div>
-
-                <div className="w-full flex justify-end my-2 mb-3">
-                  <Link to={`/campaignDetails/${campaign._id}`}>
-                    <button className="rounded-md  btn-sm btn overflow-hidden relative group cursor-pointer border-2 font-medium border-[#ff4880] text-[#ff4880] hover:text-black">
-                      View Details
-                    </button>
-                  </Link>
-                </div>
-              </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-2">
+  {campaign.length === 0 ? (
+    // Render skeleton loaders while data is loading
+    Array(6) // Render 6 skeleton cards (adjust as per your grid layout)
+      .fill()
+      .map((_, index) => (
+        <div key={index}>
+          <Skeleton width={300} height={10} count={5} style={{marginBottom:'7px'}}  />
+        </div>
+      ))
+  ) : (
+    // Render actual campaign data
+    campaign.map((campaignItem) => (
+      <div key={campaignItem._id}>
+        <div className="px-0 border   bg-[#fbebe2] rounded-xl">
+          <figure className="w-full bg-cover">
+            <img
+              src={campaignItem.image}
+              alt="No uploaded any image"
+              className="rounded-t-xl h-72 rounded-br-full bg-cover w-full "
+            />
+          </figure>
+          <div className="px-5">
+            <div className="flex justify-between">
+              <h2 className="card-title font-bold text-2xl">{campaignItem.name}</h2>
+              <h2 className="font-bold">{campaignItem.date}</h2>
+            </div>
+            <div className="text-sm font-bold text-gray-500 ">
+              <p>Need :  {campaignItem.maxDonation} $</p>
+              <p>Donated :  {campaignItem.donatedAmount} $</p>
+            </div>
+            <div className="w-full flex justify-end my-2 mb-3">
+              <Link to={`/campaignDetails/${campaignItem._id}`}>
+                <button className="rounded-md  btn-sm btn overflow-hidden relative group cursor-pointer border-2 font-medium border-[#ff4880] text-[#ff4880] hover:text-black">
+                  View Details
+                </button>
+              </Link>
             </div>
           </div>
-        ))}
+        </div>
       </div>
+    ))
+  )}
+</div>
     </div>
   );
 };

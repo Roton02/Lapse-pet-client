@@ -1,11 +1,9 @@
 // import Banner from "../../Shared/Banner/Banner";
 import Banner2 from "../../Shared/Banner/Banner2";
-import BecomeAMembar from "./BecomeAMembar";
 import CallToAction from "./CallToAction";
 import Choses from "./Choses";
 import Donators from "./Donators";
-import Indroduction from "./Indroduction";
-import OurTeam from "./OurTeam";
+import AboutUs from "./Indroduction";
 import PeatCetegory from "./PeatCetegory";
 import Testimonials from "./Testimonial";
 
@@ -19,8 +17,10 @@ const Home = () => {
       <Choses></Choses>
       {/* <BecomeAMembar></BecomeAMembar> */}
       <Testimonials></Testimonials>
+      <AboutUs></AboutUs>
+      
       <Donators></Donators>
-      <OurTeam></OurTeam>
+      
     </div>
   );
 };

@@ -27,6 +27,9 @@ import AdminOnlyUpdate from "../../DashBorad/AdminAllPets/AdminOnlyUpdate";
 // import Sidebar from "../../Root/Sidebar";
 import AdminCampaign from "../../DashBorad/AdminCampaign/AdminCampaign";
 import AdminCampaignEdit from "../../DashBorad/AdminCampaign/AdminCampaignEdit";
+import Contract from "../../Shared/Contract/Contract";
+import Profile from "../../Page/Register/Profile/Profile";
+import UpdateProfile from "../../Page/Register/UpdateProfile/UpdateProfile";
 
 
 
@@ -64,6 +67,18 @@ import AdminCampaignEdit from "../../DashBorad/AdminCampaign/AdminCampaignEdit";
         {
           path:'/campaignDetails/:id',
           element: <PrivateRoute><CampaignDetails></CampaignDetails></PrivateRoute>
+        },
+        {
+          path:'/contract',
+          element:<Contract></Contract>
+        },
+        {
+          path:'/profile',
+          element: <Profile></Profile>
+        },
+        {
+          path:'/updateProfile',
+          element:<UpdateProfile></UpdateProfile>
         }
        
       ]

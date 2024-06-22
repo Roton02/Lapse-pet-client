@@ -2,6 +2,7 @@ import {
   FaAd,
   FaAdn,
   FaCalendar,
+  FaCampground,
   FaCanadianMapleLeaf,
   FaCreativeCommons,
   FaEnvelope,
@@ -20,7 +21,8 @@ const Dashboard = () => {
   console.log(isAdmin);
 
   return (
-    <div className="flex bg-gradient-to-bl from-pink-300 via-transparent">
+    <div className=" bg-gradient-to-bl  via-transparent ">
+      <div className="flex bg-gradient-to-bl from-pink-300 via-transparent max-w-screen-xl mx-auto ">
       {/* dashboard side bar */}
       <div className="w-64 min-h-screen bg-[#ff4880]">
         <ul className="menu p-4">
@@ -141,9 +143,9 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/order/contact">
-              <FaEnvelope></FaEnvelope>
-              Contact
+            <NavLink to="/campaign">
+              <FaCampground></FaCampground>
+              Donation Campaign
             </NavLink>
           </li>
         </ul>
@@ -152,6 +154,7 @@ const Dashboard = () => {
       <div className="flex-1 p-8">
         <Outlet></Outlet>
       </div>
+    </div>
     </div>
   );
 };

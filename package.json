@@ -12,7 +12,7 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^2.7.1",
     "@stripe/stripe-js": "^3.5.0",
-    "@tanstack/react-query": "^5.40.1",
+    "@tanstack/react-query": "^5.45.1",
     "@tanstack/react-table": "^8.17.3",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
@@ -29,6 +29,8 @@
     "react-icons": "^5.1.0",
     "react-infinite-scroll-component": "^6.1.0",
     "react-intersection-observer": "^9.10.3",
+    "react-loading-skeleton": "^3.4.0",
+    "react-quill": "^2.0.0",
     "react-router-dom": "^6.23.0",
     "react-select": "^5.8.0",
     "react-tabs": "^6.0.2",

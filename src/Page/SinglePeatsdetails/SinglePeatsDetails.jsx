@@ -79,7 +79,7 @@ const SinglePeatsDetails = () => {
               </p>
               <p className="font-anton border-b-2">{details.description}</p>
               
-              <p className="font-anton">{details.description2}</p>
+              <div className="font-anton">{details.description2}</div>
 
               <div className="mt-3 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
                 <button

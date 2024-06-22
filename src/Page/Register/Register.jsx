@@ -7,6 +7,7 @@ import { IoIosEyeOff } from "react-icons/io";
 import { toast } from "react-toastify";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import { imageUpload } from "../../api/utils";
 
 const Register = () => {
   const axiosPublic = useAxiosPublic()
@@ -17,11 +18,20 @@ const Register = () => {
   const navigate = useNavigate();
   const { signUp, googleSignIn, githubSignIn, UpdateUser } =
     useContext(AuthContext);
-  const handleSubmitRegister = (e) => {
+  const handleSubmitRegister = async(e) => {
     e.preventDefault();
     // e.target.reset();
+    let image = e.target.elements.photo.files[0];
+    try {
+      const imgData = await imageUpload(image);
+      // setImageURL(imgData);
+      console.log(imgData);
+      image = imgData
+  } catch (err) {
+      console.log(err);
+  }
     const name = e.target.name.value;
-    const photoLnk = e.target.name2.value;
+    const photoLnk = image;
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(typeof name, photoLnk, email, password);
@@ -131,7 +141,14 @@ const Register = () => {
         <title>Register</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-      <div className="flex flex-col max-w-md mx-auto border-2 bg-base-200 p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800">
+      <div className="flex items-center w-full border-2 max-w-sm mx-auto overflow-hidden bg-white rounded-lg  dark:bg-gray-800 lg:max-w-4xl">
+      <div className="hidden  lg:block lg:w-1/2 " >
+      <video src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/login-security-8684570-6983203.mp4" autoPlay="muted" loop="loop" playsInline type="video/mp4"></video>
+    </div>
+    <div className="divider lg:divider-horizontal py-20">YEH..</div> 
+
+
+      <div className="flex flex-col max-w-md mx-auto  p-6 rounded-md sm:p-10 ">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Register</h1>
           <p className="text-sm dark:text-gray-600">Register to new account</p>
@@ -151,15 +168,13 @@ const Register = () => {
               />
             </div>
             <div>
-              <label htmlFor="Photo URL" className="block mb-2 text-sm">
-                Photo URL
-              </label>
+              <label className="text-gray-700 dark:text-gray-200">Image</label>
               <input
-                type="text"
-                name="name2"
-                id="name2"
-                placeholder="Photo URL"
-                className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"
+                required
+                id="username"
+                type="file"
+                name="photo"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
               />
             </div>
 
@@ -199,7 +214,7 @@ const Register = () => {
             <div>
               <button
                 type="submit"
-                className="w-full px-8 btn btn-secondary hover:bg-pink-700 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50"
+                className="w-full px-8 btn bg-[#ff4880] hover:bg-pink-500 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50"
               >
                 Register
               </button>
@@ -242,6 +257,7 @@ const Register = () => {
             </button>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

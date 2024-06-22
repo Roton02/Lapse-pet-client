@@ -31,15 +31,15 @@ const Banner2 = () => {
                   <span className="bg-[#FF497C] text-white mr-3 text-xl px-2 py-1 rounded-full">
                     <i className="bx bxs-hot"></i>
                   </span>
-                 The reason you need
+                  The reason for Adoption
                 </p>
 
                 <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold text-center md:text-left">
                   Your Trusted Source for <br />
-                  Quality Gadgets
+                  Adopt Peats
                 </p>
                 <p className="font-medium text-black/60 md:text-lg text-center md:text-left">
-                  Explore a wide range of cutting-edge electronic devices
+                Find the perfect tech solutions for being  your loving  pet.
                 </p>
 
                 <div className="flex justify-center md:justify-start">
@@ -56,7 +56,7 @@ const Banner2 = () => {
               <div className="w-full md:max-h-[400px]  flex-1 mb-10 md:mb-0">
                 <img
                   className="md:h-full h-[250px] object-cover w-full"
-                  src='https://i.ibb.co/YZWj1ns/cat-551554-640-removebg-preview.png'
+                  src="https://i.ibb.co/p2Sy0DZ/d-removebg-preview.png"
                   alt=""
                 />
               </div>
@@ -72,15 +72,15 @@ const Banner2 = () => {
                   <span className="bg-[#FF497C] text-white mr-3 text-xl px-2 py-1 rounded-full">
                     <i className="bx bxs-hot"></i>
                   </span>
-                 The reason you need
+                  The reason for Adoption
                 </p>
 
                 <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold text-center md:text-left">
                   Your Trusted Source for <br />
-                  Quality Gadgets
+                  Adopt Peats
                 </p>
                 <p className="font-medium text-black/60 md:text-lg text-center md:text-left">
-                  Explore a wide range of cutting-edge electronic devices
+                Find the perfect tech solutions for being  your loving  pet.
                 </p>
 
                 <div className="flex justify-center md:justify-start">
@@ -97,7 +97,7 @@ const Banner2 = () => {
               <div className="w-full md:max-h-[400px]  flex-1 mb-10 md:mb-0">
                 <img
                   className="md:h-full h-[250px] object-cover w-full"
-                  src='https://i.ibb.co/M8XvCVg/istockphoto-1124344916-612x612-removebg-preview-1.png'
+                  src="https://i.ibb.co/fMMf630/gettyimages-173603002-612x612-removebg-preview.png"
                   alt=""
                 />
               </div>
@@ -113,15 +113,15 @@ const Banner2 = () => {
                   <span className="bg-[#FF497C] text-white mr-3 text-xl px-2 py-1 rounded-full">
                     <i className="bx bxs-hot"></i>
                   </span>
-                 The reason you need
+                  The reason for Adoption
                 </p>
 
                 <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold text-center md:text-left">
-                HELP<br /> Animals 
-                
+                  Your Trusted Source for <br />
+                  Adopt Peats
                 </p>
                 <p className="font-medium text-black/60 md:text-lg text-center md:text-left">
-                Find the perfect tech solutions for your lifestyle.
+                  Find the perfect tech solutions for being  your loving  pet.
                 </p>
 
                 <div className="flex justify-center md:justify-start">
@@ -138,7 +138,7 @@ const Banner2 = () => {
               <div className="w-full max-h-[400px] flex-1 mb-10 md:mb-0">
                 <img
                   className="h-full object-cover w-full"
-                  src='https://i.ibb.co/s91nWXT/dog-3697190-1280-removebg-preview.png'
+                  src="https://i.ibb.co/cYHXYFv/p-removebg-preview.png"
                   alt=""
                 />
               </div>
@@ -146,10 +146,8 @@ const Banner2 = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-
     </div>
   );
 };
-
 
 export default Banner2;

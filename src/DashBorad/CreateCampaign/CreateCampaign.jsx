@@ -54,7 +54,7 @@ const CreateCampaign = () => {
   };
   return (
     <div>
-      <section className="max-w-3xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
+      <section className="max-w-3xl p-6 mx-auto bg-white rounded-md shadow-l-md dark:bg-gray-800">
         <h2
           className="text-lg text-center border-b-2 pb-5 font-semibold text-gray-700 capitalize 
     dark:text-white"
@@ -137,7 +137,7 @@ const CreateCampaign = () => {
           <div className="flex justify-end mt-6">
             <button
               type="submit"
-              className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+              className="px-8 py-2.5 leading-5 text-white text-lg transition-colors duration-300 transform  rounded-md bg-[#ff4880] hover:bg-black delay-75"
             >
               Submit
             </button>

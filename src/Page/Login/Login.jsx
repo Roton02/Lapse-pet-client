@@ -84,7 +84,13 @@ const Login = () => {
         <title>Login</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <div className="flex flex-col max-w-md mx-auto border-2 bg-base-200 lg:my-5 p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800">
+      <div className="flex items-center border-2  w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg  lg:max-w-4xl">
+      <div className="hidden  lg:block lg:w-1/2 " >
+      <video src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/account-login-8677600-6981645.mp4" autoPlay="muted" loop="loop" playsInline type="video/mp4"></video>
+    </div>
+    <div className="divider lg:divider-horizontal py-20">YEH..</div> 
+
+      <div className="flex flex-col max-w-md mx-auto  lg:my-5 p-6 sm:p-10 ">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Login</h1>
           <p className="text-sm dark:text-gray-600">
@@ -126,13 +132,13 @@ const Login = () => {
             <div>
               <button
                 type="submit"
-                className="w-full px-8 btn btn-secondary hover:bg-pink-700 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50"
+                className="w-full px-8 btn bg-[#ff4880] hover:bg-pink-400 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50"
               >
                 Login
               </button>
             </div>
             <p className="px-6 text-lg text-center dark:text-gray-600">
-              Dont have an account yet?
+              Dont have an account yet? <br />
               <Link
                 to="/register"
                 className="hover:underline ml-4 text-green-600"
@@ -176,6 +182,7 @@ const Login = () => {
             </button>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -3,13 +3,13 @@ import Marquee from "react-fast-marquee";
 
 const Donators = () => {
   return (
-    <div>
+    <div className="mb-10">
       <SectionTitle
         heading={"COMPANIES THAT HELP US"}
         subHeading={"OUR DONORS  "}
       ></SectionTitle>
       <Marquee>
-        <div className="flex gap-16">
+        <div className="flex gap-16 ">
           <img
             className="h-32 "
             src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFXV7-ZMSfGaP0jLXDCAvZ_E7PDBNsp2e08F6dr0S8md23U0emSejl33GOe9zIHKc16vQ&usqp=CAU "
