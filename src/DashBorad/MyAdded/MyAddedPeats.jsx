@@ -11,6 +11,7 @@ import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const MyAddedPets = () => {
   const { user } = useAuth();
@@ -162,6 +163,10 @@ const MyAddedPets = () => {
 
   return (
     <div className="container mx-auto p-4 ">
+       <Helmet>
+        <title>Lapse-Peat || My Added Peats</title>
+        {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+      </Helmet>
       <h1 className="text-2xl font-bold mb-4">My Added Pets</h1>
       <table className="min-w-full bg-white border border-gray-300">
         <thead>

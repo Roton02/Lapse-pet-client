@@ -1,7 +1,6 @@
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useAdmin from "../../Hooks/useAdmin";
-import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css'
 
 
@@ -11,9 +10,12 @@ const AdminRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading || isAdminLoading) {
-        return <div className="flex items-center justify-center mt-20">
-        <Skeleton width={800} height={20} count={5} style={{marginBottom:'10px'}} />
-    </div>
+        return  <div className="flex items-center mx-auto my-auto justify-center mt-20">
+        <span className="loading loading-bars loading-xs"></span>
+        <span className="loading loading-bars loading-sm"></span>
+        <span className="loading loading-bars loading-md"></span>
+        <span className="loading loading-bars loading-lg"></span>
+      </div>
     }
 
     if (user && isAdmin) {

@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const MyDonation = () => {
   const { user: authUser } = useAuth();
@@ -46,6 +47,10 @@ const MyDonation = () => {
 
   return (
     <div>
+       <Helmet>
+        <title>Lapse-Peat || My Donation</title>
+        {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+      </Helmet>
       <div className="my-10">
         <h2 className="text-4xl text-center">My Donation List</h2>
       </div>

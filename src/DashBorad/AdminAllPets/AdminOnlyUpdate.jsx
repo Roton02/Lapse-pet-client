@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAuth from "../../Hooks/useAuth";
 import { imageUpload } from "../../api/utils";
+import { Helmet } from "react-helmet-async";
 
 const AdminOnlyUpdate = () => {
   const navigate = useNavigate();
@@ -72,6 +73,10 @@ const AdminOnlyUpdate = () => {
 
   return (
     <div>
+       <Helmet>
+        <title>Lapse-Peat || Admin Peats Update </title>
+        {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+      </Helmet>
       <div className="relative">
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <div className="">

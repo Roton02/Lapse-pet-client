@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { FaBan, FaTrashAlt, FaUsers } from "react-icons/fa";
+import { FaBan } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const AllUsers = () => {
   const axiosSecure =useAxiosSecure()
@@ -9,6 +10,7 @@ const AllUsers = () => {
     queryKey: ["users"],
     queryFn: async () => {
       const res = await axiosSecure.get("/users");
+      console.log(res.data);
       return res.data;
     },
   });
@@ -57,6 +59,10 @@ const AllUsers = () => {
 
   return (
     <div>
+       <Helmet>
+        <title>Lapse-Peat || All Users</title>
+        {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+      </Helmet>
       <div className="my-10">
         <h2 className="text-4xl text-center">Total Users: {users.length}</h2>
       </div>

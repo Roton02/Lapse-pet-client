@@ -17,7 +17,17 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <ContextProvider>
         <HelmetProvider>
           <div className="px-2">
-            <RouterProvider router={router} />
+            <RouterProvider
+              fallbackElement={
+                <div className="flex min-h-screen my-auto items-center justify-center">
+                  <span className="loading loading-bars loading-xs"></span>
+                  <span className="loading loading-bars loading-sm"></span>
+                  <span className="loading loading-bars loading-md"></span>
+                  <span className="loading loading-bars loading-lg"></span>
+                </div>
+              }
+              router={router}
+            />
           </div>
         </HelmetProvider>
       </ContextProvider>

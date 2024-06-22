@@ -4,22 +4,27 @@ import { useForm } from "react-hook-form";
 import { BiVerticalBottom } from "react-icons/bi";
 import useAuth from "../../Hooks/useAuth";
 import { imageUpload } from "../../api/utils";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const UpdatePets = () => {
+  const [ prevData ,setPrevData  ] = useState({})
+  const params = useParams()
+  console.log(params);
   const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();
-  const loadedData = useLoaderData();
   // console.log(loadedData);
-  const prevData = {};
-  for (let i = 0; i < loadedData.length; i++) {
-    prevData[i] = loadedData[i];
-  }
-  console.log(prevData[0]);
+  useEffect(()=> {
+    axiosSecure(`https://lapsepets.vercel.app/myAdded/?id=${params.id}`)
+    .then(res => {
+     setPrevData(res.data[0] )
+    })
+  },[axiosSecure])
+   console.log(prevData);
   const { _id, name, age, type, img, description, description2, location } =
-    prevData[0];
+    prevData || {};
   const {
     register,
     reset,
@@ -81,8 +86,20 @@ const UpdatePets = () => {
     // setPetType(selectedOption)
   };
 
+  useEffect(()=>{
+    const id = document.getElementById('text')
+    id.innerHTML =prevData.description2
+
+  },[prevData.description2])
+
+
   return (
+   
     <div>
+       <Helmet>
+        <title>Lapse-Peat || Update My Added Peats</title>
+        {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+      </Helmet>
       <div className="relative">
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <div className="">
@@ -209,6 +226,7 @@ const UpdatePets = () => {
                           <span className="label-text">Description</span>
                         </label>
                         <textarea
+                        id="text"
                           {...register("note2", )}
                           defaultValue={description2}
                           className="textarea textarea-secondary"

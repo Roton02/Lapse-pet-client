@@ -3,6 +3,7 @@ import { imageUpload } from "../../api/utils";
 import { useNavigate, useParams } from "react-router-dom";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const MyDonationCampaignEdit = () => {
   const [editData , setEditData] = useState()
@@ -65,6 +66,10 @@ const MyDonationCampaignEdit = () => {
   };
   return (
     <div>
+       <Helmet>
+        <title>Lapse-Peat || My Campaign Edit</title>
+        {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+      </Helmet>
       <section className="max-w-3xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
         <h2
           className="text-lg text-center border-b-2 pb-5 font-semibold text-gray-700 capitalize 

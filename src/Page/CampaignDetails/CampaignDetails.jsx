@@ -3,6 +3,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../../ContextProvider/ContextProvider";
 import Payment from "../../Component/Payment";
+import { Helmet } from "react-helmet-async";
 
 const CampaignDetails = () => {
   const [recomended, setRecomended] = useState(false);
@@ -36,6 +37,10 @@ const CampaignDetails = () => {
 
   return (
     <div>
+       <Helmet>
+        <title>Lapse-Peat || Campaign Details</title>
+        {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+      </Helmet>
       <div>
         <div className="max-w-[85rem] mx-auto md:p-5 border-2 border-t-0">
           <div className="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">

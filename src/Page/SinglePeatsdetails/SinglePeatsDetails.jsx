@@ -3,6 +3,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const SinglePeatsDetails = () => {
   const params = useParams();
@@ -41,10 +42,19 @@ const SinglePeatsDetails = () => {
       }
     });
   };
+  useEffect(()=>{
+    const id = document.getElementById('text')
+    id.innerHTML =details.description2
+
+  },[details.description2])
 
   return (
     <div>
       <div>
+      <Helmet>
+        <title>Lapse-Peat || Details</title>
+        {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+      </Helmet>
         <div className="max-w-[85rem] mx-auto md:p-5 border-2 border-t-0">
           <div className="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
             <div className="lg:col-span-4 items-center mt-10 lg:mt-0">
@@ -79,7 +89,10 @@ const SinglePeatsDetails = () => {
               </p>
               <p className="font-anton border-b-2">{details.description}</p>
               
-              <div className="font-anton">{details.description2}</div>
+            <div id="text">
+
+            </div>
+             
 
               <div className="mt-3 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
                 <button

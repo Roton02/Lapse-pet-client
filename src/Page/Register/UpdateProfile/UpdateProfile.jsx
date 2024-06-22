@@ -7,6 +7,7 @@ import { imageUpload } from "../../../api/utils";
 const UpdateProfile = () => {
   const { UpdateUser, user } = useAuth();
   // console.log(user);
+  
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -239,7 +240,7 @@ const UpdateProfile = () => {
   return (
     <div className="overflow-x-hidden">
       <Helmet>
-        <title>Update Profile</title>
+        <title>Lapse-Peat || Update Profile</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <div
@@ -281,7 +282,7 @@ const UpdateProfile = () => {
               <div className=" flex items-center w-full justify-center ">
                 <Link to="/profile">
                   <button className="btn w-full   bg-slate-100 border-[#ff4880] hover:bg-[#ff4880] transition  text-[#ff4880]   duration-500  hover:text-white ">
-                    <span className="px-2">Profile</span>
+                    <span className="px-2"> Back to Profile</span>
                   </button>
                 </Link>
               </div>
@@ -309,8 +310,7 @@ const UpdateProfile = () => {
                   <div>
               <label className="text-gray-700 dark:text-gray-200">Image</label>
               <input
-                required
-                defaultValue={user?.photoURL}
+                
                 id="username"
                 type="file"
                 name="photo"

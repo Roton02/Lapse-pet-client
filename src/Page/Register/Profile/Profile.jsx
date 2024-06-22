@@ -16,7 +16,7 @@ const Profile = () => {
         <div className="mx-auto my-5 max-w-[350px] space-y-8 rounded-2xl bg-white px-6 py-8 shadow-md dark:bg-[#18181B] md:max-w-[350px]">
         {/* profile image & bg  */}
         <Helmet>
-        <title>Food Picky || Profile</title>
+        <title>Lapse-Peat || Profile</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
         <div className="relative ">

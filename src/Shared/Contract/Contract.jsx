@@ -1,6 +1,12 @@
+import { Helmet } from "react-helmet-async";
+
 const Contract = () => {
   return (
     <div>
+       <Helmet>
+        <title>Lapse-Peat || Contract</title>
+        {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+      </Helmet>
       <h1
         className="text-3xl font-anton font-semibold text-center
          underline my-5 "

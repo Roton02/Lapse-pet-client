@@ -3,6 +3,7 @@ import useAuth from "../../Hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const MyDonationCampaign = () => {
   const { user } = useAuth();
@@ -42,6 +43,10 @@ const MyDonationCampaign = () => {
 
   return (
     <div className="container mx-auto p-4">
+       <Helmet>
+        <title>Lapse-Peat || My Campaign</title>
+        {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+      </Helmet>
       <table className="min-w-full bg-white border border-gray-200">
         <thead>
           <tr>

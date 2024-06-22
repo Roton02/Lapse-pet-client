@@ -175,15 +175,7 @@ const Navbar = () => {
                 <div className="flex justify-center">
                 <img className="rounded-full w-20 text-center" src={user?.photoURL || ''} alt="" />
                 </div>
-                <li className="mx-auto  ">{user?.displayName}</li>
-                <li>
-                  <NavLink
-                    to="/dashBoard"
-                    className="btn btn-sm btn-ghost border-2  border-gray-300 hover:bg-black hover:text-white"
-                  >
-                    DashBoard
-                  </NavLink>
-                </li>
+                <li className="mx-auto text-xl font-bold ">----- {user?.displayName}  -----</li>
                 <li>
                   <NavLink
                     to="/profile"
@@ -192,6 +184,15 @@ const Navbar = () => {
                     Profile
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink
+                    to="/dashBoard"
+                    className="btn btn-sm btn-ghost border-2  border-gray-300 hover:bg-black hover:text-white"
+                  >
+                    DashBoard
+                  </NavLink>
+                </li>
+                
               
                 <button
                   onClick={Logout}

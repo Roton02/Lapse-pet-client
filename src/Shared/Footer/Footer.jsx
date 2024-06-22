@@ -73,6 +73,7 @@ const Footer = () => {
 		</div>
 	</div>
 	<div  className="py-2 text-sm text-center dark:text-gray-600">© Create by MR Coders .</div>
+	<div  className="py-2 text-sm text-center "> ©  Copyright 2024. All Rights Reserved. .</div>
 </footer>
     );
 };
