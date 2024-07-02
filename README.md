@@ -62,7 +62,7 @@ Feel free to explore our platform and make a positive impact on the lives of ani
 1. Clone the repository:
 
 ```
-git clone [https://github.com/Roton02/Globe-Glimpse-Client.git](https://github.com/Roton02/Lapse-pet-client.git))
+git clone https://github.com/Roton02/Lapse-pet-client.git
 ```
 
 2. Navigate to the project directory:
