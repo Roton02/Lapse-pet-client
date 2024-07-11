@@ -31,21 +31,21 @@ const Category = ({ item }) => {
                 <div className="space-y-2 p-5">
                   <a
                     href="#"
-                    className="block text-xl font-bold  dark:text-white text-slate-600 "
+                    className="block text-xl font-bold  "
                   >
                     {data.description}
                   </a>
-                  <p className="text-sm  text-gray-500">
+                  <p className="text-sm  ">
                     {data.description2}
                   </p>
 
                   <div>
-                    <div className="flex justify-between font-bold text-slate-600">
+                    <div className="flex justify-between font-bold ">
                       <p>$ 20000</p>
                       <p>$ 7500</p>
                       <p>$18000</p>
                     </div>
-                    <div className="flex justify-between text-gray-500">
+                    <div className="flex justify-between ">
                       <p>Target Amount</p>
                       <p>Raised so far</p>
                       <p>Still need</p>

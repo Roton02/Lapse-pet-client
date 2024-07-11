@@ -20,12 +20,9 @@ const Home = () => {
       <PeatCetegory> </PeatCetegory>
       <CallToAction></CallToAction>
       <Choses></Choses>
-      {/* <BecomeAMembar></BecomeAMembar> */}
-      <Testimonials></Testimonials>
+      {/* <Testimonials></Testimonials> */}
       <AboutUs></AboutUs>
-      
       <Donators></Donators>
-      
     </div>
   );
 };

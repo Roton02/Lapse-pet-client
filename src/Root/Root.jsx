@@ -4,13 +4,10 @@ import "aos/dist/aos.css";
 import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
 import Header from "../Shared/Header/Header";
-import useAuth from "../Hooks/useAuth";
-import DuplicateRegister from "../Page/Register/DuplicateRegister";
 
 AOS.init();
 
 const Root = () => {
-  const {user}= useAuth()
   const location = useLocation();
   const noHeaderAndFooter =
     location.pathname.includes("login") ||
@@ -19,6 +16,24 @@ const Root = () => {
   console.log(location);
   return (
     <div>
+      <div>
+        {noHeaderAndFooter || <Header></Header>}
+        <div className="max-w-7xl mx-auto">
+          {noHeaderAndFooter || <Navbar></Navbar>}
+          <div className="min-h-screen">
+            <Outlet></Outlet>
+          </div>
+          {noHeaderAndFooter || <Footer></Footer>}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Root;
+
+/* 
+<div>
       {
         user ? <div>
         {noHeaderAndFooter || <Header></Header>}
@@ -34,7 +49,4 @@ const Root = () => {
       
       
     </div>
-  );
-};
-
-export default Root;
+*/
