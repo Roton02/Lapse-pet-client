@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container px-6 py-12 mx-auto">
         <div className="md:flex md:-mx-3 md:items-center md:justify-between">
           <h1 className="text-xl font-semibold tracking-tight text-gray-800 md:mx-3 xl:text-2xl dark:text-white">
-            Subscribe our newsletter to get update.
+            Join us 
           </h1>
 
           <div className="mt-6 md:mx-3 shrink-0 md:mt-0 md:w-auto">
@@ -150,14 +150,14 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between sm:flex-row">
           <a href="#">
             <img
-              className="w-auto h-7"
-              src="https://merakiui.com/images/full-logo.svg"
+              className="w-36"
+              src="https://i.ibb.co/L0v6r6Z/logo-finel-removebg-preview.png"
               alt=""
             />
           </a>
 
-          <p className="mt-4 text-sm text-gray-500 sm:mt-0 dark:text-gray-300">
-            © Copyright 2021. All Rights Reserved.
+          <p className="mt-4  text-gray-500 sm:mt-0 dark:text-gray-300">
+            © Copyright {new Date().getFullYear()}. All Rights Reserved.
           </p>
         </div>
       </div>
