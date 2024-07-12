@@ -16,15 +16,15 @@ const Root = () => {
   console.log(location);
   return (
     <div>
-      <div className="w-screen">
+      <div className="w-full overflow-x-hidden">
         {noHeaderAndFooter || <Header></Header>}
         <div className="max-w-7xl mx-auto">
           {noHeaderAndFooter || <Navbar></Navbar>}
           <div className="min-h-screen">
             <Outlet></Outlet>
           </div>
-          {noHeaderAndFooter || <Footer></Footer>}
         </div>
+        {noHeaderAndFooter || <Footer></Footer>}
       </div>
     </div>
   );
