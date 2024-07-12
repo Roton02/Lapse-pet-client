@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900">
-      <div className="container px-6 py-12 mx-auto">
+    <footer className="bg-white w-screen mx-auto flex justify-center items-center">
+      <div className=" px-6 py-12  max-w-7xl mx-auto ">
         <div className="md:flex md:-mx-3 md:items-center md:justify-between">
-          <h1 className="text-xl font-semibold tracking-tight text-gray-800 md:mx-3 xl:text-2xl dark:text-white">
+          <h1 className="text-xl font-semibold tracking-tight  md:mx-3 xl:text-2xl ">
             Join us 
           </h1>
 
@@ -36,7 +36,7 @@ const Footer = () => {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div>
-            <p className="font-semibold text-gray-800 dark:text-white">
+            <p className="font-semibold  dark:text-white">
               Quick Link
             </p>
 
@@ -44,21 +44,21 @@ const Footer = () => {
               <a
                 target="_blank"
                 href="https://web.facebook.com/roton.chodiry"
-                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                className=" transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
               >
                 Facebook
               </a>
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/md-sana-ullah12/"
-                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                className=" transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
               >
                 Linked in
               </a>
               <a
                 target="_blank"
                 href="https://x.com/MdSanaulla75762"
-                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                className=" transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
               >
                 Twitter
               </a>
@@ -66,13 +66,13 @@ const Footer = () => {
           </div>
 
           <div>
-            <p className="font-semibold text-gray-800 dark:text-white">Pages</p>
+            <p className="font-semibold dark:text-white">Pages</p>
 
             <div className="flex flex-col items-start mt-5 space-y-2">
               <Link to="/listing">
                 <a
                   href="#"
-                  className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                  className="transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
                 >
                   pet listing
                 </a>
@@ -80,7 +80,7 @@ const Footer = () => {
               <Link to="/campaign">
                 <a
                   href="#"
-                  className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                  className=" transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
                 >
                   Donation Campaign
                 </a>
@@ -88,7 +88,7 @@ const Footer = () => {
               <Link to='/contract'>
                 <a
                   href="/contract"
-                  className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                  className=" transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
                 >
                   Contract
                 </a>
@@ -97,26 +97,26 @@ const Footer = () => {
           </div>
 
           <div>
-            <p className="font-semibold text-gray-800 dark:text-white">
+            <p className="font-semibold  dark:text-white">
               Services
             </p>
 
             <div className="flex flex-col items-start mt-5 space-y-2">
               <a
                 href=""
-                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                className=" transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
               >
                 Create Campaign
               </a>
               <a
                 href=""
-                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                className=" transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
               >
                 Adopt & share pet
               </a>
               <a
                 href=""
-                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                className=" transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
               >
                 Trust platform for donation
               </a>
@@ -124,20 +124,20 @@ const Footer = () => {
           </div>
 
           <div>
-            <p className="font-semibold text-gray-800 dark:text-white">
+            <p className="font-semibold  dark:text-white">
               Contact Us
             </p>
 
             <div className="flex flex-col items-start mt-5 space-y-2">
               <a
                 href="#"
-                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                className=" transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
               >
                 +8801569140343
               </a>
               <a
                 href="#"
-                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
+                className="transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500"
               >
                 sanaullahroton01@gmail.com
               </a>
@@ -156,7 +156,7 @@ const Footer = () => {
             />
           </a>
 
-          <p className="mt-4  text-gray-500 sm:mt-0 dark:text-gray-300">
+          <p className="mt-4 sm:mt-0 dark:text-gray-300">
             © Copyright {new Date().getFullYear()}. All Rights Reserved.
           </p>
         </div>

@@ -16,7 +16,7 @@ const Root = () => {
   console.log(location);
   return (
     <div>
-      <div>
+      <div className="w-screen">
         {noHeaderAndFooter || <Header></Header>}
         <div className="max-w-7xl mx-auto">
           {noHeaderAndFooter || <Navbar></Navbar>}
