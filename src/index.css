@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rancho&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.logo,h1, h2, h3, h4 {
+    font-family: "Rancho", cursive;
+    letter-spacing: 1px;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+
+
+
