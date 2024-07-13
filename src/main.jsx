@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       <ContextProvider>
         <HelmetProvider>
-          <div className="px-2 ">
+          <div className="px-1 md:px-0">
             <RouterProvider
               fallbackElement={
                 <div className="flex min-h-screen my-auto items-center justify-center">
