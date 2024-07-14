@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
 import Header from "../Shared/Header/Header";
+import Navbar2 from "../Shared/Navbar/Navbar2";
 
 AOS.init();
 
@@ -19,7 +20,7 @@ const Root = () => {
       <div className="w-full overflow-x-hidden">
         {noHeaderAndFooter || <Header></Header>}
         <div className=" mx-auto">
-          {noHeaderAndFooter || <Navbar></Navbar>}
+          {noHeaderAndFooter || <Navbar2></Navbar2>}
           <div className="min-h-[70vh]">
             <Outlet></Outlet>
           </div>
