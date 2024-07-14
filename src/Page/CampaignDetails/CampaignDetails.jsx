@@ -37,7 +37,7 @@ const CampaignDetails = () => {
 
   return (
     <div>
-       <Helmet>
+      <Helmet>
         <title>Lapse-Peat || Campaign Details</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
@@ -51,7 +51,7 @@ const CampaignDetails = () => {
                 alt="Image Loading..............."
               />
             </div>
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3 ">
               <img
                 className="  mx-auto h-1/2 "
                 src="https://i.ibb.co/kqWvWh1/images-removebg-preview.png"
@@ -83,7 +83,7 @@ const CampaignDetails = () => {
                   className="btn bg-[#ff4880] text-white hover:text-black btn-sm"
                 >
                   Donate Now
-                </button> 
+                </button>
 
                 <dialog
                   id="my_modal_5"
@@ -127,19 +127,19 @@ const CampaignDetails = () => {
         </div>
       </div>
       {recomended && (
-        <div>
+        <div className="max-w-7xl mx-auto">
           <h1 className="text-2xl font-bold flex justify-center py-5 ">
             Recomended For Donate{" "}
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-10 mt-2">
             {recomendedData.slice(0, 3).map((campaign) => (
-              <div key={campaign._id}>
-                <div className="px-0 border  bg-[#fbebe2] rounded-xl">
+              <div key={campaign._id} className="">
+                <div className="px-0 border  bg-[#fbebe2] rounded-xl ">
                   <figure className="w-full bg-cover">
                     <img
                       src={campaign.image}
                       alt="No uploaded any image"
-                      className="rounded-t-xl min-h-28 rounded-br-full bg-cover w-full "
+                      className="rounded-t-xl h-80 rounded-br-full bg-cover w-full "
                     />
                   </figure>
                   <div className="px-5">

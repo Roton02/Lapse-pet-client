@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Skeleton from "react-loading-skeleton";
-import 'react-loading-skeleton/dist/skeleton.css'
+import "react-loading-skeleton/dist/skeleton.css";
 import { Helmet } from "react-helmet-async";
-
 
 const Listing = () => {
   const axiosPublic = useAxiosPublic();
@@ -35,16 +34,16 @@ const Listing = () => {
   };
   return (
     <div>
-       <Helmet>
+      <Helmet>
         <title>Lapse-Peat || Listing</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <header>
         <div
-          className={`max-w-7xl h-[200px]  mx-auto rounded-b-md bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4]
+          className={`w-screen h-[200px]  mx-auto rounded-b-md bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4]
          `}
         >
-          <div className="">
+          <div className="max-w-7xl mx-auto">
             <h1 className="text-4xl pt-5 text-center  font-bold mb-5 text-[#393d72] ">
               ----Adoption Search----
             </h1>
@@ -55,55 +54,62 @@ const Listing = () => {
           </div>
         </div>
       </header>
-      <div
-        className="md:px-32 p-5 rounded-3xl  w-full border
-       mt-1 bg-slate-50  flex flex-col lg:flex-row items-center justify-between "
-      >
-        <form onSubmit={handleSubmit}>
-          <div className="relative z-10 flex  space-x-2  py-5  rounded-lg  text-neutral-200">
-            <div className="">
-              <input
-                type="text"
-                name="serching"
-                className="py-2.5 md:w-96 px-4 block  border-transparent rounded-lg bg-white border border-gray-600 text-black"
-                placeholder="Search by peat Name And get the peat details !"
-              />
-            </div>
+      <div className="  bg-slate-50  border">
+        <div
+          className="md:px-32 p-5   max-w-7xl mx-auto
+       mt-1  flex flex-col lg:flex-row items-center justify-between"
+        >
+          <form onSubmit={handleSubmit}>
+            <div className="relative z-10 flex  space-x-2  py-5  rounded-lg  text-neutral-200">
+              <div className="">
+                <input
+                  type="text"
+                  name="serching"
+                  className="py-2.5 md:w-96 px-4 block  border-transparent rounded-lg bg-white border border-gray-600 text-black"
+                  placeholder="Search by peat Name And get the peat details !"
+                />
+              </div>
 
-            <div className="flex-[0_0_auto] ">
-              <button
-                type="submit"
-                className="size-[46px] text-sm md:w-52 w-20 inline-flex justify-center items-center gap-x-2  font-semibold rounded-lg border border-transparent  text-white  bg-[#ff4880] disabled:opacity-50 disabled:pointer-events-none"
-              >
-                Search
-              </button>
+              <div className="flex-[0_0_auto] ">
+                <button
+                  type="submit"
+                  className="size-[46px] text-sm md:w-52 w-20 inline-flex justify-center items-center gap-x-2  font-semibold rounded-lg border border-transparent  text-white  bg-[#ff4880] disabled:opacity-50 disabled:pointer-events-none"
+                >
+                  Search
+                </button>
+              </div>
             </div>
+          </form>
+          <div className="w-52">
+            <select
+              onChange={handleCategory}
+              name="category"
+              className="select select-secondary w-full max-w-xs"
+            >
+              <option disabled selected value="">
+                Find By Category name
+              </option>
+              <option value="Cat">cats</option>
+              <option value="Dog">Dog</option>
+              <option value="Rabbit">Rabbite</option>
+            </select>
           </div>
-        </form>
-        <div className="w-52">
-          <select
-            onChange={handleCategory}
-            name="category"
-            className="select select-secondary w-full max-w-xs"
-          >
-            <option disabled selected value="">
-              Find By Category name
-            </option>
-            <option value="Cat">cats</option>
-            <option value="Dog">Dog</option>
-            <option value="Rabbit">Rabbite</option>
-          </select>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+      <div className=" max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
         {listingData.length === 0
           ? // Render skeleton loaders while data is loading
             Array(9) // Render 9 skeleton cards (adjust as per your grid layout)
               .fill()
               .map((_, index) => (
                 <div key={index}>
-                  <Skeleton width={300} height={10} count={5} style={{marginBottom:'px'}}  />
+                  <Skeleton
+                    width={300}
+                    height={10}
+                    count={5}
+                    style={{ marginBottom: "px" }}
+                  />
                 </div>
               ))
           : // Render actual data

@@ -3,10 +3,10 @@ import { Helmet } from "react-helmet-async";
 import Banner2 from "../../Shared/Banner/Banner2";
 import CallToAction from "./CallToAction";
 import Choses from "./Choses";
-import Donators from "./Donators";
+// import Donators from "./Donators";
 import AboutUs from "./Indroduction";
 import PeatCetegory from "./PeatCetegory";
-import Testimonials from "./Testimonial";
+// import Testimonials from "./Testimnial";
 
 const Home = () => {
   return (

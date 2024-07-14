@@ -18,9 +18,9 @@ const Root = () => {
     <div>
       <div className="w-full overflow-x-hidden">
         {noHeaderAndFooter || <Header></Header>}
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           {noHeaderAndFooter || <Navbar></Navbar>}
-          <div className="min-h-screen">
+          <div className="min-h-[70vh]">
             <Outlet></Outlet>
           </div>
         </div>

@@ -21,7 +21,7 @@ const PeatCetegory = () => {
     const rabbite = categoryData.filter(peat => peat.type === "Rabbit")
     console.log(cats,dog, rabbite);
   return (
-    <div className="px-4">
+    <div className="px-4 max-w-7xl mx-auto">
       <SectionTitle heading={'ABILITY TO SAVE ANIMALS'} subHeading={'--FUNDRAISING CAMPAINGS--'}>
 
       </SectionTitle>
