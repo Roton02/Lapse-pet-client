@@ -4,7 +4,12 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../ContextProvider/ContextProvider";
 import "./Navbar.css";
 const Navbar = () => {
+  // const [isOpen, setIsOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  };
 
   const { Logout, user } = useContext(AuthContext);
   const [theme, setTheme] = useState(() => {
@@ -36,102 +41,282 @@ const Navbar = () => {
     <div className="bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4]  w-full  md:flex md:justify-between md:items-center bg-base-100">
       <nav className="  navbar z-[100] max-w-7xl mx-auto">
         <div className="navbar-start ">
-          <div className="">
-            <div className="drawer">
-              <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-              <div className="drawer-content">
-                {/* Page content here */}
-                <label
-                  htmlFor="my-drawer"
-                  className="btn btn-primary drawer-button"
+          <div className="block md:block lg:hidden">
+            <div className="text-center">
+              <button className="" type="button" onClick={toggleDrawer}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
                 >
-                  Open drawer
-                </label>
-              </div>
-              <div className="drawer-side">
-                <label
-                  htmlFor="my-drawer"
-                  aria-label="close sidebar"
-                  className="drawer-overlay"
-                ></label>
-                <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-                  {/* Sidebar content here */}
-                  <li>
-                    <a>Sidebar Item 1</a>
-                  </li>
-                  <li>
-                    <a>Sidebar Item 2</a>
-                  </li>
-                </ul>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 8h16M4 16h16"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div
+              className={`fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-white w-80 dark:bg-gray-800 ${
+                isOpen ? "translate-x-0" : "-translate-x-full"
+              }`}
+            >
+              <h5
+                id="drawer-label"
+                className="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"
+              >
+                <svg
+                  className="w-4 h-4 mr-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>
+                Pages
+              </h5>
+              <button
+                type="button"
+                onClick={toggleDrawer}
+                aria-controls="drawer-example"
+                className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                <svg
+                  className="w-3 h-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                  />
+                </svg>
+                <span className="sr-only">Close menu</span>
+              </button>
+
+              <div className=" grid grid-cols-1 ">
+                <Link to="/">
+                  <a
+                    href="#_"
+                    className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
+                  >
+                    <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                      <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                    </span>
+                    <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                      Home
+                    </span>
+                    <span className="relative invisible">Home</span>
+                  </a>
+                </Link>
+                <Link to="/listing">
+                  <a
+                    href="#_"
+                    className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
+                  >
+                    <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                      <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                    </span>
+                    <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                      Pet Listing
+                    </span>
+                    <span className="relative invisible">Pet Listing</span>
+                  </a>
+                </Link>
+                <Link to="/campaign">
+                  <a
+                    href="#_"
+                    className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
+                  >
+                    <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                      <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                    </span>
+                    <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                      Donation Campaigns
+                    </span>
+                    <span className="relative invisible">
+                      Donation Campaigns
+                    </span>
+                  </a>
+                </Link>
+                <Link to="/contract">
+                  <a
+                    href="#_"
+                    className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
+                  >
+                    <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                      <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                    </span>
+                    <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                      Contract
+                    </span>
+                    <span className="relative invisible">contract</span>
+                  </a>
+                </Link>
+                <hr />
+                {user ? (
+                  <div className="grid grid-cols-1">
+                    <Link to="/profile">
+                      <a
+                        href="#_"
+                        className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
+                      >
+                        <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                          <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                          </svg>
+                        </span>
+                        <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                          Profile
+                        </span>
+                        <span className="relative invisible">Profile</span>
+                      </a>
+                    </Link>
+                    <Link to="/dashBoard">
+                      <a
+                        href="#_"
+                        className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
+                      >
+                        <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                          <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                          </svg>
+                        </span>
+                        <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                          DashBoard
+                        </span>
+                        <span className="relative invisible">DashBoard</span>
+                      </a>
+                    </Link>
+                    <Link to="/updateProfile">
+                      <a
+                        href="#_"
+                        className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
+                      >
+                        <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                          <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                          </svg>
+                        </span>
+                        <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                          Settings
+                        </span>
+                        <span className="relative invisible">Settings</span>
+                      </a>
+                    </Link>
+
+                    <div>
+                      <a
+                        onClick={Logout}
+                        href="#_"
+                        className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
+                      >
+                        <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                          <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                          </svg>
+                        </span>
+                        <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                          Logout
+                        </span>
+                        <span className="relative invisible">Logout</span>
+                      </a>
+                    </div>
+                  </div>
+                ) : (
+                  <Link to="/login">
+                    <a
+                      href="#_"
+                      className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
+                    >
+                      <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                      </span>
+                      <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                        Login
+                      </span>
+                      <span className="relative invisible">Login</span>
+                    </a>
+                  </Link>
+                )}
               </div>
             </div>
-            {/* <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <div className="flex lg:hidden">
-                <button
-                  onClick={() => setIsOpen(!isOpen)}
-                  type="button"
-                  className=""
-                  aria-label="toggle menu"
-                >
-                  {isOpen ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8h16M4 16h16" />
-                    </svg>
-                  )}
-                </button>
-              </div>
-            </div>
-           {
-            isOpen &&  <div
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 gap-2  z-[100]   shadow bg-base-100  w-52  "
-          >
-            <NavLink
-              to="/"
-              className="btn  border-b-2 border-gray-300 hover:bg-black hover:text-white "
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/listing"
-              className="btn border-2 border-gray-300 hover:bg-black hover:text-white "
-            >
-              Pet Listing
-            </NavLink>
-            <NavLink
-              to="/campaign"
-              className="btn border-2 border-gray-300 hover:bg-black hover:text-white "
-            >
-              Donation Campaigns
-            </NavLink>
-            <NavLink
-              to="/contract"
-              className="btn border-2 border-gray-300 hover:bg-black hover:text-white "
-            >
-              Contract
-            </NavLink>
-          </div>
-           } */}
           </div>
           <Link to="/">
             <img
-              className="w-48"
+              className=" w-24 lg:w-44"
               src="https://i.ibb.co/L0v6r6Z/logo-finel-removebg-preview.png"
               alt=""
             />
