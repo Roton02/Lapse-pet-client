@@ -6,7 +6,7 @@ const CallToAction = () => {
       <header className="max-w-7xl mx-auto bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4] rounded-3xl">
         <div className="container px-6 py-7 mx-auto">
           <div className="items-center lg:flex">
-            <div className="w-full md:ml-10 lg:w-1/2">
+            <div className="w-full lg:ml-10 lg:w-1/2">
               <div className="lg:max-w-lg">
                 <h1 className=" font-semibold  text-[#ff4880]">
                   --- DONATION <br />{" "}
@@ -22,7 +22,7 @@ const CallToAction = () => {
                   provide, free from judgment or resentment, solidifying their
                   role not just as pets but as cherished members of the family.
                 </p>
-                <Link to='/donate-campaign' className="pt-10">
+                <Link to='/campaign' className="pt-10">
                   <a
                     href="#_"
                     className="relative inline-block mt-4 px-4 py-2 font-medium group"
@@ -40,7 +40,7 @@ const CallToAction = () => {
 
             <div className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
               <img
-                className="w rounded-2xl lg:max-w-3xl"
+                className=" w-full md:px-0 lg:p-0 rounded-2xl lg:max-w-3xl"
                 src="https://i.ibb.co/TPbZ4dP/volunteering-help-charity-teen-woman-with-dog-res-2021-09-04-04-17-59-utc-1.jpg"
                 alt="Catalogue-pana.svg"
               />
