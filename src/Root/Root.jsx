@@ -20,7 +20,7 @@ const Root = () => {
       <div className="w-full overflow-x-hidden">
         {noHeaderAndFooter || <Header></Header>}
         <div className=" mx-auto">
-          {noHeaderAndFooter || <Navbar2></Navbar2>}
+          {noHeaderAndFooter || <Navbar></Navbar>}
           <div className="min-h-[70vh]">
             <Outlet></Outlet>
           </div>

@@ -75,10 +75,11 @@ const Navbar2 = () => {
                   )}
                 </button>
               </div>
-            </div>
+            </div>  
 
-            <div className={`flex lg:flex lg:items-center lg:justify-between w-full lg:w-auto transition-transform duration-300 ease-in-out ${isOpen ? 'block' : 'hidden'} lg:block`}>
-              <div className=" flex flex-col   p-10 lg:flex-row lg:items-center lg:mx-8 lg:space-x-2 ">
+            <div className={`flex lg:flex lg:items-center justify-center lg:justify-between  w-full lg:w-auto transition-transform duration-300 ease-in-out 
+              ${isOpen ? 'block  ' : 'hidden'} lg:block`}>
+              <div className=" flex flex-col  lg:flex-row lg:items-center lg:mx-8 lg:space-x-2 ">
               <NavLink
               to="/"
               className="btn btn-sm  border-b-2 border-gray-300 hover:bg-black hover:text-white "

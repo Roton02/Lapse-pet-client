@@ -4,6 +4,8 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../ContextProvider/ContextProvider";
 import "./Navbar.css";
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const { Logout, user } = useContext(AuthContext);
   const [theme, setTheme] = useState(() => {
     // Retrieve theme from localStorage on component mount
@@ -34,52 +36,98 @@ const Navbar = () => {
     <div className="bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4]  w-full  md:flex md:justify-between md:items-center bg-base-100">
       <nav className="  navbar z-[100] max-w-7xl mx-auto">
         <div className="navbar-start ">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 "
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
+          <div className="">
+            <div className="drawer">
+              <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+              <div className="drawer-content">
+                {/* Page content here */}
+                <label
+                  htmlFor="my-drawer"
+                  className="btn btn-primary drawer-button"
+                >
+                  Open drawer
+                </label>
+              </div>
+              <div className="drawer-side">
+                <label
+                  htmlFor="my-drawer"
+                  aria-label="close sidebar"
+                  className="drawer-overlay"
+                ></label>
+                <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                  {/* Sidebar content here */}
+                  <li>
+                    <a>Sidebar Item 1</a>
+                  </li>
+                  <li>
+                    <a>Sidebar Item 2</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 gap-2  z-[100]   shadow bg-base-100  w-52  "
+            {/* <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div className="flex lg:hidden">
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  type="button"
+                  className=""
+                  aria-label="toggle menu"
+                >
+                  {isOpen ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8h16M4 16h16" />
+                    </svg>
+                  )}
+                </button>
+              </div>
+            </div>
+           {
+            isOpen &&  <div
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3 gap-2  z-[100]   shadow bg-base-100  w-52  "
+          >
+            <NavLink
+              to="/"
+              className="btn  border-b-2 border-gray-300 hover:bg-black hover:text-white "
             >
-              <NavLink
-                to="/"
-                className="btn  border-b-2 border-gray-300 hover:bg-black hover:text-white "
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to="/listing"
-                className="btn border-2 border-gray-300 hover:bg-black hover:text-white "
-              >
-                Pet Listing
-              </NavLink>
-              <NavLink
-                to="/campaign"
-                className="btn border-2 border-gray-300 hover:bg-black hover:text-white "
-              >
-                Donation Campaigns
-              </NavLink>
-              <NavLink
-                to="/contract"
-                className="btn border-2 border-gray-300 hover:bg-black hover:text-white "
-              >
-                Contract
-              </NavLink>
-            </div>
+              Home
+            </NavLink>
+            <NavLink
+              to="/listing"
+              className="btn border-2 border-gray-300 hover:bg-black hover:text-white "
+            >
+              Pet Listing
+            </NavLink>
+            <NavLink
+              to="/campaign"
+              className="btn border-2 border-gray-300 hover:bg-black hover:text-white "
+            >
+              Donation Campaigns
+            </NavLink>
+            <NavLink
+              to="/contract"
+              className="btn border-2 border-gray-300 hover:bg-black hover:text-white "
+            >
+              Contract
+            </NavLink>
+          </div>
+           } */}
           </div>
           <Link to="/">
             <img
@@ -170,7 +218,7 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content hidden lg:flex  z-[100] menu p-2 gap-2 shadow bg-base-100 rounded-box w-64"
+                  className="dropdown-content  flex  z-[100] menu p-2 gap-2 shadow bg-base-100 rounded-box w-64"
                 >
                   <div className="flex justify-center">
                     <img
