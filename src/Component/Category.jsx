@@ -7,7 +7,7 @@ const Category = ({ item }) => {
   console.log(item);
   return (
     <div>
-      <div className="grid md:grid-cols-3 gap-10 px-4 items-center ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 items-center ">
         {item.length === 0 ? (
           // Render skeleton loaders while data is loading
           Array(6) // Render 6 skeleton cards (adjust as per your grid layout)
@@ -21,14 +21,14 @@ const Category = ({ item }) => {
           // Render actual category items
           item.map((data) => (
             <Link key={data._id} to={`/category/${data._id}`}>
-              <div className="w-full min-w-96 overflow-hidden shadow-sm dark:bg-gray-800">
+              <div className="w-full  overflow-hidden shadow-sm hover:scale-105 transition delay-100 ">
                 <img
                   className="object-cover rounded-xl w-full h-56"
                   src={data.img}
                   alt="avatar"
                 />
 
-                <div className="space-y-2 p-5">
+                <div className="space-y-2 p-1">
                   <a
                     href="#"
                     className="block text-xl font-bold  "
