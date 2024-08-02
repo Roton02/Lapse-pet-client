@@ -46,7 +46,7 @@ const Navbar = () => {
               <button className="" type="button" onClick={toggleDrawer}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6"
+                  className="w-6 h-6 ml-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -71,7 +71,7 @@ const Navbar = () => {
                 className="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"
               >
                 <svg
-                  className="w-4 h-4 mr-2.5"
+                  className="w-4 h-4 mr-2.5n "
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -316,7 +316,7 @@ const Navbar = () => {
           </div>
           <Link to="/">
             <img
-              className=" w-24 lg:w-44"
+              className=" w-24 lg:w-44 ml-5 lg:ml-0"
               src="https://i.ibb.co/L0v6r6Z/logo-finel-removebg-preview.png"
               alt=""
             />
