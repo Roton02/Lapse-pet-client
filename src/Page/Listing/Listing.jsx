@@ -65,7 +65,7 @@ const Listing = () => {
                 <input
                   type="text"
                   name="serching"
-                  className="py-2.5 md:w-96 px-4 block  border-transparent rounded-lg bg-white border border-gray-600 text-black"
+                  className="py-2.5 border md:w-96 px-4 block   rounded-lg bg-white  border-gray-600 text-black"
                   placeholder="Search by peat Name And get the peat details !"
                 />
               </div>
