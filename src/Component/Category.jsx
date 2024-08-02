@@ -7,13 +7,13 @@ const Category = ({ item }) => {
   console.log(item);
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 items-center ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10  items-center ">
         {item.length === 0 ? (
           // Render skeleton loaders while data is loading
           Array(6) // Render 6 skeleton cards (adjust as per your grid layout)
             .fill()
             .map((_, index) => (
-              <div key={index} className="w-full min-w-96 overflow-hidden shadow-sm dark:bg-gray-800">
+              <div key={index} className="w-full  overflow-hidden shadow-sm dark:bg-gray-800">
                 <Skeleton width={300} height={10} count={5} style={{marginBottom:'7px'}} />
               </div>
             ))

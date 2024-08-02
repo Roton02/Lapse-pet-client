@@ -27,7 +27,7 @@ const PeatCetegory = () => {
       </SectionTitle>
       <div className="flex justify-center items-center mx-auto px-4 my-10">
         <Tabs>
-          <TabList className={"  border-b md:pl-24 ml-10 flex justify-start  items-center mb-5"}>
+          <TabList className={"  border-b pl-8 md:pl-10  flex justify-start  items-center mb-5"}>
             <Tab><span className=" font-semibold text-sm ">  Cats</span></Tab>
             <Tab><span className=" font-semibold text-sm ">  Dogs</span></Tab>
             <Tab><span className=" font-semibold text-sm ">  Rabbite</span></Tab>
