@@ -392,7 +392,7 @@ const SinglePeatsDetails = () => {
                       wonderful animals.
                     </p>
                     <div className="z-50">
-                      <Link to="">
+                      <Link to="/dashboard/CreateCampaign">
                         <a
                           href="#_"
                           className="relative border-2   inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-pink-500 transition duration-300 ease-out  border-pink-500 shadow-md group"
