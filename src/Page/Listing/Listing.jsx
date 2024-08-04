@@ -97,7 +97,7 @@ const Listing = () => {
         </div>
       </div>
 
-      <div className=" max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+      <div className=" max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 md:gap-5 gap-5 mt-10 items-center  ">
         {listingData.length === 0
           ? // Render skeleton loaders while data is loading
             Array(9) // Render 9 skeleton cards (adjust as per your grid layout)
@@ -114,32 +114,38 @@ const Listing = () => {
               ))
           : // Render actual data
             listingData.map((list) => (
-              <div key={list._id}>
-                <div
-                  className={`px-0 border-2 rounded-xl bg-cover bg-no-repeat`}
-                  style={{ backgroundImage: `url(${list.img})` }}
-                >
-                  <div className="card-body pl-8 space-y-0 bg-slate-700 bg-opacity-20 text-white hover:bg-[#ff4880] hover:bg-opacity-50 transition delay-200">
-                    <div className="border-b-2 flex justify-between ">
-                      <h2 className="text-3xl font-bold ">{list.name}</h2>
-                      <h2 className=" font-bold ">{list.date}</h2>
-                    </div>
-                    <div className="flex justify-between">
-                      <h2 className=""> Age : {list.age} Month</h2>
-                    </div>
-                    <p className="">Location : {list.location}</p>
-                    <div className=" font-semibold text-xl mt-5 my-4">
-                      <div>
-                        <Link to={`/singlePage/${list._id}`}>
-                          <button className="  border-b-2 rounded-b-md border-0 ">
-                            View Details
-                          </button>
-                        </Link>
+              <Link key={list._id} to={`/singlePage/${list._id}`}>
+                <div className=" w-full ">
+                  <a
+                    href="#"
+                    className="w-full  h-60 group relative block bg-black"
+                  >
+                    <img
+                      alt="Something is wrong"
+                      src={list.img}
+                      className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+                    />
+
+                    <div className="relative p-4 sm:p-6 lg:p-8">
+                      <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
+                        {list.date}
+                      </p>
+
+                      <p className="text-xl font-bold text-white sm:text-2xl">
+                        {list.name}
+                      </p>
+
+                      <div className="mt-20">
+                        <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                          <p className="text-sm text-white">
+                            {list.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
-              </div>
+              </Link>
             ))}
       </div>
     </div>
