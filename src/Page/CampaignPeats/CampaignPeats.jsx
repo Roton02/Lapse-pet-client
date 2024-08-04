@@ -76,13 +76,12 @@ const CampaignPeats = () => {
           : // Render actual campaign data
             data?.pages.map((page, pageIndex) =>
               page.map((campaignItem) => (
-                <Link key={campaignItem._id} to={`/campaignDetails/${campaignItem._id}`}>
-                  <a  href="#" className="group relative block h-64 sm:h-80 lg:h-96">
-                  <span className="absolute inset-0 border-2 border-dashed border-black"></span>
-
-                  <div className="relative flex h-full transform items-end border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
+                <Link className="mt-5" key={campaignItem._id} to={`/campaignDetails/${campaignItem._id}`}>
+                  <a  href="#" className="group relative block h-[370px] md:h-96">
+                  <span className="absolute inset-0 border-2 border-dashed border-black dark:"></span>
+                  <div className="relative flex h-full transform items-end border-2 border-black  transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2">
                     <div className="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8">
-                      <img className="h-56 w-80" src={campaignItem.image} alt="" />
+                      <img className="h-56 w-80" src={campaignItem.image} alt="Something is wrong" />
 
                       <h2 className="mt-4 text-xl font-medium sm:text-2xl">
                         {campaignItem.name}
@@ -97,12 +96,12 @@ const CampaignPeats = () => {
                     <figure className="w-full bg-cover">
                       <img
                         src={campaignItem.image}
-                        alt="No uploaded any image"
+                        alt="Something is wrong this image"
                        className="h-64  w-full"
                       />
                     </figure>
 
-                      <p className="mt-4 text-sm sm:text-base">
+                      <p className="mt-4 text-sm ">
                         {campaignItem.sortDescription}
                       </p>
 
