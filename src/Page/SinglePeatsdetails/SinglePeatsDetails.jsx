@@ -95,9 +95,9 @@ const SinglePeatsDetails = () => {
 
                 <p className="py-2  text-lg font-anton "></p>
 
-                <h2 className="  text-lg font-anton ">
+                <p className=" font-semibold  ">
                   Location : {details.location}
-                </h2>
+                </p>
                 <p className="font-anton border-b-2 my-2">
                   {details.description}
                 </p>
