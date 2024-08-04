@@ -144,13 +144,28 @@ const CampaignPeats = () => {
             )}
       </div>
 
-      <div ref={ref}>
+      <div ref={ref} className="max-w-7xl mx-auto">
         {isFetchingNextPage &&
           // Render skeleton loaders while loading more data
           Array(3)
             .fill()
             .map((_, index) => (
-              <div key={index}>
+              <div
+                key={index}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between items-center"
+              >
+                <Skeleton
+                  width={300}
+                  height={10}
+                  count={5}
+                  style={{ marginBottom: "7px", color: "black" }}
+                />
+                <Skeleton
+                  width={300}
+                  height={10}
+                  count={5}
+                  style={{ marginBottom: "7px" }}
+                />
                 <Skeleton
                   width={300}
                   height={10}
