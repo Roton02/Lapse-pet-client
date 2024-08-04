@@ -1,14 +1,11 @@
-import {
-  FaFacebook,
-  FaTwitter,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { Link, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import { Helmet } from "react-helmet-async";
+import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
 const SinglePeatsDetails = () => {
   const params = useParams();
@@ -79,141 +76,175 @@ const SinglePeatsDetails = () => {
           <title>Lapse-Peat || Details</title>
           {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
         </Helmet>
-        <div className="max-w-7xl mx-auto mt-5 border-2 border-t-0">
-          <div className="flex ">
-            <div className="  w-2/3">
-              <div className="flex-1">
+        <div className="max-w-7xl mx-auto ">
+          <div className="flex md:flex-row flex-col">
+            <div className="md:w-2/3 md:p-6">
+              <div className="  flex-1">
                 <img
-                  className=" bg-black"
+                  className=" w-full "
                   src={details.img}
                   alt="Image Loading..............."
                 />
               </div>
               <div className="">
-                <div className="flex justify-between border-b-2    items-center">
-                  <h1 className="block  text-2xl font-anton font-bold text-gray-800  md:text-3xl lg:text-4xl dark:text-white">
-                    {details.name}
-                  </h1>
-                  <p className="mr-5 bg-pink-500 px-10   text-lg font-anton font-bold text-white dark:text-neutral-400">
-                    age : {details.age}
-                  </p>
-                </div>
+                <SectionTitle
+                  month={"month"}
+                  heading={details.name}
+                  subHeading={details.age}
+                ></SectionTitle>
 
-                <p className="py-2 border-b-2 text-lg font-anton text-gray-800 dark:text-neutral-400">
-                  Date : {details.date}
-                </p>
+                <p className="py-2  text-lg font-anton "></p>
 
-                <p className=" border-b-2 text-lg font-anton text-gray-800 dark:text-neutral-400">
+                <h2 className="  text-lg font-anton ">
                   Location : {details.location}
+                </h2>
+                <p className="font-anton border-b-2 my-2">
+                  {details.description}
                 </p>
-                <p className="font-anton border-b-2">{details.description}</p>
 
                 <div id="text"></div>
 
-                <div className="mt-3 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
-                  <button
-                    onClick={() =>
-                      document.getElementById("my_modal_5").showModal()
-                    }
-                    className="btn bg-[#ff4880]  text-white hover:text-black  btn-sm px-10 hover:bg-[#fff] "
-                  >
-                    Adopt
-                  </button>
-
-                  <dialog
-                    id="my_modal_5"
-                    className="modal modal-bottom sm:modal-middle"
-                  >
-                    <div className="modal-box relative">
-                      <form onSubmit={handleAdoptionREquest}>
-                        <div className="bg-slate-100 p-5">
-                          <h1 className="text-2xl underline font-anton text-center">
-                            Peat Information -{" "}
-                          </h1>
-                          <div className="flex my-4 justify-center gap-5 items-center">
-                            <div className="avatar">
-                              <div className="w-16 rounded">
-                                <img src={details.img} />
-                              </div>
-                            </div>
-                            <div className="text-xl font-anton">
-                              <p>{details.name}</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex gap-5">
-                          <div>
-                            <label htmlFor="FoodName"> Name</label> <br />
-                            <input
-                              name="name"
-                              type="text"
-                              required
-                              value={user?.displayName}
-                              placeholder="Write Food Name"
-                              className="input input-bordered w-full"
-                            />
-                          </div>
-                          <div>
-                            <label htmlFor="FoodName">Email</label> <br />
-                            <input
-                              name="image"
-                              type="text"
-                              required
-                              value={user?.email}
-                              placeholder="Write Valid URL"
-                              className="input input-bordered w-full"
-                            />
-                          </div>
-                        </div>
-                        <div className="">
-                          <div>
-                            <label htmlFor="Phone">Phone</label> <br />
-                            <input
-                              name="phone"
-                              type="number"
-                              required
-                              placeholder="write your Number"
-                              className="input input-bordered w-full"
-                            />
-                          </div>
-                          <div>
-                            <label htmlFor="expired">Address</label> <br />
-                            <input
-                              name="address"
-                              type="text"
-                              required
-                              placeholder="write Recived address"
-                              className="input input-bordered w-full"
-                            />
-                          </div>
-                        </div>
-
-                        <div className="flex justify-center my-5">
-                          <button
-                            type="submit"
-                            className="btn px-5 bg-[#ff4880] text-white hover:text-black"
-                          >
-                            submit
-                          </button>
-                        </div>
-                      </form>
-                      <div
-                        className="modal-action absolute
-                                  top-0 right-6
-                                  flex justify-center"
-                      >
-                        <form method="dialog">
-                          <button type="submit" className="btn ">
-                            X
-                          </button>
-                        </form>
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-3 w-full mt-6 sm:w-auto">
+                    <div className="avatar ">
+                      <div className="w-16 rounded-full">
+                        <img
+                          src={details?.addedPerson?.AddedPersonImage}
+                          alt=""
+                        />
                       </div>
                     </div>
-                  </dialog>
+                    <div className="">
+                      <h1 className="font-bold text-xl mt-5">
+                        {details?.addedPerson?.AddedPersonName}
+                      </h1>
+                      <p className="text-sm">{details.date}</p>
+                    </div>
+                  </div>
+                  <div className="mt-12 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
+                    <button
+                      onClick={() =>
+                        document.getElementById("my_modal_5").showModal()
+                      }
+                      className=""
+                    >
+                      <a
+                        href="#_"
+                        className="relative border-2 w-40 rounded-l-lg  inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-pink-500 transition duration-300 ease-out  border-pink-500 shadow-md group"
+                      >
+                        <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-pink-500 group-hover:translate-x-0 ease">
+                          <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                          </svg>
+                        </span>
+                        <span className="absolute flex items-center justify-center w-full h-full text-pink-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                          Adopt
+                        </span>
+                        <span className="relative invisible">Adopt</span>
+                      </a>
+                    </button>
+
+                    <dialog
+                      id="my_modal_5"
+                      className="modal modal-bottom sm:modal-middle"
+                    >
+                      <div className="modal-box relative">
+                        <form onSubmit={handleAdoptionREquest}>
+                          <div className="bg-slate-100 p-5">
+                            <h1 className="text-2xl underline font-anton text-center">
+                              Peat Information -{" "}
+                            </h1>
+                            <div className="flex my-4 justify-center gap-5 items-center">
+                              <div className="avatar">
+                                <div className="w-16 rounded">
+                                  <img src={details.img} />
+                                </div>
+                              </div>
+                              <div className="text-xl font-anton">
+                                <p>{details.name}</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex gap-5">
+                            <div>
+                              <label htmlFor="FoodName"> Name</label> <br />
+                              <input
+                                name="name"
+                                type="text"
+                                required
+                                value={user?.displayName}
+                                placeholder="Write Food Name"
+                                className="input input-bordered w-full"
+                              />
+                            </div>
+                            <div>
+                              <label htmlFor="FoodName">Email</label> <br />
+                              <input
+                                name="image"
+                                type="text"
+                                required
+                                value={user?.email}
+                                placeholder="Write Valid URL"
+                                className="input input-bordered w-full"
+                              />
+                            </div>
+                          </div>
+                          <div className="">
+                            <div>
+                              <label htmlFor="Phone">Phone</label> <br />
+                              <input
+                                name="phone"
+                                type="number"
+                                required
+                                placeholder="write your Number"
+                                className="input input-bordered w-full"
+                              />
+                            </div>
+                            <div>
+                              <label htmlFor="expired">Address</label> <br />
+                              <input
+                                name="address"
+                                type="text"
+                                required
+                                placeholder="write Recived address"
+                                className="input input-bordered w-full"
+                              />
+                            </div>
+                          </div>
+
+                          <div className="flex justify-center my-5">
+                            <button
+                              type="submit"
+                              className="btn px-5 bg-[#ff4880] text-white hover:text-black"
+                            >
+                              submit
+                            </button>
+                          </div>
+                        </form>
+                        <div
+                          className="modal-action absolute
+                                  top-0 right-6
+                                  flex justify-center"
+                        >
+                          <form method="dialog">
+                            <button type="submit" className="btn ">
+                              X
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </dialog>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="w-1/3">
+            <div className="md:w-1/3">
               <div className="p-2">
                 <div>
                   <h2 className="text-2xl font-semibold">Mine</h2>
@@ -313,8 +344,7 @@ const SinglePeatsDetails = () => {
                   <div className="bg-base-300 mt-4 p-4 space-y-3">
                     <h2 className="text-2xl font-semibold"> Q-Zone</h2>
                     <div className="grid grid-cols-1 gap-y-5">
-                    {
-                      listingData.slice(5,8).map((list) => (
+                      {listingData.slice(5, 8).map((list) => (
                         <Link key={list._id} to={`/singlePage/${list._id}`}>
                           <div className=" w-full ">
                             <a
@@ -330,11 +360,11 @@ const SinglePeatsDetails = () => {
                                 <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
                                   {list.date}
                                 </p>
-    
+
                                 <p className="text-xl font-bold text-white sm:text-2xl">
                                   {list.name}
                                 </p>
-    
+
                                 <div className="mt-20">
                                   <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
                                     <p className="text-sm text-white">
@@ -346,10 +376,8 @@ const SinglePeatsDetails = () => {
                             </a>
                           </div>
                         </Link>
-                        ))
-                    }
+                      ))}
                     </div>
-                    
                   </div>
                 </div>
                 <div className=" bg-[url('https://i.ibb.co/yyFpL27/dog-5482171-640.jpg')] text-white ">
