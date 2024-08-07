@@ -82,12 +82,16 @@ const AdminCampaign = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className=" mx-auto p-4">
       <Helmet>
         <title>Lapse-Peat || Admin Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <table className="min-w-full bg-white border border-gray-200">
+      <div className="my-10">
+        <h2 className="text-4xl text-center"> All Donation Campaign </h2>
+      </div>
+
+      <table className="mx-auto">
         <thead>
           <tr>
             <th className="py-2 px-4 border-b">Pet Name</th>
@@ -101,38 +105,51 @@ const AdminCampaign = () => {
         <tbody>
           {data.map((item, index) => (
             <tr key={index}>
-              <td className="py-2 px-4 border-b text-center">{item.name}</td>
-              <td className="py-2 px-4 border-b text-center">
+              <td className="py-2 px-4 border-b text-start">{item.name}</td>
+              <td className="py-2 px-4 border-b text-start">
                 <h2>{item.userName}</h2>
               </td>
-              <td className="py-2 px-4 border-b text-center">
+              <td className="py-2 px-4 border-b text-start">
                 <h2>{item.userEmail}</h2>
               </td>
-              <td className="py-2 px-4 border-b text-center">
+              <td className="py-2 px-4 border-b text-start">
                 {item.pause ? (
-                  <button
-                    onClick={() => handleUnPause(item._id)}
-                    className="bg-pink-500  text-white font-bold py-1 px-4 rounded"
-                  >
-                    unpaused
+                  <button onClick={() => handleUnPause(item._id)} className="">
+                   <a
+                      href="#_"
+                      className="relative px-5 py-2 font-medium text-white group"
+                    >
+                      <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-black group-hover:bg-black group-hover:skew-x-12"></span>
+                      <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-black group-hover:bg-black group-hover:-skew-x-12"></span>
+                      <span className="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-black -rotate-12"></span>
+                      <span className="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-black -rotate-12"></span>
+                      <span className="relative">Unpause</span>
+                    </a>
+                    
                   </button>
                 ) : (
-                  <button
-                    onClick={() => handlePause(item._id)}
-                    className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded"
-                  >
-                    Pause
+                  <button onClick={() => handlePause(item._id)} className="">
+                    <a
+                      href="#_"
+                      className="relative px-5 py-2 font-medium text-white group"
+                    >
+                      <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-purple-500 group-hover:bg-purple-700 group-hover:skew-x-12"></span>
+                      <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-purple-700 group-hover:bg-purple-500 group-hover:-skew-x-12"></span>
+                      <span className="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-purple-600 -rotate-12"></span>
+                      <span className="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-purple-400 -rotate-12"></span>
+                      <span className="relative">Pause</span>
+                    </a>
                   </button>
                 )}
               </td>
-              <td className="py-2 px-4 border-b text-center">
+              <td className="py-2 px-4 border-b text-start">
                 <Link to={`updateCampaignByAdmin/${item._id}`}>
                   <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
                     Edit
                   </button>
                 </Link>
               </td>
-              <td className="py-2 px-1 border-b text-center">
+              <td className="py-2 px-1 border-b text-start">
                 {/* You can open the modal using document.getElementById('ID').showModal() method */}
                 <button
                   onClick={() => handleDelete(item._id)}

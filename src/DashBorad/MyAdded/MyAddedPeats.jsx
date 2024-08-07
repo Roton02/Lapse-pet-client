@@ -167,8 +167,11 @@ const MyAddedPets = () => {
         <title>Lapse-Peat || My Added Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <h1 className="text-2xl font-bold mb-4">My Added Pets</h1>
-      <table className="min-w-full bg-white border border-gray-300">
+      <div className="my-10">
+        <h2 className="text-4xl text-center">My Added Pets</h2>
+      </div>
+
+      <table className="mx-auto">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr

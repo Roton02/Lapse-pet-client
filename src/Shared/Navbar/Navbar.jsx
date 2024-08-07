@@ -218,7 +218,7 @@ const Navbar = () => {
                         <span className="relative invisible">Profile</span>
                       </a>
                     </Link>
-                    <Link to="/dashBoard">
+                    <Link to="/dashboard/addPet">
                       <a
                         href="#_"
                         className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -449,7 +449,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <NavLink
-                      to="/dashBoard"
+                      to="/dashboard/addPet"
                       className="btn btn-sm btn-ghost border-2  border-gray-300 hover:bg-black hover:text-white"
                     >
                       DashBoard

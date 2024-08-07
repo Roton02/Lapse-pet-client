@@ -11,6 +11,7 @@ import "react-quill/dist/quill.snow.css";
 import { Helmet } from "react-helmet-async";
 
 const AddPets = () => {
+  // localStorage.setItem("theme",  "dark" );
   const [content, setContent] = useState('');
   const axiosSecure = useAxiosSecure();
   const { register, handleSubmit, setValue, formState: { errors } } = useForm();

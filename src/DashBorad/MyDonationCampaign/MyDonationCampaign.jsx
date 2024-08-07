@@ -42,12 +42,15 @@ const MyDonationCampaign = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className=" mx-auto p-4">
        <Helmet>
         <title>Lapse-Peat || My Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <table className="min-w-full bg-white border border-gray-200">
+      <div className="my-10">
+        <h2 className="text-4xl text-center">My Donation Campaign</h2>
+      </div>
+      <table className="mx-auto">
         <thead>
           <tr>
             <th className="py-2 px-4 border-b">Pet Name</th>

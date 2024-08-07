@@ -18,13 +18,22 @@ const UpdatePets = () => {
   const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
-    axiosSecure(`https://lapsepets.vercel.app/myAdded/?id=${params.id}`).then((res) => {
-      setPrevData(res.data[0]);
-    });
+    axiosSecure(`https://lapsepets.vercel.app/myAdded/?id=${params.id}`).then(
+      (res) => {
+        setPrevData(res.data[0]);
+      }
+    );
   }, [axiosSecure, params.id]);
 
-  const { _id, name, age, type, img, description, description2, location } = prevData || {};
-  const { register, reset, handleSubmit, formState: { errors }, control } = useForm();
+  const { _id, name, age, type, img, description, description2, location } =
+    prevData || {};
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors },
+    control,
+  } = useForm();
   const { user } = useAuth();
   const [selectedOption, setSelectedOption] = useState(type);
 
@@ -35,7 +44,7 @@ const UpdatePets = () => {
       type,
       location,
       note1: description,
-      note2: description2
+      note2: description2,
     });
   }, [reset, name, age, type, location, description, description2]);
 
@@ -90,19 +99,18 @@ const UpdatePets = () => {
         <title>Lapse-Peat || Update My Added Peats</title>
       </Helmet>
       <div className="relative">
-        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div className="max-w-[85rem] mt-14 lg:mt-0  px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="lg:max-w-lg lg:mx-auto ms-auto">
-                <div className="p-4 sm:p-7 flex flex-col bg-white rounded-2xl shadow-lg dark:bg-neutral-900">
+                <div className="p-4 sm:p-7 flex flex-col rounded-2xl ">
                   <div className="text-center">
-                    <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">Update peats</h1>
+                    <h1 className="block underline text-4xl font-bold ">
+                      Update peats
+                    </h1>
                   </div>
 
                   <div className="mt-5">
-                    <div className="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-700 dark:after:border-neutral-700">
-                      <BiVerticalBottom />
-                    </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="form-control">
                         <label className="label">
@@ -116,7 +124,9 @@ const UpdatePets = () => {
                           placeholder="Name"
                           className="input input-bordered"
                         />
-                        {errors.name && <span className="text-red-600">Name is required</span>}
+                        {errors.name && (
+                          <span className="text-red-600">Name is required</span>
+                        )}
                       </div>
                       <div className="form-control">
                         <label className="label">
@@ -130,7 +140,9 @@ const UpdatePets = () => {
                           placeholder="peat age"
                           className="input input-bordered"
                         />
-                        {errors.age && <span className="text-red-600">Age is required</span>}
+                        {errors.age && (
+                          <span className="text-red-600">Age is required</span>
+                        )}
                       </div>
                       <div className="form-control">
                         <label className="label">
@@ -143,7 +155,11 @@ const UpdatePets = () => {
                           placeholder="Photo"
                           className="input"
                         />
-                        {errors.photo && <span className="text-red-600">Image is required</span>}
+                        {errors.photo && (
+                          <span className="text-red-600">
+                            Image is required
+                          </span>
+                        )}
                       </div>
                       <div className="form-control">
                         <label className="label">
@@ -156,7 +172,12 @@ const UpdatePets = () => {
                           render={({ field }) => (
                             <Select
                               {...field}
-                              value={options.find(option => option.value === field.value) || options.find(option => option.value === type)}
+                              value={
+                                options.find(
+                                  (option) => option.value === field.value
+                                ) ||
+                                options.find((option) => option.value === type)
+                              }
                               onChange={(val) => {
                                 field.onChange(val.value);
                                 handleChange(val);
@@ -180,7 +201,11 @@ const UpdatePets = () => {
                         placeholder="write receiver location"
                         className="input input-bordered"
                       />
-                      {errors.location && <span className="text-red-600">Location is required</span>}
+                      {errors.location && (
+                        <span className="text-red-600">
+                          Location is required
+                        </span>
+                      )}
                     </div>
                     <div className="form-control">
                       <label className="label">
@@ -194,7 +219,9 @@ const UpdatePets = () => {
                         placeholder="Note About Peat"
                         className="input input-bordered"
                       />
-                      {errors.note1 && <span className="text-red-600">Note is required</span>}
+                      {errors.note1 && (
+                        <span className="text-red-600">Note is required</span>
+                      )}
                     </div>
                     <div className="form-control">
                       <label className="label">
@@ -214,15 +241,27 @@ const UpdatePets = () => {
                           />
                         )}
                       />
-                      {errors.note2 && <span className="text-red-600">Description is required</span>}
+                      {errors.note2 && (
+                        <span className="text-red-600">
+                          Description is required
+                        </span>
+                      )}
                     </div>
                     <div className="mt-5 flex justify-center">
-                      <button
-                        type="submit"
-                        className="rounded-md w-1/3 btn overflow-hidden relative group cursor-pointer border-2 font-medium border-[#ff4880] text-[#1e847f] hover:text-white"
-                      >
-                        <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-[#ff4880] top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-                        <span className="relative my-auto text-[#ff4880] transition duration-300 group-hover:text-white ease">Update</span>
+                      <button type="submit" className=" ">
+                        <a
+                          href="#_"
+                          className="relative px-9 py-3 overflow-hidden font-medium text-black bg-pink-500  border border-gray-100  shadow-inner group"
+                        >
+                          <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
+                          <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
+                          <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+                          <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+                          <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
+                          <span className="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
+                           Update
+                          </span>
+                        </a>
                       </button>
                     </div>
                   </div>

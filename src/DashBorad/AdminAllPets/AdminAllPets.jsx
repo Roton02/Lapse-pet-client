@@ -197,23 +197,23 @@ const AdminAllPets = () => {
   }, [pets, pageIndex, pageSize]);
 
   return (
-    <div className="container mx-auto p-4 ">
+    <div className="max-w-7xl mx-auto p-4 ">
       <Helmet>
         <title>Lapse-Peat || Admin All Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <h1 className="text-4xl text-center font-bold mb-4">All Pets</h1>
-      <table className="min-w-full  bg-white border border-gray-300">
+      <h1 className="text-4xl text-center font-bold mt-5  lg:mt-0 mb-4">All Pets</h1>
+      <table className=" mx-auto">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr
               key={headerGroup.id}
-              className="bg-gray-100 border-b border-gray-300"
+              className=" border-b border-gray-300"
             >
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="p-4 text-left text-sm font-medium text-gray-700"
+                  className="p-4 text-left text-sm font-medium"
                 >
                   {header.isPlaceholder ? null : (
                     <div>
@@ -231,19 +231,19 @@ const AdminAllPets = () => {
         <tbody>
           {paginatedData.map((row, i) => (
             <tr key={row._id} className="border-b border-gray-300">
-              <td className="p-4 text-sm text-gray-700">
+              <td className="p-4 text-sm ">
                 {i + 1 + pageIndex * pageSize}
               </td>
-              <td className="p-4 text-sm text-gray-700">
+              <td className="p-4 text-sm ">
                 <img
                   src={row.img}
                   alt="Pet"
                   className="w-12 h-12 object-cover"
                 />
               </td>
-              <td className="p-4 text-sm text-gray-700">{row.name}</td>
-              <td className="p-4 text-sm text-gray-700">{row.type}</td>
-              <td className="p-4 text-sm text-gray-700">
+              <td className="p-4 text-sm ">{row.name}</td>
+              <td className="p-4 text-sm ">{row.type}</td>
+              <td className="p-4 text-sm ">
                 {row.adopted ? (
                   <button disabled className="bg-green-300 px-1">
                     AllReady Adopted
@@ -255,7 +255,7 @@ const AdminAllPets = () => {
                   </button>
                 )}
               </td>
-              <td className="p-4 text-sm text-gray-700">
+              <td className="p-4 text-sm ">
                 <div className="space-x-2">
                   <Link to={`updatepets/${row._id}`}>
                     <button className="bg-blue-500 text-white px-2 py-1 rounded">
@@ -270,7 +270,7 @@ const AdminAllPets = () => {
                   </button>
                 </div>
               </td>
-              <td className="p-4 text-sm text-gray-700">
+              <td className="p-4 text-sm ">
                 <div className="space-x-2">
                   <button
                     onClick={() => handleChangeStatusByNotAdopted(row._id)}
@@ -292,20 +292,20 @@ const AdminAllPets = () => {
         </tbody>
       </table>
       {table.getPageCount() > 1 && (
-        <div className="flex justify-between items-center mt-4">
+        <div className="flex justify-between px-10 items-center mt-4">
           <button
-            className="px-4 py-2 bg-gray-200 text-gray-700 rounded"
+            className="px-4 py-2 bg-gray-200  rounded"
             onClick={() => table.setPageIndex(pageIndex - 1)}
             disabled={!table.getCanPreviousPage()}
           >
             Previous
           </button>
-          <span className="text-sm text-gray-700">
+          <span className="text-sm ">
             Page {table.getState().pagination.pageIndex + 1} of{" "}
             {table.getPageCount()}
           </span>
           <button
-            className="px-4 py-2 bg-gray-200 text-gray-700 rounded"
+            className="px-4 py-2 bg-gray-200  rounded"
             onClick={() => table.setPageIndex(pageIndex + 1)}
             disabled={!table.getCanNextPage()}
           >

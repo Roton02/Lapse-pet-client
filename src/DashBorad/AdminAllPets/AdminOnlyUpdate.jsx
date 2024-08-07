@@ -78,22 +78,20 @@ const AdminOnlyUpdate = () => {
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <div className="relative">
-        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div className="max-w-[85rem] mt-12 lg:mt-0 px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <div className="">
             <div>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="lg:max-w-lg lg:mx-auto ms-auto">
-                  <div className="p-4 sm:p-7 flex flex-col bg-white rounded-2xl shadow-lg dark:bg-neutral-900">
+                  <div className="p-4 sm:p-7 flex flex-col  rounded-2xl ">
                     <div className="text-center">
-                      <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
+                      <h1 className="block text-2xl font-bold ">
                         Update peats By Admin
                       </h1>
                     </div>
 
                     <div className="mt-5">
-                      <div className="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-700 dark:after:border-neutral-700">
-                        <BiVerticalBottom />
-                      </div>
+                      
                       <div className="grid grid-cols-2 gap-4">
                         <div className="form-control">
                           <label className="label">
@@ -215,12 +213,21 @@ const AdminOnlyUpdate = () => {
                         <button
                           type="submit"
                           value={""}
-                          className="rounded-md w-1/3  btn  overflow-hidden relative group cursor-pointer border-2  font-medium border-[#ff4880] text-[#1e847f]hover:text-white"
+                          className=""
                         >
-                          <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-[#ff4880] top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-                          <span className="relative my-auto  text-[#ff4880] transition duration-300 group-hover:text-white ease">
-                            Update
+                                                  <a
+                          href="#_"
+                          className="relative px-9 py-3 overflow-hidden font-medium text-black bg-pink-500  border border-gray-100  shadow-inner group"
+                        >
+                          <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
+                          <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
+                          <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+                          <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+                          <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
+                          <span className="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
+                           Update
                           </span>
+                        </a>
                         </button>
                       </div>
                     </div>

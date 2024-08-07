@@ -59,7 +59,10 @@ const CreateCampaign = () => {
         <title>Lapse-Peat || Create Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <section className="max-w-3xl p-6 mx-auto bg-white rounded-md shadow-l-md dark:bg-gray-800">
+      <div className="my-10">
+        <h2 className="text-4xl text-center">Create your Donation Campaign</h2>
+      </div>
+      <section className="max-w-3xl p-6 mx-auto bg-white dark:bg-gray-800">
         <h2
           className="text-lg text-center border-b-2 pb-5 font-semibold text-gray-700 capitalize 
     dark:text-white"

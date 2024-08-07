@@ -58,9 +58,12 @@ const AdoptionRequest = () => {
         <title>Lapse-Peat || Adoption Request</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <section className="container px-4 mx-auto">
+      <div className="my-10">
+        <h2 className="text-4xl text-center">All Requsted Pets</h2>
+      </div>
+      <section className=" px-4 mx-auto">
         <div className="flex items-center gap-x-3">
-          <h2 className="text-lg font-medium text-gray-800 dark:text-white">
+          <h2 className="text-lg font-medium ">
             Requester Details{" "}
           </h2>
 
@@ -69,16 +72,16 @@ const AdoptionRequest = () => {
           </span>
         </div>
 
-        <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800 dark:border-neutral-700">
+        <div className="overflow-hidden ">
           <table className="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
-            <thead className="bg-gray-50 dark:bg-neutral-800">
+            <thead className="">
               <tr>
                 <th
                   scope="col"
                   className="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start"
                 >
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs ml-6 font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                    <span className="text-xs ml-6 font-semibold uppercase tracking-wide ">
                       No
                     </span>
                   </div>
@@ -88,7 +91,7 @@ const AdoptionRequest = () => {
                   className="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start"
                 >
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs ml-6 font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                    <span className="text-xs ml-6 font-semibold uppercase tracking-wide ">
                       Name
                     </span>
                   </div>
@@ -98,7 +101,7 @@ const AdoptionRequest = () => {
                   className="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start"
                 >
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs ml-6 font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                    <span className="text-xs ml-6 font-semibold uppercase tracking-wide ">
                       Email
                     </span>
                   </div>
@@ -106,21 +109,21 @@ const AdoptionRequest = () => {
 
                 <th scope="col" className="px-3 py-3 text-start">
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                    <span className="text-xs font-semibold uppercase tracking-wide ">
                       Phone
                     </span>
                   </div>
                 </th>
                 <th scope="col" className="px-3 py-3 text-start">
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                    <span className="text-xs font-semibold uppercase tracking-wide ">
                       Location
                     </span>
                   </div>
                 </th>
                 <th scope="col" className="px-3 py-3 text-start">
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                    <span className="text-xs font-semibold uppercase tracking-wide ">
                       Action
                     </span>
                   </div>
@@ -137,7 +140,7 @@ const AdoptionRequest = () => {
                     <div className="ps-6 lg:ps-3 xl:ps-0 px-6 pe-6 py-3">
                       <div className="flex items-center  gap-x-3">
                         <div>
-                          <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                          <span className="block text-sm font-semibold ">
                             {manage.RequesterName}
                           </span>
                         </div>
@@ -146,7 +149,7 @@ const AdoptionRequest = () => {
                   </td>
                   <td className="h-px w-72 whitespace-nowrap">
                     <div className="pl-6 py-3">
-                      <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                      <span className="block text-sm font-semibold ">
                         {manage.RequesterEmail}
                       </span>
                     </div>
