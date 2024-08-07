@@ -25,10 +25,10 @@ const Dashboard = () => {
     setIsOpen(!isOpen);
   };
 
-  localStorage.setItem("theme",  "light" );
+  localStorage.setItem("theme", "light");
 
   return (
-    <div className="   bg-gradient-to-bl from-pink-300  via-transparent ">
+    <div className=" w-screen  bg-gradient-to-bl from-pink-300  via-transparent ">
       <div className="flex max-w-screen-xl mx-auto ">
         {/* dashboard side bar */}
         <div className="absolute block md:block lg:hidden">
@@ -69,7 +69,7 @@ const Dashboard = () => {
               >
                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
               </svg>
-             {  } Admin Panel
+              {} Admin Panel
             </h5>
             <button
               type="button"
@@ -230,7 +230,9 @@ const Dashboard = () => {
                         <FaAdn></FaAdn>
                         Adoption Request
                       </span>
-                      <span className="relative invisible">Adoption Request</span>
+                      <span className="relative invisible">
+                        Adoption Request
+                      </span>
                     </a>
                   </NavLink>
                   <NavLink to="/dashboard/CreateCampaign">
@@ -276,11 +278,12 @@ const Dashboard = () => {
                         </svg>
                       </span>
                       <span className="absolute gap-2 flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
-                      
-                    <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
-                    My Donation Campaigns
+                        <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
+                        My Donation Campaigns
                       </span>
-                      <span className="relative invisible">My Donation Campaigns</span>
+                      <span className="relative invisible">
+                        My Donation Campaigns
+                      </span>
                     </a>
                   </NavLink>
                   <NavLink to="/dashboard/myDonation">
@@ -300,10 +303,8 @@ const Dashboard = () => {
                         </svg>
                       </span>
                       <span className="absolute gap-2 flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
-                      
-                      
-                    <FaList></FaList>
-                    My Donations
+                        <FaList></FaList>
+                        My Donations
                       </span>
                       <span className="relative invisible">My Donations</span>
                     </a>
@@ -354,7 +355,7 @@ const Dashboard = () => {
                         <FaCalendar></FaCalendar>
                         My added pets
                       </span>
-                      <span className="relative invisible">All Pets</span>
+                      <span className="relative invisible">My added pets</span>
                     </a>
                   </NavLink>
                   <NavLink to="/dashboard/adoptionRequest">
@@ -377,7 +378,9 @@ const Dashboard = () => {
                         <FaAdn></FaAdn>
                         Adoption Request
                       </span>
-                      <span className="relative invisible">Adoption Request</span>
+                      <span className="relative invisible">
+                        Adoption Request
+                      </span>
                     </a>
                   </NavLink>
                   <NavLink to="/dashboard/CreateCampaign">
@@ -423,11 +426,12 @@ const Dashboard = () => {
                         </svg>
                       </span>
                       <span className="absolute gap-2 flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
-                      
-                    <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
-                    My Donation Campaigns
+                        <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
+                        My Donation Campaigns
                       </span>
-                      <span className="relative invisible">My Donation Campaigns</span>
+                      <span className="relative invisible">
+                        My Donation Campaigns
+                      </span>
                     </a>
                   </NavLink>
                   <NavLink to="/dashboard/myDonation">
@@ -447,10 +451,8 @@ const Dashboard = () => {
                         </svg>
                       </span>
                       <span className="absolute gap-2 flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
-                      
-                      
-                    <FaList></FaList>
-                    My Donations
+                        <FaList></FaList>
+                        My Donations
                       </span>
                       <span className="relative invisible">My Donations</span>
                     </a>
@@ -459,221 +461,221 @@ const Dashboard = () => {
               )}
               <hr />
               <Link to="/">
-                  <a
-                    href="#_"
-                    className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
-                  >
-                    <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                      </svg>
-                    </span>
-                    <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
-                      Home
-                    </span>
-                    <span className="relative invisible">Home</span>
-                  </a>
-                </Link>
-                <Link to="/listing">
-                  <a
-                    href="#_"
-                    className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
-                  >
-                    <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                      </svg>
-                    </span>
-                    <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
-                      Pet Listing
-                    </span>
-                    <span className="relative invisible">Pet Listing</span>
-                  </a>
-                </Link>
-                <Link to="/campaign">
-                  <a
-                    href="#_"
-                    className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
-                  >
-                    <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                      </svg>
-                    </span>
-                    <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
-                      Donation Campaigns
-                    </span>
-                    <span className="relative invisible">
-                      Donation Campaigns
-                    </span>
-                  </a>
-                </Link>
-                <Link to="/contract">
-                  <a
-                    href="#_"
-                    className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
-                  >
-                    <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                      </svg>
-                    </span>
-                    <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
-                      Contract
-                    </span>
-                    <span className="relative invisible">contract</span>
-                  </a>
-                </Link>
+                <a
+                  href="#_"
+                  className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
+                >
+                  <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </span>
+                  <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                    Home
+                  </span>
+                  <span className="relative invisible">Home</span>
+                </a>
+              </Link>
+              <Link to="/listing">
+                <a
+                  href="#_"
+                  className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
+                >
+                  <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </span>
+                  <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                    Pet Listing
+                  </span>
+                  <span className="relative invisible">Pet Listing</span>
+                </a>
+              </Link>
+              <Link to="/campaign">
+                <a
+                  href="#_"
+                  className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
+                >
+                  <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </span>
+                  <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                    Donation Campaigns
+                  </span>
+                  <span className="relative invisible">Donation Campaigns</span>
+                </a>
+              </Link>
+              <Link to="/contract">
+                <a
+                  href="#_"
+                  className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
+                >
+                  <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </span>
+                  <span className="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">
+                    Contract
+                  </span>
+                  <span className="relative invisible">contract</span>
+                </a>
+              </Link>
             </div>
           </div>
         </div>
-        <div className="hidden lg:block w-64 min-h-screen bg-[#ff4880]">
-          <ul className="menu p-4">
-            {isAdmin ? (
-              <>
-                <li>
-                  <Link to="/dashboard/users">
-                    <FaUsers></FaUsers>
-                    All Users
-                  </Link>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/fets">
-                    <FaList></FaList>
-                    All Pets
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/admin/AllDonation">
-                    <FaList></FaList>
-                    All Donation
-                  </NavLink>
-                </li>
-                <hr />
-                <li>
-                  <NavLink to="/dashboard/addPet">
-                    <FaAd></FaAd>
-                    Add a pet
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/myAddedPeats">
-                    <FaCalendar></FaCalendar>
-                    My added pets
-                  </NavLink>
-                </li>
+        <div className="hidden lg:block   bg-[#ff4880]">
+          <div className="w-64 min-h-screen">
+            <ul className="menu p-4">
+              {isAdmin ? (
+                <>
+                  <li>
+                    <Link to="/dashboard/users">
+                      <FaUsers></FaUsers>
+                      All Users
+                    </Link>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/fets">
+                      <FaList></FaList>
+                      All Pets
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/admin/AllDonation">
+                      <FaList></FaList>
+                      All Donation
+                    </NavLink>
+                  </li>
+                  <hr />
+                  <li>
+                    <NavLink to="/dashboard/addPet">
+                      <FaAd></FaAd>
+                      Add a pet
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/myAddedPeats">
+                      <FaCalendar></FaCalendar>
+                      My added pets
+                    </NavLink>
+                  </li>
 
-                <li>
-                  <NavLink to="/dashboard/adoptionRequest">
-                    <FaAdn></FaAdn>
-                    Adoption Request
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/CreateCampaign">
-                    <FaCreativeCommons></FaCreativeCommons>
-                    Create Donation Campaign
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/myDonationCampaign">
-                    <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
-                    My Donation Campaigns
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/myDonation">
-                    <FaList></FaList>
-                    My Donations
-                  </NavLink>
-                </li>
-              </>
-            ) : (
-              <>
-                <li>
-                  <NavLink to="/dashboard/addPet">
-                    <FaAd></FaAd>
-                    Add a pet
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/myAddedPeats">
-                    <FaCalendar></FaCalendar>
-                    My added pets
-                  </NavLink>
-                </li>
+                  <li>
+                    <NavLink to="/dashboard/adoptionRequest">
+                      <FaAdn></FaAdn>
+                      Adoption Request
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/CreateCampaign">
+                      <FaCreativeCommons></FaCreativeCommons>
+                      Create Donation Campaign
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/myDonationCampaign">
+                      <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
+                      My Donation Campaigns
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/myDonation">
+                      <FaList></FaList>
+                      My Donations
+                    </NavLink>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <NavLink to="/dashboard/addPet">
+                      <FaAd></FaAd>
+                      Add a pet
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/myAddedPeats">
+                      <FaCalendar></FaCalendar>
+                      My added pets
+                    </NavLink>
+                  </li>
 
-                <li>
-                  <NavLink to="/dashboard/adoptionRequest">
-                    <FaAdn></FaAdn>
-                    Adoption Request
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/CreateCampaign">
-                    <FaCreativeCommons></FaCreativeCommons>
-                    Create Donation Campaign
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/myDonationCampaign">
-                    <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
-                    My Donation Campaigns
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/myDonation">
-                    <FaList></FaList>
-                    My Donations
-                  </NavLink>
-                </li>
-              </>
-            )}
-            {/* shared nav links */}
-            <div className="divider"></div>
-            <li>
-              <NavLink to="/">
-                <FaHome></FaHome>
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/listing">
-                <FaSearch></FaSearch>
-                Pet Listing
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/campaign">
-                <FaCampground></FaCampground>
-                Donation Campaign
-              </NavLink>
-            </li>
-          </ul>
+                  <li>
+                    <NavLink to="/dashboard/adoptionRequest">
+                      <FaAdn></FaAdn>
+                      Adoption Request
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/CreateCampaign">
+                      <FaCreativeCommons></FaCreativeCommons>
+                      Create Donation Campaign
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/myDonationCampaign">
+                      <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
+                      My Donation Campaigns
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/myDonation">
+                      <FaList></FaList>
+                      My Donations
+                    </NavLink>
+                  </li>
+                </>
+              )}
+              {/* shared nav links */}
+              <div className="divider"></div>
+              <li>
+                <NavLink to="/">
+                  <FaHome></FaHome>
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/listing">
+                  <FaSearch></FaSearch>
+                  Pet Listing
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/campaign">
+                  <FaCampground></FaCampground>
+                  Donation Campaign
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </div>
         {/* dashboard content */}
         <div className="flex-1  lg:p-8">
