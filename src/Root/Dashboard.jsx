@@ -5,7 +5,6 @@ import {
   FaCampground,
   FaCanadianMapleLeaf,
   FaCreativeCommons,
-  FaEnvelope,
   FaHome,
   FaList,
   FaSearch,
@@ -25,11 +24,11 @@ const Dashboard = () => {
     setIsOpen(!isOpen);
   };
 
-  localStorage.setItem("theme", "light");
+  localStorage.setItem("theme", "dark");
 
   return (
-    <div className=" w-screen  bg-gradient-to-bl from-pink-300  via-transparent ">
-      <div className="flex max-w-screen-xl mx-auto ">
+    <div className="   ">
+      <div className="flex max-w-screen-xl lg:w-full mx-auto ">
         {/* dashboard side bar */}
         <div className="absolute block md:block lg:hidden">
           <div className="text-center">
@@ -678,7 +677,7 @@ const Dashboard = () => {
           </div>
         </div>
         {/* dashboard content */}
-        <div className="flex-1  lg:p-8">
+        <div className="flex-1  lg:p-8 bg-gradient-to-bl from-pink-300  via-transparent  ">
           <Outlet></Outlet>
         </div>
       </div>

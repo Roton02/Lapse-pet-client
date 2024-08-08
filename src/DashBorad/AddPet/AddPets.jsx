@@ -92,14 +92,14 @@ console.log(petDetails);
         <title>Lapse-Peat || Add Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         <div className="relative">
           <div className="max-w-4xl mx-auto p-8 rounded-lg ">
             <div className="text-center">
-              <h1 className="text-3xl font-extrabold text-gray-900 mb-4">
+              <h1 className="text-3xl font-extrabold mb-4">
                 Add A New Pet
               </h1>
-              <p className="text-gray-600">
+              <p className="">
                 Fill in the details below to add a new pet for adoption.
               </p>
             </div>

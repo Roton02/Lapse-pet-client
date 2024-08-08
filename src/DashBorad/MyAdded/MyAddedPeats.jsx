@@ -163,7 +163,7 @@ const MyAddedPets = () => {
 
   return (
     <div className="container mx-auto p-4 ">
-       <Helmet>
+      <Helmet>
         <title>Lapse-Peat || My Added Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
@@ -181,7 +181,7 @@ const MyAddedPets = () => {
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="p-4 text-left text-sm font-medium text-gray-700 cursor-pointer"
+                  className="p-4 text-left text-sm font-medium  cursor-pointer"
                   onClick={header.column.getToggleSortingHandler()}
                 >
                   {header.isPlaceholder ? null : (
@@ -204,19 +204,19 @@ const MyAddedPets = () => {
         <tbody>
           {paginatedData.map((row, i) => (
             <tr key={row._id} className="border-b border-gray-300">
-              <td className="p-4 text-sm text-gray-700">
+              <td className="p-4 text-sm ">
                 {i + 1 + pageIndex * pageSize}
               </td>
-              <td className="p-4 text-sm text-gray-700">
+              <td className="p-4 text-sm ">
                 <img
                   src={row.img}
                   alt="Pet"
                   className="w-12 h-12 object-cover"
                 />
               </td>
-              <td className="p-4 text-sm text-gray-700">{row.name}</td>
-              <td className="p-4 text-sm text-gray-700">{row.type}</td>
-              <td className="p-4 text-sm text-gray-700">
+              <td className="p-4 text-sm ">{row.name}</td>
+              <td className="p-4 text-sm ">{row.type}</td>
+              <td className="p-4 text-sm ">
                 {row.adopted ? (
                   <button disabled className="bg-green-300 px-1">
                     Adopted
@@ -228,8 +228,8 @@ const MyAddedPets = () => {
                   </button>
                 )}
               </td>
-              <td className="p-4 text-sm text-gray-700">
-                <div className="space-x-2">
+              <td className="p-4 text-sm ">
+                <div className="space-x-2 flex ">
                   <Link to={`updatepets/${row._id}`}>
                     <button className="bg-blue-500 text-white px-2 py-1 rounded">
                       Update
@@ -265,18 +265,18 @@ const MyAddedPets = () => {
       {table.getPageCount() > 1 && (
         <div className="flex justify-between items-center mt-4">
           <button
-            className="px-4 py-2 bg-gray-200 text-gray-700 rounded"
+            className="px-4 py-2 bg-gray-200  rounded"
             onClick={() => table.setPageIndex(pageIndex - 1)}
             disabled={!table.getCanPreviousPage()}
           >
             Previous
           </button>
-          <span className="text-sm text-gray-700">
+          <span className="text-sm ">
             Page {table.getState().pagination.pageIndex + 1} of{" "}
             {table.getPageCount()}
           </span>
           <button
-            className="px-4 py-2 bg-gray-200 text-gray-700 rounded"
+            className="px-4 py-2 bg-gray-200  rounded"
             onClick={() => table.setPageIndex(pageIndex + 1)}
             disabled={!table.getCanNextPage()}
           >

@@ -203,7 +203,7 @@ const AdminAllPets = () => {
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <h1 className="text-4xl text-center font-bold mt-5  lg:mt-0 mb-4">All Pets</h1>
-      <table className=" mx-auto">
+      <table className="table max-w-5xl mx-auto">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr
@@ -245,11 +245,11 @@ const AdminAllPets = () => {
               <td className="p-4 text-sm ">{row.type}</td>
               <td className="p-4 text-sm ">
                 {row.adopted ? (
-                  <button disabled className="bg-green-300 px-1">
+                  <button disabled className="bg-green-300 px-1 block">
                     AllReady Adopted
                   </button>
                 ) : (
-                  <button disabled className="to-blue-300 px-1">
+                  <button disabled className="to-blue-300 btn-block px-1">
                     {" "}
                     Not Adopted
                   </button>
@@ -271,17 +271,17 @@ const AdminAllPets = () => {
                 </div>
               </td>
               <td className="p-4 text-sm ">
-                <div className="space-x-2">
+                <div className="space-x-2 ">
                   <button
                     onClick={() => handleChangeStatusByNotAdopted(row._id)}
-                    className="bg-emerald-950 text-white px-2 py-1 rounded"
+                    className="block bg-emerald-950 text-white px-2 py-1 rounded"
                   >
                     Not Adopted
                   </button>
 
                   <button
                     onClick={() => handleChangeStatusByAdopted(row._id)}
-                    className="bg-green-500 text-white px-2 py-1 rounded"
+                    className=" block bg-green-500 text-white px-2 py-1 rounded"
                   >
                     Adopted
                   </button>
