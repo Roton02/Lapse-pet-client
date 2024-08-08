@@ -224,7 +224,7 @@ const MyAddedPets = () => {
                 ) : (
                   <button disabled className="to-blue-300 px-1">
                     {" "}
-                    Not Adopted
+                    Not{`'`}Adopted
                   </button>
                 )}
               </td>

@@ -53,12 +53,12 @@ const MyDonationCampaign = () => {
       <table className="mx-auto">
         <thead>
           <tr>
-            <th className="py-2 px-4 border-b">Pet Name</th>
-            <th className="py-2 px-4 border-b">Maximum Donation</th>
+            <th className="py-2 px-4 border-b">Pet{`'`}Name</th>
+            <th className="py-2 px-4 border-b">Maximum{`'`}Donation</th>
             <th className="py-2 px-4 border-b">Donated</th>
             <th className="py-2 px-4 border-b">Pause</th>
             <th className="py-2 px-4 border-b">Edit</th>
-            <th className="py-2 px-4 border-b">View Donators</th>
+            <th className="py-2 px-4 border-b">View{`'`}Donators</th>
           </tr>
         </thead>
         <tbody>
@@ -100,7 +100,7 @@ const MyDonationCampaign = () => {
                   className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
                   onClick={() => document.getElementById(`my_modal_${index}`).showModal()}
                 >
-                  View Donators
+                  View{`'`}Donators
                 </button>
                 <dialog id={`my_modal_${index}`} className="modal">
                   <div className="modal-box">
