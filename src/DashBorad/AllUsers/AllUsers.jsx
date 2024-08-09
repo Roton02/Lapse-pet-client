@@ -102,7 +102,7 @@ const AllUsers = () => {
                       onClick={() => handleMakeAdmin(user)}
                       className="btn  bg-pink-600"
                     >
-                      Make Admin
+                      Make{`'`}Admin
                     </button>
                   )}
                 </td>

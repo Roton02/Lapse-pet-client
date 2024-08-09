@@ -246,17 +246,17 @@ const AdminAllPets = () => {
               <td className="p-4 text-sm ">
                 {row.adopted ? (
                   <button disabled className="bg-green-300 px-1 block">
-                    AllReady Adopted
+                    AllReady{`'`}Adopted
                   </button>
                 ) : (
                   <button disabled className="to-blue-300 btn-block px-1">
                     {" "}
-                    Not Adopted
+                    Not{`'`}Adopted
                   </button>
                 )}
               </td>
               <td className="p-4 text-sm ">
-                <div className="space-x-2">
+                <div className="space-x-2 flex">
                   <Link to={`updatepets/${row._id}`}>
                     <button className="bg-blue-500 text-white px-2 py-1 rounded">
                       Update
@@ -271,12 +271,12 @@ const AdminAllPets = () => {
                 </div>
               </td>
               <td className="p-4 text-sm ">
-                <div className="space-x-2 ">
+                <div className="space-x-2 flex">
                   <button
                     onClick={() => handleChangeStatusByNotAdopted(row._id)}
                     className="block bg-emerald-950 text-white px-2 py-1 rounded"
                   >
-                    Not Adopted
+                    Not{`'`}Adopted
                   </button>
 
                   <button
