@@ -93,7 +93,7 @@ const MyDonation = () => {
                           (totalDonated / 100).toFixed(2)
                         )
                       }
-                      className="btn btn-outline btn-sm border-b-4 border-black rounded-b-lg"
+                      className="btn btn-outline btn-sm border-b-4 border-black rounded-b-lg text-nowrap"
                     >
                       Ask for refund
                     </button>

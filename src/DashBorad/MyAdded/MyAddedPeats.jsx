@@ -222,9 +222,9 @@ const MyAddedPets = () => {
                     Adopted
                   </button>
                 ) : (
-                  <button disabled className="to-blue-300 px-1">
+                  <button disabled className="to-blue-300 px-1 text-nowrap">
                     {" "}
-                    Not{`'`}Adopted
+                    Not Adopted
                   </button>
                 )}
               </td>

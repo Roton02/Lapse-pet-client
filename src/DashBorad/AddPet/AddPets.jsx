@@ -12,9 +12,14 @@ import { Helmet } from "react-helmet-async";
 
 const AddPets = () => {
   // localStorage.setItem("theme",  "dark" );
-  const [content, setContent] = useState('');
+  const [content, setContent] = useState("");
   const axiosSecure = useAxiosSecure();
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm();
   const [photo, setPhoto] = useState(null);
   const { user } = useAuth();
   const [selectedOption, setSelectedOption] = useState(null);
@@ -64,7 +69,7 @@ const AddPets = () => {
       adopted: false,
       addedPerson: { AddedPersonImage, AddedPersonName, AddedPersonEmail },
     };
-console.log(petDetails);
+    console.log(petDetails);
     axiosSecure.post("/AddPet", petDetails).then((res) => {
       if (res.data.acknowledged) {
         Swal.fire({
@@ -88,7 +93,7 @@ console.log(petDetails);
 
   return (
     <div className="py-10">
-       <Helmet>
+      <Helmet>
         <title>Lapse-Peat || Add Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
@@ -96,9 +101,7 @@ console.log(petDetails);
         <div className="relative">
           <div className="max-w-4xl mx-auto p-8 rounded-lg ">
             <div className="text-center">
-              <h1 className="text-3xl font-extrabold mb-4">
-                Add A New Pet
-              </h1>
+              <h1 className="text-3xl font-extrabold mb-4">Add A New Pet</h1>
               <p className="">
                 Fill in the details below to add a new pet for adoption.
               </p>
@@ -106,9 +109,7 @@ console.log(petDetails);
             <form onSubmit={handleSubmit(onSubmit)} className="mt-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="form-control">
-                  <label className="block text-sm font-medium text-gray-700">
-                    Name
-                  </label>
+                  <label className="block text-sm font-medium ">Name</label>
                   <input
                     type="text"
                     {...register("name", { required: true })}
@@ -117,13 +118,13 @@ console.log(petDetails);
                     className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
                   />
                   {errors.name && (
-                    <span className="text-red-600 text-sm">Name is required</span>
+                    <span className="text-red-600 text-sm">
+                      Name is required
+                    </span>
                   )}
                 </div>
                 <div className="form-control">
-                  <label className="block text-sm font-medium text-gray-700">
-                    Age
-                  </label>
+                  <label className="block text-sm font-medium ">Age</label>
                   <input
                     type="text"
                     {...register("age", { required: true })}
@@ -132,13 +133,13 @@ console.log(petDetails);
                     className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
                   />
                   {errors.age && (
-                    <span className="text-red-600 text-sm">Age is required</span>
+                    <span className="text-red-600 text-sm">
+                      Age is required
+                    </span>
                   )}
                 </div>
                 <div className="form-control">
-                  <label className="block text-sm font-medium text-gray-700">
-                    Image
-                  </label>
+                  <label className="block text-sm font-medium ">Image</label>
                   <input
                     type="file"
                     {...register("photo", { required: true })}
@@ -147,13 +148,13 @@ console.log(petDetails);
                     className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                   />
                   {errors.photo && (
-                    <span className="text-red-600 text-sm">Image is required</span>
+                    <span className="text-red-600 text-sm">
+                      Image is required
+                    </span>
                   )}
                 </div>
                 <div className="form-control">
-                  <label className="block text-sm font-medium text-gray-700">
-                    Type
-                  </label>
+                  <label className="block text-sm font-medium ">Type</label>
                   <Select
                     value={selectedOption}
                     onChange={handleChange}
@@ -163,9 +164,7 @@ console.log(petDetails);
                 </div>
               </div>
               <div className="form-control mt-6">
-                <label className="block text-sm font-medium text-gray-700">
-                  Location
-                </label>
+                <label className="block text-sm font-medium ">Location</label>
                 <input
                   type="text"
                   {...register("location", { required: true })}
@@ -174,13 +173,13 @@ console.log(petDetails);
                   className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
                 />
                 {errors.location && (
-                  <span className="text-red-600 text-sm">Location is required</span>
+                  <span className="text-red-600 text-sm">
+                    Location is required
+                  </span>
                 )}
               </div>
               <div className="form-control mt-6">
-                <label className="block text-sm font-medium text-gray-700">
-                  Short Note
-                </label>
+                <label className="block text-sm font-medium ">Short Note</label>
                 <input
                   type="text"
                   {...register("note1", { required: true })}
@@ -189,11 +188,13 @@ console.log(petDetails);
                   className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
                 />
                 {errors.note1 && (
-                  <span className="text-red-600 text-sm">Short note is required</span>
+                  <span className="text-red-600 text-sm">
+                    Short note is required
+                  </span>
                 )}
               </div>
               <div className="form-control mt-6">
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium ">
                   Description
                 </label>
                 <ReactQuill
@@ -206,15 +207,23 @@ console.log(petDetails);
                   placeholder="Write About Pet"
                 />
                 {errors.note2 && (
-                  <span className="text-red-600 text-sm">Description is required</span>
+                  <span className="text-red-600 text-sm">
+                    Description is required
+                  </span>
                 )}
               </div>
               <div className="mt-8 flex justify-center">
-                <button
-                  type="submit"
-                  className="rounded-md w-1/3 py-2 px-4 bg-[#ff4880] hover:bg-pink-400 text-white font-semibold transition duration-300"
-                >
-                  Add Pet
+                <button type="submit" className="">
+                  <a
+                    href="#_"
+                    className="relative inline-block px-12 py-2 font-medium group"
+                  >
+                    <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                    <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                    <span className="relative text-nowrap text-black group-hover:text-white">
+                      Add Pet
+                    </span>
+                  </a>
                 </button>
               </div>
             </form>

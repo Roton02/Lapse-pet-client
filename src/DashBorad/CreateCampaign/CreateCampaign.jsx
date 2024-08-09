@@ -62,9 +62,9 @@ const CreateCampaign = () => {
       <div className="my-10">
         <h2 className="text-4xl text-center">Create your Donation Campaign</h2>
       </div>
-      <section className="max-w-3xl p-6 mx-auto bg-white dark:bg-gray-800">
+      <section className="max-w-3xl p-6 mx-auto bg-white dark:bg-[#1D232A]">
         <h2
-          className="text-lg text-center border-b-2 pb-5 font-semibold text-gray-700 capitalize 
+          className="text-lg text-center border-b-2 pb-5 font-semibold  capitalize 
     dark:text-white"
         >
           Create your Donation Campaign
@@ -73,28 +73,28 @@ const CreateCampaign = () => {
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
             <div>
-              <label className="text-gray-700 dark:text-gray-200">Name</label>
+              <label className=" dark:text-gray-200">Name</label>
               <input
                 required
                 id="username"
                 type="text"
                 name="name"
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2  bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
               />
             </div>
             <div>
-              <label className="text-gray-700 dark:text-gray-200">Image</label>
+              <label className=" dark:text-gray-200">Image</label>
               <input
                 required
                 id="username"
                 type="file"
                 name="photo"
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2  bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
               />
             </div>
 
             <div>
-              <label className="text-gray-700 dark:text-gray-200">
+              <label className=" dark:text-gray-200">
                 Maximum donation amount
               </label>
               <input
@@ -102,12 +102,12 @@ const CreateCampaign = () => {
                 id="emailAddress"
                 type="number"
                 name="maxDonation"
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2  bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
               />
             </div>
 
             <div>
-              <label className="text-gray-700 dark:text-gray-200">
+              <label className=" dark:text-gray-200">
                 Last date of donation
               </label>
               <input
@@ -115,12 +115,12 @@ const CreateCampaign = () => {
                 id="password"
                 type="date"
                 name="date"
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2  bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
               />
             </div>
           </div>
           <div>
-            <label className="text-gray-700 dark:text-gray-200">
+            <label className=" dark:text-gray-200">
               sort Description
             </label>
             <input
@@ -128,7 +128,7 @@ const CreateCampaign = () => {
               id="passwordConfirmation"
               type="text"
               name="sortDescription"
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+              className="block w-full px-4 py-2 mt-2  bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
             />
           </div>
           <div>

@@ -53,12 +53,12 @@ const MyDonationCampaign = () => {
       <table className="mx-auto">
         <thead>
           <tr>
-            <th className="py-2 px-4 border-b">Pet{`'`}Name</th>
-            <th className="py-2 px-4 border-b">Maximum{`'`}Donation</th>
-            <th className="py-2 px-4 border-b">Donated</th>
-            <th className="py-2 px-4 border-b">Pause</th>
-            <th className="py-2 px-4 border-b">Edit</th>
-            <th className="py-2 px-4 border-b">View{`'`}Donators</th>
+            <th className="py-2 px-4 text-nowrap border-b">Pet Name</th>
+            <th className="py-2 px-4 text-nowrap border-b">Maximum Donation</th>
+            <th className="py-2 px-4 text-nowrap border-b">Donated</th>
+            <th className="py-2 px-4 text-nowrap border-b">Pause</th>
+            <th className="py-2 px-4 text-nowrap border-b">Edit</th>
+            <th className="py-2 px-4 text-nowrap border-b">View Donators</th>
           </tr>
         </thead>
         <tbody>
@@ -78,7 +78,7 @@ const MyDonationCampaign = () => {
               </td>
               <td className="py-2 px-4 border-b text-center">
                 {item.pause ? (
-                  <button>Already Paused</button>
+                  <button className="text-nowrap">Already Paused</button>
                 ) : (
                   <button
                     onClick={() => handlePause(item._id)}
@@ -97,10 +97,10 @@ const MyDonationCampaign = () => {
               </td>
               <td className="py-2 px-1 border-b text-center">
                 <button
-                  className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
+                  className="bg-green-500 text-nowrap hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
                   onClick={() => document.getElementById(`my_modal_${index}`).showModal()}
                 >
-                  View{`'`}Donators
+                  View Donators
                 </button>
                 <dialog id={`my_modal_${index}`} className="modal">
                   <div className="modal-box">
@@ -113,16 +113,16 @@ const MyDonationCampaign = () => {
                     <div>
                       {item.donators && item.donators.length > 0 ? (
                         item.donators.map((d, i) => (
-                          <div className="p-2 my-2  bg-pink-200 rounded-xl" key={i}>
+                          <div className="p-2 my-2  bg-white rounded-xl" key={i}>
         
-                            <div>
-                            <p className="text-xl font-semibold">{d.name}</p>
+                            <div className="text-start text-black ml-5">
+                            <h1 className="text-xl font-semibold">{d.name}</h1>
                             <h4>{d.email}</h4>
                             </div>
                           </div>
                         ))
                       ) : (
-                        <p className="mt-5 text-red-600 font-bold">There are no donators</p>
+                        <p className="mt-5 text-nowrap text-red-600 font-bold">There are no donators</p>
                       )}
                     </div>
                   </div>
