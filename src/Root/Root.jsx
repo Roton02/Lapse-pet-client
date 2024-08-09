@@ -5,7 +5,7 @@ import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
 import Header from "../Shared/Header/Header";
 import ReactPlayer from "react-player";
-import LoaderVideo from "../assets/Banner.mp4"
+import LoaderVideo from "../assets/Banner.mp4";
 import { useEffect, useState } from "react";
 // import Navbar2 from "../Shared/Navbar/Navbar2";
 
@@ -28,34 +28,33 @@ const Root = () => {
   console.log(location);
   return (
     <>
-    {loading ? (
-      <div className="bg-[#110e11] w-screen flex justify-center items-center min-h-screen relative">
-        <ReactPlayer
-          url={LoaderVideo}
-          playing
-          loop
-          muted
-          width="100%"
-          height="100%"
-          className="absolute top-0 left-0 w-screen h-full"
-        />
-      </div>
-    ) : (
-      <div>
-      <div className="w-full overflow-x-hidden">
-        {noHeaderAndFooter || <Header></Header>}
-        <div className=" mx-auto">
-          {noHeaderAndFooter || <Navbar></Navbar>}
-          <div className="min-h-[70vh]">
-            <Outlet></Outlet>
+      {loading ? (
+        <div className="bg-[#110e11] w-screen flex justify-center items-center min-h-screen relative">
+          <ReactPlayer
+            url={LoaderVideo}
+            playing
+            loop
+            muted
+            width="100%"
+            height="100%"
+            className="absolute top-0 left-0 w-screen h-full"
+          />
+        </div>
+      ) : (
+        <div>
+          <div className="w-full overflow-x-hidden">
+            {noHeaderAndFooter || <Header></Header>}
+            <div className=" mx-auto">
+              {noHeaderAndFooter || <Navbar></Navbar>}
+              <div className="min-h-[70vh]">
+                <Outlet></Outlet>
+              </div>
+            </div>
+            {noHeaderAndFooter || <Footer></Footer>}
           </div>
         </div>
-        {noHeaderAndFooter || <Footer></Footer>}
-      </div>
-    </div>
-    )}
-  </>
-   
+      )}
+    </>
   );
 };
 
