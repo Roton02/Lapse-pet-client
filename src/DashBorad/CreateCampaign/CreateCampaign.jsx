@@ -5,8 +5,8 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { Helmet } from "react-helmet-async";
 
 const CreateCampaign = () => {
-  const {user} = useAuth()
-  const axiosSecure = useAxiosSecure()
+  const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -16,30 +16,29 @@ const CreateCampaign = () => {
       const imgData = await imageUpload(image);
       // setImageURL(imgData);
       console.log(imgData);
-      image = imgData
-  } catch (err) {
+      image = imgData;
+    } catch (err) {
       console.log(err);
-  }
+    }
     const date = form.date.value;
     const maxDonation = form.maxDonation.value;
     const sortDescription = form.sortDescription.value;
     const longDescription = form.longDescription.value;
     const campaignDetails = {
-      userName:user.displayName,
-      userEmail:user.email,
-      userPhoto:user.photoURL,
-      pause:false,
+      userName: user.displayName,
+      userEmail: user.email,
+      userPhoto: user.photoURL,
+      pause: false,
       image,
       date,
       name,
       maxDonation,
-      donatedAmount:0,
+      donatedAmount: 0,
       sortDescription,
       longDescription,
     };
     console.log(campaignDetails);
-    axiosSecure.post('Donation/campaign', campaignDetails)
-    .then(res => {
+    axiosSecure.post("Donation/campaign", campaignDetails).then((res) => {
       console.log(res.data);
       if (res.data.insertedId) {
         Swal.fire({
@@ -47,15 +46,14 @@ const CreateCampaign = () => {
           icon: "success",
           title: "Your Campaign Added Successfully",
           showConfirmButton: false,
-          timer: 1200
+          timer: 1200,
         });
       }
-    })
-
+    });
   };
   return (
     <div>
-       <Helmet>
+      <Helmet>
         <title>Lapse-Peat || Create Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
@@ -120,9 +118,7 @@ const CreateCampaign = () => {
             </div>
           </div>
           <div>
-            <label className=" dark:text-gray-200">
-              sort Description
-            </label>
+            <label className=" dark:text-gray-200">sort Description</label>
             <input
               required
               id="passwordConfirmation"
@@ -136,7 +132,7 @@ const CreateCampaign = () => {
               <span className="label-text">Description</span>
             </label>
             <textarea
-            name="longDescription"
+              name="longDescription"
               className="textarea w-full textarea-secondary"
               placeholder="Write Above Peats"
             ></textarea>
