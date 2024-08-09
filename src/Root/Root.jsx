@@ -60,21 +60,4 @@ const Root = () => {
 
 export default Root;
 
-/* 
-<div>
-      {
-        user ? <div>
-        {noHeaderAndFooter || <Header></Header>}
-        <div className="max-w-7xl mx-auto">
-          {noHeaderAndFooter || <Navbar></Navbar>}
-          <div className="min-h-screen">
-            <Outlet></Outlet>
-          </div>
-          {noHeaderAndFooter || <Footer></Footer>}
-        </div>
-      </div> : <DuplicateRegister></DuplicateRegister>
-      }
-      
-      
-    </div>
-*/
+
