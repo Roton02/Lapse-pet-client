@@ -12,6 +12,7 @@ import CampaignPeats from "../../Page/CampaignPeats/CampaignPeats";
 import CampaignDetails from "../../Page/CampaignDetails/CampaignDetails";
 import Dashboard from "../../Root/Dashboard";
 import PrivateRoute from "../PrivateRoute/PrivateRoute"
+import PrivateRouteOnlyDashboard from "../PrivateRoute/PrivateRoute"
 import AddPets from "../../DashBorad/AddPet/AddPets";
 import MyAddedPeats from "../../DashBorad/MyAdded/MyAddedPeats";
 import AdoptionRequest from "../../DashBorad/RequestedPeats/AdoptionRequest";
@@ -85,7 +86,7 @@ import UpdateProfile from "../../Page/Register/UpdateProfile/UpdateProfile";
     },
     {
       path: 'dashboard',
-      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>  ,
+      element: <Dashboard></Dashboard>,
       children: [
         // normal user routes
        {

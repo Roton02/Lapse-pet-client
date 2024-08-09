@@ -23,7 +23,7 @@ const Dashboard = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 4500);
+    }, 3000);
   }, []);
   // TODO: get isAdmin value from the database
   const [isAdmin] = useAdmin();
