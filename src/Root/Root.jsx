@@ -18,7 +18,7 @@ const Root = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 4500);
+    }, 4000);
   }, []);
   const location = useLocation();
   const noHeaderAndFooter =
