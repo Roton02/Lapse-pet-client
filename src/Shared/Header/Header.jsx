@@ -30,7 +30,7 @@ const Header = () => {
           <a href="https://web.facebook.com/roton.chodiry" target="_blank" className=" p-2">
             <FaFacebook />
           </a>
-          <a href="https://web.facebook.com/roton.chodiry" target="_blank" className=" p-2">
+          <a href="https://www.linkedin.com/in/md-sana-ullah12/" target="_blank" className=" p-2">
           <FaLinkedinIn></FaLinkedinIn>
           </a>
           <a href="https://x.com/MdSanaulla75762" target="_blank" className=" p-2">

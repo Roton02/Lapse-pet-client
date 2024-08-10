@@ -86,7 +86,7 @@ import UpdateProfile from "../../Page/Register/UpdateProfile/UpdateProfile";
     },
     {
       path: 'dashboard',
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute> ,
       children: [
         // normal user routes
        {

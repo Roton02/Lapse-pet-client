@@ -79,16 +79,16 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="bg-white">
       <Helmet>
         <title>Lapse-Peat || Login</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <div className="flex items-center border-2  w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg  lg:max-w-4xl">
+      <div className="flex items-center   w-full max-w-sm mx-auto overflow-hidden bg-white   lg:max-w-4xl">
       <div className="hidden  lg:block lg:w-1/2 " >
       <video src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/account-login-8677600-6981645.mp4" autoPlay="muted" loop="loop" playsInline type="video/mp4"></video>
     </div>
-    <div className="divider lg:divider-horizontal py-20">YEH..</div> 
+    <div className="divider block lg:hidden lg:divider-horizontal py-20">YEH..</div> 
 
       <div className="flex flex-col max-w-md mx-auto  lg:my-5 p-6 sm:p-10 ">
         <div className="mb-8 text-center">

@@ -43,14 +43,14 @@ const Root = () => {
       ) : (
         <div>
           <div className="w-full overflow-x-hidden">
-            {noHeaderAndFooter || <Header></Header>}
+           <Header></Header>
             <div className=" mx-auto">
-              {noHeaderAndFooter || <Navbar></Navbar>}
+              <Navbar></Navbar>
               <div className="min-h-[70vh]">
                 <Outlet></Outlet>
               </div>
             </div>
-            {noHeaderAndFooter || <Footer></Footer>}
+             <Footer></Footer>
           </div>
         </div>
       )}
