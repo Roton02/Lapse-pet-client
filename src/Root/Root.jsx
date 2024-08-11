@@ -21,7 +21,7 @@ const Root = () => {
     }, 4000);
   }, []);
   const location = useLocation();
-  const noHeaderAndFooter =
+  const login_and_register =
     location.pathname.includes("login") ||
     location.pathname.includes("register") ||
     location.pathname.includes("Login");
@@ -44,7 +44,7 @@ const Root = () => {
         <div className="">
           <Navbar />
           <div className="flex flex-col w-full h-screen">
-            <div className="flex-1">
+            <div className={`flex-1 ${login_and_register && 'bg-white'}`}>
               <Outlet />
             </div>
             <Footer />

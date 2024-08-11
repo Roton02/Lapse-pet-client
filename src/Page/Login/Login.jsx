@@ -90,7 +90,7 @@ const Login = () => {
             type="video/mp4"
           ></video>
         </div>
-        <div className="flex flex-col max-w-md mx-auto   ">
+        <div className="flex flex-col max-w-md mx-auto  mt-5 ">
           <div className=" text-center">
             <h1 className=" text-3xl text-black mb-1 font-bold">Login to your Account</h1>
           </div>
