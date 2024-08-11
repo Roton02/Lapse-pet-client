@@ -41,16 +41,13 @@ const Root = () => {
           />
         </div>
       ) : (
-        <div>
-          <div className="w-full overflow-x-hidden">
-           <Header></Header>
-            <div className=" mx-auto">
-              <Navbar></Navbar>
-              <div className="min-h-[70vh]">
-                <Outlet></Outlet>
-              </div>
+        <div className="">
+          <Navbar />
+          <div className="flex flex-col w-full h-screen">
+            <div className="flex-1">
+              <Outlet />
             </div>
-             <Footer></Footer>
+            <Footer />
           </div>
         </div>
       )}
@@ -59,5 +56,3 @@ const Root = () => {
 };
 
 export default Root;
-
-

@@ -92,9 +92,7 @@ const Login = () => {
         </div>
         <div className="flex flex-col max-w-md mx-auto   ">
           <div className=" text-center">
-            <h1 className=" text-3xl mb-1 font-bold">Login to your Account</h1>
-            
-
+            <h1 className=" text-3xl text-black mb-1 font-bold">Login to your Account</h1>
           </div>
           <div className="">
             <button
@@ -110,7 +108,7 @@ const Login = () => {
               >
                 <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
               </svg>
-              <p>Login with Google</p>
+              <p className="text-black">Login with Google</p>
             </button>
           </div>
           <div className="my-2">
@@ -127,10 +125,10 @@ const Login = () => {
               >
                 <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
               </svg>
-              <p>Login with Google</p>
+              <p className="text-black">Login with Google</p>
             </button>
           </div>
-          <div className="flex items-center w-full my-1">
+          <div className="flex text-black items-center w-full my-1">
             <hr className="w-full border border-black" />
             <p className="px-3">OR</p>
             <hr className="w-full border border-black" />
@@ -138,7 +136,7 @@ const Login = () => {
           <form onSubmit={handleSubmitLogin} className="space-y-2">
             <div className="space-y-1">
               <div>
-                <label htmlFor="email" className="block mb-2 text-sm">
+                <label htmlFor="email" className="block text-black mb-2 text-sm">
                   Email address
                 </label>
                 <input
@@ -146,11 +144,11 @@ const Login = () => {
                   name="email"
                   id="email"
                   placeholder="leroy@jenkins.com"
-                  className="w-full px-3 py-2 border rounded-md"
+                  className="w-full bg-black text-white px-3 py-2 border rounded-md"
                 />
               </div>
               <div className="relative">
-                <label htmlFor="password" className="text-sm">
+                <label htmlFor="password" className="text-sm text-black">
                   Password
                 </label>
                 <input
@@ -158,14 +156,18 @@ const Login = () => {
                   name="password"
                   id="password"
                   placeholder="*****"
-                  className="w-full px-3 py-2 border rounded-md "
+                  className="w-full bg-black text-white px-3 py-2 border rounded-md "
                 />
                 {error && <p>{error.split("/")[1].split(")")[0]}</p>}
                 <span
                   className="absolute top-10 right-4"
                   onClick={() => setToggle(!toggle)}
                 >
-                  {toggle ? <IoIosEye /> : <IoIosEyeOff />}
+                  {toggle ? (
+                    <IoIosEye className="text-white" />
+                  ) : (
+                    <IoIosEyeOff className="text-white" />
+                  )}
                 </span>
               </div>
             </div>
@@ -178,13 +180,19 @@ const Login = () => {
                   Login
                 </button>
               </div>
-              <p className="text-md text-center mt-3">Dont have account?
-		<Link to={"/register"} rel="noopener noreferrer" className="focus:underline hover:underline font-semibold"> Sign up here</Link>
-	</p>
-
+              <p className="text-md text-black text-center mt-3">
+                Dont have account?
+                <Link
+                  to={"/register"}
+                  rel="noopener noreferrer"
+                  className="focus:underline hover:underline font-semibold"
+                >
+                  {" "}
+                  Sign up here
+                </Link>
+              </p>
             </div>
           </form>
-         
         </div>
       </div>
     </div>
