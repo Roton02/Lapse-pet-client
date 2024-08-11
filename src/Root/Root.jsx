@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
-import Header from "../Shared/Header/Header";
+// import Header from "../Shared/Header/Header";
 import ReactPlayer from "react-player";
 import LoaderVideo from "../assets/Banner.mp4";
 import { useEffect, useState } from "react";

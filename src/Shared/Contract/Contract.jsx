@@ -22,8 +22,8 @@ const Contract = () => {
         ></iframe>
       </div>
       <section className="  rounded-xl">
-        <div className="grid max-w-7xl mx-auto grid-cols-1 px-10 lg:px-0 lg:grid-cols-6  gap-10   md:divide-x">
-          <div className=" col-span-2 p-10 py-20 md:py-0 text-white bg-slate-900 ">
+        <div className="grid max-w-7xl mx-auto grid-cols-1 lg:px-0 lg:grid-cols-6  gap-10   md:divide-x">
+          <div className=" col-span-2 p-10 py-10 lg:py-0 text-white bg-slate-900 ">
             <div className="">
               <div className=" pt-5">
                 <p>Contact</p>

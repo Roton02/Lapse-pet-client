@@ -92,7 +92,9 @@ const Login = () => {
         </div>
         <div className="flex flex-col max-w-md mx-auto  mt-5 ">
           <div className=" text-center">
-            <h1 className=" text-3xl text-black mb-1 font-bold">Login to your Account</h1>
+            <h1 className=" text-3xl text-black mb-1 font-bold">
+              Login to your Account
+            </h1>
           </div>
           <div className="">
             <button
@@ -123,9 +125,10 @@ const Login = () => {
                 viewBox="0 0 32 32"
                 className="w-5 h-5 fill-current"
               >
-                <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
+                <path d="M16 0.396c-8.839 0-16 7.196-16 16.084 0 7.084 4.584 13.083 10.941 15.197 0.803 0.149 1.097-0.347 1.097-0.772 0-0.38-0.014-1.389-0.022-2.727-4.453 0.967-5.391-2.145-5.391-2.145-0.731-1.857-1.785-2.352-1.785-2.352-1.461-1.003 0.111-0.984 0.111-0.984 1.615 0.114 2.465 1.677 2.465 1.677 1.434 2.457 3.762 1.747 4.679 1.336 0.147-1.039 0.561-1.748 1.019-2.148-3.553-0.404-7.288-1.786-7.288-7.953 0-1.757 0.623-3.193 1.646-4.318-0.166-0.402-0.714-2.027 0.157-4.227 0 0 1.344-0.431 4.4 1.649 1.279-0.357 2.65-0.536 4.011-0.543 1.361 0.008 2.733 0.186 4.013 0.543 3.052-2.08 4.393-1.649 4.393-1.649 0.875 2.2 0.328 3.825 0.161 4.227 1.026 1.126 1.642 2.561 1.642 4.318 0 6.181-3.739 7.545-7.303 7.944 0.574 0.495 1.085 1.467 1.085 2.961 0 2.136-0.02 3.861-0.02 4.386 0 0.429 0.288 0.928 1.107 0.772 6.348-2.12 10.928-8.113 10.928-15.197 0-8.888-7.163-16.084-16-16.084z"></path>
               </svg>
-              <p className="text-black">Login with Google</p>
+
+              <p className="text-black">Login with Github</p>
             </button>
           </div>
           <div className="flex text-black items-center w-full my-1">
@@ -136,7 +139,10 @@ const Login = () => {
           <form onSubmit={handleSubmitLogin} className="space-y-2">
             <div className="space-y-1">
               <div>
-                <label htmlFor="email" className="block text-black mb-2 text-sm">
+                <label
+                  htmlFor="email"
+                  className="block text-black mb-2 text-sm"
+                >
                   Email address
                 </label>
                 <input
