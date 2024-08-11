@@ -20,14 +20,13 @@ const Category = ({ item }) => {
         ) : (
           // Render actual category items
           item.map((data) => (
-            <Link key={data._id} to={`/category/${data._id}`}>
+            <div key={data._id} to={`/category/${data._id}`}>
               <div className="w-full  overflow-hidden shadow-sm hover:scale-105 transition delay-100 ">
                 <img
                   className="object-cover rounded-xl w-full h-56"
                   src={data.img}
                   alt="avatar"
                 />
-
                 <div className="space-y-2 p-1">
                   <a
                     href="#"
@@ -58,7 +57,7 @@ const Category = ({ item }) => {
                   ></progress>
                 </div>
               </div>
-            </Link>
+            </div>
           ))
         )}
       </div>

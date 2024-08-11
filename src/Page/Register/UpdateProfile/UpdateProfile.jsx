@@ -7,9 +7,8 @@ import { imageUpload } from "../../../api/utils";
 const UpdateProfile = () => {
   const { UpdateUser, user } = useAuth();
   // console.log(user);
-  
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     let photo = e.target.elements.photo.files[0];
@@ -17,10 +16,10 @@ const UpdateProfile = () => {
       const imgData = await imageUpload(photo);
       // setImageURL(imgData);
       console.log(imgData);
-      photo = imgData
-  } catch (err) {
+      photo = imgData;
+    } catch (err) {
       console.log(err);
-  }
+    }
     // const email = e.target.email.value;
     // console.log(name,photo,email);
     UpdateUser(name, photo)
@@ -244,14 +243,13 @@ const UpdateProfile = () => {
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <div
-        className=" bg-cover  bg-center rounded-b-2xl 
-        bg-[url('https://i.ibb.co/HHy24ns/bg.jpg')]"
+        className="bg-gradient-to-b from-[#F9F3F0] via-[#FCE7DC] to-white "
       >
         <h1 className="  text-2xl lg:text-4xl text-center  font-bold pt-10 uppercase ">
           Update and more attractive <br /> your profile.....{" "}
         </h1>
         <div className="hero  min-h-screen  ">
-          <div className="hero-content lg:border border-slate-400 rounded-xl p-5 mb-10  flex-col lg:flex-row-reverse">
+          <div className="hero-content  p-5 mb-10  flex-col lg:flex-row-reverse">
             <div className="animate__animated animate__fadeInLeft  animate__delay-1s  text-center  lg:ml-32 lg:text-left px-5 md:px-10 lg:px-16 py-10 rounded-xl bg-opacity-60  ">
               <img
                 className="w-40  flex justify-center items-center mx-auto rounded-3xl bg-opacity-60"
@@ -290,12 +288,12 @@ const UpdateProfile = () => {
             <div className="animate__animated animate__fadeInRight animate__delay-1s   card shrink-0 w-full max-w-sm  py-2 bg-opacity-60 ">
               <form onSubmit={handleSubmit} className="card-body">
                 <div className="form-control">
-                  <h1 className="text-2xl flex font-bold underline text-center pb-5">
+                  <h1 className="text-2xl text-black flex font-bold underline text-center pb-5">
                     {" "}
                     Update Your personal info{" "}
                   </h1>
                   <label className="label">
-                    <span className="label-text ">Name</span>
+                    <span className="label-text text-black ">Name</span>
                   </label>
                   <input
                     defaultValue={user?.displayName}
@@ -303,34 +301,35 @@ const UpdateProfile = () => {
                     required
                     name="name"
                     placeholder="Enter your update Name"
-                    className="input input-bordered"
+                    className="input text-black bg-white  input-bordered"
                   />
                 </div>
                 <div className="form-control">
                   <div>
-              <label className="text-gray-700 dark:text-gray-200">Image</label>
-              <input
-                
-                id="username"
-                type="file"
-                name="photo"
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md"
-              />
-            </div>
+                    <label className="text-black  ">
+                      Image
+                    </label>
+                    <input
+                      id="username"
+                      type="file"
+                      name="photo"
+                      className="block w-full px-4 py-2 mt-2 text-black  bg-white border border-gray-200 rounded-md"
+                    />
+                  </div>
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text ">Photo URL</span>
+                    <span className="label-text text-black">Email</span>
                   </label>
                   <input
                     value={user?.email}
                     type="text"
                     name="email"
-                    className="input input-bordered"
+                    className="input bg-white text-black input-bordered"
                   />
                 </div>
 
-                <div className="form-control mt-6">
+                <div className="form-control ">
                   <button className="w-full btn mt-2 text-sm font-bold bg-slate-100 border-[#ff4880] hover:bg-[#ff4880] transition  text-[#ff4880]   duration-500  hover:text-white">
                     Update
                   </button>
