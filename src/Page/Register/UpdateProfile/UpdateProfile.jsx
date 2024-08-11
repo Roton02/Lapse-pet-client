@@ -242,9 +242,7 @@ const UpdateProfile = () => {
         <title>Lapse-Peat || Update Profile</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-      <div
-        className="bg-gradient-to-b from-[#F9F3F0] via-[#FCE7DC] to-white "
-      >
+      <div className="">
         <h1 className="  text-2xl lg:text-4xl text-center  font-bold pt-10 uppercase ">
           Update and more attractive <br /> your profile.....{" "}
         </h1>
@@ -306,9 +304,7 @@ const UpdateProfile = () => {
                 </div>
                 <div className="form-control">
                   <div>
-                    <label className="text-black  ">
-                      Image
-                    </label>
+                    <label className="text-black  ">Image</label>
                     <input
                       id="username"
                       type="file"
