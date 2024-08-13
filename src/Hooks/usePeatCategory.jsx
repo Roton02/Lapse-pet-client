@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const usePeatCategory = () => {
     const [categoryData, setCategoryData] = useState([])
     useEffect(()=>{
-       fetch('https://lapsepets.vercel.app/allCategory')
+       fetch('http://localhost:5000/allCategory')
        .then(res=> res.json())
        .then(data => setCategoryData(data))
     },[])

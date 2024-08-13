@@ -18,7 +18,7 @@ const UpdatePets = () => {
   const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
-    axiosSecure(`https://lapsepets.vercel.app/myAdded/?id=${params.id}`).then(
+    axiosSecure(`http://localhost:5000/myAdded/?id=${params.id}`).then(
       (res) => {
         setPrevData(res.data[0]);
       }

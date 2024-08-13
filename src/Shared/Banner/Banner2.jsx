@@ -28,7 +28,7 @@ const Banner2 = () => {
           <SwiperSlide>
             <div className="md:h-[500px] h-auto lg:ml-8">
               <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center">
-              <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto">
+                <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto">
                   <p className="font-semibold text-[#FF497C] mb-3  md:text-left">
                     <span className="bg-[#FF497C] text-white mr-3 text-xl px-2 py-1 rounded-full">
                       <i className="bx bxs-hot"></i>
@@ -37,22 +37,22 @@ const Banner2 = () => {
                   </p>
 
                   <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold  md:text-left">
-                  Your Trusted Source  <br />
-                  for  Adopt Peats
+                    Your Trusted Source <br />
+                    for Adopt Peats
                   </p>
                   <p className="font-medium text-black/60 md:text-lg md:text-left">
                     Find the perfect tech solutions for being your loving pet.
                   </p>
 
-                  <Link to='/listing'>
-                  <div className="flex justify-start">
-                    <button className="bg-[#FF497C] py-2 mt-5 px-3 rounded text-white font-semibold hover:bg-[#ab3154]">
-                      <span className="mr-3">
-                        <i className="bx bx-hive"></i>
-                      </span>
-                      Discover Me
-                    </button>
-                  </div>
+                  <Link to="/listing">
+                    <div className="flex justify-start">
+                      <button className="bg-[#FF497C] py-2 mt-5 px-3 rounded text-white font-semibold hover:bg-[#ab3154]">
+                        <span className="mr-3">
+                          <i className="bx bx-hive"></i>
+                        </span>
+                        Discover Me
+                      </button>
+                    </div>
                   </Link>
                 </div>
 
@@ -71,7 +71,7 @@ const Banner2 = () => {
           <SwiperSlide>
             <div className="md:h-[500px] h-auto lg:ml-8">
               <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center">
-              <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto">
+                <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto">
                   <p className="font-semibold text-[#FF497C] mb-3 md:text-left">
                     <span className="bg-[#FF497C] text-white mr-3 text-xl px-2 py-1 rounded-full">
                       <i className="bx bxs-hot"></i>
@@ -80,22 +80,22 @@ const Banner2 = () => {
                   </p>
 
                   <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold  md:text-left">
-                  Your Trusted Source  <br />
-                  for  Adopt Peats
+                    Your Trusted Source <br />
+                    for Adopt Peats
                   </p>
                   <p className="font-medium text-black/60 md:text-lg md:text-left">
                     Find the perfect tech solutions for being your loving pet.
                   </p>
 
-                  <Link to='/listing'>
-                  <div className="flex justify-start">
-                    <button className="bg-[#FF497C] py-2 mt-5 px-3 rounded text-white font-semibold hover:bg-[#ab3154]">
-                      <span className="mr-3">
-                        <i className="bx bx-hive"></i>
-                      </span>
-                      Discover Me
-                    </button>
-                  </div>
+                  <Link to="/listing">
+                    <div className="flex justify-start">
+                      <button className="bg-[#FF497C] py-2 mt-5 px-3 rounded text-white font-semibold hover:bg-[#ab3154]">
+                        <span className="mr-3">
+                          <i className="bx bx-hive"></i>
+                        </span>
+                        Discover Me
+                      </button>
+                    </div>
                   </Link>
                 </div>
 
@@ -123,22 +123,22 @@ const Banner2 = () => {
                   </p>
 
                   <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold  md:text-left">
-                  Your Trusted Source  <br />
-                  for  Adopt Peats
+                    Your Trusted Source <br />
+                    for Adopt Peats
                   </p>
                   <p className="font-medium text-black/60 md:text-lg md:text-left">
                     Find the perfect tech solutions for being your loving pet.
                   </p>
 
-                  <Link to='/listing'>
-                  <div className="flex justify-start">
-                    <button className="bg-[#FF497C] py-2 mt-5 px-3 rounded text-white font-semibold hover:bg-[#ab3154]">
-                      <span className="mr-3">
-                        <i className="bx bx-hive"></i>
-                      </span>
-                      Discover Me
-                    </button>
-                  </div>
+                  <Link to="/listing">
+                    <div className="flex justify-start">
+                      <button className="bg-[#FF497C] py-2 mt-5 px-3 rounded text-white font-semibold hover:bg-[#ab3154]">
+                        <span className="mr-3">
+                          <i className="bx bx-hive"></i>
+                        </span>
+                        Discover Me
+                      </button>
+                    </div>
                   </Link>
                 </div>
 
