@@ -6,11 +6,13 @@ Welcome to our Pet Adoption Platform! This platform aims to connect pets in need
 - UserGmail: [examinner@gmail.com]
 - Password: [121212Aa@]
 
+
+
 ## Live Site
 [Live Site URL] = 'https://ephemeral-queijadas-e60793.netlify.app/'
 
 ## Description
-The Pet Adoption Platform is a dynamic web application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. Leveraging modern technologies and best practices, our platform offers a user-friendly interface for pet adoption and donation campaigns, contributing to the mission of uniting pets with their forever families.
+The Pet Adoption Platform is a dynamic web application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. Leveraging modern technologies and best practices, our platform offers a user-friendly interface for pet adoption and donation campaigns, contributingg to the mission of uniting pets with their forever families.
 
 ## Features
 - User-friendly navigation with a responsive navbar.
