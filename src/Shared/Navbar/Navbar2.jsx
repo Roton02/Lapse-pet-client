@@ -36,7 +36,7 @@ const Navbar2 = () => {
     <div>
       <nav className="relative bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4] ">
         <div className="container py-4 mx-auto max-w-7xl px-4 lg:px-0">
-          <div className="lg:flex lg:items-center lg:justify-between">
+          <div className="lg:flex lg:items-center lg:justify-between ">
             <div className="flex items-center justify-between">
             <Link to="/">
             <img
