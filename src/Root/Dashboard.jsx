@@ -34,11 +34,21 @@ const Dashboard = () => {
     setIsOpen(!isOpen);
   };
 
-  localStorage.setItem("theme", "dark");
+  // localStorage.setItem("theme", "dark");
+
+  useEffect(() => {
+    // Store current theme in localStorage
+    // localStorage.setItem("theme", theme ? "dark" : "light");
+    const theme = localStorage.getItem("theme");
+
+    document
+      .querySelector("html")
+      .setAttribute("data-theme", theme == "light" ? "dark" : "light");
+  }, []); // Re-run effect when theme changes
 
   return (
     <>
-      {loading ? (
+      {false ? (
         <div className="bg-[#110e11] w-screen flex justify-center items-center min-h-screen relative">
           <ReactPlayer
             url={LoaderVideo}

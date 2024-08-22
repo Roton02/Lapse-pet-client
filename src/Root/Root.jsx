@@ -28,7 +28,7 @@ const Root = () => {
   console.log(location);
   return (
     <>
-      {loading ? (
+      {false  ? (
         <div className="bg-[#110e11] w-screen flex justify-center items-center min-h-screen relative">
           <ReactPlayer
             url={LoaderVideo}
