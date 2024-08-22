@@ -204,9 +204,7 @@ const MyAddedPets = () => {
         <tbody>
           {paginatedData.map((row, i) => (
             <tr key={row._id} className="border-b border-gray-300">
-              <td className="p-4 text-sm ">
-                {i + 1 + pageIndex * pageSize}
-              </td>
+              <td className="p-4 text-sm ">{i + 1 + pageIndex * pageSize}</td>
               <td className="p-4 text-sm ">
                 <img
                   src={row.img}

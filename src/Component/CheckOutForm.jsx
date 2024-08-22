@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import { toast } from "react-toastify";
 
-const CheckOutForm = ({pause,id}) => {
+const CheckOutForm = ({ pause, id }) => {
   console.log(pause);
   const [transactionId, setTransactionId] = useState("");
   const stripe = useStripe();
@@ -17,7 +18,8 @@ const CheckOutForm = ({pause,id}) => {
 
   useEffect(() => {
     if (amount > 0) {
-      axiosSecure.post("/create-payment-intent", { donation: amount })
+      axiosSecure
+        .post("/create-payment-intent", { donation: amount })
         .then((res) => {
           console.log("Client Secret fetched:", res.data.clientSecret);
           setClientSecret(res.data.clientSecret);
@@ -80,17 +82,23 @@ const CheckOutForm = ({pause,id}) => {
       let danateMoney = 0;
       if (paymentIntent.status === "succeeded") {
         const amount = paymentIntent.amount;
-        danateMoney=paymentIntent.amount
-        const donate_person_email =user.email
-        const donate_person_name =user.displayName;
-        const donate_details = {amount,donate_person_email,donate_person_name,danateMoney}
-        axiosSecure.patch(`/campaigndonateUpdate/${id}`, donate_details)
-        .then(res => {
-          console.log(res.data);
-        })
+        danateMoney = paymentIntent.amount;
+        const donate_person_email = user.email;
+        const donate_person_name = user.displayName;
+        const donate_details = {
+          amount,
+          donate_person_email,
+          donate_person_name,
+          danateMoney,
+        };
+        axiosSecure
+          .patch(`/campaigndonateUpdate/${id}`, donate_details)
+          .then((res) => {
+            console.log(res.data);
+          });
         console.log("Transaction id", paymentIntent.id);
         setTransactionId(paymentIntent.id);
-        toast.success('Payment Succesfull', {
+        toast.success("Payment Succesfull", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -98,9 +106,8 @@ const CheckOutForm = ({pause,id}) => {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "dark"
-          });
-
+          theme: "dark",
+        });
       }
     }
   };
@@ -114,7 +121,6 @@ const CheckOutForm = ({pause,id}) => {
     <form onSubmit={handleSubmit}>
       <label htmlFor="amount">Donation Amount:</label>
       <input
-      
         type="number"
         id="amount"
         name="amount"
@@ -142,17 +148,16 @@ const CheckOutForm = ({pause,id}) => {
       />
       {pause && <p className="text-red-800 mt-5">The donation is paused </p>}
       <button
-       
         type="submit"
         className="btn mt-7 flex justify-center mx-auto px-10 bg-[#ff4880] text-white font-bold hover:text-black "
         disabled={!stripe || pause}
       >
         Donate
       </button>
-     <div className="p-5">
-     <p className="text-red-500">{error}</p>
-     <p className="text-green-500">Your Transaction Id: {transactionId}</p>
-     </div>
+      <div className="p-5">
+        <p className="text-red-500">{error}</p>
+        <p className="text-green-500">Your Transaction Id: {transactionId}</p>
+      </div>
     </form>
   );
 };

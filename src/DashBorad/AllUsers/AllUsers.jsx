@@ -5,7 +5,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { Helmet } from "react-helmet-async";
 
 const AllUsers = () => {
-  const axiosSecure =useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
@@ -44,7 +44,7 @@ const AllUsers = () => {
       if (result.isConfirmed) {
         axiosSecure.post("/users/ban", user).then((res) => {
           if (res.data.insertedId) {
-            const remainingByBanned = users.filter(b=> b._id !==user._id)
+            const remainingByBanned = users.filter((b) => b._id !== user._id);
             console.log(remainingByBanned);
             Swal.fire({
               title: "Ban!",
@@ -59,7 +59,7 @@ const AllUsers = () => {
 
   return (
     <div>
-       <Helmet>
+      <Helmet>
         <title>Lapse-Peat || All Users</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
@@ -70,7 +70,7 @@ const AllUsers = () => {
         <table className="table table-zebra w-full">
           {/* head */}
           <thead>
-            <tr >
+            <tr>
               <th></th>
               <th className="font-bold">Profile</th>
               <th className="font-bold">Name</th>
@@ -89,8 +89,6 @@ const AllUsers = () => {
                       <img src={user.image} />
                     </div>
                   </div>
-
-                  
                 </td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>

@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 // PrivateRoute.jsx
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import "react-loading-skeleton/dist/skeleton.css";
 import { AuthContext } from "../../ContextProvider/ContextProvider";
-import ReactPlayer from "react-player";
-import LoaderVideo from "../../assets/Banner.mp4";
+// import ReactPlayer from "react-player";
+// import LoaderVideo from "../../assets/Banner.mp4";
 
 const PrivateRoute = ({ children }) => {
   const location = useLocation();

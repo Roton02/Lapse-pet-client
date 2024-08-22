@@ -1,7 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import Select from "react-select";
 import { useForm } from "react-hook-form";
-import { BiVerticalBottom } from "react-icons/bi";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
@@ -15,8 +15,14 @@ const AdminOnlyUpdate = () => {
   const loadedData = useLoaderData();
   console.log(loadedData);
 
-  const { _id, name, age, type, img, description, description2, location } = loadedData;
-  const { register, reset, handleSubmit, formState: { errors } } = useForm();
+  const { _id, name, age, type, img, description, description2, location } =
+    loadedData;
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const { user } = useAuth();
   const [selectedOption, setSelectedOption] = useState();
   const [fileInput, setFileInput] = useState(null);
@@ -73,7 +79,7 @@ const AdminOnlyUpdate = () => {
 
   return (
     <div>
-       <Helmet>
+      <Helmet>
         <title>Lapse-Peat || Admin Peats Update </title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
@@ -91,7 +97,6 @@ const AdminOnlyUpdate = () => {
                     </div>
 
                     <div className="mt-5">
-                      
                       <div className="grid grid-cols-2 gap-4">
                         <div className="form-control">
                           <label className="label">
@@ -210,24 +215,20 @@ const AdminOnlyUpdate = () => {
                       </div>
 
                       <div className="mt-5 flex justify-center">
-                        <button
-                          type="submit"
-                          value={""}
-                          className=""
-                        >
-                                                  <a
-                          href="#_"
-                          className="relative px-9 py-3 overflow-hidden font-medium text-black bg-pink-500  border border-gray-100  shadow-inner group"
-                        >
-                          <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
-                          <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
-                          <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-                          <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
-                          <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
-                          <span className="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
-                           Update
-                          </span>
-                        </a>
+                        <button type="submit" value={""} className="">
+                          <a
+                            href="#_"
+                            className="relative px-9 py-3 overflow-hidden font-medium text-black bg-pink-500  border border-gray-100  shadow-inner group"
+                          >
+                            <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
+                            <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
+                            <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+                            <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"></span>
+                            <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-gray-900 opacity-0 group-hover:opacity-100"></span>
+                            <span className="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
+                              Update
+                            </span>
+                          </a>
                         </button>
                       </div>
                     </div>

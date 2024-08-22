@@ -125,7 +125,7 @@ const Register = () => {
         axiosPublic.post("/users", userInfo).then((res) => {
           console.log("object");
           console.log(res.data);
-          navigate('/');
+          navigate("/");
         });
       })
       .catch((error) => {

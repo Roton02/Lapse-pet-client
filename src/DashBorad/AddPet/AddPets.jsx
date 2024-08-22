@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import  { useState, useEffect } from "react";
 import Select from "react-select";
 import { useForm } from "react-hook-form";
-import { BiVerticalBottom } from "react-icons/bi";
 import useAuth from "../../Hooks/useAuth";
 import { imageUpload } from "../../api/utils";
 import Swal from "sweetalert2";

@@ -202,14 +202,13 @@ const AdminAllPets = () => {
         <title>Lapse-Peat || Admin All Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <h1 className="text-4xl text-center font-bold mt-5  lg:mt-0 mb-4">All Pets</h1>
+      <h1 className="text-4xl text-center font-bold mt-5  lg:mt-0 mb-4">
+        All Pets
+      </h1>
       <table className="table max-w-5xl mx-auto">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
-            <tr
-              key={headerGroup.id}
-              className=" border-b border-gray-300"
-            >
+            <tr key={headerGroup.id} className=" border-b border-gray-300">
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
@@ -231,9 +230,7 @@ const AdminAllPets = () => {
         <tbody>
           {paginatedData.map((row, i) => (
             <tr key={row._id} className="border-b border-gray-300">
-              <td className="p-4 text-sm ">
-                {i + 1 + pageIndex * pageSize}
-              </td>
+              <td className="p-4 text-sm ">{i + 1 + pageIndex * pageSize}</td>
               <td className="p-4 text-sm ">
                 <img
                   src={row.img}
@@ -245,11 +242,17 @@ const AdminAllPets = () => {
               <td className="p-4 text-sm ">{row.type}</td>
               <td className="p-4 text-sm ">
                 {row.adopted ? (
-                  <button disabled className="bg-green-300 text-nowrap px-1 block">
+                  <button
+                    disabled
+                    className="bg-green-300 text-nowrap px-1 block"
+                  >
                     AllReady Adopted
                   </button>
                 ) : (
-                  <button disabled className="to-blue-300 btn-block text-nowrap  px-1">
+                  <button
+                    disabled
+                    className="to-blue-300 btn-block text-nowrap  px-1"
+                  >
                     {" "}
                     Not Adopted
                   </button>

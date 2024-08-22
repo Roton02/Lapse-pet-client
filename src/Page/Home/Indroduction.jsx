@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 
 const AboutUs = () => {
@@ -67,9 +68,7 @@ const AboutUs = () => {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <p className="text-lg ">
-                  Seamless Adoption Process
-                </p>
+                <p className="text-lg ">Seamless Adoption Process</p>
               </div>
               <div className="flex items-center">
                 <svg

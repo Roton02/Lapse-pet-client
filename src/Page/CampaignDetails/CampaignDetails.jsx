@@ -160,47 +160,47 @@ const CampaignDetails = () => {
                 </div>
               </div>
               {recomended && (
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-2xl font-bold flex justify-center py-5 ">
-            Recomended For Donate{" "}
-          </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2   gap-10 mt-2">
-            {recomendedData.slice(0, 2).map((campaign) => (
-              <div key={campaign._id} className="">
-                <div className="px-0 border   bg-gray-100  shadow-2xl hover:scale-105">
-                  <figure className="w-full bg-cover">
-                    <img
-                      src={campaign.image}
-                      alt="No uploaded any image"
-                      className="rounded-t-sm h-80 rounded-br-full rounded-tr-full bg-cover w-full "
-                    />
-                  </figure>
-                  <div className="px-5">
-                    <div className="flex justify-between">
-                      <h2 className="card-title font-bold text-2xl">
-                        {campaign.name}
-                      </h2>
-                      <h2 className="font-bold">{campaign.date}</h2>
-                    </div>
-                    <div className="text-sm font-bold text-gray-500 ">
-                      <p>Max Donate: $ {campaign.maxDonation}</p>
-                      <p>Donated : $ {campaign.donated_amount}</p>
-                    </div>
+                <div className="max-w-7xl mx-auto">
+                  <h1 className="text-2xl font-bold flex justify-center py-5 ">
+                    Recomended For Donate{" "}
+                  </h1>
+                  <div className="grid grid-cols-1 md:grid-cols-2   gap-10 mt-2">
+                    {recomendedData.slice(0, 2).map((campaign) => (
+                      <div key={campaign._id} className="">
+                        <div className="px-0 border   bg-gray-100  shadow-2xl hover:scale-105">
+                          <figure className="w-full bg-cover">
+                            <img
+                              src={campaign.image}
+                              alt="No uploaded any image"
+                              className="rounded-t-sm h-80 rounded-br-full rounded-tr-full bg-cover w-full "
+                            />
+                          </figure>
+                          <div className="px-5">
+                            <div className="flex justify-between">
+                              <h2 className="card-title font-bold text-2xl">
+                                {campaign.name}
+                              </h2>
+                              <h2 className="font-bold">{campaign.date}</h2>
+                            </div>
+                            <div className="text-sm font-bold text-gray-500 ">
+                              <p>Max Donate: $ {campaign.maxDonation}</p>
+                              <p>Donated : $ {campaign.donated_amount}</p>
+                            </div>
 
-                    <div className="w-full flex justify-end my-2 mb-3">
-                      <Link to={`/campaignDetails/${campaign._id}`}>
-                        <button className="rounded-md  btn-sm btn overflow-hidden relative group cursor-pointer border-2 font-medium border-[#ff4880] text-[#ff4880] hover:text-black">
-                          View Details
-                        </button>
-                      </Link>
-                    </div>
+                            <div className="w-full flex justify-end my-2 mb-3">
+                              <Link to={`/campaignDetails/${campaign._id}`}>
+                                <button className="rounded-md  btn-sm btn overflow-hidden relative group cursor-pointer border-2 font-medium border-[#ff4880] text-[#ff4880] hover:text-black">
+                                  View Details
+                                </button>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+              )}
             </div>
             <div className="md:w-1/3">
               <div className="p-2">
@@ -225,7 +225,9 @@ const CampaignDetails = () => {
                       <span className="absolute flex items-center justify-center w-full h-full text-pink-500 transition-all duration-300 transform group-hover:translate-x-full ease">
                         My Campaign List
                       </span>
-                      <span className="relative invisible">My Campaign List</span>
+                      <span className="relative invisible">
+                        My Campaign List
+                      </span>
                     </a>
                   </Link>
                   <Link to="/dashboard/myDonation">
@@ -247,9 +249,7 @@ const CampaignDetails = () => {
                       <span className="absolute flex items-center justify-center w-full h-full text-pink-500 transition-all duration-300 transform group-hover:translate-x-full ease">
                         My Donation
                       </span>
-                      <span className="relative invisible">
-                        My Donation
-                      </span>
+                      <span className="relative invisible">My Donation</span>
                     </a>
                   </Link>
                 </div>
@@ -303,7 +303,10 @@ const CampaignDetails = () => {
                     <h2 className="text-2xl font-semibold"> Q-Zone</h2>
                     <div className="grid grid-cols-1 gap-y-5">
                       {recomendedData.slice(5, 8).map((list) => (
-                        <Link key={list._id} to={`/campaignDetails/${list._id}`}>
+                        <Link
+                          key={list._id}
+                          to={`/campaignDetails/${list._id}`}
+                        >
                           <div className=" w-full ">
                             <a
                               href="#"
@@ -381,9 +384,7 @@ const CampaignDetails = () => {
             </div>
           </div>
         </div>
-        
       </div>
-      
     </div>
   );
 };

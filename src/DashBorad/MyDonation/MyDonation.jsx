@@ -47,7 +47,7 @@ const MyDonation = () => {
 
   return (
     <div>
-       <Helmet>
+      <Helmet>
         <title>Lapse-Peat || My Donation</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
@@ -68,8 +68,13 @@ const MyDonation = () => {
           <tbody>
             {users.map((user) => {
               const donators = user.donators || [];
-              const userDonations = donators.filter((p) => p.email === authUser.email);
-              const totalDonated = userDonations.reduce((total, p) => total + p.donate, 0);
+              const userDonations = donators.filter(
+                (p) => p.email === authUser.email
+              );
+              const totalDonated = userDonations.reduce(
+                (total, p) => total + p.donate,
+                0
+              );
 
               return totalDonated > 0 ? (
                 <tr key={user._id}>
@@ -82,16 +87,11 @@ const MyDonation = () => {
                     </div>
                   </td>
                   <td>{user.name}</td>
-                  <td>
-                    {(totalDonated / 100).toFixed(2)} $
-                  </td>
+                  <td>{(totalDonated / 100).toFixed(2)} $</td>
                   <td>
                     <button
                       onClick={() =>
-                        handleRefundMoney(
-                          user,
-                          (totalDonated / 100).toFixed(2)
-                        )
+                        handleRefundMoney(user, (totalDonated / 100).toFixed(2))
                       }
                       className="btn btn-outline btn-sm border-b-4 border-black rounded-b-lg text-nowrap"
                     >

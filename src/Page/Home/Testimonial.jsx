@@ -19,7 +19,7 @@ const Testimonials = () => {
           <section className="">
             <div className="container flex flex-col items-center px-4 py-12 mx-auto text-center">
               <h2 className="max-w-2xl mx-auto text-2xl font-semibold tracking-tight  xl:text-3xl dark:text-white">
-              Transformative Joy: My Journey with Adopted Pets
+                Transformative Joy: My Journey with Adopted Pets
               </h2>
 
               <p className="max-w-4xl mt-6 text-center  dark:text-gray-300">
@@ -51,7 +51,7 @@ const Testimonials = () => {
           <section className="">
             <div className="container flex flex-col items-center px-4 py-12 mx-auto text-center">
               <h2 className="max-w-2xl mx-auto text-2xl font-semibold tracking-tight  xl:text-3xl dark:text-white">
-              From Fear to Love: A Tale of Adoption
+                From Fear to Love: A Tale of Adoption
               </h2>
 
               <p className="max-w-4xl mt-6 text-center ">
@@ -84,7 +84,7 @@ const Testimonials = () => {
           <section className="">
             <div className="container flex flex-col items-center px-4 py-12 mx-auto text-center">
               <h2 className="max-w-2xl mx-auto text-2xl font-semibold tracking-tight  xl:text-3xl ">
-              Unconditional Bonds: Adopted Pets in My Life
+                Unconditional Bonds: Adopted Pets in My Life
               </h2>
 
               <p className="max-w-4xl mt-6 text-center ">
@@ -117,7 +117,7 @@ const Testimonials = () => {
           <section className="">
             <div className="container flex flex-col items-center px-4 py-12 mx-auto text-center">
               <h2 className="max-w-2xl mx-auto text-2xl font-semibold tracking-tight xl:text-3xl dark:text-white">
-              Finding Happiness: How Adopting Pets Changed Everything
+                Finding Happiness: How Adopting Pets Changed Everything
               </h2>
 
               <p className="max-w-4xl mt-6 text-center ">
@@ -150,7 +150,7 @@ const Testimonials = () => {
           <section className="">
             <div className="container flex flex-col items-center px-4 py-12 mx-auto text-center">
               <h2 className="max-w-2xl mx-auto text-2xl font-semibold tracking-tight  xl:text-3xl dark:text-white">
-              Adopt, Love, Cherish: My Experience with Rescued Animals
+                Adopt, Love, Cherish: My Experience with Rescued Animals
               </h2>
 
               <p className="max-w-4xl mt-6 text-center ">
@@ -162,10 +162,7 @@ const Testimonials = () => {
               <div className="flex items-center gap-3 w-full mt-6 sm:w-auto">
                 <div className="avatar ">
                   <div className="w-24 rounded-full">
-                    <img
-                      src="https://i.ibb.co/nzjN9sv/images.jpg"
-                      alt=""
-                    />
+                    <img src="https://i.ibb.co/nzjN9sv/images.jpg" alt="" />
                   </div>
                 </div>
                 <div className="">

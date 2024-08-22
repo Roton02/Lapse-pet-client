@@ -11,21 +11,19 @@ const AdoptionRequest = () => {
   const { data: RequestedPets = [], refetch } = useQuery({
     queryKey: ["pets"],
     queryFn: async () => {
-      const res = await axiosSecure.get(`Adopted/request/${user.email}`
-      );
+      const res = await axiosSecure.get(`Adopted/request/${user.email}`);
       return res.data;
     },
   });
   console.log(RequestedPets);
-  const handleAccept =(_id,id)=>{
+  const handleAccept = (_id, id) => {
     console.log(_id, id);
-    axiosSecure.patch(`adopted/requestedAccept/${_id}/${id}`)
-    .then(res=>{
-      console.log("working",res.data);
-      refetch()
-    })
-  }
-  const handleCancle =(id)=>{
+    axiosSecure.patch(`adopted/requestedAccept/${_id}/${id}`).then((res) => {
+      console.log("working", res.data);
+      refetch();
+    });
+  };
+  const handleCancle = (id) => {
     console.log(id);
     Swal.fire({
       title: "Are you sure?",
@@ -49,12 +47,12 @@ const AdoptionRequest = () => {
           }
         });
       }
-    });  
-  }
+    });
+  };
 
   return (
     <div>
-       <Helmet>
+      <Helmet>
         <title>Lapse-Peat || Adoption Request</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
@@ -63,9 +61,7 @@ const AdoptionRequest = () => {
       </div>
       <section className=" px-4 mx-auto">
         <div className="flex items-center gap-x-3">
-          <h2 className="text-lg font-medium ">
-            Requester Details{" "}
-          </h2>
+          <h2 className="text-lg font-medium ">Requester Details </h2>
 
           <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">
             {RequestedPets.length} Request
@@ -161,20 +157,20 @@ const AdoptionRequest = () => {
                     {manage.RequsterAddress}
                   </td>
                   <td className="size-px px-6 py-1.5 whitespace-nowrap">
-                  <button
-                    onClick={() => handleAccept(manage._id, manage.id)}
-                    className="bg-green-500 text-white px-2 py-1 rounded"
-                  >
-                    Accept
-                  </button>
+                    <button
+                      onClick={() => handleAccept(manage._id, manage.id)}
+                      className="bg-green-500 text-white px-2 py-1 rounded"
+                    >
+                      Accept
+                    </button>
                   </td>
                   <td className="size-px px-6 py-1.5 whitespace-nowrap">
-                  <button
-                    onClick={() => handleCancle(manage._id)}
-                    className="bg-red-500 text-white px-2 py-1 rounded"
-                  >
-                    Cancle
-                  </button>
+                    <button
+                      onClick={() => handleCancle(manage._id)}
+                      className="bg-red-500 text-white px-2 py-1 rounded"
+                    >
+                      Cancle
+                    </button>
                   </td>
                 </tr>
               ))}

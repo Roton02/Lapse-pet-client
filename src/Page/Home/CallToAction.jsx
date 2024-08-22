@@ -22,7 +22,7 @@ const CallToAction = () => {
                   provide, free from judgment or resentment, solidifying their
                   role not just as pets but as cherished members of the family.
                 </p>
-                <Link to='/campaign' className="pt-10">
+                <Link to="/campaign" className="pt-10">
                   <a
                     href="#_"
                     className="relative inline-block mt-4 px-4 py-2 font-medium group"
@@ -30,11 +30,10 @@ const CallToAction = () => {
                     <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-[#ff4880] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                     <span className="absolute inset-0 w-full h-full bg-white border-2 border-[#ff4880] group-hover:bg-[#ff4880]"></span>
                     <span className="relative text-[#ff4880] group-hover:text-white">
-                    Donate For Campaign
+                      Donate For Campaign
                     </span>
                   </a>
                 </Link>
-               
               </div>
             </div>
 

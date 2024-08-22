@@ -43,7 +43,7 @@ const MyDonationCampaign = () => {
 
   return (
     <div className=" mx-auto p-4">
-       <Helmet>
+      <Helmet>
         <title>Lapse-Peat || My Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
@@ -65,12 +65,19 @@ const MyDonationCampaign = () => {
           {data.map((item, index) => (
             <tr key={index}>
               <td className="py-2 px-4 border-b text-center">{item.name}</td>
-              <td className="py-2 px-4 border-b text-center">${item.maxDonation}</td>
+              <td className="py-2 px-4 border-b text-center">
+                ${item.maxDonation}
+              </td>
               <td className="py-2 px-4 border-b text-center">
                 <div className="relative pt-1">
                   <div className="overflow-hidden h-2 text-xs flex rounded bg-pink-200">
                     <div
-                      style={{ width: `${calculateProgress(item.donatedAmount, item.maxDonation)}%` }}
+                      style={{
+                        width: `${calculateProgress(
+                          item.donatedAmount,
+                          item.maxDonation
+                        )}%`,
+                      }}
                       className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"
                     ></div>
                   </div>
@@ -98,7 +105,9 @@ const MyDonationCampaign = () => {
               <td className="py-2 px-1 border-b text-center">
                 <button
                   className="bg-green-500 text-nowrap hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
-                  onClick={() => document.getElementById(`my_modal_${index}`).showModal()}
+                  onClick={() =>
+                    document.getElementById(`my_modal_${index}`).showModal()
+                  }
                 >
                   View Donators
                 </button>
@@ -109,20 +118,28 @@ const MyDonationCampaign = () => {
                         ✕
                       </button>
                     </form>
-                    <h3 className="font-bold text-lg">Your Campaign Donator List!</h3>
+                    <h3 className="font-bold text-lg">
+                      Your Campaign Donator List!
+                    </h3>
                     <div>
                       {item.donators && item.donators.length > 0 ? (
                         item.donators.map((d, i) => (
-                          <div className="p-2 my-2  bg-white rounded-xl" key={i}>
-        
+                          <div
+                            className="p-2 my-2  bg-white rounded-xl"
+                            key={i}
+                          >
                             <div className="text-start text-black ml-5">
-                            <h1 className="text-xl font-semibold">{d.name}</h1>
-                            <h4>{d.email}</h4>
+                              <h1 className="text-xl font-semibold">
+                                {d.name}
+                              </h1>
+                              <h4>{d.email}</h4>
                             </div>
                           </div>
                         ))
                       ) : (
-                        <p className="mt-5 text-nowrap text-red-600 font-bold">There are no donators</p>
+                        <p className="mt-5 text-nowrap text-red-600 font-bold">
+                          There are no donators
+                        </p>
                       )}
                     </div>
                   </div>

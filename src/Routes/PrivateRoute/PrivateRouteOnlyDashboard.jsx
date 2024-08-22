@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 // PrivateRoute.jsx
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
@@ -7,7 +9,6 @@ import { AuthContext } from "../../ContextProvider/ContextProvider";
 const PrivateRoute = ({ children }) => {
   const location = useLocation();
   const { user, loading } = useContext(AuthContext);
- 
 
   if (!user) {
     // If user is not authenticated, redirect to login page
