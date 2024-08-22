@@ -13,16 +13,11 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     // Render skeleton loaders while loading
     return (
-      <div className="bg-[#110e11] w-screen flex justify-center items-center min-h-screen relative">
-        <ReactPlayer
-          url={LoaderVideo}
-          playing
-          loop
-          muted
-          width="100%"
-          height="100%"
-          className="absolute top-0 left-0 w-screen h-full"
-        />
+      <div className="flex items-center justify-center mt-20">
+        <div className="flex gap-2">
+          <span className="loading loading-spinner loading-lg"></span>
+          <span className="text-xl font-bold">Looding...</span>
+        </div>
       </div>
     );
   }
