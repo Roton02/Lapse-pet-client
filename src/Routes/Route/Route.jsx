@@ -133,7 +133,7 @@ import UpdateProfile from "../../Page/Register/UpdateProfile/UpdateProfile";
         {
           path:'fets/updatepets/:id',
           element:<AdminRoute><AdminOnlyUpdate></AdminOnlyUpdate></AdminRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/allCategory/${params.id}`)
+          loader: ({params})=>fetch(`https://lapsepets.vercel.app/allCategory/${params.id}`)
          },
          {
           path:'admin/AllDonation',
