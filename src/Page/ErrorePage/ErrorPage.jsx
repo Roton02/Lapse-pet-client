@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
-
-import lottie from "../../assets/lottie.json";
-import Lottie from "lottie-react";
 import { Helmet } from "react-helmet-async";
-import img   from '../../assets/404-removebg-preview.png'
+import img from "../../assets/404-removebg-preview.png";
 
 const ErrorPage = () => {
   return (

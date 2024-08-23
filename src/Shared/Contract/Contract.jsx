@@ -1,6 +1,27 @@
 import { Helmet } from "react-helmet-async";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 const Contract = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_75l5vtu", "template_bisvf4r", form.current, {
+        publicKey: "R1BroEXe6pbJyPecI",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     <div>
       <Helmet>
@@ -89,6 +110,8 @@ const Contract = () => {
             </div>
           </div>
           <form
+            ref={form}
+            onSubmit={sendEmail}
             noValidate=""
             className="flex lg:col-span-4 flex-col py-6 my-5 space-y-6 md:py-0 md:px-6"
           >
@@ -96,6 +119,7 @@ const Contract = () => {
               <span className="mb-1">Full name</span>
               <input
                 type="text"
+                name="user_name"
                 placeholder="Leroy Jenkins"
                 className="block w-full p-3 rounded-md shadow-sm focus:ring focus:ring-opacity-75 "
               />
@@ -104,6 +128,7 @@ const Contract = () => {
               <span className="mb-1">Email address</span>
               <input
                 type="email"
+                name="user_email"
                 placeholder="leroy@jenkins.com"
                 className="block p-3 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 "
               />
@@ -111,6 +136,7 @@ const Contract = () => {
             <label className="block">
               <span className="mb-1">Message</span>
               <textarea
+                name="message"
                 placeholder="write message"
                 rows="5"
                 className="block p-5 w-full rounded-md focus:ring focus:ring-opacity-75 "
@@ -119,7 +145,7 @@ const Contract = () => {
             <button
               data-aos="fade-left"
               data-aos-duration="1000"
-              type="button"
+              type="submit"
               className="self-end px-8 py-3 text-lg rounded-lg bg-[#ff4880] text-white  hover:bg-gray-200 
                hover:text-black duration-300"
             >
