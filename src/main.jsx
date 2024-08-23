@@ -8,6 +8,9 @@ import "react-toastify/dist/ReactToastify.css";
 import ContextProvider from "./ContextProvider/ContextProvider";
 import router from "./Routes/Route/Route";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ReactPlayer from "react-player";
+import LoaderVideo from "./assets/Banner.mp4";
+
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -18,12 +21,16 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <div className="px-1 md:px-0">
             <RouterProvider
               fallbackElement={
-                <div className="flex h-screen mb-96 items-center justify-center mt-20">
-                <div className="flex gap-2">
-                  <span className="loading loading-spinner loading-lg"></span>
-                  <span className="text-xl font-bold">Looding...</span>
+                <div className="bg-[#110e11] w-screen flex justify-center items-center min-h-screen relative">
+                  <ReactPlayer
+                    url={LoaderVideo}
+                    playing
+                    muted
+                    width="100%"
+                    height="100%"
+                    className="absolute top-0 left-0 w-screen h-full"
+                  />
                 </div>
-              </div>
               }
               router={router}
             />
