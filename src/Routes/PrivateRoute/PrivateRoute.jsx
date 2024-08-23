@@ -14,7 +14,7 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     // Render skeleton loaders while loading
     return (
-      <div className="flex items-center justify-center mt-20">
+      <div className="flex h-screen mb-96 items-center justify-center mt-20">
         <div className="flex gap-2">
           <span className="loading loading-spinner loading-lg"></span>
           <span className="text-xl font-bold">Looding...</span>

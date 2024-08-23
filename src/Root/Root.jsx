@@ -33,7 +33,6 @@ const Root = () => {
           <ReactPlayer
             url={LoaderVideo}
             playing
-            loop
             muted
             width="100%"
             height="100%"
