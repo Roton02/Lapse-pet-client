@@ -7,9 +7,11 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ContextProvider from "./ContextProvider/ContextProvider";
 import router from "./Routes/Route/Route";
+import { Player } from "@lottiefiles/react-lottie-player";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import ReactPlayer from "react-player";
-import LoaderVideo from "./assets/Banner.mp4";
+// import ReactPlayer from "react-player";
+// import LoaderVideo from "./assets/Banner.mp4";
+import lottie from './assets/Loader.json'
 
 const queryClient = new QueryClient();
 
@@ -21,14 +23,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <div className="px-1 md:px-0">
             <RouterProvider
               fallbackElement={
-                <div className="bg-[#110e11] w-screen flex justify-center items-center min-h-screen relative">
-                  <ReactPlayer
-                    url={LoaderVideo}
-                    playing
-                    muted
-                    width="100%"
-                    height="100%"
-                    className="absolute top-0 left-0 w-screen h-full"
+                <div className="flex min-h-screen my-auto items-center justify-center">
+                  <Player
+                    autoplay
+                    loop
+                    src={lottie}
+                    style={{ height: "300px", width: "300px" }}
                   />
                 </div>
               }
