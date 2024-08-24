@@ -108,6 +108,16 @@ const Register = () => {
         axiosPublic.post("/users", userInfo).then((res) => {
           console.log("object");
           console.log(res.data);
+          toast.success("😍 Register successful!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
           navigate("/");
         });
       })
@@ -125,6 +135,16 @@ const Register = () => {
         axiosPublic.post("/users", userInfo).then((res) => {
           console.log("object");
           console.log(res.data);
+          toast.success("😍 Register successful!", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
           navigate("/");
         });
       })

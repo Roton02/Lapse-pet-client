@@ -25,7 +25,17 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         console.log(result.user);
-        toast.success(" successful Login ");
+        toast.success('😍 Login successful!', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          
+          });
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
@@ -46,6 +56,17 @@ const Login = () => {
         axiosPublic.post("/users", userInfo).then((res) => {
           console.log("object");
           console.log(res.data);
+          toast.success('😍 Login successful!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            
+            });
           navigate(location?.state ? location.state : "/");
         });
       })
@@ -65,6 +86,16 @@ const Login = () => {
         axiosPublic.post("/users", userInfo).then((res) => {
           console.log("object");
           console.log(res.data);
+          toast.success('😍 Login successful!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
           navigate(location?.state ? location.state : "/");
         });
       })

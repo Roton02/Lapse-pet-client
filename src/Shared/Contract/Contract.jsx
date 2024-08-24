@@ -143,8 +143,7 @@ const Contract = () => {
               ></textarea>
             </label>
             <button
-              data-aos="fade-left"
-              data-aos-duration="1000"
+              
               type="submit"
               className="self-end px-8 py-3 text-lg rounded-lg bg-[#ff4880] text-white  hover:bg-gray-200 
                hover:text-black duration-300"

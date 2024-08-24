@@ -14,6 +14,7 @@ import { updateProfile } from "firebase/auth";
 // import { toast } from "react-toastify";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 
 export const AuthContext = createContext(null);
 const ContextProvider = ({ children }) => {
@@ -45,12 +46,15 @@ const ContextProvider = ({ children }) => {
   const Logout = () => {
     // setLoading(false)
     signOut(auth);
-    Swal.fire({
+    toast.error(" You are now out of Log   🥵 !", {
       position: "top-center",
-      icon: "success",
-      title: `LogOut SuccessFul !`,
-      showConfirmButton: false,
-      timer: 1500,
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
     });
     return;
   };

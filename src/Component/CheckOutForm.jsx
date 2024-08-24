@@ -98,8 +98,8 @@ const CheckOutForm = ({ pause, id }) => {
           });
         console.log("Transaction id", paymentIntent.id);
         setTransactionId(paymentIntent.id);
-        toast.success("Payment Succesfull", {
-          position: "top-right",
+        toast.success("Payment Succesfull 😻", {
+          position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,

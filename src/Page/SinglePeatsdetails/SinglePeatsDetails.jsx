@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
+import { toast } from "react-toastify";
 
 const SinglePeatsDetails = () => {
   const params = useParams();
@@ -47,12 +48,15 @@ const SinglePeatsDetails = () => {
     axiosPublic.post("/Adopted/request", requestedData).then((res) => {
       console.log(res.data);
       if (res.data.insertedId) {
-        Swal.fire({
+        toast.success("Your request has Recived 😍", {
           position: "top-center",
-          icon: "success",
-          title: `Your request has Recived`,
-          showConfirmButton: false,
-          timer: 2000,
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
         });
       }
     });

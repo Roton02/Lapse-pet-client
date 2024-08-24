@@ -40,7 +40,7 @@ const Root = () => {
           />
         </div>
       ) : (
-        <div className="">
+        <div className="overflow-x-hidden">
           <Navbar />
           <div className="flex flex-col w-full h-screen">
             <div className={`flex-1 ${login_and_register && "bg-white"}`}>
