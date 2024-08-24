@@ -32,7 +32,7 @@ const Contract = () => {
         className="text-3xl font-anton font-semibold text-center
          underline my-5 "
       >
-        Our Branch Address
+        Our Office Address
       </h1>
       <div className="max-w-7xl mx-auto overflow-hidden mt-5  h-[400px]">
         <iframe
