@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
+import { toast } from "react-toastify";
 
 const Contract = () => {
   const form = useRef();
@@ -14,6 +15,16 @@ const Contract = () => {
       })
       .then(
         () => {
+          toast(" 😍 Message Send Successful", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
           console.log("SUCCESS!");
         },
         (error) => {
@@ -143,7 +154,6 @@ const Contract = () => {
               ></textarea>
             </label>
             <button
-              
               type="submit"
               className="self-end px-8 py-3 text-lg rounded-lg bg-[#ff4880] text-white  hover:bg-gray-200 
                hover:text-black duration-300"
