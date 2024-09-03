@@ -339,11 +339,7 @@ const Navbar = () => {
             </div>
           </div>
           <Link to="/">
-            <img
-              className=" w-24 lg:w-44 ml-5 lg:ml-0"
-              src="https://i.ibb.co/L0v6r6Z/logo-finel-removebg-preview.png"
-              alt=""
-            />
+            <h1 className="text-2xl md:text-4xl"><span className="text-pink-600">Lapse</span>-Pet</h1>
           </Link>
         </div>
 
