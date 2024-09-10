@@ -28,7 +28,7 @@ const Root = () => {
   console.log(location);
   return (
     <>
-      {loading ? (
+      {false ? (
         <div className="bg-[#110e11] w-screen flex justify-center items-center min-h-screen relative">
           <ReactPlayer
             url={LoaderVideo}
@@ -40,7 +40,7 @@ const Root = () => {
           />
         </div>
       ) : (
-        <div className="overflow-x-hidden">
+        <div className="">
           <Navbar />
           <div className="flex flex-col w-full h-screen">
             <div className={`flex-1 ${login_and_register && "bg-white"}`}>
