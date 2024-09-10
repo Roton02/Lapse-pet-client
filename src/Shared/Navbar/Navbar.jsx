@@ -464,10 +464,10 @@ const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className="rounded-md btn-sm  m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-[#ff4880] text-[#ff4880] hover:text-white"
+              className="rounded-md pb-1  px-2 overflow-hidden relative group cursor-pointer border-2 font-medium border-[#ff4880] text-[#ff4880] hover:text-white"
             >
               <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-[#ff4880] top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-              <span className="relative text-[#ff4880] transition duration-300 group-hover:text-white ease">
+              <span className="relative  text-[#ff4880] transition duration-300 group-hover:text-white ease">
                 Login
               </span>
             </Link>

@@ -46,7 +46,7 @@ const ContextProvider = ({ children }) => {
   const Logout = () => {
     // setLoading(false)
     signOut(auth);
-    toast.error(" You are now out of Log   🥵 !", {
+    toast.error(" You are now out of Log    !", {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
