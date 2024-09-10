@@ -433,7 +433,7 @@ const Navbar = () => {
                     />
                   </div>
                   <li className="mx-auto text-xl font-bold ">
-                    ----- {user?.displayName} -----
+                    {user?.displayName} 
                   </li>
                   <li>
                     <NavLink

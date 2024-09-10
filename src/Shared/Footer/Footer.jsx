@@ -4,7 +4,13 @@ import ScrollToTop from "react-scroll-to-top";
 const Footer = () => {
   return (
     <div className="relative mt-16 ">
-       <ScrollToTop smooth  />
+      <ScrollToTop
+        height="100"
+        style={{ backgroundColor: "#ff497c" }}
+        className="text-center flex justify-center items-center mx-auto bg-[#ff497c]"
+        top={1000}
+        smooth
+      />
       <svg
         className="absolute top-0 w-full  h-6 -mt-5 sm:-mt-10 sm:h-16 text-deep-purple-accent-400"
         preserveAspectRatio="none"
@@ -25,22 +31,8 @@ const Footer = () => {
                 title="Company"
                 className="inline-flex items-center"
               >
-                <svg
-                  className="w-8 text-teal-accent-400"
-                  viewBox="0 0 24 24"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeMiterlimit="10"
-                  stroke="currentColor"
-                  fill="none"
-                >
-                  <rect x="3" y="1" width="7" height="12" />
-                  <rect x="3" y="17" width="7" height="6" />
-                  <rect x="14" y="1" width="7" height="6" />
-                  <rect x="14" y="11" width="7" height="12" />
-                </svg>
-                <span className="ml-2 text-xl font-bold tracking-wide  uppercase">
+                
+                <span className=" text-xl font-bold tracking-wide  uppercase">
                   Lapse Pet
                 </span>
               </a>
