@@ -339,7 +339,9 @@ const Navbar = () => {
             </div>
           </div>
           <Link to="/">
-            <h1 className="text-2xl md:text-4xl"><span className="text-pink-600">Lapse</span>-Pet</h1>
+            <h1 className="text-2xl md:text-4xl  text-black">
+              <span className="text-pink-600">Lapse</span>-Pet
+            </h1>
           </Link>
         </div>
 
@@ -433,7 +435,7 @@ const Navbar = () => {
                     />
                   </div>
                   <li className="mx-auto text-xl font-bold ">
-                    {user?.displayName} 
+                    {user?.displayName}
                   </li>
                   <li>
                     <NavLink
