@@ -26,11 +26,11 @@ const Banner2 = () => {
         >
           {/* slide 1 */}
           <SwiperSlide>
-            <div className="md:h-[500px] h-auto lg:ml-8">
+            <div className="md:h-[500px] h-auto lg:ml-8 text-black">
               <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center">
                 <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto">
                   <p className="font-semibold text-[#FF497C] mb-3  md:text-left">
-                    <span className="bg-[#FF497C] text-white mr-3 text-xl px-2 py-1 rounded-full">
+                    <span className="bg-[#FF497C]  mr-3 text-xl px-2 py-1 rounded-full">
                       <i className="bx bxs-hot"></i>
                     </span>
                     The reason for Adoption
@@ -46,7 +46,7 @@ const Banner2 = () => {
 
                   <Link to="/listing">
                     <div className="flex justify-start">
-                      <button className="bg-[#FF497C] py-2 mt-5 px-3 rounded text-white font-semibold hover:bg-[#ab3154]">
+                      <button className="bg-[#FF497C] py-2 mt-5 px-3 rounded font-semibold hover:bg-[#ab3154]">
                         <span className="mr-3">
                           <i className="bx bx-hive"></i>
                         </span>
@@ -69,7 +69,7 @@ const Banner2 = () => {
           </SwiperSlide>
           {/* slide 2 */}
           <SwiperSlide>
-            <div className="md:h-[500px] h-auto lg:ml-8">
+            <div className="md:h-[500px] h-auto lg:ml-8 text-black">
               <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center">
                 <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto">
                   <p className="font-semibold text-[#FF497C] mb-3 md:text-left">
@@ -112,7 +112,7 @@ const Banner2 = () => {
           </SwiperSlide>
           {/* slide 3 */}
           <SwiperSlide>
-            <div className="md:h-[500px] h-auto lg:ml-8">
+            <div className="md:h-[500px] h-auto lg:ml-8 text-black">
               <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center">
                 <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto">
                   <p className="font-semibold text-[#FF497C] mb-3  md:text-left">

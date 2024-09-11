@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const CallToAction = () => {
   return (
-    <div>
-      <header className="max-w-7xl mx-auto bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4] rounded-3xl">
+    <div className="bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4] ">
+      <header className="max-w-7xl mx-auto ">
         <div className="container px-6 py-7 mx-auto">
           <div className="items-center lg:flex">
             <div className="w-full lg:ml-10 lg:w-1/2">
@@ -15,7 +15,7 @@ const CallToAction = () => {
                   </span>
                 </h1>
 
-                <p className="mt-3 ">
+                <p className="mt-3 dark:text-black">
                   Pets bring a constant sense of companionship, infusing our
                   living spaces with their distinctive character and warmth.
                   This relationship is deepened by the unconditional love they
