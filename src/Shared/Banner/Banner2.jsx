@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const Banner2 = () => {
   return (
-    <div className=" md:h-[420px]  lg:h-[500px] px-10   bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4]">
+    <div className=" md:h-[420px]  lg:h-[500px] px-10 dark:bg-black   bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4]">
       <div className="max-w-7xl mx-auto pb-8 md:pb-0 ">
         <Swiper
           effect={"fade"}
@@ -46,7 +46,7 @@ const Banner2 = () => {
 
                   <Link to="/listing">
                     <div className="flex justify-start">
-                      <button className="bg-[#FF497C] py-2 mt-5 px-3 rounded font-semibold hover:bg-[#ab3154]">
+                      <button className="bg-[#FF497C] py-2 mt-5 px-3 rounded text-white font-semibold hover:bg-[#ab3154]">
                         <span className="mr-3">
                           <i className="bx bx-hive"></i>
                         </span>
