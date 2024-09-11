@@ -57,13 +57,13 @@ const CreateCampaign = () => {
         <title>Lapse-Peat || Create Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <div className="my-10">
+      <div className="my-10 ">
         <h2 className="text-4xl text-center">Create your Donation Campaign</h2>
       </div>
-      <section className="max-w-3xl p-6 mx-auto bg-white dark:bg-[#1D232A]">
+      <section className="max-w-3xl p-6 mx-auto ">
         <h2
-          className="text-lg text-center border-b-2 pb-5 font-semibold  capitalize 
-    dark:text-white"
+          className="text-lg text-center border-b-2 border-gray-700  pb-5 font-semibold  capitalize 
+    "
         >
           Create your Donation Campaign
         </h2>
@@ -71,28 +71,28 @@ const CreateCampaign = () => {
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
             <div>
-              <label className=" dark:text-gray-200">Name</label>
+              <label className=" ">Name</label>
               <input
                 required
                 id="username"
                 type="text"
                 name="name"
-                className="block w-full px-4 py-2 mt-2  bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2  border rounded-md border-secondary"
               />
             </div>
             <div>
-              <label className=" dark:text-gray-200">Image</label>
+              <label className=" ">Image</label>
               <input
                 required
                 id="username"
                 type="file"
                 name="photo"
-                className="block w-full px-4 py-2 mt-2  bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2  border rounded-md border-secondary"
               />
             </div>
 
             <div>
-              <label className=" dark:text-gray-200">
+              <label className=" ">
                 Maximum donation amount
               </label>
               <input
@@ -100,12 +100,12 @@ const CreateCampaign = () => {
                 id="emailAddress"
                 type="number"
                 name="maxDonation"
-                className="block w-full px-4 py-2 mt-2  bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2  border rounded-md border-secondary"
               />
             </div>
 
             <div>
-              <label className=" dark:text-gray-200">
+              <label className=" ">
                 Last date of donation
               </label>
               <input
@@ -113,18 +113,18 @@ const CreateCampaign = () => {
                 id="password"
                 type="date"
                 name="date"
-                className="block w-full px-4 py-2 mt-2  bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2  border rounded-md border-secondary"
               />
             </div>
           </div>
           <div>
-            <label className=" dark:text-gray-200">sort Description</label>
+            <label className=" ">sort Description</label>
             <input
               required
               id="passwordConfirmation"
               type="text"
               name="sortDescription"
-              className="block w-full px-4 py-2 mt-2  bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+              className="block w-full px-4 py-2 mt-2  border rounded-md border-secondary"
             />
           </div>
           <div>

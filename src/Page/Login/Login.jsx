@@ -104,12 +104,12 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-white">
+    <div className="">
       <Helmet>
         <title>Lapse-Peat || Login</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <div className="flex items-center   w-full max-w-sm mx-auto overflow-hidden bg-white   lg:max-w-4xl">
+      <div className="flex items-center   w-full max-w-sm mx-auto overflow-hidden    lg:max-w-4xl">
         <div className="hidden  lg:block lg:w-1/2 ">
           <video
             src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/account-login-8677600-6981645.mp4"

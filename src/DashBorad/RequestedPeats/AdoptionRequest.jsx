@@ -150,10 +150,10 @@ const AdoptionRequest = () => {
                       </span>
                     </div>
                   </td>
-                  <td className="size-px whitespace-nowrap">
+                  <td className="size-px whitespace-nowrap ">
                     <div className=" pr-6 py-3">{manage.RequsterNumber}</div>
                   </td>
-                  <td className="size-px whitespace-nowrap">
+                  <td className="size-px whitespace-nowrap text-ellipsis max-w-20 bg-red-500 overflow-hidden">
                     {manage.RequsterAddress}
                   </td>
                   <td className="size-px px-6 py-1.5 whitespace-nowrap">

@@ -105,6 +105,7 @@ const Navbar = () => {
               <div className=" grid grid-cols-1 ">
                 <Link to="/">
                   <a
+                  onClick={toggleDrawer}
                     href="#_"
                     className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
                   >
@@ -126,7 +127,7 @@ const Navbar = () => {
                   </a>
                 </Link>
                 <Link to="/listing">
-                  <a
+                  <a onClick={toggleDrawer}
                     href="#_"
                     className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
                   >
@@ -148,7 +149,7 @@ const Navbar = () => {
                   </a>
                 </Link>
                 <Link to="/campaign">
-                  <a
+                  <a onClick={toggleDrawer}
                     href="#_"
                     className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
                   >
@@ -172,7 +173,7 @@ const Navbar = () => {
                   </a>
                 </Link>
                 <Link to="/contract">
-                  <a
+                  <a onClick={toggleDrawer}
                     href="#_"
                     className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
                   >
@@ -197,7 +198,7 @@ const Navbar = () => {
                 {user ? (
                   <div className="grid grid-cols-1">
                     <Link to="/profile">
-                      <a
+                      <a onClick={toggleDrawer}
                         href="#_"
                         className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
                       >
@@ -219,7 +220,7 @@ const Navbar = () => {
                       </a>
                     </Link>
                     <Link to="/dashboard/addPet">
-                      <a
+                      <a onClick={toggleDrawer}
                         href="#_"
                         className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
                       >
@@ -241,7 +242,7 @@ const Navbar = () => {
                       </a>
                     </Link>
                     <Link to="/updateProfile">
-                      <a
+                      <a onClick={toggleDrawer}
                         href="#_"
                         className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
                       >
@@ -264,7 +265,7 @@ const Navbar = () => {
                     </Link>
 
                     <div>
-                      <a
+                      <a 
                         onClick={Logout}
                         href="#_"
                         className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -290,7 +291,7 @@ const Navbar = () => {
                 ) : (
                   <div className="grid grid-cols-1">
                     <Link to="/login">
-                      <a
+                      <a onClick={toggleDrawer}
                         href="#_"
                         className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
                       >
@@ -312,7 +313,7 @@ const Navbar = () => {
                       </a>
                     </Link>
                     <Link to="/register">
-                      <a
+                      <a onClick={toggleDrawer}
                         href="#_"
                         className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
                       >

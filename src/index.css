@@ -17,6 +17,17 @@ p{
   border: 2px solid rebeccapurple;
 } */
 
+.custom{
+  width: calc(100% - 320px)
+
+}
+@media (0px < width < 700px) {
+ 
+.custom{
+  width: 100% 
+
+}
+}
 
 @keyframes gradient-move {
     0% {
