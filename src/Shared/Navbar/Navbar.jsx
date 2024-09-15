@@ -340,7 +340,7 @@ const Navbar = () => {
             </div>
           </div>
           <Link to="/">
-            <h1 className="text-2xl md:text-4xl  text-black">
+            <h1 className="text-2xl customNav md:text-4xl  text-black">
               <span className="text-pink-600">Lapse</span>-Pet
             </h1>
           </Link>

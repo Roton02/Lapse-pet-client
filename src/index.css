@@ -28,6 +28,12 @@ p{
 
 }
 }
+.customNav{
+  text-shadow: 0,0,0,20;
+  text-shadow: 0,0,20,40;
+  text-shadow: 0,20,40,60;
+  text-shadow: 20,40,60,80;
+}
 
 @keyframes gradient-move {
     0% {
