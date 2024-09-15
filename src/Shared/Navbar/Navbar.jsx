@@ -38,15 +38,15 @@ const Navbar = () => {
   }, [theme]); // Re-run effect when theme changes
   console.log(user);
   return (
-    <div className="bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4]  w-full  md:flex md:justify-between md:items-center bg-base-100">
+    <div className="bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4]  w-full  md:flex md:justify-between md:items-center ">
       <nav className="  navbar z-[100] max-w-7xl mx-auto">
-        <div className="navbar-start ">
+        <div className="navbar-start z-50">
           <div className="block md:block lg:hidden">
             <div className="text-center">
               <button className="" type="button" onClick={toggleDrawer}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 ml-5"
+                  className="w-6 h-6 mx-4 mt-2"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
