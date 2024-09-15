@@ -58,7 +58,7 @@ const AllUsers = () => {
   };
 
   return (
-    <div>
+    <div className="-z-50">
       <Helmet>
         <title>Lapse-Peat || All Users</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}

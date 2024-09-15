@@ -92,7 +92,7 @@ const AddPets = () => {
   };
 
   return (
-    <div className="py-10">
+    <div className="py-10 -z-50">
       <Helmet>
         <title>Lapse-Peat || Add Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
@@ -130,7 +130,7 @@ const AddPets = () => {
                     {...register("age", { required: true })}
                     name="age"
                     placeholder="Pet age"
-                    className="mt-1 block w-full px-3 py-2 bg-white  border rounded-md border-secondary"
+                    className="mt-1 block w-full px-3 py-2   border rounded-md border-secondary"
                   />
                   {errors.age && (
                     <span className="text-red-600 text-sm">

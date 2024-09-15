@@ -197,7 +197,7 @@ const AdminAllPets = () => {
   }, [pets, pageIndex, pageSize]);
 
   return (
-    <div className="max-w-7xl mx-auto p-4 ">
+    <div className="max-w-7xl mx-auto p-4 -z-50 ">
       <Helmet>
         <title>Lapse-Peat || Admin All Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}

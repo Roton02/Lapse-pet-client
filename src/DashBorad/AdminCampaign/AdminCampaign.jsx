@@ -82,7 +82,7 @@ const AdminCampaign = () => {
   };
 
   return (
-    <div className=" mx-auto p-4">
+    <div className=" mx-auto p-4 -z-50">
       <Helmet>
         <title>Lapse-Peat || Admin Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}

@@ -41,9 +41,9 @@ const Dashboard = () => {
  
 
   return (
-    <>
+    <div className="custom-z">
       {false ? (
-        <div className="bg-[#110e11] w-screen flex justify-center items-center min-h-screen relative">
+        <div className="bg-[#110e11] w-screen flex justify-center items-center min-h-screen relative custom-z">
           <ReactPlayer
             url={LoaderVideo}
             playing
@@ -55,7 +55,7 @@ const Dashboard = () => {
           />
         </div>
       ) : (
-        <div className="   ">
+        <div className=" custom-z  ">
           <div className="flex  ">
             {/* dashboard side bar */}
             <div className="fixed  w-[320px]">
@@ -740,7 +740,7 @@ const Dashboard = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

@@ -162,7 +162,7 @@ const MyAddedPets = () => {
   }, [pets, pageIndex, pageSize]);
 
   return (
-    <div className="container mx-auto p-4 ">
+    <div className="container mx-auto p-4 -z-50">
       <Helmet>
         <title>Lapse-Peat || My Added Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
