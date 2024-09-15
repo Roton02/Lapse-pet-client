@@ -360,7 +360,7 @@ const Navbar = () => {
           </div>
 
           {user ? (
-            <div className="flex items-center ">
+            <div className="flex items-center ml-3 ">
               <div className="dropdown dropdown-end">
                 <div tabIndex={0} role="button">
                   <div
