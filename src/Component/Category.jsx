@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { Link } from "react-router-dom";
 
 const Category = ({ item }) => {
   console.log(item);
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10  items-center ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10   items-center ">
         {item.length === 0
           ? // Render skeleton loaders while data is loading
             Array(6) // Render 6 skeleton cards (adjust as per your grid layout)
@@ -26,7 +27,7 @@ const Category = ({ item }) => {
               ))
           : // Render actual category items
             item.map((data) => (
-              <div key={data._id} to={`/category/${data._id}`}>
+              <Link  key={data._id} to={`/listing`}>
                 <div className="w-full  overflow-hidden shadow-sm hover:scale-105 transition delay-100 ">
                   <img
                     className="object-cover rounded-xl w-full h-56"
@@ -58,7 +59,7 @@ const Category = ({ item }) => {
                     ></progress>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
       </div>
     </div>
