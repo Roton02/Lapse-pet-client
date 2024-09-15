@@ -38,15 +38,7 @@ const Dashboard = () => {
 
   // localStorage.setItem("theme", "dark");
 
-  useEffect(() => {
-    // Store current theme in localStorage
-    // localStorage.setItem("theme", theme ? "dark" : "light");
-    const theme = localStorage.getItem("theme");
-
-    document
-      .querySelector("html")
-      .setAttribute("data-theme", theme == "light" ? "dark" : "light");
-  }, []); // Re-run effect when theme changes
+ 
 
   return (
     <>
