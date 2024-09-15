@@ -93,7 +93,7 @@ const Dashboard = () => {
                     className="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"
                   >
                     <svg
-                      className="w-4 h-4 mr-2.5n "
+                      className="w-4 h-4 mr-2.5n mr-3 "
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
@@ -127,7 +127,7 @@ const Dashboard = () => {
                   <div className=" grid grid-cols-1 items-center ">
                     {isAdmin ? (
                       <>
-                        <NavLink to="/dashboard/users">
+                        <NavLink to="/dashboard/users" onClick={toggleDrawer}>
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -152,7 +152,7 @@ const Dashboard = () => {
                             </span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/fets">
+                        <NavLink to="/dashboard/fets" onClick={toggleDrawer}>
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -175,7 +175,7 @@ const Dashboard = () => {
                             <span className="relative invisible">All Pets</span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/admin/AllDonation">
+                        <NavLink to="/dashboard/admin/AllDonation" onClick={toggleDrawer}>
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -200,7 +200,7 @@ const Dashboard = () => {
                             </span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/addPet">
+                        <NavLink to="/dashboard/addPet" onClick={toggleDrawer}>
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -225,7 +225,7 @@ const Dashboard = () => {
                             </span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/myAddedPeats">
+                        <NavLink to="/dashboard/myAddedPeats"onClick={toggleDrawer}>
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -250,7 +250,7 @@ const Dashboard = () => {
                             </span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/adoptionRequest">
+                        <NavLink to="/dashboard/adoptionRequest"onClick={toggleDrawer}>
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -275,7 +275,7 @@ const Dashboard = () => {
                             </span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/CreateCampaign">
+                        <NavLink to="/dashboard/CreateCampaign" onClick={toggleDrawer}>
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -301,7 +301,7 @@ const Dashboard = () => {
                             </span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/myDonationCampaign">
+                        <NavLink to="/dashboard/myDonationCampaign" onClick={toggleDrawer}>
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -326,7 +326,7 @@ const Dashboard = () => {
                             </span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/myDonation">
+                        <NavLink to="/dashboard/myDonation"onClick={toggleDrawer}>
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
