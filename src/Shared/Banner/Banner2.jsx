@@ -26,7 +26,7 @@ const Banner2 = () => {
         >
           {/* slide 1 */}
           <SwiperSlide>
-            <div className="md:h-[500px] h-auto lg:ml-8 text-black">
+            <div className="md:h-[500px] h-auto lg:ml-8 text-black border-none">
               <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center">
                 <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto">
                   <p className="font-semibold text-[#FF497C] mb-3  md:text-left">

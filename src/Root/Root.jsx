@@ -43,7 +43,7 @@ const Root = () => {
         <div className="">
           <Navbar />
           <div className="flex flex-col w-full h-screen">
-            <div className={`flex-1 ${login_and_register && ""}`}>
+            <div className={`flex-1 ${login_and_register && "bg-white"}`}>
               <Outlet />
             </div>
             <Footer />
