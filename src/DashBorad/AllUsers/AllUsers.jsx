@@ -43,18 +43,18 @@ const AllUsers = () => {
           <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
               <div className="">
-                <table className="min-w-full divide-y px-5 divide-gray-200 dark:divide-gray-700">
-                  <thead className="">
+                <table className="min-w-full table max-w-5xl mx-auto overflow-scroll divide-y px-5 divide-white ">
+                  <thead className="bg-slate-800 text-white">
                     <tr className="space-x-10 text-start ">
-                      <th>No</th>
-                      <th className="font-bold hidden md:inline-block">
+                      <th className="border-l">No</th>
+                      <th className="font-bold border-l hidden md:inline-block">
                         Profile
                       </th>
-                      <th className="font-bold hidden md:inline-block ml-0 md:ml-2">
+                      <th className="font-bold border-l hidden md:inline-block ml-0 md:ml-2">
                         Name
                       </th>
-                      <th className="font-bold md:text-start ml-4">Email</th>
-                      <th className="font-bold">Role</th>
+                      <th className="font-bold border-l md:text-start ml-4">Email</th>
+                      <th className="font-bold border-l">Role</th>
                     </tr>
                   </thead>
 

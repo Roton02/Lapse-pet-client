@@ -208,11 +208,11 @@ const AdminAllPets = () => {
       <table className="table max-w-5xl mx-auto overflow-scroll">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id} className=" border-b bg-slate-800 font-bold text-xl text-white border-gray-300">
+            <tr key={headerGroup.id} className="  bg-slate-800 font-bold text-xl text-white  border-l">
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="p-4 text-left text-sm font-medium"
+                  className="p-4 border-l text-left text-sm font-medium"
                 >
                   {header.isPlaceholder ? null : (
                     <div>

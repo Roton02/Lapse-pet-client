@@ -33,6 +33,9 @@ p {
     width: 100%;
   }
 }
+.custom-p{
+  padding: 50px;
+}
 .customNav {
   text-shadow: 0, 0, 0, 20;
   text-shadow: 0, 0, 20, 40;
