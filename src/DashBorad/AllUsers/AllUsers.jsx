@@ -118,8 +118,8 @@ const AllUsers = () => {
     //     </table>
     //   </div>
     // </div>
-    <div>
-      <div className="my-10">
+    <div className="-z-50">
+      <div className="my-10 -z-50">
         <h2 className="text-4xl text-center">Total Users: {users.length}</h2>
       </div>
       <section className="container px-4 mx-auto mt-16 md:mt-12">

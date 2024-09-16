@@ -1,57 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rancho&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rancho&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-.logo,h1, h2, h3, h4 {
-    font-family: "Rancho", cursive;
-    letter-spacing: 1px;
+.logo,
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Rancho", cursive;
+  letter-spacing: 1px;
 }
-p{
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 1px;
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
 }
 /* *{
   border: 2px solid rebeccapurple;
 } */
 
-.custom{
-  width: calc(100% - 320px)
-
+.custom {
+  width: calc(100% - 320px);
 }
-@media (0px < width < 700px) {
- 
-.custom{
-  width: 100% 
-
+@media (0px < width < 767px) {
+  .custom {
+    width: 100%;
+  }
 }
+@media (750px < width < 1024px) {
+  .custom {
+    width: 100%;
+  }
 }
-.customNav{
-  text-shadow: 0,0,0,20;
-  text-shadow: 0,0,20,40;
-  text-shadow: 0,20,40,60;
-  text-shadow: 20,40,60,80;
+.customNav {
+  text-shadow: 0, 0, 0, 20;
+  text-shadow: 0, 0, 20, 40;
+  text-shadow: 0, 20, 40, 60;
+  text-shadow: 20, 40, 60, 80;
 }
-.custom-z{
+.custom-z {
   z-index: 9999999;
- 
 }
 
 @keyframes gradient-move {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .animate-gradient-move {
-    background-size: 200% 200%;
-    animation: gradient-move 5s ease infinite;
+  50% {
+    background-position: 100% 50%;
   }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-move {
+  background-size: 200% 200%;
+  animation: gradient-move 5s ease infinite;
+}
