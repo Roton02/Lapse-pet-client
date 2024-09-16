@@ -242,14 +242,14 @@ const MyAddedPets = () => {
                   {row.adopted ? (
                     <button
                       disabled={true}
-                      className="bg-emerald-950 text-white px-2 py-1 rounded"
+                      className="bg-emerald-950 text-white px-2 text-nowrap py-1 rounded"
                     >
                       Already Adopt
                     </button>
                   ) : (
                     <button
                       onClick={() => handleAdopted(row._id, row.id)}
-                      className="bg-green-500 text-white px-2 py-1 rounded"
+                      className="bg-green-500 text-white px-2 text-nowrap py-1 rounded"
                     >
                       Adopted
                     </button>
