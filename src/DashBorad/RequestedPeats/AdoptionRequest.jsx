@@ -68,23 +68,23 @@ const AdoptionRequest = () => {
           </span>
         </div>
 
-        <div className="overflow-hidden ">
+        <div className="overflow-x-scroll ">
           <table className="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
             <thead className="">
               <tr>
                 <th
                   scope="col"
-                  className="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start"
+                  className=" text-start"
                 >
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs ml-6 font-semibold uppercase tracking-wide ">
+                    <span className="text-xs  font-semibold uppercase tracking-wide ">
                       No
                     </span>
                   </div>
                 </th>
                 <th
                   scope="col"
-                  className="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start"
+                  className="text-start"
                 >
                   <div className="flex items-center gap-x-2">
                     <span className="text-xs ml-6 font-semibold uppercase tracking-wide ">
@@ -94,32 +94,26 @@ const AdoptionRequest = () => {
                 </th>
                 <th
                   scope="col"
-                  className="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start"
+                  className="text-start"
                 >
-                  <div className="flex items-center gap-x-2">
-                    <span className="text-xs ml-6 font-semibold uppercase tracking-wide ">
+                  <div className=" flex items-center gap-x-2 ">
+                    <span className="text-xs ml-6 hidden lg:inline-block font-semibold uppercase tracking-wide ">
                       Email
                     </span>
                   </div>
                 </th>
 
-                <th scope="col" className="px-3 py-3 text-start">
+                <th scope="col" className="md:px-3 py-3 hidden md:inline-block  text-start">
                   <div className="flex items-center gap-x-2">
                     <span className="text-xs font-semibold uppercase tracking-wide ">
                       Phone
                     </span>
                   </div>
                 </th>
-                <th scope="col" className="px-3 py-3 text-start">
+               
+                <th scope="col" className="md:px-3  py-3 text-start">
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs font-semibold uppercase tracking-wide ">
-                      Location
-                    </span>
-                  </div>
-                </th>
-                <th scope="col" className="px-3 py-3 text-start">
-                  <div className="flex items-center gap-x-2">
-                    <span className="text-xs font-semibold uppercase tracking-wide ">
+                    <span className="text-xs ml-3 font-semibold uppercase tracking-wide ">
                       Action
                     </span>
                   </div>
@@ -129,7 +123,7 @@ const AdoptionRequest = () => {
             <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
               {RequestedPets.map((manage, i) => (
                 <tr key={manage._id}>
-                  <td className="size-px px-6 py-3 whitespace-nowrap">
+                  <td className="size-px md:px-6 py-3 whitespace-nowrap">
                     {i + 1}
                   </td>
                   <td className="size-px whitespace-nowrap">
@@ -143,31 +137,29 @@ const AdoptionRequest = () => {
                       </div>
                     </div>
                   </td>
-                  <td className="h-px w-72 whitespace-nowrap">
-                    <div className="pl-6 py-3">
+                  <td className=" whitespace-nowrap hidden lg:inline-block">
+                    <div className="md:pl-4 lg:py-4">
                       <span className="block text-sm font-semibold ">
                         {manage.RequesterEmail}
                       </span>
                     </div>
                   </td>
                   <td className="size-px whitespace-nowrap ">
-                    <div className=" pr-6 py-3">{manage.RequsterNumber}</div>
+                    <div className="hidden md:inline-block ml-2 pr-6 py-3">{manage.RequsterNumber}</div>
                   </td>
-                  <td className="size-px whitespace-nowrap text-ellipsis max-w-20 bg-red-500 overflow-hidden">
-                    {manage.RequsterAddress}
-                  </td>
-                  <td className="size-px px-6 py-1.5 whitespace-nowrap">
+                  
+                  <td className="size-px md:px-4 py-1.5 whitespace-nowrap">
                     <button
                       onClick={() => handleAccept(manage._id, manage.id)}
-                      className="bg-green-500 text-white px-2 py-1 rounded"
+                      className="bg-green-500 btn btn-sm text-white  "
                     >
                       Accept
                     </button>
                   </td>
-                  <td className="size-px px-6 py-1.5 whitespace-nowrap">
+                  <td className="size-px px-4 py-1.5 whitespace-nowrap">
                     <button
                       onClick={() => handleCancle(manage._id)}
-                      className="bg-red-500 text-white px-2 py-1 rounded"
+                      className="bg-red-500 btn btn-sm text-white  "
                     >
                       Cancle
                     </button>
