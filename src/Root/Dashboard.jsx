@@ -617,62 +617,62 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="hidden lg:block   bg-[#ff4880]">
+              <div className="hidden lg:block   bg-secondary">
                 <div className="w-72 min-h-screen">
                   <ul className="menu p-4">
                     {isAdmin ? (
                       <>
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <Link to="/dashboard/users">
                             <FaUsers></FaUsers>
                             All Users
                           </Link>
                         </li>
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/fets">
                             <FaList></FaList>
                             All Pets
                           </NavLink>
                         </li>
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/admin/AllDonation">
                             <FaList></FaList>
                             All Donation
                           </NavLink>
                         </li>
                         <hr />
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/addPet">
                             <FaAd></FaAd>
                             Add a pet
                           </NavLink>
                         </li>
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/myAddedPeats">
                             <FaCalendar></FaCalendar>
                             My added pets
                           </NavLink>
                         </li>
 
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/adoptionRequest">
                             <FaAdn></FaAdn>
                             Adoption Request
                           </NavLink>
                         </li>
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/CreateCampaign">
                             <FaCreativeCommons></FaCreativeCommons>
                             Create Donation Campaign
                           </NavLink>
                         </li>
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/myDonationCampaign">
                             <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
                             My Donation Campaigns
                           </NavLink>
                         </li>
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/myDonation">
                             <FaList></FaList>
                             My Donations
@@ -681,38 +681,38 @@ const Dashboard = () => {
                       </>
                     ) : (
                       <>
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/addPet">
                             <FaAd></FaAd>
                             Add a pet
                           </NavLink>
                         </li>
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/myAddedPeats">
                             <FaCalendar></FaCalendar>
                             My added pets
                           </NavLink>
                         </li>
 
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/adoptionRequest">
                             <FaAdn></FaAdn>
                             Adoption Request
                           </NavLink>
                         </li>
-                        <li>
-                          <NavLink to="/dashboard/CreateCampaign">
+                        <li className="text-[17px] text-nowrap">
+                          <NavLink to="/dashboard/CreateCampaign" className='text-nowrap'>
                             <FaCreativeCommons></FaCreativeCommons>
                             Create Donation Campaign
                           </NavLink>
                         </li>
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/myDonationCampaign">
                             <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
                             My Donation Campaigns
                           </NavLink>
                         </li>
-                        <li>
+                        <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/myDonation">
                             <FaList></FaList>
                             My Donations
@@ -722,19 +722,19 @@ const Dashboard = () => {
                     )}
                     {/* shared nav links */}
                     <div className="divider"></div>
-                    <li>
+                    <li className="text-[17px] text-nowrap">
                       <NavLink to="/">
                         <FaHome></FaHome>
                         Home
                       </NavLink>
                     </li>
-                    <li>
+                    <li className="text-[17px] text-nowrap">
                       <NavLink to="/listing">
                         <FaSearch></FaSearch>
                         Pet Listing
                       </NavLink>
                     </li>
-                    <li>
+                    <li className="text-[17px] text-nowrap">
                       <NavLink to="/campaign">
                         <FaCampground></FaCampground>
                         Donation Campaign

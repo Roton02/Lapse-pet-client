@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Select from "react-select";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
@@ -90,6 +90,16 @@ const AddPets = () => {
   const handleChange = (selectedOption) => {
     setSelectedOption(selectedOption);
   };
+  const customStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      borderColor: state.isFocused ? 'var(--tw-border-secondary)' : 'var(--tw-border-secondary)',  // Using Tailwind CSS variable for border color
+      boxShadow: state.isFocused ? '0 0 0 1px var(--tw-border-secondary)' : null,  // Optional for focus effect
+      '&:hover': {
+        borderColor: 'var(--tw-border-secondary)',  // Border color on hover
+      },
+    }),
+  };
 
   return (
     <div className="py-10 -z-50">
@@ -102,9 +112,10 @@ const AddPets = () => {
           <div className="max-w-4xl mx-auto p-8 rounded-lg ">
             <div className="text-center">
               <h1 className="text-3xl font-extrabold mb-4">Add A New Pet</h1>
-              <p className="">
+              <p className=" ">
                 Fill in the details below to add a new pet for adoption.
               </p>
+              <div className="mx-10 border  border-slate-700 mt-2"></div>
             </div>
             <form onSubmit={handleSubmit(onSubmit)} className="mt-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -154,12 +165,13 @@ const AddPets = () => {
                   )}
                 </div>
                 <div className="form-control">
-                  <label className="block text-sm font-medium ">Type</label>
+                  <label className="block text-sm font-medium">Type</label>
                   <Select
                     value={selectedOption}
                     onChange={handleChange}
                     options={options}
-                    className="mt-2 p- border-none "
+                    className="mt-2 "
+                    styles={customStyles} // Apply custom styles here
                   />
                 </div>
               </div>
@@ -203,7 +215,7 @@ const AddPets = () => {
                     setContent(value);
                     setValue("note2", value);
                   }}
-                  className="mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none"
+                  className="mt-1 bg-white border border-secondary rounded-md shadow-sm focus:outline-none"
                   placeholder="Write About Pet"
                 />
                 {errors.note2 && (
@@ -218,9 +230,9 @@ const AddPets = () => {
                     href="#_"
                     className="relative inline-block px-12 py-2 font-medium group"
                   >
-                    <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-                    <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
-                    <span className="relative text-nowrap text-black group-hover:text-white">
+                    <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-secondary group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                    <span className="absolute inset-0 w-full h-full bg-secondary border-2 border-secobg-secondary group-hover:bg-secondary"></span>
+                    <span className="relative text-nowrap text-secobg-secondary group-hover:text-white">
                       Add Pet
                     </span>
                   </a>

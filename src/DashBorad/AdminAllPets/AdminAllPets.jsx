@@ -295,7 +295,7 @@ const AdminAllPets = () => {
         </tbody>
       </table>
       {table.getPageCount() > 1 && (
-        <div className="flex justify-center overflow-scroll gap-7  md:justify-between md:px-12 items-center mt-4">
+        <div className="flex justify-center  gap-7 md:gap-0 overflow-hidden  md:justify-between md:px-12 items-center mt-4">
           <button
             className="px-4 py-2 bg-gray-200  rounded"
             onClick={() => table.setPageIndex(pageIndex - 1)}
