@@ -34,7 +34,6 @@ const AllUsers = () => {
     <div className="-z-50">
       <Helmet>
         <title>Lapse-Peat || All Users</title>
-        {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <div className="my-10 -z-50">
         <h2 className="text-4xl text-center">Total Users: {users.length}</h2>

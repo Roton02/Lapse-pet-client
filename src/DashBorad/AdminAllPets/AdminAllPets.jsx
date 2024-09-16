@@ -197,7 +197,7 @@ const AdminAllPets = () => {
   }, [pets, pageIndex, pageSize]);
 
   return (
-    <div className="max-w-7xl mx-auto p-4 -z-50 ">
+    <div className="max-w-7xl mx-auto p-4 -z-50 mt-7 md:mt-0">
       <Helmet>
         <title>Lapse-Peat || Admin All Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
@@ -205,10 +205,10 @@ const AdminAllPets = () => {
       <h1 className="text-4xl text-center font-bold mt-5  lg:mt-0 mb-4">
         All Pets
       </h1>
-      <table className="table max-w-5xl mx-auto">
+      <table className="table max-w-5xl mx-auto overflow-scroll">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id} className=" border-b border-gray-300">
+            <tr key={headerGroup.id} className=" border-b bg-slate-800 font-bold text-xl text-white border-gray-300">
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
@@ -244,14 +244,14 @@ const AdminAllPets = () => {
                 {row.adopted ? (
                   <button
                     disabled
-                    className="bg-green-300 text-nowrap px-1 block"
+                    className="bg-green-500 text-nowrap px-1 block"
                   >
                     AllReady Adopted
                   </button>
                 ) : (
                   <button
                     disabled
-                    className="to-blue-300 btn-block text-nowrap  px-1"
+                    className="bg-pink-500 btn-block text-nowrap  px-1"
                   >
                     {" "}
                     Not Adopted
@@ -295,7 +295,7 @@ const AdminAllPets = () => {
         </tbody>
       </table>
       {table.getPageCount() > 1 && (
-        <div className="flex justify-between px-10 items-center mt-4">
+        <div className="flex justify-center overflow-scroll gap-7  md:justify-between md:px-12 items-center mt-4">
           <button
             className="px-4 py-2 bg-gray-200  rounded"
             onClick={() => table.setPageIndex(pageIndex - 1)}
