@@ -205,6 +205,7 @@ const AdminAllPets = () => {
       <h1 className="text-4xl text-center font-bold mt-5  lg:mt-0 mb-4">
         All Pets
       </h1>
+      <div className="w-[90vw] overflow-x-scroll  ">
       <table className="table max-w-5xl mx-auto overflow-scroll">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -294,6 +295,7 @@ const AdminAllPets = () => {
           ))}
         </tbody>
       </table>
+      </div>
       {table.getPageCount() > 1 && (
         <div className="flex justify-center  gap-7 md:gap-0 overflow-hidden  md:justify-between md:px-12 items-center mt-4">
           <button

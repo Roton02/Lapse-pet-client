@@ -232,7 +232,7 @@ const AddPets = () => {
                   >
                     <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-secondary group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                     <span className="absolute inset-0 w-full h-full bg-secondary border-2 border-secobg-secondary group-hover:bg-secondary"></span>
-                    <span className="relative text-nowrap text-secobg-secondary group-hover:text-white">
+                    <span className="relative text-nowrap text-seco bg-secondary group-hover:text-white">
                       Add Pet
                     </span>
                   </a>

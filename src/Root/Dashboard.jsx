@@ -663,7 +663,7 @@ const Dashboard = () => {
                         <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/CreateCampaign">
                             <FaCreativeCommons></FaCreativeCommons>
-                            Create Donation Campaign
+                            Create  Campaign
                           </NavLink>
                         </li>
                         <li className="text-[17px] text-nowrap">
@@ -703,7 +703,7 @@ const Dashboard = () => {
                         <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/CreateCampaign" className='text-nowrap'>
                             <FaCreativeCommons></FaCreativeCommons>
-                            Create Donation Campaign
+                            Create  Campaign
                           </NavLink>
                         </li>
                         <li className="text-[17px] text-nowrap">
