@@ -57,16 +57,11 @@ const CreateCampaign = () => {
         <title>Lapse-Peat || Create Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <div className="my-10 ">
+      <div className="md:mt-14 ">
         <h2 className="text-4xl text-center">Create your Donation Campaign</h2>
       </div>
-      <section className="max-w-3xl p-6 mx-auto ">
-        <h2
-          className="text-lg text-center border-b-2 border-gray-700  pb-5 font-semibold  capitalize 
-    "
-        >
-          Create your Donation Campaign
-        </h2>
+      <section className="max-w-3xl px-4 mx-auto ">
+        
 
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
@@ -133,6 +128,7 @@ const CreateCampaign = () => {
             </label>
             <textarea
               name="longDescription"
+              rows={4}
               className="textarea w-full textarea-secondary"
               placeholder="Write Above Peats"
             ></textarea>

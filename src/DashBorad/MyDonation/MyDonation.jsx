@@ -57,9 +57,9 @@ const MyDonation = () => {
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
           <thead>
-            <tr>
+            <tr className="text-black">
               <th></th>
-              <th className="font-bold">Pet image</th>
+              <th className="font-bold hidden md:inline-block">Pet image</th>
               <th className="font-bold">Pet name</th>
               <th className="font-bold">Donated amount</th>
               <th className="font-bold">Refund</th>
@@ -79,7 +79,7 @@ const MyDonation = () => {
               return totalDonated > 0 ? (
                 <tr key={user._id}>
                   <th></th>
-                  <td>
+                  <td className="hidden md:inline-block">
                     <div className="avatar">
                       <div className="w-16 rounded-full">
                         <img src={user.image} alt={user.name} />
@@ -95,7 +95,7 @@ const MyDonation = () => {
                       }
                       className="btn btn-outline btn-sm border-b-4 border-black rounded-b-lg text-nowrap"
                     >
-                      Ask for refund
+                       refund
                     </button>
                   </td>
                 </tr>
