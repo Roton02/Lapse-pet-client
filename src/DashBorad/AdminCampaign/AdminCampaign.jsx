@@ -93,13 +93,12 @@ const AdminCampaign = () => {
 
       <table className="mx-auto">
         <thead>
-          <tr>
-            <th className="py-2 px-4 text-nowrap border-b">Pet Name</th>
-            <th className="py-2 px-4 text-nowrap border-b">User Name</th>
-            <th className="py-2 px-4 text-nowrap border-b">User Email</th>
-            <th className="py-2 px-4 text-nowrap border-b">Pause</th>
-            <th className="py-2 px-4 text-nowrap border-b">Edit</th>
-            <th className="py-2 px-4 text-nowrap border-b">Delete</th>
+          <tr className="text-start">
+            <th className="py-2 text-start px-4 text-nowrap border-b">Pet Name</th>
+            <th className="py-2 text-start px-4 text-nowrap border-b">User Name</th>
+            <th className="py-2  m-1 px-4 text-nowrap border-b">Pause</th>
+            <th className="py-2  m-1 px-4 text-nowrap border-b">Edit</th>
+            <th className="py-2  m-1 px-4 text-nowrap border-b">Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -107,42 +106,23 @@ const AdminCampaign = () => {
             <tr key={index}>
               <td className="py-2 px-4 border-b  text-start">{item.name}</td>
               <td className="py-2 px-4 border-b text-start">
-                <h2 className="text-nowrap">{item.userName}</h2>
+                <p className="text-nowrap">{item.userName}</p>
               </td>
-              <td className="py-2 px-4 border-b text-start">
-                <h2>{item.userEmail}</h2>
-              </td>
+              
               <td className="py-2 px-4 border-b text-start">
                 {item.pause ? (
-                  <button onClick={() => handleUnPause(item._id)} className="">
-                    <a
-                      href="#_"
-                      className="relative text-nowrap inline-flex items-center justify-start px-3 py-2 overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group"
-                    >
-                      <span className="w-48 h-48 rounded rotate-[-40deg] bg-purple-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-                      <span className="relative text-nowrap w-full text-left text-black transition-colors duration-300 ease-in-out group-hover:text-white">
-                        unpause
-                      </span>
-                    </a>
+                  <button onClick={() => handleUnPause(item._id)} className="btn btn-sm bg-pink-500 px-3 hover:bg-green-500 text-white">
+                    unpause
                   </button>
                 ) : (
-                  <button onClick={() => handlePause(item._id)} className="">
-                    <a
-                      href="#_"
-                      className="relative px-5 py-2 font-medium text-white group"
-                    >
-                      <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-purple-500 group-hover:bg-purple-700 group-hover:skew-x-12"></span>
-                      <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-purple-700 group-hover:bg-purple-500 group-hover:-skew-x-12"></span>
-                      <span className="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-purple-600 -rotate-12"></span>
-                      <span className="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-purple-400 -rotate-12"></span>
-                      <span className="relative">Pause</span>
-                    </a>
+                  <button onClick={() => handlePause(item._id)} className="btn btn-sm bg-green-500 hover:bg-pink-500 px-5 text-white">
+                   Pause
                   </button>
                 )}
               </td>
               <td className="py-2 px-4 border-b text-start">
                 <Link to={`updateCampaignByAdmin/${item._id}`}>
-                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
+                  <button className="bg-blue-500 btn-sm hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
                     Edit
                   </button>
                 </Link>
@@ -151,7 +131,7 @@ const AdminCampaign = () => {
                 {/* You can open the modal using document.getElementById('ID').showModal() method */}
                 <button
                   onClick={() => handleDelete(item._id)}
-                  className="bg-red-500 text-white font-bold py-1 px-4 rounded"
+                  className="bg-red-500 btn-sm text-white font-bold py-1 px-4 rounded"
                 >
                   Delete
                 </button>
