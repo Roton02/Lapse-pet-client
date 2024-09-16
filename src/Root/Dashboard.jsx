@@ -56,7 +56,7 @@ const Dashboard = () => {
         <div className=" custom-z  ">
           <div className="flex  ">
             {/* dashboard side bar */}
-            <div className="fixed  w-[320px]">
+            <div className="fixed  w-[300px]">
               <div className="absolute block md:block lg:hidden">
                 <div className="text-center">
                   <button
@@ -617,7 +617,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="hidden lg:block   bg-secondary">
+              <div className="hidden lg:block   bg-[#ff3a75]">
                 <div className="w-72 min-h-screen">
                   <ul className="menu p-4">
                     {isAdmin ? (
@@ -669,7 +669,7 @@ const Dashboard = () => {
                         <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/myDonationCampaign">
                             <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
-                            My Donation Campaigns
+                            My Campaigns
                           </NavLink>
                         </li>
                         <li className="text-[17px] text-nowrap">
@@ -709,7 +709,7 @@ const Dashboard = () => {
                         <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/myDonationCampaign">
                             <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
-                            My Donation Campaigns
+                            My  Campaigns
                           </NavLink>
                         </li>
                         <li className="text-[17px] text-nowrap">

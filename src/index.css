@@ -21,7 +21,7 @@ p {
 } */
 
 .custom {
-  width: calc(100% - 320px);
+  width: calc(100% - 300px);
 }
 @media (0px < width < 767px) {
   .custom {

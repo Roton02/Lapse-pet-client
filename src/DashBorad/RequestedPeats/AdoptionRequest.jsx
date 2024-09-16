@@ -68,7 +68,7 @@ const AdoptionRequest = () => {
           </span>
         </div>
 
-        <div className="overflow-x-scroll ">
+        <div className="overflow-x-scroll md:overflow-hidden ">
           <table className="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
             <thead className="">
               <tr>
@@ -123,11 +123,11 @@ const AdoptionRequest = () => {
             <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
               {RequestedPets.map((manage, i) => (
                 <tr key={manage._id}>
-                  <td className="size-px md:px-6 py-3 whitespace-nowrap">
+                  <td className="size-px  py-3 whitespace-nowrap">
                     {i + 1}
                   </td>
                   <td className="size-px whitespace-nowrap">
-                    <div className="ps-6 lg:ps-3 xl:ps-0 px-6 pe-6 py-3">
+                    <div className="ps-6 lg:ps-3 xl:ps-0 ml-2 px-6 pe-6 py-3">
                       <div className="flex items-center  gap-x-3">
                         <div>
                           <span className="block text-sm font-semibold ">
