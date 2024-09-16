@@ -38,8 +38,6 @@ const Dashboard = () => {
 
   // localStorage.setItem("theme", "dark");
 
- 
-
   return (
     <div className="custom-z">
       {false ? (
@@ -175,7 +173,10 @@ const Dashboard = () => {
                             <span className="relative invisible">All Pets</span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/admin/AllDonation" onClick={toggleDrawer}>
+                        <NavLink
+                          to="/dashboard/admin/AllDonation"
+                          onClick={toggleDrawer}
+                        >
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -225,7 +226,10 @@ const Dashboard = () => {
                             </span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/myAddedPeats"onClick={toggleDrawer}>
+                        <NavLink
+                          to="/dashboard/myAddedPeats"
+                          onClick={toggleDrawer}
+                        >
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -250,7 +254,10 @@ const Dashboard = () => {
                             </span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/adoptionRequest"onClick={toggleDrawer}>
+                        <NavLink
+                          to="/dashboard/adoptionRequest"
+                          onClick={toggleDrawer}
+                        >
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -275,7 +282,10 @@ const Dashboard = () => {
                             </span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/CreateCampaign" onClick={toggleDrawer}>
+                        <NavLink
+                          to="/dashboard/CreateCampaign"
+                          onClick={toggleDrawer}
+                        >
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -301,7 +311,10 @@ const Dashboard = () => {
                             </span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/myDonationCampaign" onClick={toggleDrawer}>
+                        <NavLink
+                          to="/dashboard/myDonationCampaign"
+                          onClick={toggleDrawer}
+                        >
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -326,7 +339,10 @@ const Dashboard = () => {
                             </span>
                           </a>
                         </NavLink>
-                        <NavLink to="/dashboard/myDonation"onClick={toggleDrawer}>
+                        <NavLink
+                          to="/dashboard/myDonation"
+                          onClick={toggleDrawer}
+                        >
                           <a
                             href="#_"
                             className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out  border-purple-500 shadow-md group"
@@ -730,12 +746,12 @@ const Dashboard = () => {
             </div>
             {/* dashboard content */}
             <div className="w-full flex justify-end">
-            <div
-              className="flex justify-center min-h-screen bg-gradient-to-bl from-pink-300 via-transparent custom "
-              // style={{  " }}
-            >
-              <Outlet></Outlet>
-            </div>
+              <div
+                className="flex justify-center min-h-screen bg-gradient-to from-pink-300 via-transparent custom "
+                // style={{  " }}
+              >
+                <Outlet></Outlet>
+              </div>
             </div>
           </div>
         </div>

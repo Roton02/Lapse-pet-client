@@ -58,23 +58,23 @@ const AllUsers = () => {
   };
 
   return (
-    <div className="-z-50">
+    <div className="-z-50 ">
       <Helmet>
         <title>Lapse-Peat || All Users</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <div className="my-10">
         <h2 className="text-4xl text-center">Total Users: {users.length}</h2>
-      </div>
-      <div className="overflow-x-auto">
-        <table className="table table-zebra w-full">
+      </div> 
+      <div className=" ">
+        <table className="table  w-full ">
           {/* head */}
           <thead>
-            <tr>
-              <th></th>
-              <th className="font-bold">Profile</th>
-              <th className="font-bold">Name</th>
-              <th className="font-bold">Email</th>
+            <tr className="text-black space-x-2">
+              <th>No</th>
+              <th className="font-bold hidden md:inline-block">Profile</th>
+              <th className="font-bold hidden md:inline-block ml-0 md:ml-2">Name</th>
+              <th className="font-bold ">Email</th>
               <th className="font-bold">Role</th>
               <th className="font-bold">Ban</th>
             </tr>
@@ -83,31 +83,31 @@ const AllUsers = () => {
             {users.map((user, index) => (
               <tr key={user._id}>
                 <th>{index + 1}</th>
-                <td>
+                <td className="hidden md:inline-block">
                   <div className="avatar">
-                    <div className="w-16 rounded-full">
+                    <div className="w-12 rounded-full">
                       <img src={user.image} />
                     </div>
                   </div>
                 </td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
+                <td className="hidden md:inline-block">{user.name}</td>
+                <td className="px-2 mx-0">{user.email}</td>
                 <td>
                   {user.role === "admin" ? (
-                    "Admin"
+                   <span className="btn btn-sm bg-green-500  px-4"> Admin</span>
                   ) : (
                     <button
                       onClick={() => handleMakeAdmin(user)}
-                      className="btn  bg-pink-600"
+                      className="btn btn-sm bg-pink-600 text-nowrap"
                     >
-                      Make{`'`}Admin
+                      Make Admin
                     </button>
                   )}
                 </td>
                 <td>
                   <button
                     onClick={() => handleDeleteUser(user)}
-                    className="btn btn-ghost "
+                    className="btn btn-sm "
                   >
                     <FaBan className="text-red-700 text-2xl"></FaBan>
                   </button>
