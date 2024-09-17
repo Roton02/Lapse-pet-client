@@ -68,16 +68,16 @@ const AdoptionRequest = () => {
           </span>
         </div>
 
-        <div className="overflow-x-scroll md:overflow-hidden ">
-          <table className="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
-            <thead className="">
-              <tr>
+        <div className="w-[90vw] md:w-full  ">
+          <table className=" divide-y divide-gray-200 dark:divide-neutral-700">
+            <thead className=" ">
+              <tr className="bg-slate-800  font-bold text-xl text-white  border-l border-white">
                 <th
                   scope="col"
                   className=" text-start"
                 >
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs  font-semibold uppercase tracking-wide ">
+                    <span className="text-xs px-4 border-r font-semibold uppercase tracking-wide ">
                       No
                     </span>
                   </div>
@@ -87,7 +87,7 @@ const AdoptionRequest = () => {
                   className="text-start"
                 >
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs ml-6 font-semibold uppercase tracking-wide ">
+                    <span className="text-xs ml-6 border-r px-4 font-semibold uppercase tracking-wide ">
                       Name
                     </span>
                   </div>
@@ -97,7 +97,7 @@ const AdoptionRequest = () => {
                   className="text-start"
                 >
                   <div className=" flex items-center gap-x-2 ">
-                    <span className="text-xs ml-6 hidden lg:inline-block font-semibold uppercase tracking-wide ">
+                    <span className="text-xs ml-6 border-r px-4 hidden lg:inline-block font-semibold uppercase tracking-wide ">
                       Email
                     </span>
                   </div>
@@ -105,7 +105,7 @@ const AdoptionRequest = () => {
 
                 <th scope="col" className="md:px-3 py-3 hidden md:inline-block  text-start">
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs font-semibold uppercase tracking-wide ">
+                    <span className="text-xs border-r px-4 font-semibold uppercase tracking-wide ">
                       Phone
                     </span>
                   </div>
@@ -113,8 +113,15 @@ const AdoptionRequest = () => {
                
                 <th scope="col" className="md:px-3  py-3 text-start">
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs ml-3 font-semibold uppercase tracking-wide ">
+                    <span className="text-xs border-r px-4 ml-3 font-semibold uppercase tracking-wide ">
                       Action
+                    </span>
+                  </div>
+                </th>
+                <th scope="col" className="md:px-3  py-3 text-start">
+                  <div className="flex items-center gap-x-2">
+                    <span className="text-xs border-r px-4 ml-3 font-semibold uppercase tracking-wide ">
+                   
                     </span>
                   </div>
                 </th>
@@ -123,7 +130,7 @@ const AdoptionRequest = () => {
             <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
               {RequestedPets.map((manage, i) => (
                 <tr key={manage._id}>
-                  <td className="size-px  py-3 whitespace-nowrap">
+                  <td className="size-px px-4  py-3 whitespace-nowrap">
                     {i + 1}
                   </td>
                   <td className="size-px whitespace-nowrap">

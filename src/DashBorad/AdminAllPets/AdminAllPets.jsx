@@ -202,10 +202,10 @@ const AdminAllPets = () => {
         <title>Lapse-Peat || Admin All Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <h1 className="text-4xl text-center  mt-7 mb-4">
+      <h1 className="text-4xl text-center  my-10 mb-4">
         All Pets
       </h1>
-      <div className="w-[90vw] md:w-full  overflow-x-scroll lg:overflow-hidden  ">
+      <div className="w-[90vw] md:w-full    ">
       <table className="table max-w-5xl mx-auto overflow-scroll">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (

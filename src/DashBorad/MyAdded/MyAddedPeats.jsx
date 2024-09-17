@@ -172,16 +172,16 @@ const MyAddedPets = () => {
       </div>
 
       <table className="mx-auto">
-        <thead>
+        <thead className="">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr
               key={headerGroup.id}
-              className="bg-gray-100 border-b border-gray-300"
+              className="bg-slate-800 font-bold text-xl text-white  border-l border-white"
             >
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="p-4 text-left text-sm font-medium  cursor-pointer"
+                  className="p-4 text-left text-sm font-medium  cursor-pointer border-l "
                   onClick={header.column.getToggleSortingHandler()}
                 >
                   {header.isPlaceholder ? null : (

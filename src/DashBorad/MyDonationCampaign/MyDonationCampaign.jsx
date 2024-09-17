@@ -50,15 +50,16 @@ const MyDonationCampaign = () => {
       <div className="my-10">
         <h2 className="text-4xl text-center">My Donation Campaign</h2>
       </div>
-      <table className="mx-auto">
+     <div className="w-[90vw] md:w-full ">
+     <table className="mx-auto">
         <thead>
-          <tr>
-            <th className="py-2 px-4 text-nowrap border-b">Pet Name</th>
-            <th className="py-2 px-4 text-nowrap border-b">Maximum Donation</th>
-            <th className="py-2 px-4 text-nowrap border-b">Donated</th>
-            <th className="py-2 px-4 text-nowrap border-b">Pause</th>
-            <th className="py-2 px-4 text-nowrap border-b">Edit</th>
-            <th className="py-2 px-4 text-nowrap border-b">View Donators</th>
+          <tr className="bg-slate-800   text-white  border-l border-white">
+            <th className="py-2 px-4 border-r text-[14px] text-nowrap border-b">Pet Name</th>
+            <th className="py-2 px-4 border-r text-[14px] text-nowrap border-b">Maximum Donation</th>
+            <th className="py-2 px-4 border-r text-[14px] text-nowrap border-b">Donated</th>
+            <th className="py-2 px-4 border-r text-[14px] text-nowrap border-b">Pause</th>
+            <th className="py-2 px-4 border-r text-[14px] text-nowrap border-b">Edit</th>
+            <th className="py-2 px-4 border-r text-[14px] text-nowrap border-b">View Donators</th>
           </tr>
         </thead>
         <tbody>
@@ -149,6 +150,7 @@ const MyDonationCampaign = () => {
           ))}
         </tbody>
       </table>
+     </div>
     </div>
   );
 };

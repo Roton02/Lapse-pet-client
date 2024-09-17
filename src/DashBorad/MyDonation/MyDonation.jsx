@@ -54,15 +54,15 @@ const MyDonation = () => {
       <div className="my-10">
         <h2 className="text-4xl text-center">My Donation List</h2>
       </div>
-      <div className="overflow-x-auto">
+      <div className="">
         <table className="table  w-full">
           <thead>
-            <tr className="text-black">
-              <th>No</th>
-              <th className="font-bold hidden md:inline-block">Pet image</th>
-              <th className="font-bold">Pet name</th>
-              <th className="font-bold">Donated amount</th>
-              <th className="font-bold">Refund</th>
+            <tr className=" bg-slate-800   text-white  ">
+              <th className="border-r">No</th>
+              <th className="px-12 border-r font-bold hidden md:inline-block">Pet image</th>
+              <th className="px-12 border-r font-bold">Pet name</th>
+              <th className="px-12 border-r font-bold">Donated amount</th>
+              <th className="px-12 border-r font-bold">Refund</th>
             </tr>
           </thead>
           <tbody>
@@ -79,16 +79,16 @@ const MyDonation = () => {
               return totalDonated > 0 ? (
                 <tr key={user._id}>
                   <th>{i+1}</th>
-                  <td className="hidden md:inline-block">
+                  <td className="hidden px-12 md:inline-block">
                     <div className="avatar">
                       <div className="w-16 rounded-full">
                         <img src={user.image} alt={user.name} />
                       </div>
                     </div>
                   </td>
-                  <td>{user.name}</td>
-                  <td>{(totalDonated / 100).toFixed(2)} $</td>
-                  <td>
+                  <td className="px-12">{user.name}</td>
+                  <td className="px-12">{(totalDonated / 100).toFixed(2)} $</td>
+                  <td className="px-12">
                     <button
                       onClick={() =>
                         handleRefundMoney(user, (totalDonated / 100).toFixed(2))

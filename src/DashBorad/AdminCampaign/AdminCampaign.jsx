@@ -82,10 +82,11 @@ const AdminCampaign = () => {
         <title>Lapse-Peat || Admin Campaign</title>
       </Helmet>
       <div className=" -z-50">
-        <h5 className="text-3xl text-center  p-5 ">Total Donation Campaign: {data.length}</h5>
+        <h5 className="text-xl mt-5 md:mt-0 md:text-3xl text-center  p-5 ">Total Donation Campaign: {data.length}</h5>
       </div>
 
-      <table className="mx-auto  max-w-5xl  overflow-scroll ">
+     <div className="w-[90vw] md:w-full ">
+     <table className="mx-auto  max-w-5xl  overflow-scroll ">
         <thead className="bg-slate-800 text-white">
           <tr className="text-start custom-p">
             <th className="py-2 border-l text-start px-4 text-nowrap border-b">
@@ -164,6 +165,7 @@ const AdminCampaign = () => {
         </tbody>
       </table>
 
+     </div>
       {/* Pagination Controls */}
       {pageCount > 1 && (
         <div className="flex justify-center gap-7 md:justify-between md:px-12 items-center mt-4">
