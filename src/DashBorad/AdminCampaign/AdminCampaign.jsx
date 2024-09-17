@@ -23,7 +23,10 @@ const AdminCampaign = () => {
   });
 
   // Paginate data
-  const paginatedData = data.slice(pageIndex * pageSize, (pageIndex + 1) * pageSize);
+  const paginatedData = data.slice(
+    pageIndex * pageSize,
+    (pageIndex + 1) * pageSize
+  );
   const pageCount = Math.ceil(data.length / pageSize);
 
   const handleUnPause = async (id) => {
@@ -61,12 +64,14 @@ const AdminCampaign = () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await axiosSecure.delete(`/ADmin/campaignAllPeats/${id}`).then((res) => {
-          if (res.data.deletedCount) {
-            Swal.fire("Deleted!", "Your file has been deleted.", "success");
-            refetch();
-          }
-        });
+        await axiosSecure
+          .delete(`/ADmin/campaignAllPeats/${id}`)
+          .then((res) => {
+            if (res.data.deletedCount) {
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              refetch();
+            }
+          });
       }
     });
   };
@@ -76,28 +81,53 @@ const AdminCampaign = () => {
       <Helmet>
         <title>Lapse-Peat || Admin Campaign</title>
       </Helmet>
-      <div className="my-10">
-        <h2 className="text-4xl text-center">All Donation Campaign</h2>
+      <div className=" -z-50">
+        <h5 className="text-3xl text-center  p-5 ">Total Donation Campaign: {data.length}</h5>
       </div>
 
       <table className="mx-auto  max-w-5xl  overflow-scroll ">
         <thead className="bg-slate-800 text-white">
           <tr className="text-start custom-p">
-            <th className="py-2 border-l text-start px-8 text-nowrap border-b">Pet Name</th>
-            <th className="py-2 border-l text-start px-8 text-nowrap border-b">User Name</th>
-            <th className="py-2 border-l m-1 px-8 text-nowrap border-b">Pause</th>
-            <th className="py-2 border-l m-1 px-8 text-nowrap border-b">Edit</th>
-            <th className="py-2 border-l m-1 px-4 text-nowrap border-b">Delete</th>
+            <th className="py-2 border-l text-start px-4 text-nowrap border-b">
+              No
+            </th>
+            <th className="py-2 border-l text-start px-4 text-nowrap border-b">
+              Pet image
+            </th>
+            <th className="py-2 border-l text-start px-4 text-nowrap border-b">
+              Pet name
+            </th>
+            <th className="py-2 border-l text-center px-4 text-nowrap border-b">
+              User Name
+            </th>
+            <th className="py-2 border-l m-1 px-4 text-nowrap border-b">
+              Pause
+            </th>
+            <th className="py-2 border-l m-1 px-4 text-nowrap border-b">
+              Edit
+            </th>
+            <th className="py-2 border-l m-1 px-4 text-nowrap border-b">
+              Delete
+            </th>
           </tr>
         </thead>
         <tbody>
           {paginatedData.map((item, index) => (
-            <tr key={index}>
-              <td className="py-2 px-8 border-b  text-start">{item.name}</td>
-              <td className="py-2 px-8 border-b text-start">
+            <tr key={index} className="">
+              <td className="py-2 px-4 border-b  text-start">{index+1}</td>
+               <td className="px-4 ">
+                <img
+                  src={item.image}
+                  alt="Pet"
+                  className="w-20 h-16 object-cover"
+                />
+              </td>
+              <td className="py-2 px-6 border-b  text-start">{item.name}</td>
+              <td className="py-2 px-6 border-b text-center">
                 <p className="text-nowrap">{item.userName}</p>
               </td>
-              <td className="py-2 px-8 border-b text-start">
+             
+              <td className="py-2 px-6 border-b text-start">
                 {item.pause ? (
                   <button
                     onClick={() => handleUnPause(item._id)}

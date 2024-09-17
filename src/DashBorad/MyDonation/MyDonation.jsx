@@ -55,10 +55,10 @@ const MyDonation = () => {
         <h2 className="text-4xl text-center">My Donation List</h2>
       </div>
       <div className="overflow-x-auto">
-        <table className="table table-zebra w-full">
+        <table className="table  w-full">
           <thead>
             <tr className="text-black">
-              <th></th>
+              <th>No</th>
               <th className="font-bold hidden md:inline-block">Pet image</th>
               <th className="font-bold">Pet name</th>
               <th className="font-bold">Donated amount</th>
@@ -66,7 +66,7 @@ const MyDonation = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => {
+            {users.map((user,i) => {
               const donators = user.donators || [];
               const userDonations = donators.filter(
                 (p) => p.email === authUser.email
@@ -78,7 +78,7 @@ const MyDonation = () => {
 
               return totalDonated > 0 ? (
                 <tr key={user._id}>
-                  <th></th>
+                  <th>{i+1}</th>
                   <td className="hidden md:inline-block">
                     <div className="avatar">
                       <div className="w-16 rounded-full">

@@ -197,15 +197,15 @@ const AdminAllPets = () => {
   }, [pets, pageIndex, pageSize]);
 
   return (
-    <div className="max-w-7xl mx-auto p-4 -z-50 mt-7 md:mt-0">
+    <div className="max-w-7xl mx-auto  -z-50 mt-7 md:mt-0">
       <Helmet>
         <title>Lapse-Peat || Admin All Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <h1 className="text-4xl text-center font-bold mt-5  lg:mt-0 mb-4">
+      <h1 className="text-4xl text-center  mt-7 mb-4">
         All Pets
       </h1>
-      <div className="w-[90vw] overflow-x-scroll  ">
+      <div className="w-[90vw] md:w-full  overflow-x-scroll lg:overflow-hidden  ">
       <table className="table max-w-5xl mx-auto overflow-scroll">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (

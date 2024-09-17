@@ -36,6 +36,11 @@ p {
 .custom-p{
   padding: 50px;
 }
+.customCampaign{
+  width: calc(100% -30px);
+  background: #000;
+}
+
 .customNav {
   text-shadow: 0, 0, 0, 20;
   text-shadow: 0, 0, 20, 40;
