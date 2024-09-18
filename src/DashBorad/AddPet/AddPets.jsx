@@ -93,10 +93,10 @@ const AddPets = () => {
   const customStyles = {
     control: (provided, state) => ({
       ...provided,
-      borderColor: state.isFocused ? 'var(--tw-border-secondary)' : 'var(--tw-border-secondary)',  // Using Tailwind CSS variable for border color
-      boxShadow: state.isFocused ? '0 0 0 1px var(--tw-border-secondary)' : null,  // Optional for focus effect
+      borderColor: state.isFocused ? 'var(--tw-border-black)' : 'var(--tw-border-black)',  // Using Tailwind CSS variable for border color
+      boxShadow: state.isFocused ? '0 0 0 1px var(--tw-border-black)' : null,  // Optional for focus effect
       '&:hover': {
-        borderColor: 'var(--tw-border-secondary)',  // Border color on hover
+        borderColor: 'var(--tw-border-black)',  // Border color on hover
       },
     }),
   };
@@ -126,7 +126,7 @@ const AddPets = () => {
                     {...register("name", { required: true })}
                     name="name"
                     placeholder="Name"
-                    className="mt-1 block w-full px-3 py-2 bg-white  border rounded-md border-secondary"
+                    className="mt-1 block w-full px-3 py-2 bg-white  border rounded-md border-black"
                   />
                   {errors.name && (
                     <span className="text-red-600 text-sm">
@@ -141,7 +141,7 @@ const AddPets = () => {
                     {...register("age", { required: true })}
                     name="age"
                     placeholder="Pet age"
-                    className="mt-1 block w-full px-3 py-2   border rounded-md border-secondary"
+                    className="mt-1 block w-full px-3 py-2   border rounded-md border-black"
                   />
                   {errors.age && (
                     <span className="text-red-600 text-sm">
@@ -156,7 +156,7 @@ const AddPets = () => {
                     {...register("photo", { required: true })}
                     name="photo"
                     placeholder="Photo"
-                    className="mt-1 block w-full px-3 py-2 bg-white   border rounded-md border-secondary"
+                    className="mt-2 block w-full px-3 py-1 bg-white   border rounded-md border-black"
                   />
                   {errors.photo && (
                     <span className="text-red-600 text-sm">
@@ -182,7 +182,7 @@ const AddPets = () => {
                   {...register("location", { required: true })}
                   name="location"
                   placeholder="Location"
-                  className="mt-1 block w-full px-3 py-2 bg-white  border rounded-md border-secondary"
+                  className="mt-1 block w-full px-3 py-2 bg-white  border rounded-md border-black"
                 />
                 {errors.location && (
                   <span className="text-red-600 text-sm">
@@ -197,7 +197,7 @@ const AddPets = () => {
                   {...register("note1", { required: true })}
                   name="note1"
                   placeholder="Short Note About Pet"
-                  className="mt-1 block w-full px-3 py-2 bg-white  border rounded-md border-secondary"
+                  className="mt-1 block w-full px-3 py-2 bg-white  border rounded-md border-black"
                 />
                 {errors.note1 && (
                   <span className="text-red-600 text-sm">
@@ -215,7 +215,7 @@ const AddPets = () => {
                     setContent(value);
                     setValue("note2", value);
                   }}
-                  className="mt-1 bg-white border border-secondary rounded-md shadow-sm focus:outline-none"
+                  className="mt-1 bg-white border border-black rounded-md shadow-sm focus:outline-none"
                   placeholder="Write About Pet"
                 />
                 {errors.note2 && (
