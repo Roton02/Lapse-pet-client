@@ -106,7 +106,7 @@ const Login = () => {
   return (
     <div className="">
       <Helmet>
-        <title>Lapse-Peat || Login</title>
+        <title>Lapse-Pet || Login</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <div className="flex items-center   w-full max-w-sm mx-auto overflow-hidden    lg:max-w-4xl">

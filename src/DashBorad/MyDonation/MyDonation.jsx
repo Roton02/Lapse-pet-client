@@ -48,7 +48,7 @@ const MyDonation = () => {
   return (
     <div className="-z-50">
       <Helmet>
-        <title>Lapse-Peat || My Donation</title>
+        <title>Lapse-Pet || My Donation</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <div className="my-10">

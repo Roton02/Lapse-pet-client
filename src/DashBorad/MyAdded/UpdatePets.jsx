@@ -97,7 +97,7 @@ const UpdatePets = () => {
   return (
     <div>
       <Helmet>
-        <title>Lapse-Peat || Update My Added Peats</title>
+        <title>Lapse-Pet || Update My Added Peats</title>
       </Helmet>
       <div className="relative">
         <div className="max-w-[85rem] mt-14 lg:mt-0  px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">

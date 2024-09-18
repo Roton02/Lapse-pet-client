@@ -80,7 +80,7 @@ const AdminOnlyUpdate = () => {
   return (
     <div>
       <Helmet>
-        <title>Lapse-Peat || Admin Peats Update </title>
+        <title>Lapse-Pet || Admin Peats Update </title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <div className="relative">

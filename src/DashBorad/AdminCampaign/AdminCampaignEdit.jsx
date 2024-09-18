@@ -69,7 +69,7 @@ const AdminCampaignEdit = () => {
   return (
     <div>
       <Helmet>
-        <title>Lapse-Peat || Admin Campaign Edit</title>
+        <title>Lapse-Pet || Admin Campaign Edit</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <section className="max-w-3xl mt-20 lg:mt-00 p-6 mx-auto  ">

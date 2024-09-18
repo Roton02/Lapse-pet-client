@@ -104,7 +104,7 @@ const AddPets = () => {
   return (
     <div className="py-10 -z-50">
       <Helmet>
-        <title>Lapse-Peat || Add Peats</title>
+        <title>Lapse-Pet || Add Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">

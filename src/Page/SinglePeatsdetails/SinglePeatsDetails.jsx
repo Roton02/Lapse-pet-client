@@ -77,7 +77,7 @@ const SinglePeatsDetails = () => {
     <div>
       <div>
         <Helmet>
-          <title>Lapse-Peat || Details</title>
+          <title>Lapse-Pet || Details</title>
           {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
         </Helmet>
         <div className="max-w-7xl mx-auto ">

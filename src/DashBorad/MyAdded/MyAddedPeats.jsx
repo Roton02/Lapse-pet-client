@@ -164,7 +164,7 @@ const MyAddedPets = () => {
   return (
     <div className="container mx-auto p-4 -z-50">
       <Helmet>
-        <title>Lapse-Peat || My Added Peats</title>
+        <title>Lapse-Pet || My Added Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <div className="my-10">

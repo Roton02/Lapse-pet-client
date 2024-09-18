@@ -36,7 +36,7 @@ const Contract = () => {
   return (
     <div>
       <Helmet>
-        <title>Lapse-Peat || Contract</title>
+        <title>Lapse-Pet || Contract</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <h1

@@ -239,7 +239,7 @@ const UpdateProfile = () => {
   return (
     <div className="overflow-x-hidden">
       <Helmet>
-        <title>Lapse-Peat || Update Profile</title>
+        <title>Lapse-Pet || Update Profile</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <div className="">

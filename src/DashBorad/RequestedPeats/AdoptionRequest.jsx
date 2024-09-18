@@ -53,7 +53,7 @@ const AdoptionRequest = () => {
   return (
     <div className="-z-50">
       <Helmet>
-        <title>Lapse-Peat || Adoption Request</title>
+        <title>Lapse-Pet || Adoption Request</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <div className="my-10">

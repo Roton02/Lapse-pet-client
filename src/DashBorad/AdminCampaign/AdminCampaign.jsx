@@ -79,7 +79,7 @@ const AdminCampaign = () => {
   return (
     <div className=" mx-auto p-4 -z-50">
       <Helmet>
-        <title>Lapse-Peat || Admin Campaign</title>
+        <title>Lapse-Pet || Admin Campaign</title>
       </Helmet>
       <div className=" -z-50">
         <h5 className="text-xl mt-5 md:mt-0 md:text-3xl text-center  p-5 ">Total Donation Campaign: {data.length}</h5>

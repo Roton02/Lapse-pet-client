@@ -54,7 +54,7 @@ const CreateCampaign = () => {
   return (
     <div className="-z-50">
       <Helmet>
-        <title>Lapse-Peat || Create Campaign</title>
+        <title>Lapse-Pet || Create Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <div className="mt-14 ">

@@ -38,7 +38,7 @@ const CampaignPeats = () => {
   return (
     <div className="  mx-auto">
       <Helmet>
-        <title>Lapse-Peat || Campaign</title>
+        <title>Lapse-Pet || Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <header>

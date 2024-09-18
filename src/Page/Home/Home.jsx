@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div className="overflow-x-hidden ">
       <Helmet>
-        <title>Lapse-Peat || Home</title>
+        <title>Lapse-Pet || Home</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       {/* <Banner heading='Help Animals'  subheading={'The reason you need'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '} btn={'Discover Me'}></Banner> */}

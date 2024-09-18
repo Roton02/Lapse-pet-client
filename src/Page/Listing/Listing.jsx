@@ -35,7 +35,7 @@ const Listing = () => {
   return (
     <div>
       <Helmet>
-        <title>Lapse-Peat || Listing</title>
+        <title>Lapse-Pet || Listing</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <header>

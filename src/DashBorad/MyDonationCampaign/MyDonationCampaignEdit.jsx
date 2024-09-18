@@ -69,7 +69,7 @@ const MyDonationCampaignEdit = () => {
   return (
     <div>
       <Helmet>
-        <title>Lapse-Peat || My Campaign Edit</title>
+        <title>Lapse-Pet || My Campaign Edit</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <section className="max-w-3xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">

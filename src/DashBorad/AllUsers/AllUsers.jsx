@@ -33,7 +33,7 @@ const AllUsers = () => {
   return (
     <div className="-z-50">
       <Helmet>
-        <title>Lapse-Peat || All Users</title>
+        <title>Lapse-Pet || All Users</title>
       </Helmet>
       <div className="my-10 -z-50">
         <h2 className="text-4xl text-center">Total Users: {users.length}</h2>

@@ -40,7 +40,7 @@ const CampaignDetails = () => {
   return (
     <div>
       <Helmet>
-        <title>Lapse-Peat || Campaign Details</title>
+        <title>Lapse-Pet || Campaign Details</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <div>
