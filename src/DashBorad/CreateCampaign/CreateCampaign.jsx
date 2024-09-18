@@ -60,6 +60,8 @@ const CreateCampaign = () => {
       <div className="mt-14 ">
         <h2 className="md:text-3xl text-xl  text-center">Create your Donation Campaign</h2>
       </div>
+      <div className="mx-16 border  border-slate-700 mt-2"></div>
+
       <section className="max-w-3xl px-4 mx-auto ">
         
 
