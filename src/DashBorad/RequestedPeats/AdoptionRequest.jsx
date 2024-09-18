@@ -113,14 +113,14 @@ const AdoptionRequest = () => {
                
                 <th scope="col" className="md:px-3  py-3 text-start">
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs border-r px-4 ml-3 font-semibold uppercase tracking-wide ">
+                    <span className="text-xs  px-4 ml-3 font-semibold uppercase tracking-wide ">
                       Action
                     </span>
                   </div>
                 </th>
                 <th scope="col" className="md:px-3  py-3 text-start">
                   <div className="flex items-center gap-x-2">
-                    <span className="text-xs border-r px-4 ml-3 font-semibold uppercase tracking-wide ">
+                    <span className="text-xs  px-4 ml-3 font-semibold uppercase tracking-wide ">
                    
                     </span>
                   </div>
