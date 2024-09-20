@@ -28,7 +28,8 @@ const Category = ({ item }) => {
           : // Render actual category items
             item.map((data) => (
               <Link  key={data._id} to={`/listing`}>
-                <div className="w-full  overflow-hidden shadow-sm hover:scale-105 transition delay-100 ">
+                <div data-aos="fade-up"
+                  data-aos-duration="2000" className="w-full  overflow-hidden shadow-sm hover:scale-105 transition delay-100 ">
                   <img
                     className="object-cover rounded-xl w-full h-56"
                     src={data.img}
@@ -36,9 +37,9 @@ const Category = ({ item }) => {
                   />
                   <div className="space-y-2 p-1">
                     <a href="#" className="block text-xl font-bold  ">
-                      {data.description}
+                      {data.description} 
                     </a>
-                    <p className="text-sm  ">{data.description2}</p>
+                    <p  className="text-sm   ">{data.description2.slice(0,80)}  <span className="text-secondary font-medium">see All</span></p>
 
                     <div>
                       <div className="flex justify-between font-bold ">
