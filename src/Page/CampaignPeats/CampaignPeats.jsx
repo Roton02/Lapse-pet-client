@@ -49,11 +49,14 @@ const CampaignPeats = () => {
             className="max-w-7xl mx-auto
           "
           >
-            <h1 className="text-4xl pt-5 text-center font-bold mb-5 text-[#393d72]">
+            <h1 data-aos="zoom-in"
+                  data-aos-duration="2000" className="text-4xl pt-5 text-center font-bold mb-5 text-[#393d72]">
               ----Donation Campaign----
             </h1>
-            <p className="w-36 border-b-4 border-[#393d72] mx-auto"> </p>
-            <p className="text-center py-3">
+            <p data-aos="zoom-in"
+                  data-aos-duration="2000" className="w-36 border-b-4 border-[#393d72] mx-auto"> </p>
+            <p data-aos="zoom-in"
+                  data-aos-duration="2000" className="text-center py-3">
               Your Donated Money save a life ....
             </p>
           </div>
@@ -78,7 +81,8 @@ const CampaignPeats = () => {
           : // Render actual campaign data
             data?.pages.map((page, pageIndex) =>
               page.map((campaignItem) => (
-                <Link
+                <Link data-aos="fade-up"
+                  data-aos-duration="2000"
                   className="mt-5"
                   key={campaignItem._id}
                   to={`/campaignDetails/${campaignItem._id}`}
