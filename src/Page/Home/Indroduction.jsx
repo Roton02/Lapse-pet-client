@@ -8,7 +8,11 @@ const AboutUs = () => {
         heading={"About Us"}
         subHeading={"Why Chose us "}
       ></SectionTitle>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center justify-center">
           {/* Video Section */}
           <div className="relative overflow-hidden rounded-lg h-96">
