@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Helmet } from "react-helmet-async";
+import SectionHeader from "../../Shared/SectionHeader/SectionHeader";
 
 const fetchCampaigns = async ({ pageParam = 1 }) => {
   const axiosPublic = useAxiosPublic();
@@ -41,27 +42,8 @@ const CampaignPeats = () => {
         <title>Lapse-Pet || Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <header>
-        <div
-          className={` h-[200px] mx-auto rounded-b-md bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4]`}
-        >
-          <div
-            className="max-w-7xl mx-auto
-          "
-          >
-            <h1 data-aos="zoom-in"
-                  data-aos-duration="2000" className="text-4xl pt-5 text-center font-bold mb-5 text-[#393d72]">
-              ----Donation Campaign----
-            </h1>
-            <p data-aos="zoom-in"
-                  data-aos-duration="2000" className="w-36 border-b-4 border-[#393d72] mx-auto"> </p>
-            <p data-aos="zoom-in"
-                  data-aos-duration="2000" className="text-center py-3">
-              Your Donated Money save a life ....
-            </p>
-          </div>
-        </div>
-      </header>
+      <SectionHeader header={'Donation Campaign'} subHeader={'Your Donated Money save a life .'}></SectionHeader>
+    
 
       <div className=" max-w-7xl  mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-2">
         {status === "loading"

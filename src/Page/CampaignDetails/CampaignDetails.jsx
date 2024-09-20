@@ -6,6 +6,7 @@ import Payment from "../../Component/Payment";
 import { Helmet } from "react-helmet-async";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
+import SectionHeader from "../../Shared/SectionHeader/SectionHeader";
 
 const CampaignDetails = () => {
   const [recomended, setRecomended] = useState(false);
@@ -43,6 +44,7 @@ const CampaignDetails = () => {
         <title>Lapse-Pet || Campaign Details</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
+      <SectionHeader header={'Campaign Details '} subHeader={`Dear ${user.displayName} ,  Read the campaign properly in detail`}></SectionHeader>
       <div>
         <div className="max-w-7xl mx-auto ">
           <div className="flex md:flex-row flex-col">
