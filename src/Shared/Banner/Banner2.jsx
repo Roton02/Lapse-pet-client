@@ -57,7 +57,11 @@ const Banner2 = () => {
                 </div>
 
                 {/* left */}
-                <div className="hidden md:block w-full md:max-h-[400px]  flex-1 mb-10 md:mb-0">
+                <div
+                  data-aos="fade-left"
+                  data-aos-duration="1000"
+                  className=" hidden md:block w-full md:max-h-[400px]  flex-1 mb-10 md:mb-0"
+                >
                   <img
                     className="md:h-full h-[250px] object-cover w-full"
                     src="https://i.ibb.co/p2Sy0DZ/d-removebg-preview.png"
@@ -100,7 +104,8 @@ const Banner2 = () => {
                 </div>
 
                 {/* left */}
-                <div className="hidden md:block w-full md:max-h-[400px]  flex-1 mb-10 md:mb-0">
+                <div data-aos="fade-left"
+                  data-aos-duration="1000" className="hidden md:block w-full md:max-h-[400px]  flex-1 mb-10 md:mb-0">
                   <img
                     className="md:h-full h-[250px] object-cover w-full"
                     src="https://i.ibb.co/fMMf630/gettyimages-173603002-612x612-removebg-preview.png"
@@ -143,7 +148,8 @@ const Banner2 = () => {
                 </div>
 
                 {/* left */}
-                <div className="hidden md:block w-full max-h-[400px] flex-1 mb-10 md:mb-0">
+                <div data-aos="fade-left"
+                  data-aos-duration="1000" className="hidden md:block w-full max-h-[400px] flex-1 mb-10 md:mb-0">
                   <img
                     className="h-full object-cover w-full"
                     src="https://i.ibb.co/cYHXYFv/p-removebg-preview.png"
