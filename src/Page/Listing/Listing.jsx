@@ -44,11 +44,25 @@ const Listing = () => {
          `}
         >
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl pt-5 text-center  font-bold mb-5 text-[#393d72] ">
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              className="text-4xl pt-5 text-center  font-bold mb-5 text-[#393d72] "
+            >
               ----Adoption Search----
             </h1>
-            <p className="w-36 border-b-4 border-[#393d72] mx-auto"> </p>
-            <p className="text-center py-3">
+            <p
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              className="w-36 border-b-4 border-[#393d72] mx-auto"
+            >
+              {" "}
+            </p>
+            <p
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              className="text-center py-3"
+            >
               You can find peats and also can adopted peats
             </p>
           </div>
@@ -56,6 +70,8 @@ const Listing = () => {
       </header>
       <div className="  bg-slate-50  border">
         <div
+          data-aos="fade-up"
+          data-aos-duration="2000"
           className="md:px-32 p-5   max-w-7xl mx-auto
        mt-1  flex flex-col lg:flex-row items-center justify-between"
         >
@@ -114,7 +130,12 @@ const Listing = () => {
               ))
           : // Render actual data
             listingData.map((list) => (
-              <Link key={list._id} to={`/singlePage/${list._id}`}>
+              <Link
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                key={list._id}
+                to={`/singlePage/${list._id}`}
+              >
                 <div className=" w-full ">
                   <a
                     href="#"
