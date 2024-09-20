@@ -324,7 +324,8 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <Link to="/">
+          <Link data-aos="fade-"
+                  data-aos-duration="2500"  to="/">
             <h1 className="text-2xl customNav md:text-4xl  text-black">
               <span className="text-pink-600">Lapse</span>-Pet
             </h1>

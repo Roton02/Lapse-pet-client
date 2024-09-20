@@ -28,7 +28,8 @@ const Banner2 = () => {
           <SwiperSlide>
             <div className="md:h-[500px] h-auto lg:ml-8 text-black border-none">
               <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center">
-                <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto">
+                <div data-aos="fade-up"
+                  data-aos-duration="2500"   className="flex-1 mt-10 md:mt-0 w-full md:w-auto">
                   <p className="font-semibold text-[#FF497C] mb-3  md:text-left">
                     <span className="bg-[#FF497C]  mr-3 text-xl px-2 py-1 rounded-full">
                       <i className="bx bxs-hot"></i>
@@ -58,8 +59,8 @@ const Banner2 = () => {
 
                 {/* left */}
                 <div
-                  data-aos="fade-left"
-                  data-aos-duration="1000"
+                  data-aos="fade-up"
+                  data-aos-duration="2500"
                   className=" hidden md:block w-full md:max-h-[400px]  flex-1 mb-10 md:mb-0"
                 >
                   <img
