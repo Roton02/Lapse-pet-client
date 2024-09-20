@@ -7,6 +7,7 @@ import useAuth from "../../Hooks/useAuth";
 import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import { toast } from "react-toastify";
+import SectionHeader from "../../Shared/SectionHeader/SectionHeader";
 
 const SinglePeatsDetails = () => {
   const params = useParams();
@@ -80,6 +81,7 @@ const SinglePeatsDetails = () => {
           <title>Lapse-Pet || Details</title>
           {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
         </Helmet>
+        <SectionHeader header={'Available pet Details '} subHeader={`Dear ${user.displayName} ,  Read the Pet data  properly in details .`}></SectionHeader>
         <div className="max-w-7xl mx-auto  ">
           <div className="flex md:flex-row flex-col">
             <div className="md:w-2/3 md:p-6">

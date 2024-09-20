@@ -13,7 +13,6 @@ import auth from "../Firebase.config/Firbase.config";
 import { updateProfile } from "firebase/auth";
 // import { toast } from "react-toastify";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
-import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 
 export const AuthContext = createContext(null);

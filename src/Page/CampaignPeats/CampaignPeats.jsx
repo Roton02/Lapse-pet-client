@@ -9,6 +9,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Helmet } from "react-helmet-async";
 import SectionHeader from "../../Shared/SectionHeader/SectionHeader";
+import useAuth from "../../Hooks/useAuth";
 
 const fetchCampaigns = async ({ pageParam = 1 }) => {
   const axiosPublic = useAxiosPublic();
@@ -19,6 +20,7 @@ const fetchCampaigns = async ({ pageParam = 1 }) => {
 };
 
 const CampaignPeats = () => {
+  const {user} = useAuth()
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, status } =
     useInfiniteQuery({
       queryKey: ["campaigns"],
@@ -42,8 +44,10 @@ const CampaignPeats = () => {
         <title>Lapse-Pet || Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <SectionHeader header={'Donation Campaign'} subHeader={'Your Donated Money save a life .'}></SectionHeader>
-    
+      <SectionHeader
+        header={"Donation Campaign"}
+        subHeader={`Dear ${user.displayName} , Your Donated Money save a life .`}
+      ></SectionHeader>
 
       <div className=" max-w-7xl  mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-2">
         {status === "loading"
@@ -63,7 +67,8 @@ const CampaignPeats = () => {
           : // Render actual campaign data
             data?.pages.map((page, pageIndex) =>
               page.map((campaignItem) => (
-                <Link data-aos="fade-up"
+                <Link
+                  data-aos="fade-up"
                   data-aos-duration="2000"
                   className="mt-5"
                   key={campaignItem._id}

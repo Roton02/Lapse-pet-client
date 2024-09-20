@@ -5,9 +5,11 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Helmet } from "react-helmet-async";
 import SectionHeader from "../../Shared/SectionHeader/SectionHeader";
+import useAuth from "../../Hooks/useAuth";
 
 const Listing = () => {
   const axiosPublic = useAxiosPublic();
+  const {user} = useAuth()
   const [search, setSearch] = useState("");
   const [listingData, setListingData] = useState([]);
   const [selectedData, setSelectedData] = useState([]);
@@ -39,7 +41,7 @@ const Listing = () => {
         <title>Lapse-Pet || Listing</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <SectionHeader header={'Adoption Search'} subHeader={'You can find peats and also can adopted peats'}></SectionHeader>
+      <SectionHeader header={'Adoption Search'} subHeader={`Dear ${user.displayName} , You can find pets and also can adopted pets`}></SectionHeader>
       <div className="  bg-slate-50  border">
         <div
           data-aos="fade-up"

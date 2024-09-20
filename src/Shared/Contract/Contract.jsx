@@ -2,8 +2,11 @@ import { Helmet } from "react-helmet-async";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import { toast } from "react-toastify";
+import SectionHeader from "../SectionHeader/SectionHeader";
+import useAuth from "../../Hooks/useAuth";
 
 const Contract = () => {
+  const {user} = useAuth()
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -39,6 +42,7 @@ const Contract = () => {
         <title>Lapse-Pet || Contract</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
+      <SectionHeader header={'Contract Us '} subHeader={`Dear ${user.displayName} , Fill up the contract form to send Email Us `}></SectionHeader>
       <h1
         className="text-3xl font-anton font-semibold text-center
          underline my-5 "
