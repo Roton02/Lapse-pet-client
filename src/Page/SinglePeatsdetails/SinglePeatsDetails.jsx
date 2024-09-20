@@ -80,38 +80,42 @@ const SinglePeatsDetails = () => {
           <title>Lapse-Pet || Details</title>
           {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
         </Helmet>
-        <div className="max-w-7xl mx-auto ">
+        <div className="max-w-7xl mx-auto  ">
           <div className="flex md:flex-row flex-col">
             <div className="md:w-2/3 md:p-6">
-              <div className="  flex-1">
+              <div data-aos="fade-right"
+                  data-aos-duration="2000" className="  flex-1">
                 <img
                   className=" w-full "
                   src={details.img}
-                  alt="Image Loading..............."
+                  
                 />
               </div>
               <div className="">
-                <SectionTitle
+                <SectionTitle 
                   month={"month"}
                   heading={details.name}
                   subHeading={details.age}
                 ></SectionTitle>
 
-                <p className="py-2  text-lg font-anton "></p>
+                <p  className="py-2  text-lg font-anton "></p>
 
-                <p className=" font-semibold  ">
+                <p data-aos="fade-up"
+                  data-aos-duration="2000" className=" font-semibold  ">
                   Location : {details.location}
                 </p>
-                <p className="font-anton border-b-2 my-2">
+                <p data-aos="fade-up"
+                  data-aos-duration="2000" className="font-anton border-b-2 my-2">
                   {details.description}
                 </p>
 
                 <div id="text"></div>
 
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-3 w-full mt-6 sm:w-auto">
+                <div  className="flex justify-between items-center">
+                  <div data-aos="fade-up"
+                  data-aos-duration="2000" className="flex items-center gap-3 w-full mt-6 sm:w-auto">
                     <div className="avatar ">
-                      <div className="w-16 rounded-full">
+                      <div  className="w-16 rounded-full">
                         <img
                           src={details?.addedPerson?.AddedPersonImage}
                           alt=""
@@ -126,7 +130,8 @@ const SinglePeatsDetails = () => {
                     </div>
                   </div>
                   <div className="mt-12 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
-                    <button
+                    <button data-aos="fade-up"
+                  data-aos-duration="2000" 
                       onClick={() =>
                         document.getElementById("my_modal_5").showModal()
                       }
@@ -248,7 +253,8 @@ const SinglePeatsDetails = () => {
                 </div>
               </div>
             </div>
-            <div className="md:w-1/3">
+            <div data-aos="fade-left"
+                  data-aos-duration="2000" className="md:w-1/3">
               <div className="p-2">
                 <div>
                   <h2 className="text-2xl font-semibold">Mine</h2>

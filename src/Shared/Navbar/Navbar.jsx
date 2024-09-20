@@ -336,25 +336,25 @@ const Navbar = () => {
           <div className=" space-x-2  hidden lg:flex ">
             <NavLink
               to="/"
-              className="btn btn-sm  border-b-2 border-gray-300 hover:bg-black hover:text-white "
+              className=" p-2 px-2 font-medium "
             >
               Home
             </NavLink>
             <NavLink
               to="/listing"
-              className="btn  btn-sm border-2 border-gray-300 hover:bg-black hover:text-white "
+              className=" p-2 px-2 font-medium  "
             >
               Pet Listing
             </NavLink>
             <NavLink
               to="/campaign"
-              className="btn btn-sm border-2 border-gray-300 hover:bg-black hover:text-white "
+              className="  p-2 px-2 font-medium "
             >
               Donation Campaigns
             </NavLink>
             <NavLink
               to="/contract"
-              className="btn btn-sm border-2 border-gray-300 hover:bg-black hover:text-white "
+              className="  p-2 px-2 font-medium "
             >
               Contract
             </NavLink>
