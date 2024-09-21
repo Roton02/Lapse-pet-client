@@ -53,7 +53,7 @@ const Dashboard = () => {
           />
         </div>
       ) : (
-        <div className=" custom-z  ">
+        <div className=" custom-z   ">
           <div className="flex  ">
             {/* dashboard side bar */}
             <div className="fixed  w-[300px]">
