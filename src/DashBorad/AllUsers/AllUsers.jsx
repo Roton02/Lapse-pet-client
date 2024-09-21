@@ -31,7 +31,7 @@ const AllUsers = () => {
   };
 
   return (
-    <div className="-z-50">
+    <div className="-z-50 md:z-auto">
       <Helmet>
         <title>Lapse-Pet || All Users</title>
       </Helmet>
