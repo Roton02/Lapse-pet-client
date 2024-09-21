@@ -46,7 +46,7 @@ const MyDonation = () => {
   };
 
   return (
-    <div className="-z-50">
+    <div className="-z-50 md:z-auto">
       <Helmet>
         <title>Lapse-Pet || My Donation</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
