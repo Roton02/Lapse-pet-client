@@ -42,7 +42,7 @@ const MyDonationCampaign = () => {
   };
 
   return (
-    <div className=" mx-auto p-4 -z-50">
+    <div className=" mx-auto p-4 -z-50 md:z-auto">
       <Helmet>
         <title>Lapse-Pet || My Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}

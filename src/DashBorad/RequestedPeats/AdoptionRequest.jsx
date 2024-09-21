@@ -51,7 +51,7 @@ const AdoptionRequest = () => {
   };
 
   return (
-    <div className="-z-50">
+    <div className="-z-50 md:z-auto">
       <Helmet>
         <title>Lapse-Pet || Adoption Request</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
