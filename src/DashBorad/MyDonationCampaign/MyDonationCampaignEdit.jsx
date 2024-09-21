@@ -72,38 +72,40 @@ const MyDonationCampaignEdit = () => {
         <title>Lapse-Pet || My Campaign Edit</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <section className="max-w-3xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
+      <section className="max-w-3xl p-6 mx-auto   ">
         <h2
-          className="text-lg text-center border-b-2 pb-5 font-semibold text-gray-700 capitalize 
-    dark:text-white"
+          className="text-lg md:text-3xl text-center mt-5  pb-5 font-semibold  capitalize 
+    "
         >
           Update your Donation Campaign
         </h2>
+        <div className="mx-5 border  border-slate-700 mt-2"></div>
+
 
         <form onSubmit={handleSubmit}>
-          <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 md:px-5 gap-6 mt-4 sm:grid-cols-2">
             <div>
-              <label className="text-gray-700 dark:text-gray-200">Name</label>
+              <label className=" ">Name</label>
               <input
                 id="username"
                 type="text"
                 name="name"
                 defaultValue={editData?.name}
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2  border rounded-md border-secondary "
               />
             </div>
             <div>
-              <label className="text-gray-700 dark:text-gray-200">Image</label>
+              <label className=" ">Image</label>
               <input
                 id="username"
                 type="file"
                 name="photo"
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2  border rounded-md border-secondary "
               />
             </div>
 
             <div>
-              <label className="text-gray-700 dark:text-gray-200">
+              <label className=" ">
                 Maximum donation amount
               </label>
               <input
@@ -111,12 +113,12 @@ const MyDonationCampaignEdit = () => {
                 type="number"
                 name="maxDonation"
                 defaultValue={editData?.maxDonation}
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2  border rounded-md border-secondary "
               />
             </div>
 
             <div>
-              <label className="text-gray-700 dark:text-gray-200">
+              <label className=" ">
                 Last date of donation
               </label>
               <input
@@ -124,12 +126,12 @@ const MyDonationCampaignEdit = () => {
                 type="date"
                 name="date"
                 defaultValue={editData?.date}
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                className="block w-full px-4 py-2 mt-2  border rounded-md border-secondary "
               />
             </div>
           </div>
-          <div>
-            <label className="text-gray-700 dark:text-gray-200">
+          <div className="md:px-5">
+            <label className=" ">
               sort Description
             </label>
             <input
@@ -137,10 +139,10 @@ const MyDonationCampaignEdit = () => {
               type="text"
               name="sortDescription"
               defaultValue={editData?.sortDescription}
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+              className="block w-full px-4 py-2 mt-2  border rounded-md border-secondary "
             />
           </div>
-          <div>
+          <div className="px-5">
             <label className="label">
               <span className="label-text">Description</span>
             </label>
@@ -149,13 +151,14 @@ const MyDonationCampaignEdit = () => {
               defaultValue={editData?.longDescription}
               className="textarea w-full textarea-secondary"
               placeholder="Write Above Peats"
+              rows={4}
             ></textarea>
           </div>
 
-          <div className="flex justify-end mt-6">
+          <div className="flex px-5 justify-end mt-6">
             <button
               type="submit"
-              className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+              className="px-8 py-2.5 leading-5 text-white text-lg transition-colors duration-300 transform  rounded-md bg-[#ff4880] hover:bg-black delay-75"
             >
               Update
             </button>
