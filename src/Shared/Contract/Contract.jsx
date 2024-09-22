@@ -42,7 +42,7 @@ const Contract = () => {
         <title>Lapse-Pet || Contract</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <SectionHeader header={'Contract Us '} subHeader={`Dear ${user.displayName} , Fill up the contract form to send Email Us `}></SectionHeader>
+      <SectionHeader header={'Contract Us '} subHeader={`Dear ${user?.displayName || 'User'} , Fill up the contract form to send Email Us `}></SectionHeader>
       <h1
         className="text-3xl font-anton font-semibold text-center
          underline my-5 "
