@@ -102,7 +102,7 @@ const AddPets = () => {
   };
 
   return (
-    <div className="py-10 -z-50 md:z-auto">
+    <div className="py-10 ">
       <Helmet>
         <title>Lapse-Pet || Add Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}

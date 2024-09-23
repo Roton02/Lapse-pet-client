@@ -39,7 +39,7 @@ const Dashboard = () => {
   // localStorage.setItem("theme", "dark");
 
   return (
-    <div className="custom-z">
+    <div className="">
       {false ? (
         <div className="bg-[#110e11] w-screen flex justify-center items-center min-h-screen relative custom-z">
           <ReactPlayer
@@ -53,7 +53,7 @@ const Dashboard = () => {
           />
         </div>
       ) : (
-        <div className=" custom-z   ">
+        <div className=" ">
           <div className="flex  ">
             {/* dashboard side bar */}
             <div className="fixed  w-[300px]">
@@ -745,7 +745,7 @@ const Dashboard = () => {
               </div>
             </div>
             {/* dashboard content */}
-            <div className="w-full flex justify-end">
+            <div className={`w-full flex justify-end  ${isOpen ? '-z-50' : ''}`}>
               <div
                 className="flex justify-center min-h-screen bg-gradient-to from-pink-300 via-transparent custom "
                 // style={{  " }}

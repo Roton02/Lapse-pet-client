@@ -52,7 +52,7 @@ const CreateCampaign = () => {
     });
   };
   return (
-    <div className="-z-50 md:z-auto">
+    <div className="">
       <Helmet>
         <title>Lapse-Pet || Create Campaign</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}

@@ -77,7 +77,7 @@ const AdminCampaign = () => {
   };
 
   return (
-    <div className=" mx-auto p-4 -z-50 md:z-auto">
+    <div className=" mx-auto p-4 ">
       <Helmet>
         <title>Lapse-Pet || Admin Campaign</title>
       </Helmet>

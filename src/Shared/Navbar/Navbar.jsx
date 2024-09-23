@@ -388,10 +388,10 @@ const Navbar = () => {
                   <li className="mx-auto text-xl font-bold ">
                     {user?.displayName}
                   </li>
-                  <li>
+                  <li className="">
                     <NavLink
                       to="/profile"
-                      className="btn btn-sm btn-ghost border-2  border-gray-300 hover:bg-black hover:text-white"
+                      className=" border-b-2  border-gray-300 hover:bg-black hover:text-white"
                     >
                       Profile
                     </NavLink>
@@ -399,18 +399,18 @@ const Navbar = () => {
                   <li>
                     <NavLink
                       to="/dashboard/addPet"
-                      className="btn btn-sm btn-ghost border-2  border-gray-300 hover:bg-black hover:text-white"
+                      className="border-b-2  border-gray-300 hover:bg-black hover:text-white"
                     >
                       DashBoard
                     </NavLink>
                   </li>
 
-                  <button
+                  <li><button
                     onClick={Logout}
-                    className="btn btn-sm btn-ghost border-2  border-gray-300 hover:bg-black hover:text-white"
+                    className="border-b-2  border-gray-300 hover:bg-black hover:text-white"
                   >
                     Logout
-                  </button>
+                  </button></li>
                 </ul>
               </div>
             </div>
