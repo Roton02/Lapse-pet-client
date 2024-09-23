@@ -11,16 +11,16 @@ const ErrorPage = () => {
       </Helmet>
       <div className="my-4 ">
         <div className="flex justify-center items-center">
-        <lottie-player
-          src="https://lottie.host/1ee7c555-22eb-4857-8902-73e1d84ccf34/P4qFlhCYb4.json"
-          background="#FFFFFF"
-          speed="1"
-          class="w-80 h-80"
-          loop
-          autoplay
-          direction="1"
-          mode="normal"
-        ></lottie-player>
+          <lottie-player
+            src="https://lottie.host/1ee7c555-22eb-4857-8902-73e1d84ccf34/P4qFlhCYb4.json"
+            background="#FFFFFF"
+            speed="1"
+            class="w-80 h-80"
+            loop
+            autoplay
+            direction="1"
+            mode="normal"
+          ></lottie-player>
         </div>
 
         <div className="container flex flex-col items-center justify-center px-5 mx-auto">

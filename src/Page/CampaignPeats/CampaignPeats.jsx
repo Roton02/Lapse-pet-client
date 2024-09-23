@@ -20,7 +20,7 @@ const fetchCampaigns = async ({ pageParam = 1 }) => {
 };
 
 const CampaignPeats = () => {
-  const {user} = useAuth()
+  const { user } = useAuth();
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, status } =
     useInfiniteQuery({
       queryKey: ["campaigns"],
@@ -46,7 +46,9 @@ const CampaignPeats = () => {
       </Helmet>
       <SectionHeader
         header={"Donation Campaign"}
-        subHeader={`Dear ${user?.displayName || 'User'} , Your Donated Money save a life .`}
+        subHeader={`Dear ${
+          user?.displayName || "User"
+        } , Your Donated Money save a life .`}
       ></SectionHeader>
 
       <div className=" max-w-7xl  mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-2">

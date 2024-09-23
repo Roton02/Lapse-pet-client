@@ -81,7 +81,6 @@ const MyDonationCampaignEdit = () => {
         </h2>
         <div className="mx-5 border  border-slate-700 mt-2"></div>
 
-
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:px-5 gap-6 mt-4 sm:grid-cols-2">
             <div>
@@ -105,9 +104,7 @@ const MyDonationCampaignEdit = () => {
             </div>
 
             <div>
-              <label className=" ">
-                Maximum donation amount
-              </label>
+              <label className=" ">Maximum donation amount</label>
               <input
                 id="emailAddress"
                 type="number"
@@ -118,9 +115,7 @@ const MyDonationCampaignEdit = () => {
             </div>
 
             <div>
-              <label className=" ">
-                Last date of donation
-              </label>
+              <label className=" ">Last date of donation</label>
               <input
                 id="password"
                 type="date"
@@ -131,9 +126,7 @@ const MyDonationCampaignEdit = () => {
             </div>
           </div>
           <div className="md:px-5">
-            <label className=" ">
-              sort Description
-            </label>
+            <label className=" ">sort Description</label>
             <input
               id="passwordConfirmation"
               type="text"

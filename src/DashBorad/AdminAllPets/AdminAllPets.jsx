@@ -202,99 +202,100 @@ const AdminAllPets = () => {
         <title>Lapse-Pet || Admin All Peats</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <h1 className="text-4xl text-center  my-10 mb-4">
-        All Pets
-      </h1>
+      <h1 className="text-4xl text-center  my-10 mb-4">All Pets</h1>
       <div className="w-[90vw] md:w-full    ">
-      <table className="table max-w-5xl mx-auto overflow-scroll">
-        <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id} className="  bg-slate-800 font-bold text-xl text-white  border-l">
-              {headerGroup.headers.map((header) => (
-                <th
-                  key={header.id}
-                  className="p-4 border-l text-left text-sm font-medium"
-                >
-                  {header.isPlaceholder ? null : (
-                    <div>
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )}
-                    </div>
-                  )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {paginatedData.map((row, i) => (
-            <tr key={row._id} className="border-b border-gray-300">
-              <td className="p-4 text-sm ">{i + 1 + pageIndex * pageSize}</td>
-              <td className="p-4 text-sm ">
-                <img
-                  src={row.img}
-                  alt="Pet"
-                  className="w-12 h-12 object-cover"
-                />
-              </td>
-              <td className="p-4 text-sm ">{row.name}</td>
-              <td className="p-4 text-sm ">{row.type}</td>
-              <td className="p-4 text-sm ">
-                {row.adopted ? (
-                  <button
-                    disabled
-                    className="bg-green-500 text-nowrap px-1 block"
+        <table className="table max-w-5xl mx-auto overflow-scroll">
+          <thead>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <tr
+                key={headerGroup.id}
+                className="  bg-slate-800 font-bold text-xl text-white  border-l"
+              >
+                {headerGroup.headers.map((header) => (
+                  <th
+                    key={header.id}
+                    className="p-4 border-l text-left text-sm font-medium"
                   >
-                    AllReady Adopted
-                  </button>
-                ) : (
-                  <button
-                    disabled
-                    className="bg-pink-500 btn-block text-nowrap  px-1"
-                  >
-                    {" "}
-                    Not Adopted
-                  </button>
-                )}
-              </td>
-              <td className="p-4 text-sm ">
-                <div className="space-x-2 flex">
-                  <Link to={`updatepets/${row._id}`}>
-                    <button className="bg-blue-500 text-white px-2 py-1 rounded">
-                      Update
+                    {header.isPlaceholder ? null : (
+                      <div>
+                        {flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
+                      </div>
+                    )}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody>
+            {paginatedData.map((row, i) => (
+              <tr key={row._id} className="border-b border-gray-300">
+                <td className="p-4 text-sm ">{i + 1 + pageIndex * pageSize}</td>
+                <td className="p-4 text-sm ">
+                  <img
+                    src={row.img}
+                    alt="Pet"
+                    className="w-12 h-12 object-cover"
+                  />
+                </td>
+                <td className="p-4 text-sm ">{row.name}</td>
+                <td className="p-4 text-sm ">{row.type}</td>
+                <td className="p-4 text-sm ">
+                  {row.adopted ? (
+                    <button
+                      disabled
+                      className="bg-green-500 text-nowrap px-1 block"
+                    >
+                      AllReady Adopted
                     </button>
-                  </Link>
-                  <button
-                    onClick={() => handleDelete(row._id)}
-                    className="bg-red-500 text-white px-2 py-1 rounded"
-                  >
-                    Delete
-                  </button>
-                </div>
-              </td>
-              <td className="p-4 text-sm ">
-                <div className="space-x-2 flex">
-                  <button
-                    onClick={() => handleChangeStatusByNotAdopted(row._id)}
-                    className="block text-nowrap bg-emerald-950 text-white px-2 py-1 rounded"
-                  >
-                    Not Adopted
-                  </button>
+                  ) : (
+                    <button
+                      disabled
+                      className="bg-pink-500 btn-block text-nowrap  px-1"
+                    >
+                      {" "}
+                      Not Adopted
+                    </button>
+                  )}
+                </td>
+                <td className="p-4 text-sm ">
+                  <div className="space-x-2 flex">
+                    <Link to={`updatepets/${row._id}`}>
+                      <button className="bg-blue-500 text-white px-2 py-1 rounded">
+                        Update
+                      </button>
+                    </Link>
+                    <button
+                      onClick={() => handleDelete(row._id)}
+                      className="bg-red-500 text-white px-2 py-1 rounded"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+                <td className="p-4 text-sm ">
+                  <div className="space-x-2 flex">
+                    <button
+                      onClick={() => handleChangeStatusByNotAdopted(row._id)}
+                      className="block text-nowrap bg-emerald-950 text-white px-2 py-1 rounded"
+                    >
+                      Not Adopted
+                    </button>
 
-                  <button
-                    onClick={() => handleChangeStatusByAdopted(row._id)}
-                    className=" block bg-green-500 text-white px-2 py-1 rounded"
-                  >
-                    Adopted
-                  </button>
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                    <button
+                      onClick={() => handleChangeStatusByAdopted(row._id)}
+                      className=" block bg-green-500 text-white px-2 py-1 rounded"
+                    >
+                      Adopted
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
       {table.getPageCount() > 1 && (
         <div className="flex justify-center  gap-7 md:gap-0 overflow-hidden  md:justify-between md:px-12 items-center mt-4">

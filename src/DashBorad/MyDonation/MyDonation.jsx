@@ -59,14 +59,16 @@ const MyDonation = () => {
           <thead>
             <tr className=" bg-slate-800   text-white  ">
               <th className="border-r">No</th>
-              <th className="px-12 border-r font-bold hidden md:inline-block">Pet image</th>
+              <th className="px-12 border-r font-bold hidden md:inline-block">
+                Pet image
+              </th>
               <th className="px-12 border-r font-bold">Pet name</th>
               <th className="px-12 border-r font-bold">Donated amount</th>
               <th className="px-12 border-r font-bold">Refund</th>
             </tr>
           </thead>
           <tbody>
-            {users.map((user,i) => {
+            {users.map((user, i) => {
               const donators = user.donators || [];
               const userDonations = donators.filter(
                 (p) => p.email === authUser.email
@@ -78,7 +80,7 @@ const MyDonation = () => {
 
               return totalDonated > 0 ? (
                 <tr key={user._id}>
-                  <th>{i+1}</th>
+                  <th>{i + 1}</th>
                   <td className="hidden px-12 md:inline-block">
                     <div className="avatar">
                       <div className="w-16 rounded-full">
@@ -95,7 +97,7 @@ const MyDonation = () => {
                       }
                       className="btn btn-outline btn-sm border-b-4 border-black rounded-b-lg text-nowrap"
                     >
-                       refund
+                      refund
                     </button>
                   </td>
                 </tr>

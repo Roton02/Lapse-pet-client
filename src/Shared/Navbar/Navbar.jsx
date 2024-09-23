@@ -324,8 +324,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <Link data-aos="fade-"
-                  data-aos-duration="2500"  to="/">
+          <Link data-aos="fade-" data-aos-duration="2500" to="/">
             <h1 className="text-2xl customNav md:text-4xl  text-black">
               <span className="text-pink-600">Lapse</span>-Pet
             </h1>
@@ -334,28 +333,16 @@ const Navbar = () => {
 
         <div className="navbar-end ">
           <div className=" space-x-2  hidden lg:flex ">
-            <NavLink
-              to="/"
-              className=" p-2 px-2 font-medium "
-            >
+            <NavLink to="/" className=" p-2 px-2 font-medium ">
               Home
             </NavLink>
-            <NavLink
-              to="/listing"
-              className=" p-2 px-2 font-medium  "
-            >
+            <NavLink to="/listing" className=" p-2 px-2 font-medium  ">
               Pet Listing
             </NavLink>
-            <NavLink
-              to="/campaign"
-              className="  p-2 px-2 font-medium "
-            >
+            <NavLink to="/campaign" className="  p-2 px-2 font-medium ">
               Donation Campaigns
             </NavLink>
-            <NavLink
-              to="/contract"
-              className="  p-2 px-2 font-medium "
-            >
+            <NavLink to="/contract" className="  p-2 px-2 font-medium ">
               Contract
             </NavLink>
           </div>
@@ -405,12 +392,14 @@ const Navbar = () => {
                     </NavLink>
                   </li>
 
-                  <li><button
-                    onClick={Logout}
-                    className="border-b-2  border-gray-300 hover:bg-black hover:text-white"
-                  >
-                    Logout
-                  </button></li>
+                  <li>
+                    <button
+                      onClick={Logout}
+                      className="border-b-2  border-gray-300 hover:bg-black hover:text-white"
+                    >
+                      Logout
+                    </button>
+                  </li>
                 </ul>
               </div>
             </div>

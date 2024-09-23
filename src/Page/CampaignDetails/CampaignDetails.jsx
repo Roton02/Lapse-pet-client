@@ -44,13 +44,19 @@ const CampaignDetails = () => {
         <title>Lapse-Pet || Campaign Details</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <SectionHeader header={'Campaign Details '} subHeader={`Dear ${user.displayName} ,  Read the campaign properly in detail`}></SectionHeader>
+      <SectionHeader
+        header={"Campaign Details "}
+        subHeader={`Dear ${user.displayName} ,  Read the campaign properly in detail`}
+      ></SectionHeader>
       <div>
         <div className="max-w-7xl mx-auto ">
           <div className="flex md:flex-row flex-col">
             <div className="md:w-2/3 md:p-6">
-              <div data-aos="fade-right"
-                  data-aos-duration="2000" className="  flex-1">
+              <div
+                data-aos="fade-right"
+                data-aos-duration="2000"
+                className="  flex-1"
+              >
                 <img
                   className=" w-full max-h-[700px] "
                   src={details.image}
@@ -65,23 +71,35 @@ const CampaignDetails = () => {
 
                 <p className="py-2  text-lg font-anton "></p>
 
-                <p data-aos="fade-up"
-                  data-aos-duration="2000" className=" font-semibold  ">
+                <p
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                  className=" font-semibold  "
+                >
                   maxDonation : {details.maxDonation} $
                 </p>
-                <p data-aos="fade-up"
-                  data-aos-duration="2000" className="font-anton border-b-2 my-2">
+                <p
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                  className="font-anton border-b-2 my-2"
+                >
                   {details.sortDescription}
                 </p>
 
-                <p data-aos="fade-up"
-                  data-aos-duration="2000" className="font-anton border-b-2 my-2">
+                <p
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                  className="font-anton border-b-2 my-2"
+                >
                   {details.longDescription}
                 </p>
 
                 <div className="flex justify-between items-center">
-                  <div data-aos="fade-up"
-                  data-aos-duration="2000" className="flex items-center gap-3 w-full mt-6 sm:w-auto">
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
+                    className="flex items-center gap-3 w-full mt-6 sm:w-auto"
+                  >
                     <div className="avatar ">
                       <div className="w-16 rounded-full">
                         <img src={details?.userPhoto} alt="" />
@@ -95,8 +113,9 @@ const CampaignDetails = () => {
                     </div>
                   </div>
                   <div className="mt-12 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
-                    <button data-aos="fade-up"
-                  data-aos-duration="2000"
+                    <button
+                      data-aos="fade-up"
+                      data-aos-duration="2000"
                       onClick={() => {
                         document.getElementById("my_modal_5").showModal();
                         setRecomended(true);
@@ -168,15 +187,22 @@ const CampaignDetails = () => {
                 </div>
               </div>
               {recomended && (
-                <div  className="max-w-7xl mx-auto">
-                  <h1 data-aos="fade-up"
-                  data-aos-duration="2000" className="text-2xl font-bold flex justify-center py-5 ">
+                <div className="max-w-7xl mx-auto">
+                  <h1
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
+                    className="text-2xl font-bold flex justify-center py-5 "
+                  >
                     Recomended For Donate{" "}
                   </h1>
                   <div className="grid grid-cols-1 md:grid-cols-2   gap-10 mt-2">
                     {recomendedData.slice(0, 2).map((campaign) => (
-                      <div data-aos="fade-up"
-                      data-aos-duration="2000" key={campaign._id} className="">
+                      <div
+                        data-aos="fade-up"
+                        data-aos-duration="2000"
+                        key={campaign._id}
+                        className=""
+                      >
                         <div className="px-0 border   bg-gray-100  shadow-2xl hover:scale-105">
                           <figure className="w-full bg-cover">
                             <img
@@ -212,8 +238,11 @@ const CampaignDetails = () => {
                 </div>
               )}
             </div>
-            <div data-aos="fade-left"
-                  data-aos-duration="2000" className="md:w-1/3">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="2000"
+              className="md:w-1/3"
+            >
               <div className="p-2">
                 <div>
                   <h2 className="text-2xl font-semibold">Mine</h2>

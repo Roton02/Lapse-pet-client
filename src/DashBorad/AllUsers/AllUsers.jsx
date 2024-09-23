@@ -53,7 +53,9 @@ const AllUsers = () => {
                       <th className="font-bold border-l hidden md:inline-block ml-0 md:ml-2">
                         Name
                       </th>
-                      <th className="font-bold border-l md:text-start ml-4">Email</th>
+                      <th className="font-bold border-l md:text-start ml-4">
+                        Email
+                      </th>
                       <th className="font-bold border-l">Role</th>
                     </tr>
                   </thead>

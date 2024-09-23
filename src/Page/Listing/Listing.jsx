@@ -9,7 +9,7 @@ import useAuth from "../../Hooks/useAuth";
 
 const Listing = () => {
   const axiosPublic = useAxiosPublic();
-  const {user} = useAuth()
+  const { user } = useAuth();
   const [search, setSearch] = useState("");
   const [listingData, setListingData] = useState([]);
   const [selectedData, setSelectedData] = useState([]);
@@ -41,7 +41,12 @@ const Listing = () => {
         <title>Lapse-Pet || Listing</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
-      <SectionHeader header={'Adoption Search'} subHeader={`Dear ${user?.displayName || 'User'}  , You can find pets and also can adopted pets`}></SectionHeader>
+      <SectionHeader
+        header={"Adoption Search"}
+        subHeader={`Dear ${
+          user?.displayName || "User"
+        }  , You can find pets and also can adopted pets`}
+      ></SectionHeader>
       <div className="  bg-slate-50  border">
         <div
           data-aos="fade-up"

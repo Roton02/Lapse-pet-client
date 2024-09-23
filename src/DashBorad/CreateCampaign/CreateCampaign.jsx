@@ -58,13 +58,13 @@ const CreateCampaign = () => {
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
       <div className="mt-14 ">
-        <h2 className="md:text-3xl text-xl  text-center">Create your Donation Campaign</h2>
+        <h2 className="md:text-3xl text-xl  text-center">
+          Create your Donation Campaign
+        </h2>
       </div>
       <div className="mx-8 border  border-slate-700 mt-2"></div>
 
       <section className="max-w-3xl px-4 mx-auto ">
-        
-
         <form onSubmit={handleSubmit} className="md:px-5">
           <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
             <div>
@@ -89,9 +89,7 @@ const CreateCampaign = () => {
             </div>
 
             <div>
-              <label className=" ">
-                Maximum donation amount
-              </label>
+              <label className=" ">Maximum donation amount</label>
               <input
                 required
                 id="emailAddress"
@@ -102,9 +100,7 @@ const CreateCampaign = () => {
             </div>
 
             <div>
-              <label className=" ">
-                Last date of donation
-              </label>
+              <label className=" ">Last date of donation</label>
               <input
                 required
                 id="password"

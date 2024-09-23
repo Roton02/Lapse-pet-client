@@ -663,7 +663,7 @@ const Dashboard = () => {
                         <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/CreateCampaign">
                             <FaCreativeCommons></FaCreativeCommons>
-                            Create  Campaign
+                            Create Campaign
                           </NavLink>
                         </li>
                         <li className="text-[17px] text-nowrap">
@@ -701,15 +701,18 @@ const Dashboard = () => {
                           </NavLink>
                         </li>
                         <li className="text-[17px] text-nowrap">
-                          <NavLink to="/dashboard/CreateCampaign" className='text-nowrap'>
+                          <NavLink
+                            to="/dashboard/CreateCampaign"
+                            className="text-nowrap"
+                          >
                             <FaCreativeCommons></FaCreativeCommons>
-                            Create  Campaign
+                            Create Campaign
                           </NavLink>
                         </li>
                         <li className="text-[17px] text-nowrap">
                           <NavLink to="/dashboard/myDonationCampaign">
                             <FaCanadianMapleLeaf></FaCanadianMapleLeaf>
-                            My  Campaigns
+                            My Campaigns
                           </NavLink>
                         </li>
                         <li className="text-[17px] text-nowrap">
@@ -745,7 +748,9 @@ const Dashboard = () => {
               </div>
             </div>
             {/* dashboard content */}
-            <div className={`w-full flex justify-end  ${isOpen ? '-z-50' : ''}`}>
+            <div
+              className={`w-full flex justify-end  ${isOpen ? "-z-50" : ""}`}
+            >
               <div
                 className="flex justify-center min-h-screen bg-gradient-to from-pink-300 via-transparent custom "
                 // style={{  " }}

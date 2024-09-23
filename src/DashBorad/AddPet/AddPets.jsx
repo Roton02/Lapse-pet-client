@@ -93,10 +93,12 @@ const AddPets = () => {
   const customStyles = {
     control: (provided, state) => ({
       ...provided,
-      borderColor: state.isFocused ? 'var(--tw-border-black)' : 'var(--tw-border-black)',  // Using Tailwind CSS variable for border color
-      boxShadow: state.isFocused ? '0 0 0 1px var(--tw-border-black)' : null,  // Optional for focus effect
-      '&:hover': {
-        borderColor: 'var(--tw-border-black)',  // Border color on hover
+      borderColor: state.isFocused
+        ? "var(--tw-border-black)"
+        : "var(--tw-border-black)", // Using Tailwind CSS variable for border color
+      boxShadow: state.isFocused ? "0 0 0 1px var(--tw-border-black)" : null, // Optional for focus effect
+      "&:hover": {
+        borderColor: "var(--tw-border-black)", // Border color on hover
       },
     }),
   };
