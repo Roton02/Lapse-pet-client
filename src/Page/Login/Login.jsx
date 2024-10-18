@@ -109,7 +109,40 @@ const Login = () => {
         <title>Lapse-Pet || Login</title>
         {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
       </Helmet>
+
+      <div className="mt-8 max-w-sm mx-auto bg-white rounded-xl  overflow-hidden transition-transform duration-300 ease-in-out scale-105 shadow-2xl">
+  <div className="bg-gradient-to-r from-[#ff497c] to-[#fc398e] px-6 py-3 flex justify-between items-center">
+    <h2 className="text-white text-lg font-semibold">Admin Credential</h2>
+    <span className="bg-white text-[#ff497c] text-xs font-bold py-1 px-3 rounded-full shadow-md">Info</span>
+  </div>
+  <div className="px-6 py-2 text-gray-800">
+    <p className="mb-2"><span className="font-semibold">Gmail:</span> roton@gmail.com</p>
+    <p><span className="font-semibold">Pass:</span> 121212Aa@</p>
+  </div>
+</div>
+
+      {/* <div className="mt-5 w-80 border border-[#ff497c] mx-auto rounded-lg bg-gradient-to-r from-[#ff497c] to-[#fc398e]  transform transition duration-500 hover:scale-105 shadow-2xl">
+  <div className="flex justify-between items-center  px-8 bg-white border-[#ff497c] rounded-t-lg">
+    <div>
+      <p className="text-lg font-bold border-b-2 text-gray-800">Admin Credential</p>
+    </div>
+    <div className="bg-[#ff497c]  text-white text-sm py-1 px-3 rounded-md shadow-md">
+      <span>Info</span>
+    </div>
+  </div>
+  <div className="flex justify-between py-2 border-[#ff497c] px-8 bg-white rounded-b-lg text-gray-800">
+    <div>
+      <p className="mb-1 text-nowrap"><span className="font-bold">Gmail:</span> roton@gmail.com</p>
+      <p><span className="font-bold text-nowrap">Pass:</span> 121212Aa@</p>
+    </div>
+   
+  </div>
+</div> */}
+
       <div className="flex items-center   w-full max-w-sm mx-auto overflow-hidden    lg:max-w-4xl">
+        
+    
+
         <div className="hidden  lg:block lg:w-1/2 ">
           <video
             src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/account-login-8677600-6981645.mp4"
@@ -199,9 +232,9 @@ const Login = () => {
                   onClick={() => setToggle(!toggle)}
                 >
                   {toggle ? (
-                    <IoIosEye className="text-white" />
+                    <IoIosEye className="text-black" />
                   ) : (
-                    <IoIosEyeOff className="text-white" />
+                    <IoIosEyeOff className="text-black" />
                   )}
                 </span>
               </div>
@@ -210,7 +243,7 @@ const Login = () => {
               <div>
                 <button
                   type="submit"
-                  className="w-full px-8 py-2 font-semibold rounded-md bg-purple-500 text-white"
+                  className="w-full px-8 py-2 font-semibold rounded-md bg-[#fc398e] text-white"
                 >
                   Login
                 </button>
