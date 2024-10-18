@@ -7,6 +7,7 @@ import Footer from "../Shared/Footer/Footer";
 import ReactPlayer from "react-player";
 import LoaderVideo from "../assets/Banner.mp4";
 import { useEffect, useState } from "react";
+import Headroom from "react-headroom";
 // import Navbar2 from "../Shared/Navbar/Navbar2";
 
 AOS.init();
@@ -41,7 +42,9 @@ const Root = () => {
         </div>
       ) : (
         <div className="">
-          <Navbar />
+          <Headroom>
+            <Navbar />
+          </Headroom>
           <div className="flex flex-col w-full h-screen">
             <div className={`flex-1 ${login_and_register && "bg-white"}`}>
               <Outlet />
