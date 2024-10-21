@@ -26,6 +26,9 @@ const Testimonials = () => {
                 Adopting my dog and cat transformed their lives from shy and
                 fearful to confident and loving, while bringing immense joy,
                 companionship, and a sense of purpose into my daily life.
+                Adopting my dog and cat transformed their lives from shy and
+                fearful to confident and loving, while bringing immense joy,
+                companionship, and a sense of purpose into my daily life.
               </p>
 
               <div className="flex items-center gap-3 w-full mt-6 sm:w-auto">
