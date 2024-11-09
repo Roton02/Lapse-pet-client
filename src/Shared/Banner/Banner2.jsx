@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const Banner2 = () => {
   return (
-    <div className=" md:h-[420px] -z-10  lg:h-[500px] px-10 dark:bg-black   bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4]">
+    <div className=" md:h-[420px]  custom-z-b  lg:h-[500px] px-10 dark:bg-black   bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4]">
       <div className="max-w-7xl mx-auto pb-8 md:pb-0 ">
         <Swiper
           effect={"fade"}
@@ -26,7 +26,7 @@ const Banner2 = () => {
         >
           {/* slide 1 */}
           <SwiperSlide>
-            <div className="md:h-[500px] h-auto lg:ml-8 text-black border-none">
+            <div className="md:h-[500px]  h-auto lg:ml-8 text-black border-none">
               <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center">
                 <div data-aos="fade-up"
                   data-aos-duration="2500"   className="flex-1 mt-10 md:mt-0 w-full md:w-auto">
@@ -61,7 +61,7 @@ const Banner2 = () => {
                 <div
                   data-aos="fade-up"
                   data-aos-duration="2500"
-                  className=" hidden md:block w-full md:max-h-[400px]  flex-1 mb-10 md:mb-0"
+                  className="  hidden md:block w-full md:max-h-[400px]  flex-1 mb-10 md:mb-0"
                 >
                   <img
                     className="md:h-full h-[250px] object-cover w-full"

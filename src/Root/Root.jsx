@@ -42,9 +42,11 @@ const Root = () => {
         </div>
       ) : (
         <div className="">
-          <>
-            <Navbar />
-          </>
+          <div className="z-[99999]">
+            <Headroom>
+              <Navbar />
+            </Headroom>
+          </div>
           <div className="flex flex-col w-full h-screen">
             <div className={`flex-1 ${login_and_register && "bg-white"}`}>
               <Outlet />
