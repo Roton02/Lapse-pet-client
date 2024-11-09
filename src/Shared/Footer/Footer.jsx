@@ -3,7 +3,7 @@ import ScrollToTop from "react-scroll-to-top";
 
 const Footer = () => {
   return (
-    <div className="relative mt-16 ">
+    <div className="relative mt-16 text-black ">
       <ScrollToTop
         height="100"
         style={{ backgroundColor: "#ff497c" }}
@@ -12,17 +12,18 @@ const Footer = () => {
         smooth
       />
       <svg
-        className="absolute top-0 w-full  h-6 -mt-5 sm:-mt-10 sm:h-16 text-deep-purple-accent-400"
+        className="absolute top-0 w-full h-6 -mt-5 sm:-mt-10 sm:h-16 text-deep-purple-accent-400"
         preserveAspectRatio="none"
         viewBox="0 0 1440 54"
       >
         <path
-          fill="currentColor"
+          fill="#fbe6db"
           d="M0 22L120 16.7C240 11 480 1.00001 720 0.700012C960 1.00001 1200 11 1320 16.7L1440 22V54H1320C1200 54 960 54 720 54C480 54 240 54 120 54H0V22Z"
         />
       </svg>
-      <div className="bg-[#202938]">
-        <div className="px-4 pt-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8  text-white">
+
+      <div className="bg-[#fbe6db]">
+        <div className="px-4 pt-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8  ">
           <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
             <div className="md:max-w-md lg:col-span-2">
               <a
@@ -31,7 +32,6 @@ const Footer = () => {
                 title="Company"
                 className="inline-flex items-center"
               >
-                
                 <span className=" text-xl font-bold tracking-wide  uppercase">
                   Lapse Pet
                 </span>
