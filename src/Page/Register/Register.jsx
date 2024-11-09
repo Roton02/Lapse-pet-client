@@ -159,9 +159,9 @@ const Register = () => {
         <title>Register</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-      <div className="flex items-center   w-full max-w-sm mx-auto overflow-hidden   lg:max-w-4xl">
+      <div className="flex items-center   w-full max-w-sm mx-auto overflow-hidden   lg:max-w-4xl ">
         <div className="hidden lg:mr-10 lg:block lg:w-1/2 ">
-          <video
+          <video className=" min-w-full"
             src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/login-security-8684570-6983203.mp4"
             autoPlay="muted"
             loop="loop"
@@ -170,7 +170,7 @@ const Register = () => {
           ></video>
         </div>
 
-        <div className="flex flex-col max-w-md mx-auto  mt-5 px-12 ">
+        <div className="flex flex-col max-w-md mx-auto  mt-5 px-14 ">
           <div className=" text-center">
             <h1 className=" text-3xl  text-black font-bold">
               Register to new account
@@ -279,7 +279,7 @@ const Register = () => {
               <div>
                 <button
                   type="submit"
-                  className="w-full mt-2 px-8 py-2 font-semibold rounded-md bg-purple-500 text-white"
+                  className="w-full mt-2 px-8 py-2 font-semibold rounded-md bg-[#e04368] text-white"
                 >
                   Register
                 </button>
