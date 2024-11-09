@@ -16,8 +16,8 @@ const Navbar = () => {
   console.log(user);
   return (
     <div className="bg-gradient-to-r from-[#F9F3F0] from-10% via-[#FCE7DC] via-30% to-[#F9F3F0] to-90% dark:bg-gradient-to-r dark:from-[#f2f2d8] dark:from-10% dark:via-[#FCE7DC] dark:via-30% dark:to-[#fae1d4]  w-full  md:flex md:justify-between md:items-center ">
-      <nav className="  navbar custom-z max-w-7xl mx-auto">
-        <div className="navbar-start custom-z ">
+      <nav className="  navbar z-[100] max-w-7xl mx-auto">
+        <div className="navbar-start z-50">
           <div className="block md:block lg:hidden">
             <div className="text-center">
               <button className="" type="button" onClick={toggleDrawer}>
@@ -331,7 +331,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="navbar-end custom-z ">
+        <div className="navbar-end ">
           <div className=" space-x-2  hidden lg:flex ">
             <NavLink to="/" className=" p-2 px-2 font-medium ">
               Home
@@ -348,8 +348,8 @@ const Navbar = () => {
           </div>
 
           {user ? (
-            <div className="flex items-center ml-3 custom-z">
-              <div className="dropdown dropdown-end custom-z">
+            <div className="flex items-center ml-3 ">
+              <div className="dropdown dropdown-end">
                 <div tabIndex={0} role="button">
                   <div
                     tabIndex={0}
@@ -363,7 +363,7 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content  flex custom-z menu p-2 gap-2 shadow bg-base-100 rounded-box w-64"
+                  className="dropdown-content  flex  z-[100] menu p-2 gap-2 shadow bg-base-100 rounded-box w-64"
                 >
                   <div className="flex justify-center">
                     <img
