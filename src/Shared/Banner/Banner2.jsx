@@ -39,7 +39,7 @@ const Banner2 = () => {
 
                   <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold  md:text-left">
                     Your Trusted Source <br />
-                    for Adopt Peats
+                    for Adopt {`Pet's`}
                   </p>
                   <p className="font-medium text-black/60 md:text-lg md:text-left">
                     Find the perfect tech solutions for being your loving pet.
@@ -86,7 +86,7 @@ const Banner2 = () => {
 
                   <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold  md:text-left">
                     Your Trusted Source <br />
-                    for Adopt Peats
+                    for Adopt {`Pet's`}
                   </p>
                   <p className="font-medium text-black/60 md:text-lg md:text-left">
                     Find the perfect tech solutions for being your loving pet.
@@ -130,7 +130,7 @@ const Banner2 = () => {
 
                   <p className="xl:text-[50px] lg:text-[40px] md:text-[32px] text-[30px] font-bold  md:text-left">
                     Your Trusted Source <br />
-                    for Adopt Peats
+                    for Adopt {`Pet's`}
                   </p>
                   <p className="font-medium text-black/60 md:text-lg md:text-left">
                     Find the perfect tech solutions for being your loving pet.
