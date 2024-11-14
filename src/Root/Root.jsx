@@ -9,6 +9,7 @@ import LoaderVideo from "../assets/Banner.mp4";
 import { useEffect, useState } from "react";
 import Headroom from "react-headroom";
 // import Navbar2 from "../Shared/Navbar/Navbar2";
+//import the navbar from './example'
 
 AOS.init();
 
